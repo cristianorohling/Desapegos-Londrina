@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Product } from '../types';
 
 interface ProductCardProps {
@@ -8,17 +7,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => {
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
-
-  const nextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImgIndex((prev) => (prev + 1) % product.images.length);
-  };
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImgIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
-  };
+  const [currentImgIndex] = useState(0);
 
   return (
     <div 
@@ -29,15 +18,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
         <img
           src={product.images[currentImgIndex]}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-700"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
-        
-        {product.isHighlighted && !product.isSold && (
-          <div className="absolute top-2 right-2 bg-amber-400 text-white p-1.5 rounded-xl shadow-lg z-10">
-            <Star size={12} fill="white" />
-          </div>
-        )}
 
         {product.isSold && (
           <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px] flex items-center justify-center z-20">
@@ -58,8 +41,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
             <span className="text-emerald-500 text-[10px] md:text-sm mr-0.5">R$</span>
             {product.price.toFixed(2)}
           </span>
-          <div className="hidden md:block bg-slate-50 p-2 rounded-xl text-slate-300 group-hover:bg-emerald-50 group-hover:text-emerald-500 transition-colors">
-            <Star size={14} />
+          <div className="hidden md:block text-slate-200 group-hover:text-emerald-500 transition-colors">
+            <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
           </div>
         </div>
       </div>
