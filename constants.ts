@@ -13,6 +13,19 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'lote-polly-pocket',
+    name: 'Lote Polly Pocket: 4 Bonecas + Várias Roupas e Acessórios',
+    description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou brincar. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios para montar diversos looks.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, botas e bolsas (uma amarela e uma prateada/roxa).\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação, exatamente como nas fotos. Entre em contato para mais detalhes!`,
+    price: 65.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/lote_polly/01.png'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now()
+  },
+  {
     id: 'panelinhas-metal',
     name: 'Kit de Panelinhas de Metal - Estilo Inox Profissional',
     description: `A brincadeira de casinha ficou séria (e muito mais divertida)! Esqueça as panelinhas de plástico que amassam fácil. Apresento este kit de cozinha infantil estilo "Inox", perfeito para os pequenos chefs que exigem qualidade na hora de preparar o "papazinho" imaginário.\n\nO que vem no menu:\n\n🥘 Caçarola com tampa: Para os grandes cozidos.\n🍝 Escorredor de macarrão: Super realista!\n🍳 Frigideira: Para aquele ovinho frito de mentirinha.\n🥄 Trio de Utensílios: Concha, espumadeira e espátula em metal.\n\nUm conjunto resistente, brilhante e pronto para durar gerações de brincadeiras. O toque de realismo que faltava na cozinha de brinquedo!`,
@@ -25,7 +38,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 100
   },
   {
     id: 'barbie-salao-pia',
@@ -44,7 +57,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'army-men-toy-story',
     name: 'Exército de Soldadinhos Verdes Disney Pixar Toy Story - Oficiais!',
-    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pé, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originais e licenciadas.\n- Estado de conservação: Excelente, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
+    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pé, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originel e licenciadas.\n- Estado de conservação: Excelente, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
     price: 40.00,
     category: 'Brinquedos',
     images: [

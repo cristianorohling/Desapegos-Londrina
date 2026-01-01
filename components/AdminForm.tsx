@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { X, Camera, Star } from 'lucide-react';
+import { X, Camera } from 'lucide-react';
 import { Product, Category } from '../types';
 import { CATEGORIES } from '../constants';
 
@@ -96,16 +95,15 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
                 </div>
               </div>
 
-              <div className="p-5 bg-emerald-50/50 rounded-2xl border border-emerald-100 flex items-center space-x-4">
+              <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-center space-x-4">
                 <input
                   type="checkbox"
                   id="highlight"
-                  className="w-6 h-6 accent-emerald-600 rounded-lg cursor-pointer"
+                  className="w-6 h-6 accent-slate-900 rounded-lg cursor-pointer"
                   checked={formData.isHighlighted}
                   onChange={e => setFormData(prev => ({ ...prev, isHighlighted: e.target.checked }))}
                 />
-                <label htmlFor="highlight" className="text-xs font-black uppercase tracking-tight text-emerald-900 cursor-pointer flex items-center space-x-2">
-                  <Star size={16} className="fill-emerald-600 text-emerald-600" />
+                <label htmlFor="highlight" className="text-xs font-black uppercase tracking-tight text-slate-500 cursor-pointer">
                   <span>Destacar Item na Vitrine</span>
                 </label>
               </div>
