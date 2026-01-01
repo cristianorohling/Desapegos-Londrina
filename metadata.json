@@ -1,0 +1,7 @@
+{
+  "name": "Desapegos Londrina",
+  "description": "Um catálogo virtual moderno e intuitivo para o seu bazar de desapegos domésticos, permitindo gerenciar produtos, categorias e facilitar o contato via WhatsApp.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
