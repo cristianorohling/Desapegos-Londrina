@@ -1,10 +1,8 @@
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
-  Plus, 
   LayoutGrid, 
   PackageOpen, 
-  MapPin, 
   X, 
   MessageCircle, 
   ChevronLeft, 
@@ -24,9 +22,7 @@ import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER } from './constants';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
-import AdminForm from './components/AdminForm';
 
-// Mapeamento de ícones para as categorias
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Brinquedos": <Gamepad2 size={16} />,
   "Decoração": <Home size={16} />,
@@ -39,20 +35,9 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 };
 
 const App: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>(() => {
-    const saved = localStorage.getItem('bazar_products_v4');
-    return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
-  });
-  
+  const [products] = useState<Product[]>(INITIAL_PRODUCTS);
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
-  const [isAdminMode, setIsAdminMode] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    localStorage.setItem('bazar_products_v4', JSON.stringify(products));
-  }, [products]);
 
   const filteredProducts = useMemo(() => {
     return products
@@ -61,51 +46,8 @@ const App: React.FC = () => {
         if (activeCategory === 'Todos' && p.isSold) return false;
         return categoryMatch;
       })
-      .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR', { sensitivity: 'base' }));
+      .sort((a, b) => b.createdAt - a.createdAt);
   }, [products, activeCategory]);
-
-  const handleAddProduct = (newProductData: Partial<Product>) => {
-    if (editingProduct) {
-      setProducts(prev => prev.map(p => p.id === editingProduct.id ? { ...p, ...newProductData } as Product : p));
-      setEditingProduct(null);
-    } else {
-      const newProduct: Product = {
-        id: crypto.randomUUID(),
-        name: newProductData.name || '',
-        description: newProductData.description || '',
-        price: newProductData.price || 0,
-        category: newProductData.category || 'Outros',
-        images: newProductData.images || [],
-        isSold: false,
-        isHighlighted: newProductData.isHighlighted || false,
-        createdAt: Date.now()
-      };
-      setProducts(prev => [newProduct, ...prev]);
-    }
-    setIsFormOpen(false);
-  };
-
-  const handleDeleteProduct = (id: string) => {
-    if (confirm("Remover este item do bazar?")) {
-      setProducts(prev => prev.filter(p => p.id !== id));
-      if (viewingProduct?.id === id) setViewingProduct(null);
-    }
-  };
-
-  const handleToggleStatus = (id: string) => {
-    setProducts(prev => prev.map(p => 
-      p.id === id ? { ...p, isSold: !p.isSold } : p
-    ));
-    if (viewingProduct?.id === id) {
-      setViewingProduct(prev => prev ? { ...prev, isSold: !prev.isSold } : null);
-    }
-  };
-
-  const openEdit = (product: Product) => {
-    setEditingProduct(product);
-    setViewingProduct(null);
-    setIsFormOpen(true);
-  };
 
   const resetView = () => {
     setActiveCategory('Todos');
@@ -113,19 +55,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
-      <Navbar 
-        isAdmin={isAdminMode} 
-        toggleAdmin={() => setIsAdminMode(!isAdminMode)} 
-        resetView={resetView}
-      />
+    <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
+      <Navbar resetView={resetView} />
 
-      {/* Menu de Categorias - Estética de Loja de Luxo com Destaque Ultra */}
+      {/* Menu de Categorias */}
       <div className="sticky top-16 z-40 bg-white/70 backdrop-blur-2xl border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
           <div className="flex items-center space-x-4 py-6">
-            
-            {/* BOTÃO DESTAQUES RENOVADO */}
             <button
               onClick={() => setActiveCategory('Todos')}
               className={`flex items-center space-x-3 px-8 py-4 rounded-[1.5rem] font-black text-[11px] uppercase tracking-[0.25em] whitespace-nowrap transition-all duration-700 relative group overflow-hidden ${
@@ -166,12 +102,10 @@ const App: React.FC = () => {
       </div>
 
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
-        
-        {/* Cabeçalho de Contexto */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
-            <div className="flex items-center space-x-3 text-emerald-600 text-[11px] font-black uppercase tracking-[0.4em] mb-4">
-              <div className="w-12 h-[2px] bg-emerald-600/30"></div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-8 text-center md:text-left">
+          <div className="max-w-2xl mx-auto md:mx-0">
+            <div className="flex items-center justify-center md:justify-start space-x-3 text-emerald-600 text-[11px] font-black uppercase tracking-[0.4em] mb-4">
+              <div className="hidden md:block w-12 h-[2px] bg-emerald-600/30"></div>
               <Flame size={16} className="text-orange-500" />
               <span>Itens Selecionados</span>
             </div>
@@ -184,38 +118,21 @@ const App: React.FC = () => {
                 : `Tudo o que você precisa em ${activeCategory.toLowerCase()}.`}
             </p>
           </div>
-          
-          {isAdminMode && (
-            <button
-              onClick={() => { setEditingProduct(null); setIsFormOpen(true); }}
-              className="group relative flex items-center justify-center space-x-3 bg-emerald-600 text-white px-10 py-5 rounded-[2rem] font-black text-[12px] uppercase tracking-widest hover:bg-slate-900 transition-all duration-500 shadow-2xl active:scale-95 overflow-hidden"
-            >
-              <Plus size={22} />
-              <span>Novo Desapego</span>
-            </button>
-          )}
         </div>
 
-        {/* Grade de Produtos */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10">
             {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
                 product={product}
-                isAdmin={isAdminMode}
-                onDelete={handleDeleteProduct}
-                onToggleStatus={handleToggleStatus}
-                onEdit={openEdit}
                 onViewDetails={setViewingProduct}
               />
             ))}
           </div>
         ) : (
           <div className="py-48 text-center bg-white rounded-[4rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] border-dashed border-2">
-            <div className="bg-slate-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8">
-              <PackageOpen size={48} className="text-slate-200" />
-            </div>
+            <PackageOpen size={48} className="mx-auto text-slate-200 mb-8" />
             <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-3">Estoque Esgotado</h3>
             <p className="text-slate-400 text-lg mb-10 max-w-md mx-auto">Não encontramos itens disponíveis nesta categoria no momento.</p>
             <button 
@@ -228,7 +145,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Footer Minimalista */}
       <footer className="bg-white border-t border-slate-100 py-24 mt-24">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
           <div>
@@ -238,11 +154,11 @@ const App: React.FC = () => {
           
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-               <div className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4">Atendimento</div>
+               <div className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4">Contato Oficial</div>
                <a 
                 href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                 target="_blank" 
-                className="group flex items-center space-x-3 bg-emerald-50 text-emerald-600 px-6 py-3 rounded-2xl font-black text-sm hover:bg-emerald-600 hover:text-white transition-all duration-500"
+                className="group flex items-center space-x-3 bg-emerald-50 text-emerald-600 px-8 py-4 rounded-2xl font-black text-sm hover:bg-emerald-600 hover:text-white transition-all duration-500 shadow-sm"
                >
                  <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
                  <span>(43) 99116-7333</span>
@@ -252,24 +168,15 @@ const App: React.FC = () => {
 
           <div className="md:text-right">
             <p className="text-slate-300 text-[10px] uppercase tracking-[0.4em] font-black">Londrina • PR</p>
-            <p className="text-slate-200 text-[10px] mt-2 font-medium">© 2024</p>
+            <p className="text-slate-200 text-[10px] mt-2 font-medium">© 2024 Catalogo Virtual</p>
           </div>
         </div>
       </footer>
-
-      {isFormOpen && (
-        <AdminForm
-          onClose={() => { setIsFormOpen(false); setEditingProduct(null); }}
-          onSubmit={handleAddProduct}
-          editProduct={editingProduct}
-        />
-      )}
 
       {/* Modal de Detalhes */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-0 md:p-8 bg-slate-900/95 backdrop-blur-xl animate-in fade-in duration-500">
           <div className="bg-white w-full max-w-6xl md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:max-h-[85vh] animate-in slide-in-from-bottom-10 duration-700 ease-out">
-            {/* Esquerda: Galeria Premium */}
             <div className="md:w-[55%] bg-slate-50 relative h-[45vh] md:h-auto overflow-hidden border-r border-slate-100">
               <ProductDetailGallery images={viewingProduct.images} />
               <button 
@@ -280,16 +187,12 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            {/* Direita: Informação Curada */}
             <div className="md:w-[45%] flex flex-col h-full bg-white">
               <div className="p-10 md:p-14 pb-8">
                 <div className="flex justify-between items-start mb-8">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div>
-                    <span className="text-[11px] font-black text-emerald-600 uppercase tracking-[0.3em] bg-emerald-50 px-4 py-2 rounded-full">
-                      {viewingProduct.category}
-                    </span>
-                  </div>
+                  <span className="text-[11px] font-black text-emerald-600 uppercase tracking-[0.3em] bg-emerald-50 px-4 py-2 rounded-full">
+                    {viewingProduct.category}
+                  </span>
                   <button 
                     onClick={() => setViewingProduct(null)} 
                     className="hidden md:flex text-slate-300 hover:text-slate-900 transition-all p-3 hover:bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100"
@@ -308,18 +211,18 @@ const App: React.FC = () => {
                 </div>
 
                 <a
-                  href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o item "${viewingProduct.name}" que vi no catálogo.`)}`}
+                  href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${viewingProduct.name}" por R$ ${viewingProduct.price.toFixed(2)}. Ainda está disponível?`)}`}
                   target={viewingProduct.isSold ? '_self' : '_blank'}
                   className={`w-full flex items-center justify-center space-x-4 py-6 rounded-[2rem] font-black uppercase text-[13px] tracking-[0.25em] transition-all duration-500 transform ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed grayscale' : 'bg-slate-900 text-white hover:bg-emerald-600 shadow-2xl shadow-slate-200 active:scale-95'}`}
                 >
                   <MessageCircle size={24} />
-                  <span>{viewingProduct.isSold ? 'Vendido' : 'Conversar no WhatsApp'}</span>
+                  <span>{viewingProduct.isSold ? 'Item Vendido' : 'Quero Comprar'}</span>
                 </a>
               </div>
               
               <div className="flex-1 overflow-y-auto p-10 md:p-14 pt-0 no-scrollbar">
                 <div className="w-full h-px bg-slate-100 mb-8"></div>
-                <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Informações do Item</h4>
+                <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Informações Adicionais</h4>
                 <div className="text-slate-600 whitespace-pre-wrap leading-relaxed font-medium text-lg md:text-xl">
                   {viewingProduct.description}
                 </div>
@@ -338,7 +241,7 @@ const ProductDetailGallery: React.FC<{ images: string[] }> = ({ images }) => {
   return (
     <div className="h-full flex flex-col relative group">
       <div className="relative flex-1 bg-slate-100">
-        <img src={images[active]} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Produto" />
+        <img src={images[active]} className="w-full h-full object-cover transition-all duration-700" alt="Produto" />
         
         {images.length > 1 && (
           <>
