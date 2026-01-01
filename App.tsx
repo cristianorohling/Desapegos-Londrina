@@ -15,7 +15,8 @@ import {
   Smartphone,
   Armchair,
   MoreHorizontal,
-  Flame
+  Flame,
+  Maximize2
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER } from './constants';
@@ -36,15 +37,16 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
+  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
 
   // Impede o scroll do body quando o modal está aberto
   useEffect(() => {
-    if (viewingProduct) {
+    if (viewingProduct || fullScreenImage) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [viewingProduct]);
+  }, [viewingProduct, fullScreenImage]);
 
   const filteredProducts = useMemo(() => {
     return INITIAL_PRODUCTS
@@ -135,24 +137,33 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Modal Otimizado: Fotos maiores no celular */}
+      {/* Modal Otimizado */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center bg-slate-900/95 backdrop-blur-md animate-in fade-in duration-300">
           <div className="bg-white w-full max-w-5xl md:rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:h-auto md:max-h-[85vh] animate-in slide-in-from-bottom-20 duration-500">
             
-            {/* Esquerda: Galeria ocupando mais espaço no mobile (55% da altura) */}
-            <div className="md:w-[55%] bg-slate-100 relative h-[55vh] md:h-auto overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-slate-100">
-              <ProductDetailGallery images={viewingProduct.images} />
+            {/* Esquerda: Galeria ocupando mais espaço no mobile */}
+            <div className="md:w-[55%] bg-slate-100 relative h-[50vh] md:h-auto overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-slate-100">
+              <ProductDetailGallery 
+                images={viewingProduct.images} 
+                onImageClick={(url) => setFullScreenImage(url)}
+              />
               <button 
                 onClick={() => setViewingProduct(null)} 
-                className="absolute top-4 right-4 bg-black/30 backdrop-blur-md p-2 rounded-full text-white z-50 md:hidden"
+                className="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2 rounded-full text-white z-50 md:hidden"
               >
                 <X size={20} />
               </button>
+              <div className="absolute top-4 left-4 md:hidden pointer-events-none">
+                <div className="bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center space-x-1.5 border border-white/20">
+                  <Maximize2 size={10} className="text-white" />
+                  <span className="text-[10px] text-white font-bold uppercase tracking-wider">Toque para ampliar</span>
+                </div>
+              </div>
             </div>
             
             {/* Direita: Conteúdo com scroll otimizado */}
-            <div className="md:w-[45%] flex flex-col bg-white overflow-hidden h-[45vh] md:h-auto">
+            <div className="md:w-[45%] flex flex-col bg-white overflow-hidden h-[50vh] md:h-auto">
               <div className="p-6 md:p-10 pb-4 shrink-0 border-b border-slate-50 md:border-none">
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-[9px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1.5 rounded-full">
@@ -195,6 +206,23 @@ const App: React.FC = () => {
         </div>
       )}
 
+      {/* Foto em tela cheia (Light-box) */}
+      {fullScreenImage && (
+        <div 
+          className="fixed inset-0 z-[200] bg-black flex items-center justify-center animate-in fade-in duration-300"
+          onClick={() => setFullScreenImage(null)}
+        >
+          <img 
+            src={fullScreenImage} 
+            className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-500" 
+            alt="Foto ampliada"
+          />
+          <button className="absolute top-6 right-6 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full text-white transition-all">
+            <X size={28} />
+          </button>
+        </div>
+      )}
+
       <footer className="bg-white border-t border-slate-100 py-12 mt-12">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h4 className="font-black text-slate-900 text-xl mb-1">Desapegos Londrina</h4>
@@ -211,51 +239,58 @@ const App: React.FC = () => {
   );
 };
 
-const ProductDetailGallery: React.FC<{ images: string[] }> = ({ images }) => {
+interface GalleryProps {
+  images: string[];
+  onImageClick: (url: string) => void;
+}
+
+const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) => {
   const [active, setActive] = useState(0);
 
-  const next = () => setActive((prev) => (prev + 1) % images.length);
-  const prev = () => setActive((prev) => (prev - 1 + images.length) % images.length);
+  const next = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActive((prev) => (prev + 1) % images.length);
+  };
+  
+  const prev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActive((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
-    <div className="h-full flex flex-col relative group touch-pan-x">
+    <div className="h-full flex flex-col relative group touch-pan-x cursor-zoom-in" onClick={() => onImageClick(images[active])}>
       <div className="relative flex-1 bg-slate-100 overflow-hidden">
-        {/* Camada de Imagem com transição suave */}
         <img 
           key={active}
           src={images[active]} 
-          className="w-full h-full object-cover animate-in fade-in zoom-in-95 duration-500" 
+          className="w-full h-full object-contain animate-in fade-in duration-300" 
           alt="Foto do produto" 
         />
         
         {images.length > 1 && (
           <>
-            {/* Controles de navegação mais visíveis no mobile */}
-            <button 
-              onClick={(e) => { e.stopPropagation(); prev(); }} 
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg text-slate-900 md:opacity-0 md:group-hover:opacity-100 transition-all active:scale-90"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={(e) => { e.stopPropagation(); next(); }} 
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg text-slate-900 md:opacity-0 md:group-hover:opacity-100 transition-all active:scale-90"
-            >
-              <ChevronRight size={24} />
-            </button>
+            {/* Áreas de toque maiores para navegação no celular */}
+            <div className="absolute inset-y-0 left-0 w-1/4 flex items-center pl-4" onClick={prev}>
+              <button className="bg-black/30 backdrop-blur-md p-3 rounded-full text-white md:opacity-0 md:group-hover:opacity-100 transition-all active:scale-90">
+                <ChevronLeft size={24} />
+              </button>
+            </div>
+            <div className="absolute inset-y-0 right-0 w-1/4 flex items-center justify-end pr-4" onClick={next}>
+              <button className="bg-black/30 backdrop-blur-md p-3 rounded-full text-white md:opacity-0 md:group-hover:opacity-100 transition-all active:scale-90">
+                <ChevronRight size={24} />
+              </button>
+            </div>
             
-            {/* Indicadores (Dots) maiores e com mais contraste */}
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+            {/* Indicadores */}
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 pointer-events-none">
               {images.map((_, i) => (
-                <button
+                <div
                   key={i}
-                  onClick={() => setActive(i)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === active 
-                      ? 'w-8 bg-emerald-500 shadow-sm' 
-                      : 'w-2 bg-white/60 hover:bg-white'
+                      ? 'w-8 bg-emerald-500 shadow-lg' 
+                      : 'w-2 bg-black/20 md:bg-white/40'
                   }`}
-                  aria-label={`Ir para imagem ${i + 1}`}
                 />
               ))}
             </div>

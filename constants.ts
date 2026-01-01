@@ -1,4 +1,3 @@
-
 import { Product, Category } from './types';
 
 export const CATEGORIES: Category[] = [
@@ -14,6 +13,21 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'panelinhas-metal',
+    name: 'Kit de Panelinhas de Metal - Estilo Inox Profissional',
+    description: `A brincadeira de casinha ficou séria (e muito mais divertida)! Esqueça as panelinhas de plástico que amassam fácil. Apresento este kit de cozinha infantil estilo "Inox", perfeito para os pequenos chefs que exigem qualidade na hora de preparar o "papazinho" imaginário.\n\nO que vem no menu:\n\n🥘 Caçarola com tampa: Para os grandes cozidos.\n🍝 Escorredor de macarrão: Super realista!\n🍳 Frigideira: Para aquele ovinho frito de mentirinha.\n🥄 Trio de Utensílios: Concha, espumadeira e espátula em metal.\n\nUm conjunto resistente, brilhante e pronto para durar gerações de brincadeiras. O toque de realismo que faltava na cozinha de brinquedo!`,
+    price: 50.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/panelinhas_metal/01.png',
+      'https://desapegos.puter.site/brinquedos/panelinhas_metal/02.jpg',
+      'https://desapegos.puter.site/brinquedos/panelinhas_metal/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
     id: 'barbie-salao-pia',
     name: 'Pia do Salão de Beleza da Barbie - Glamour e Estilo',
     description: `Transforme a brincadeira em um momento de puro glamour! Este lavatório do Salão de Beleza da Barbie é a peça que faltava para completar o cenário perfeito. \n\nCom uma cuba azul translúcida cheia de glitter e um armário roxo super charmoso decorado com o clássico laço rosa, ele traz todo o estilo que a boneca mais famosa do mundo merece.\n\nPerfeito para criar histórias de "dia de beleza", lavar os cabelos das bonecas (de faz de conta!) e deixar a imaginação fluir. Um item encantador que promete horas de diversão estilosa.`,
@@ -25,7 +39,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now()
+    createdAt: Date.now() - 500
   },
   {
     id: 'army-men-toy-story',
