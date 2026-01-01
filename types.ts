@@ -12,10 +12,3 @@ export interface Product {
   isHighlighted: boolean;
   createdAt: number;
 }
-
-export interface AppState {
-  products: Product[];
-  activeCategory: Category | 'Todos';
-  searchQuery: string;
-  isAdminMode: boolean;
-}

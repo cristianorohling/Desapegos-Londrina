@@ -35,19 +35,18 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 };
 
 const App: React.FC = () => {
-  const [products] = useState<Product[]>(INITIAL_PRODUCTS);
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
 
   const filteredProducts = useMemo(() => {
-    return products
+    return INITIAL_PRODUCTS
       .filter(p => {
         const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
         if (activeCategory === 'Todos' && p.isSold) return false;
         return categoryMatch;
       })
       .sort((a, b) => b.createdAt - a.createdAt);
-  }, [products, activeCategory]);
+  }, [activeCategory]);
 
   const resetView = () => {
     setActiveCategory('Todos');
@@ -58,7 +57,6 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar resetView={resetView} />
 
-      {/* Menu de Categorias */}
       <div className="sticky top-16 z-40 bg-white/70 backdrop-blur-2xl border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
           <div className="flex items-center space-x-4 py-6">
@@ -107,15 +105,15 @@ const App: React.FC = () => {
             <div className="flex items-center justify-center md:justify-start space-x-3 text-emerald-600 text-[11px] font-black uppercase tracking-[0.4em] mb-4">
               <div className="hidden md:block w-12 h-[2px] bg-emerald-600/30"></div>
               <Flame size={16} className="text-orange-500" />
-              <span>Itens Selecionados</span>
+              <span>Garimpo Londrina</span>
             </div>
             <h2 className="text-5xl font-black text-slate-900 tracking-tight leading-[0.9] mb-4">
-              {activeCategory === 'Todos' ? 'Curadoria de Hoje' : activeCategory}
+              {activeCategory === 'Todos' ? 'Curadoria Especial' : activeCategory}
             </h2>
             <p className="text-slate-400 text-lg font-medium leading-relaxed max-w-lg">
               {activeCategory === 'Todos' 
-                ? 'Garimpos exclusivos e desapegos imperdíveis em Londrina.' 
-                : `Tudo o que você precisa em ${activeCategory.toLowerCase()}.`}
+                ? 'Produtos selecionados para o bazar de hoje. Itens em ótimo estado e preços imperdíveis.' 
+                : `Confira nossa seleção de ${activeCategory.toLowerCase()}.`}
             </p>
           </div>
         </div>
@@ -133,8 +131,8 @@ const App: React.FC = () => {
         ) : (
           <div className="py-48 text-center bg-white rounded-[4rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] border-dashed border-2">
             <PackageOpen size={48} className="mx-auto text-slate-200 mb-8" />
-            <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-3">Estoque Esgotado</h3>
-            <p className="text-slate-400 text-lg mb-10 max-w-md mx-auto">Não encontramos itens disponíveis nesta categoria no momento.</p>
+            <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-3">Tudo vendido!</h3>
+            <p className="text-slate-400 text-lg mb-10 max-w-md mx-auto">Não há itens disponíveis nesta categoria agora.</p>
             <button 
               onClick={resetView} 
               className="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-100"
@@ -149,12 +147,12 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
           <div>
             <h4 className="font-black text-slate-900 text-2xl tracking-tighter mb-2">Desapegos Londrina</h4>
-            <p className="text-slate-400 text-sm font-medium italic">Sustentabilidade e estilo em cada detalhe.</p>
+            <p className="text-slate-400 text-sm font-medium italic">Sustentabilidade e economia em cada detalhe.</p>
           </div>
           
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-               <div className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4">Contato Oficial</div>
+               <div className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4">Contato para compra</div>
                <a 
                 href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                 target="_blank" 
@@ -168,12 +166,11 @@ const App: React.FC = () => {
 
           <div className="md:text-right">
             <p className="text-slate-300 text-[10px] uppercase tracking-[0.4em] font-black">Londrina • PR</p>
-            <p className="text-slate-200 text-[10px] mt-2 font-medium">© 2024 Catalogo Virtual</p>
+            <p className="text-slate-200 text-[10px] mt-2 font-medium">© 2024 Catalogo Estático</p>
           </div>
         </div>
       </footer>
 
-      {/* Modal de Detalhes */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-0 md:p-8 bg-slate-900/95 backdrop-blur-xl animate-in fade-in duration-500">
           <div className="bg-white w-full max-w-6xl md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:max-h-[85vh] animate-in slide-in-from-bottom-10 duration-700 ease-out">
@@ -222,7 +219,7 @@ const App: React.FC = () => {
               
               <div className="flex-1 overflow-y-auto p-10 md:p-14 pt-0 no-scrollbar">
                 <div className="w-full h-px bg-slate-100 mb-8"></div>
-                <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Informações Adicionais</h4>
+                <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Descrição do Item</h4>
                 <div className="text-slate-600 whitespace-pre-wrap leading-relaxed font-medium text-lg md:text-xl">
                   {viewingProduct.description}
                 </div>

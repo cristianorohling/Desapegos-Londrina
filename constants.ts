@@ -58,9 +58,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     createdAt: Date.now() - 2000
   },
   {
-    id: '11',
-    name: 'Abajur Retrô de Metal',
-    description: 'Luminária de mesa com design vintage industrial. Fio em tecido, bivolt. Dá um toque aconchegante em qualquer ambiente.',
+    id: 'abajur-retro',
+    name: 'Abajur Retrô de Metal - Estilo Industrial',
+    description: 'Luminária de mesa com design vintage industrial. Fio em tecido, bivolt. Dá um toque aconchegante em qualquer ambiente. Perfeito para leitura ou decoração de criado-mudo.',
     price: 110.00,
     category: 'Decoração',
     images: ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=400'],
