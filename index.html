@@ -13,6 +13,7 @@
           -moz-osx-font-smoothing: grayscale;
         }
         
+        /* Utilitários para scroll */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -25,7 +26,7 @@
             width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #f8fafc;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #cbd5e1;
@@ -60,6 +61,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
+    <!-- O Vite transformará este link no bundle final durante o build -->
     <script type="module" src="/index.tsx"></script>
 </body>
 </html>
