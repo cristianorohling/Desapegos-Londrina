@@ -57,6 +57,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar resetView={resetView} />
 
+      {/* Menu de Categorias */}
       <div className="sticky top-16 z-40 bg-white/70 backdrop-blur-2xl border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
           <div className="flex items-center space-x-4 py-6">
@@ -171,9 +172,11 @@ const App: React.FC = () => {
         </div>
       </footer>
 
+      {/* Modal de Detalhes - Onde os textos aparecem */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-0 md:p-8 bg-slate-900/95 backdrop-blur-xl animate-in fade-in duration-500">
           <div className="bg-white w-full max-w-6xl md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:max-h-[85vh] animate-in slide-in-from-bottom-10 duration-700 ease-out">
+            {/* Galeria */}
             <div className="md:w-[55%] bg-slate-50 relative h-[45vh] md:h-auto overflow-hidden border-r border-slate-100">
               <ProductDetailGallery images={viewingProduct.images} />
               <button 
@@ -184,9 +187,10 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            <div className="md:w-[45%] flex flex-col h-full bg-white">
-              <div className="p-10 md:p-14 pb-8">
-                <div className="flex justify-between items-start mb-8">
+            {/* Texto do Produto com Scroll */}
+            <div className="md:w-[45%] flex flex-col h-full bg-white overflow-hidden">
+              <div className="p-10 md:p-14 pb-6 shrink-0">
+                <div className="flex justify-between items-start mb-6">
                   <span className="text-[11px] font-black text-emerald-600 uppercase tracking-[0.3em] bg-emerald-50 px-4 py-2 rounded-full">
                     {viewingProduct.category}
                   </span>
@@ -198,32 +202,32 @@ const App: React.FC = () => {
                   </button>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.05] mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] mb-6 tracking-tight">
                   {viewingProduct.name}
                 </h2>
                 
-                <div className="flex items-baseline gap-2 mb-10">
-                  <span className="text-xl font-bold text-emerald-400 tracking-tighter">R$</span>
-                  <span className="text-5xl font-black text-emerald-600 tracking-tighter">{viewingProduct.price.toFixed(2)}</span>
+                <div className="flex items-baseline gap-2 mb-8">
+                  <span className="text-lg font-bold text-emerald-400 tracking-tighter">R$</span>
+                  <span className="text-4xl font-black text-emerald-600 tracking-tighter">{viewingProduct.price.toFixed(2)}</span>
                 </div>
 
                 <a
                   href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${viewingProduct.name}" por R$ ${viewingProduct.price.toFixed(2)}. Ainda está disponível?`)}`}
                   target={viewingProduct.isSold ? '_self' : '_blank'}
-                  className={`w-full flex items-center justify-center space-x-4 py-6 rounded-[2rem] font-black uppercase text-[13px] tracking-[0.25em] transition-all duration-500 transform ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed grayscale' : 'bg-slate-900 text-white hover:bg-emerald-600 shadow-2xl shadow-slate-200 active:scale-95'}`}
+                  className={`w-full flex items-center justify-center space-x-4 py-5 rounded-[1.5rem] font-black uppercase text-[12px] tracking-[0.2em] transition-all duration-500 transform ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed grayscale' : 'bg-slate-900 text-white hover:bg-emerald-600 shadow-xl shadow-slate-200 active:scale-95'}`}
                 >
-                  <MessageCircle size={24} />
+                  <MessageCircle size={20} />
                   <span>{viewingProduct.isSold ? 'Item Vendido' : 'Quero Comprar'}</span>
                 </a>
               </div>
               
-              <div className="flex-1 overflow-y-auto p-10 md:p-14 pt-0 no-scrollbar">
+              {/* Área de Descrição com Scrollbar Customizada */}
+              <div className="flex-1 overflow-y-auto p-10 md:p-14 pt-0 custom-scrollbar">
                 <div className="w-full h-px bg-slate-100 mb-8"></div>
-                <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Descrição do Item</h4>
-                <div className="text-slate-600 whitespace-pre-wrap leading-relaxed font-medium text-lg md:text-xl">
+                <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Sobre o desapego</h4>
+                <div className="text-slate-600 whitespace-pre-wrap leading-relaxed font-medium text-lg md:text-xl pb-10">
                   {viewingProduct.description}
                 </div>
-                <div className="h-20"></div>
               </div>
             </div>
           </div>
