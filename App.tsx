@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { 
   LayoutGrid, 
@@ -57,7 +56,6 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar resetView={resetView} />
 
-      {/* Menu de Categorias */}
       <div className="sticky top-16 z-40 bg-white/70 backdrop-blur-2xl border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
           <div className="flex items-center space-x-4 py-6">
@@ -150,81 +148,54 @@ const App: React.FC = () => {
             <h4 className="font-black text-slate-900 text-2xl tracking-tighter mb-2">Desapegos Londrina</h4>
             <p className="text-slate-400 text-sm font-medium italic">Sustentabilidade e economia em cada detalhe.</p>
           </div>
-          
           <div className="flex justify-center">
-            <div className="flex flex-col items-center">
-               <div className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4">Contato para compra</div>
-               <a 
-                href={`https://wa.me/${WHATSAPP_NUMBER}`} 
-                target="_blank" 
-                className="group flex items-center space-x-3 bg-emerald-50 text-emerald-600 px-8 py-4 rounded-2xl font-black text-sm hover:bg-emerald-600 hover:text-white transition-all duration-500 shadow-sm"
-               >
-                 <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
-                 <span>(43) 99116-7333</span>
-               </a>
-            </div>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" className="flex items-center space-x-3 bg-emerald-50 text-emerald-600 px-8 py-4 rounded-2xl font-black text-sm hover:bg-emerald-600 hover:text-white transition-all duration-500 shadow-sm">
+              <MessageCircle size={20} />
+              <span>(43) 99116-7333</span>
+            </a>
           </div>
-
           <div className="md:text-right">
             <p className="text-slate-300 text-[10px] uppercase tracking-[0.4em] font-black">Londrina • PR</p>
-            <p className="text-slate-200 text-[10px] mt-2 font-medium">© 2024 Catalogo Estático</p>
           </div>
         </div>
       </footer>
 
-      {/* Modal de Detalhes - Onde os textos aparecem */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-0 md:p-8 bg-slate-900/95 backdrop-blur-xl animate-in fade-in duration-500">
           <div className="bg-white w-full max-w-6xl md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:max-h-[85vh] animate-in slide-in-from-bottom-10 duration-700 ease-out">
-            {/* Galeria */}
             <div className="md:w-[55%] bg-slate-50 relative h-[45vh] md:h-auto overflow-hidden border-r border-slate-100">
               <ProductDetailGallery images={viewingProduct.images} />
-              <button 
-                onClick={() => setViewingProduct(null)} 
-                className="absolute top-8 left-8 bg-white/90 p-4 rounded-2xl md:hidden shadow-2xl text-slate-900 z-50 backdrop-blur-md"
-              >
+              <button onClick={() => setViewingProduct(null)} className="absolute top-8 left-8 bg-white/90 p-4 rounded-2xl md:hidden shadow-2xl text-slate-900 z-50">
                 <X size={24} />
               </button>
             </div>
             
-            {/* Texto do Produto com Scroll */}
             <div className="md:w-[45%] flex flex-col h-full bg-white overflow-hidden">
               <div className="p-10 md:p-14 pb-6 shrink-0">
                 <div className="flex justify-between items-start mb-6">
                   <span className="text-[11px] font-black text-emerald-600 uppercase tracking-[0.3em] bg-emerald-50 px-4 py-2 rounded-full">
                     {viewingProduct.category}
                   </span>
-                  <button 
-                    onClick={() => setViewingProduct(null)} 
-                    className="hidden md:flex text-slate-300 hover:text-slate-900 transition-all p-3 hover:bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100"
-                  >
+                  <button onClick={() => setViewingProduct(null)} className="hidden md:flex text-slate-300 hover:text-slate-900 transition-all p-3 hover:bg-slate-50 rounded-2xl">
                     <X size={28} />
                   </button>
                 </div>
-
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] mb-6 tracking-tight">
                   {viewingProduct.name}
                 </h2>
-                
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-lg font-bold text-emerald-400 tracking-tighter">R$</span>
-                  <span className="text-4xl font-black text-emerald-600 tracking-tighter">{viewingProduct.price.toFixed(2)}</span>
+                <div className="flex items-baseline gap-2 mb-8 text-emerald-600">
+                  <span className="text-lg font-bold tracking-tighter">R$</span>
+                  <span className="text-4xl font-black tracking-tighter">{viewingProduct.price.toFixed(2)}</span>
                 </div>
-
-                <a
-                  href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${viewingProduct.name}" por R$ ${viewingProduct.price.toFixed(2)}. Ainda está disponível?`)}`}
-                  target={viewingProduct.isSold ? '_self' : '_blank'}
-                  className={`w-full flex items-center justify-center space-x-4 py-5 rounded-[1.5rem] font-black uppercase text-[12px] tracking-[0.2em] transition-all duration-500 transform ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed grayscale' : 'bg-slate-900 text-white hover:bg-emerald-600 shadow-xl shadow-slate-200 active:scale-95'}`}
-                >
+                <a href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${viewingProduct.name}" por R$ ${viewingProduct.price.toFixed(2)}. Ainda está disponível?`)}`} target={viewingProduct.isSold ? '_self' : '_blank'} className={`w-full flex items-center justify-center space-x-4 py-5 rounded-[1.5rem] font-black uppercase text-[12px] tracking-[0.2em] transition-all duration-500 ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-emerald-600 shadow-xl'}`}>
                   <MessageCircle size={20} />
                   <span>{viewingProduct.isSold ? 'Item Vendido' : 'Quero Comprar'}</span>
                 </a>
               </div>
               
-              {/* Área de Descrição com Scrollbar Customizada */}
               <div className="flex-1 overflow-y-auto p-10 md:p-14 pt-0 custom-scrollbar">
                 <div className="w-full h-px bg-slate-100 mb-8"></div>
-                <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Sobre o desapego</h4>
+                <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em] mb-6">Detalhes do Produto</h4>
                 <div className="text-slate-600 whitespace-pre-wrap leading-relaxed font-medium text-lg md:text-xl pb-10">
                   {viewingProduct.description}
                 </div>
@@ -242,32 +213,14 @@ const ProductDetailGallery: React.FC<{ images: string[] }> = ({ images }) => {
   return (
     <div className="h-full flex flex-col relative group">
       <div className="relative flex-1 bg-slate-100">
-        <img src={images[active]} className="w-full h-full object-cover transition-all duration-700" alt="Produto" />
-        
+        <img src={images[active]} className="w-full h-full object-cover" alt="Produto" />
         {images.length > 1 && (
           <>
-            <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
-              <button 
-                onClick={() => setActive((prev) => (prev - 1 + images.length) % images.length)} 
-                className="bg-white/90 p-4 rounded-3xl shadow-2xl pointer-events-auto active:scale-90 hover:bg-white text-slate-900 transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 duration-500"
-              >
-                <ChevronLeft size={28} />
-              </button>
-              <button 
-                onClick={() => setActive((prev) => (prev + 1) % images.length)} 
-                className="bg-white/90 p-4 rounded-3xl shadow-2xl pointer-events-auto active:scale-90 hover:bg-white text-slate-900 transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 duration-500"
-              >
-                <ChevronRight size={28} />
-              </button>
-            </div>
-            
+            <button onClick={() => setActive((prev) => (prev - 1 + images.length) % images.length)} className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-3xl shadow-xl hover:bg-white transition-all opacity-0 group-hover:opacity-100"><ChevronLeft size={28} /></button>
+            <button onClick={() => setActive((prev) => (prev + 1) % images.length)} className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/90 p-4 rounded-3xl shadow-xl hover:bg-white transition-all opacity-0 group-hover:opacity-100"><ChevronRight size={28} /></button>
             <div className="absolute bottom-10 left-10 right-10 flex gap-3 overflow-x-auto no-scrollbar py-2">
               {images.map((img, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setActive(i)} 
-                  className={`relative shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-4 transition-all duration-300 ${i === active ? 'border-emerald-500 scale-110 shadow-xl' : 'border-white/50 grayscale hover:grayscale-0'}`}
-                >
+                <button key={i} onClick={() => setActive(i)} className={`shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-4 transition-all ${i === active ? 'border-emerald-500 scale-110 shadow-xl' : 'border-white/50 grayscale'}`}>
                   <img src={img} className="w-full h-full object-cover" />
                 </button>
               ))}
