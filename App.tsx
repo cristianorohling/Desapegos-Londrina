@@ -14,6 +14,7 @@ import {
   Shirt,
   Smartphone,
   Armchair,
+  Monitor,
   MoreHorizontal,
   Flame,
   Maximize2
@@ -30,6 +31,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Utilidades Domésticas": <Utensils size={14} />,
   "Roupas": <Shirt size={14} />,
   "Eletrônicos": <Smartphone size={14} />,
+  "Informática": <Monitor size={14} />,
   "Móveis": <Armchair size={14} />,
   "Outros": <MoreHorizontal size={14} />
 };

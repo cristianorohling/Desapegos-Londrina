@@ -7,23 +7,66 @@ export const CATEGORIES: Category[] = [
   "Utilidades Domésticas",
   "Roupas",
   "Eletrônicos",
+  "Informática",
   "Móveis",
   "Outros"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'repetidor-tplink',
+    name: 'Repetidor de Sinal Wi-Fi TP-Link 300Mbps (Modelo TL-WA850RE) - Bivolt',
+    description: `Vendo repetidor de sinal Wi-Fi da TP-Link, modelo TL-WA850RE (Versão 4.0). Excelente para ampliar a cobertura da internet em casa ou no escritório, eliminando "zonas mortas" onde o sinal do roteador principal não chega.\n\nDetalhes Técnicos:\n\n📶 Marca: TP-Link\n⚙️ Modelo: TL-WA850RE\n🚀 Velocidade: 300Mbps\n⚡ Voltagem: Bivolt (100-240V)\n🔌 Instalação: Plug & Play (basta colocar na tomada e configurar).\n✨ Estado: Usado, em bom estado de conservação e funcionando perfeitamente.`,
+    price: 60.00,
+    category: 'Informática',
+    images: [
+      'https://desapegos.puter.site/informatica/repetidor_tp-link/01.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now()
+  },
+  {
+    id: 'batgirl-jato',
+    name: 'Boneca Batgirl DC Super Hero Girls com Jato (Mattel) - 15cm',
+    description: `Vendo boneca Batgirl da linha DC Super Hero Girls, original da Mattel. Item perfeito para colecionadores ou para presentear. A boneca está pronta para a ação com seu jato personalizado!\n\nDetalhes do product:\n\n🦸‍♀️ Tamanho: Boneca de 15 cm.\n✈️ Acessórios: Acompanha o Jato (com rodas que giram de verdade) e o capacete removível.\n🏷️ Marca: Mattel (Ref: DVG74/DVG72).\n✨ Estado: Usada, mas bem conservada.`,
+    price: 50.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/batgirl_jato/01.png',
+      'https://desapegos.puter.site/brinquedos/batgirl_jato/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 10
+  },
+  {
+    id: 'lote-ferramentas-massinha',
+    name: 'Super Lote de Ferramentas e Moldes para Massinha (Play-Doh/Super Massa)',
+    description: `⚠️ Importante: O kit contém apenas os acessórios plásticos. As massinhas originais secaram com o tempo e foram descartadas. Você precisará usar suas próprias massinhas (Play-Doh, caseiras ou de outras marcas).\n\nKit completo de acessórios para a criançada soltar a imaginação modelando! É o combo perfeito para quem já tem os potinhos de massa em casa e precisa de ferramentas, ou para quem quer renovar os brinquedos.\n\nO que o kit inclui:\n\n✨ Vários moldes divertidos (personagens, animais, formas geométricas).\n🍝 Extrusora (fábrica de espaguete/cobrinhas) manual.\n🔪 Rolinho de abrir massa, faquinhas e estecas de modelar.\n📦 Caixa original "Maletinha Divertida Fazendo Moda".`,
+    price: 35.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/kit_massinha/01.png',
+      'https://desapegos.puter.site/brinquedos/kit_massinha/02.jpg',
+      'https://desapegos.puter.site/brinquedos/kit_massinha/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 25
+  },
+  {
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket: 4 Bonecas + Várias Roupas e Acessórios',
     description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou brincar. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios para montar diversos looks.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, botas e bolsas (uma amarela e uma prateada/roxa).\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação, exatamente como nas fotos. Entre em contato para mais detalhes!`,
-    price: 65.00,
+    price: 50.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/lote_polly/01.png'
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now()
+    createdAt: Date.now() - 50
   },
   {
     id: 'panelinhas-metal',
@@ -72,7 +115,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'baby-alive-festa-massas',
     name: 'Boneca Baby Alive Festa das Massas (Hasbro) - em Ótimo Estado',
-    description: `Vendo Boneca Baby Alive - Edição "Festa das Massas". A boneca é super divertida: a criança pode preparar o "macarrão" na maquininha, dar para a bebê comer e depois trocar a fraldinha.\n\nDetalhes do Brinquedo:\n\nMarca: Hasbro (Original).\n\nFunção: Acompanha uma máquina de massas que cria formatos divertidos (coração, gravatinha) ao girar a manivela.\n\nTamanho: Aproximadamente 32cm de altura.\n\nMaterial: Vinil e plástico resistente.\n\nItens Inclusos (conforme fotos):\n- Boneca com vestido removível.\n- Máquina de macarrão (cor azul).\n- Acessórios (pratinho/bandeja).\n- Pote de massinha (apenas o pote original, não acompanha a massinha).\n- Fraldinha.\n\nEstado de conservação: Produto usado, mas muito bem conservado e funcionando perfeitamente.\n\n⚠️ CONDIÇÕES DE VENDA (Leia com atenção):\n- Trocas: Não aceito trocas por outros produtos.\n- Pagamento: Dinheiro, Pix ou Cartão de Crédito/Débito (parcelo, com taxas da maquininha por conta do comprador).`,
+    description: `Vendo Boneca Baby Alive - Edição "Festa das Massas". A boneca é super divertida: a criança pode preparar o "macarrão" na maquininha, dar para a bebê comer e depois trocar a fraldinha.\n\nDetalhes do Brinquedo:\n\nMarca: Hasbro (Original).\n\nFunção: Acompanha uma máquina de massas que cria formatos divertidos (coração, gravatinha) ao girar a manivela.\n\nTamanho: Aproximadamente 32cm de altura.\n\nMaterial: Vinil e plástico resistente.\n\nItens Inclusos (conforme fotos):\n- Boneca com vestido removível.\n- Máquina de macarrão (cor azul).\n- Acessórios (pratinho/bandeja).\n- Pote de massinha (apenas o pote original, não acompanha a massinha).\n- Fraldinha.\n\nEstado de conservação: Produto usado, mas muito bem conservado e funcionando perfeitamente.\n\n⚠️ CONDIÇÕES DE VENDA (Leia com atenção):\n- Trocas: Não aceito trocas por outros produtos.\n- Pagamento: Dinheiro, Pix ou Cartão de Crédito/Debitó (parcelo, com taxas da maquininha por conta do comprador).`,
     price: 150.00,
     category: 'Brinquedos',
     images: [
