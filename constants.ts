@@ -4,15 +4,73 @@ export const CATEGORIES: Category[] = [
   "Brinquedos",
   "Decoração",
   "Pets",
-  "Utilidades Domésticas",
+  "Cozinha",
   "Informática",
-  "Eletrodomésticos",
   "Móveis",
   "Instrumentos Musicais",
   "Outros"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'fogao-industrial-dako-couracado',
+    name: 'Fogão Industrial Dako Couraçado Clássico – Robusto e Forno Funcional',
+    description: `Você está procurando um fogão que aguenta o tranco de verdade? Vendo este clássico fogão industrial da linha Dako Couraçado, conhecido por sua extrema robustez e durabilidade. É o tipo de equipamento feito para durar gerações.\n\n🛠️ Detalhes do Produto: É um fogão antigo, um verdadeiro "tanque de guerra". Ele possui marcas de uso visíveis e alguns pontos de ferrugem naturais do tempo, como é esperado de um equipamento industrial dessa idade. No entanto, nada disso interfere no seu funcionamento. As bocas são potentes e a estrutura é firme.\n\n🔥 O Grande Diferencial: O forno está totalmente funcional, pronto para assar pães, bolos, carnes ou o que você precisar em grandes quantidades.\n\n📦 Bônus: Para facilitar a sua vida, o fogão já vai acompanhado da mangueira de gás e do registro em bom estado. É só instalar e começar a cozinhar.\n\nIdeal para quem precisa de potência e um equipamento que funciona de verdade. Ótimo para cozinhas movimentadas, áreas de festa, sítios ou pequenos comércios.`,
+    price: 800.00,
+    category: 'Cozinha',
+    images: [
+      'https://desapegos.puter.site/cozinha/dako_couracado/01.png',
+      'https://desapegos.puter.site/cozinha/dako_couracado/02.jpg',
+      'https://desapegos.puter.site/cozinha/dako_couracado/03.jpg',
+      'https://desapegos.puter.site/cozinha/dako_couracado/04.jpg',
+      'https://desapegos.puter.site/cozinha/dako_couracado/05.jpg',
+      'https://desapegos.puter.site/cozinha/dako_couracado/06.jpg',
+      'https://desapegos.puter.site/cozinha/dako_couracado/07.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
+    id: 'fruteira-mesa-2-andares-floral',
+    name: 'Fruteira de Mesa 2 Andares - Floral e Delicada',
+    description: `Vendo esta linda peça organizadora de dois andares. Ela é feita de material resistente com acabamento estilo renda e centro floral. Muito versátil, você pode usar para:\n\n🍎 Colocar frutas na mesa de jantar.\n🧁 Servir salgadinhos ou doces em festas.\n💄 Organizar maquiagens e perfumes na penteadeira.\n☕ Decorar o cantinho do café.\n\nEstá em ótimo estado e é muito fácil de limpar/desmontar. Valor: R$ 10,00 (Barato pra sair hoje!)`,
+    price: 10.00,
+    category: 'Cozinha',
+    images: [
+      'https://desapegos.puter.site//cozinha/suporte_frutas/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 50
+  },
+  {
+    id: 'termo-rey-gravatinha-par',
+    name: 'Par de Travessas Termo-Rey "Gravatinha" - Nostalgia Pura',
+    description: `Lembra daquele cheirinho de bolo saindo do forno? Da mesa posta para o almoço de domingo na casa da avó? 👵 Essas travessas não são apenas vasilhas, são uma viagem direta para essas memórias.\n\nEstou desapegando deste par incrível de travessas opalinas da lendária Termo-Rey, na icônica e desejada estampa "Gravatinha" (o clássico padrão geométrico laranja).\n\nEssas peças marcaram época nos anos 60 e 70 e hoje são verdadeiros tesouros para colecionadores e amantes da decoração vintage afetiva. ✨ É cada vez mais difícil encontrar esse modelo, ainda mais o parzinho assim!\n\n🍽️ O que você leva:\n- 01 Travessa Oval Termo-Rey Gravatinha\n- 01 Tigela (Bowl) Redonda Termo-Rey Gravatinha\n\nPeças com história, feitas daquela opalina resistente que não se faz mais hoje em dia. Perfeitas para completar sua coleção ou dar aquele toque retrô autêntico na sua cozinha.`,
+    price: 100.00,
+    category: 'Cozinha',
+    images: [
+      'https://desapegos.puter.site/cozinha/termo_rey/01.png',
+      'https://desapegos.puter.site/cozinha/termo_rey/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 100
+  },
+  {
+    id: 'mini-aquaterrario-decorado-betta',
+    name: 'Mini Aquaterrário Decorado com Tampo de Vidro - Ideal para Betta ou Tartaruga',
+    description: `Traga mais vida e tranquilidade para o seu ambiente com este lindo Mini Aquaterrário. Compacto e já decorado, ele é a peça perfeita para quem deseja ter um pet de estimação sem ocupar muito espaço. Ideal para mesas de escritório, estantes ou bancadas.\n\n✨ Destaques do Produto:\n- Design Inteligente: Possui uma plataforma elevada (área seca) com decoração, perfeita para o descanso de mini tartarugas.\n- Segurança Total: Acompanha tampo de vidro sob medida, evitando que o animal pule para fora e protegendo contra poeira.\n- Pronto para Uso: O aquário já vem com a decoração fixada (plantas e substrato), oferecendo um visual natural e harmonioso.\n- Versatilidade: Excelente lar para um peixe Betta ou para filhotes de tartaruga tigre d'água (durante os primeiros meses).\n\n📏 Especificações Técnicas:\n- Material: Vidro com acabamento em fita colorida.\n- Dimensões: 19cm (L) x 13cm (P) x 13cm (A).\n\n📦 Itens Inclusos: Aquário decorado + Tampa de vidro.`,
+    price: 30.00,
+    category: 'Pets',
+    images: [
+      'https://desapegos.puter.site/pets/aquario_beta/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 200
+  },
   {
     id: 'boneco-dengue-vintage-xuxa',
     name: 'Boneco Vintage Articulado Dengue (Xou da Xuxa) Anos 80',
@@ -26,7 +84,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 300
   },
   {
     id: 'kit-cozinha-barbie-vintage',
@@ -40,7 +98,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 100
+    createdAt: Date.now() - 400
   },
   {
     id: 'mesa-cadeiras-barbie',
@@ -53,7 +111,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 200
+    createdAt: Date.now() - 500
   },
   {
     id: 'yamaha-clavinova-cvp',
@@ -69,7 +127,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 300
+    createdAt: Date.now() - 600
   },
   {
     id: 'pogobol-barbie-classico',
@@ -84,7 +142,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 700
   },
   {
     id: 'lote-lol-surprise-completo',
@@ -191,7 +249,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: 'Fogão de Mesa Venax 4 Bocas – Inox com Acendimento Automático e Respaldo',
     description: `Vendo fogão portátil (fogareiro) da marca Venax, modelo de mesa, ideal para quem tem pouco espaço, para cozinhas compactas ou para usar como fogão auxiliar em áreas de festa e camping.\n\nO grande diferencial deste modelo é o respaldo traseiro (panel), que além de dar um acabamento bonito, protege a parede contra respingos de gordura enquanto você cozinha.\n\nCaracterísticas Técnicas:\n\n✨ Mesa: Em Inox brilhante (super fácil de limpar e durável).\n🔥 Queimadores (Bocas): 4 no total, sendo 1 Grande (mais potente/rápido) e 3 Médios.\n⚡ Acendimento: Totalmente automático (não precisa de fósforo).\n🍳 Trempes: Esmaltadas, garantindo maior durabilidade.\n🧽 Praticidade: Botões removíveis para facilitar a limpeza pesada.\n🔧 Instalação: Entrada de gás do lado esquerdo (visto de frente).`,
     price: 190.00,
-    category: 'Eletrodomésticos',
+    category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/eletro/fogareiro_venax/01.jpg',
       'https://desapegos.puter.site/eletro/fogareiro_venax/02.jpg',
@@ -246,7 +304,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket: 4 Bonecas + Várias Roupas e Acessórios',
-    description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou brincar. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios para montar diversos looks.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, botas e bolsas (uma amarela e uma prateada/roxa).\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação, exatamente como nas fotos. Entre em contato para mais detalhes!`,
+    description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou montar diversos looks. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, botas e bolsas.\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -288,7 +346,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'army-men-toy-story',
     name: 'Exército de Soldadinhos Verdes Disney Pixar Toy Story - Oficiais!',
-    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pé, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originel e licenciadas.\n- Estado de conservação: Excelente, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
+    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pe, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originel e licenciadas.\n- Estado de conservação: Excelente, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
     price: 40.00,
     category: 'Brinquedos',
     images: [
