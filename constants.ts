@@ -132,7 +132,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'pogobol-barbie-classico',
     name: 'Pogobol da Barbie - Diversão Clássica em Rosa e Roxo!',
-    description: `Este é um Pogobol temático da Barbie, um brinquedo clássico para pular e se divertir. \n\nO item apresentado nas imagens é um product usado e exibe sinais visíveis de desgaste e uso, como marcas na superfície da bola rosa e na base plástica. Apesar das marcas de uso, ele mantém suas características originais e o tema da Barbie.`,
+    description: `Este é um Pogobol temático da Barbie, um brinquedo clássico para pular e se divertir. \n\nO item apresentado nas imagens é um product usado e exibe sinais visíveis de desgaste e uso, como marcas na superfície da bola rosa e na base plástica. Apesar das marcas de uso, ele mantém suas características originals e o tema da Barbie.`,
     price: 10.00,
     category: 'Brinquedos',
     images: [
@@ -304,7 +304,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket: 4 Bonecas + Várias Roupas e Acessórios',
-    description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou montar diversos looks. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, botas e bolsas.\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação.`,
+    description: `Vendo um excelente lote de Polly Pocket, perfeito para colecionar ou montar diversos looks. O kit é composto por 4 bonecas diferentes e uma grande variedade de roupinhas e acessórios.\n\nO lote inclui:\n\n👗 4 Bonecas Polly Pocket (loiras e morenas com estilos diferentes).\n👠 Diversas peças de roupa: vestidos estampados, macacão, calças, shorts, saias e blusinhas.\n👜 Acessórios: Pares de sapatos, bolsas.\n🧸 Extra: Inclui até um ursinho marrom.\n\nTudo em ótimo estado de conservação.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -366,23 +366,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/babyalive/01.png',
-      'https://desapegos.puter.site/babyalive/02.jpg',
-      'https://desapegos.puter.site/babyalive/03.jpg'
+      'https://desapegos.puter.site/brinquedos/babyalive/02.jpg',
+      'https://desapegos.puter.site/brinquedos/babyalive/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
     createdAt: Date.now() - 2000000
-  },
-  {
-    id: 'abajur-retro',
-    name: 'Abajur Retrô de Metal - Estilo Industrial',
-    description: 'Luminária de mesa com design vintage industrial. Fio em tecido, bivolt. Dá um toque aconchegante em qualquer ambiente. Perfeito para leitura ou decoração de criado-mudo.',
-    price: 110.00,
-    category: 'Decoração',
-    images: ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=400'],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 11000000
   }
 ];
 
