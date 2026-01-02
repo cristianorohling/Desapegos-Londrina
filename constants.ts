@@ -13,6 +13,34 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'bandai-dx-dodekabutak-vintage',
+    name: 'Robô Transformável Bandai DX Dodekabutak - Super Change Series',
+    description: `Vendo robô transformável vintage da Bandai, modelo DX Dodekabutac da série japonesa B-Robo Kabutack. Peça original e licenciada, fabricada no Japão.\n\nDetalhes do Produto:\n🤖 Personagem: Dodekabutak (Robô Besouro Gigante)\n✨ Linha: Super Change Series\n🇯🇵 Origem: Bandai Japan\n\nUm item raro para colecionadores de robôs japoneses e fãs da cultura Tokusatsu. Em excelente estado de conservação!`,
+    price: 80.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/robo_kabutak/01.jpg',
+      'https://desapegos.puter.site/brinquedos/robo_kabutak/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
+    id: 'chapeu-woody-toy-story',
+    name: 'Chapéu do Woody (Toy Story) - Clássico Caubói',
+    description: `Se você sempre quis fazer parte da turma do Andy, essa é a sua chance! Estou passando para frente este item icônico: o chapéu de caubói do Woody.\n\nEle é feito de um feltro marrom texturizado super autêntico e possui aquele detalhe clássico da costura na borda da aba, exatamente como nos filmes. Perfeito para festas, fantasias ou para colecionadores de Toy Story.`,
+    price: 5.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/chapeu_woody/01.jpg',
+      'https://desapegos.puter.site/brinquedos/chapeu_woody/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 500
+  },
+  {
     id: 'cavalo-madeira-balanco',
     name: 'Cavalinho de Balanço em Madeira Reforçado - Clássico e Resistente',
     description: `Vendo cavalinho de balanço feito em madeira de alta qualidade. É um brinquedo "à moda antiga", muito mais resistente que os de plástico atuais. Ideal tanto para a diversão das crianças (ajuda no equilíbrio e coordenação) quanto para decoração de quartos infantis ou ambientes com estilo vintage/rústico.\n\nA estrutura é reforçada, garantindo segurança e durabilidade. Peça muito bonita e conservada.`,
@@ -25,7 +53,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 1000
   },
   {
     id: 'stacie-suco-playset',
@@ -38,7 +66,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 2000
   },
   {
     id: 'gaiola-calopsita',
@@ -53,7 +81,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 5000
   },
   {
     id: 'globo-pera-luminaria',
@@ -67,7 +95,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5000
+    createdAt: Date.now() - 10000
   },
   {
     id: 'fogao-venax',
@@ -82,7 +110,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 10000
+    createdAt: Date.now() - 15000
   },
   {
     id: 'repetidor-tplink',
@@ -95,7 +123,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 15000
+    createdAt: Date.now() - 20000
   },
   {
     id: 'batgirl-jato',
@@ -109,7 +137,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 20000
+    createdAt: Date.now() - 25000
   },
   {
     id: 'lote-ferramentas-massinha',
@@ -124,7 +152,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 25000
+    createdAt: Date.now() - 30000
   },
   {
     id: 'lote-polly-pocket',
