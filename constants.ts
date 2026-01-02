@@ -13,6 +13,21 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'lote-lol-surprise-completo',
+    name: 'Lote L.O.L. Surprise! ✨ Várias Bonecas + Acessórios e Bola!',
+    description: `O mundo da L.O.L. Surprise invadiu a área! 💖 Estou desapegando deste lote super fofo com 5 bonequinhas cheias de estilo. É o kit perfeito para começar uma coleção ou aumentar a diversão de quem já ama essas pequenas.\n\nO pacote da alegria inclui:\n\n🎀 5 Bonequinhas L.O.L. com visuais diferentes (tem de cabelo com glitter, coloridas e muito mais!).\n🍼 Vários acessórios: mamadeiras, sapatinho, roupinha extra e tiara.\n🟣 Bônus: Acompanha a BOLA original para guardar tudo e levar a brincadeira para qualquer lugar!\n\nTudo pronto para novas aventuras. Quem vai levar essas fofuras para casa?`,
+    price: 80.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/lote_lol/01.png',
+      'https://desapegos.puter.site/brinquedos/lote_lol/02.jpg',
+      'https://desapegos.puter.site/brinquedos/lote_lol/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
     id: 'bandai-dx-dodekabutak-vintage',
     name: 'Robô Transformável Bandai DX Dodekabutak - Super Change Series',
     description: `Vendo robô transformável vintage da Bandai, modelo DX Dodekabutac da série japonesa B-Robo Kabutack. Peça original e licenciada, fabricada no Japão.\n\nDetalhes do Produto:\n🤖 Personagem: Dodekabutak (Robô Besouro Gigante)\n✨ Linha: Super Change Series\n🇯🇵 Origem: Bandai Japan\n\nUm item raro para colecionadores de robôs japoneses e fãs da cultura Tokusatsu. Em excelente estado de conservação!`,
@@ -24,7 +39,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 500
   },
   {
     id: 'chapeu-woody-toy-story',
@@ -38,7 +53,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 1000
   },
   {
     id: 'cavalo-madeira-balanco',
@@ -53,7 +68,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 2000
   },
   {
     id: 'stacie-suco-playset',
@@ -66,7 +81,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 2000
+    createdAt: Date.now() - 3000
   },
   {
     id: 'gaiola-calopsita',
@@ -100,7 +115,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'fogao-venax',
     name: 'Fogão de Mesa Venax 4 Bocas – Inox com Acendimento Automático e Respaldo',
-    description: `Vendo fogão portátil (fogareiro) da marca Venax, modelo de mesa, ideal para quem tem pouco espaço, para cozinhas compactas ou para usar como fogão auxiliar em áreas de festa e camping.\n\nO grande diferencial deste modelo é o respaldo traseiro (painel), que além de dar um acabamento bonito, protege a parede contra respingos de gordura enquanto você cozinha.\n\nCaracterísticas Técnicas:\n\n✨ Mesa: Em Inox brilhante (super fácil de limpar e durável).\n🔥 Queimadores (Bocas): 4 no total, sendo 1 Grande (mais potente/rápido) e 3 Médios.\n⚡ Acendimento: Totalmente automático (não precisa de fósforo).\n🍳 Trempes: Esmaltadas, garantindo maior durabilidade.\n🧽 Praticidade: Botões removíveis para facilitar a limpeza pesada.\n🔧 Instalação: Entrada de gás do lado esquerdo (visto de frente).`,
+    description: `Vendo fogão portátil (fogareiro) da marca Venax, modelo de mesa, ideal para quem tem pouco espaço, para cozinhas compactas ou para usar como fogão auxiliar em áreas de festa e camping.\n\nO grande diferencial deste modelo é o respaldo traseiro (panel), que além de dar um acabamento bonito, protege a parede contra respingos de gordura enquanto você cozinha.\n\nCaracterísticas Técnicas:\n\n✨ Mesa: Em Inox brilhante (super fácil de limpar e durável).\n🔥 Queimadores (Bocas): 4 no total, sendo 1 Grande (mais potente/rápido) e 3 Médios.\n⚡ Acendimento: Totalmente automático (não precisa de fósforo).\n🍳 Trempes: Esmaltadas, garantindo maior durabilidade.\n🧽 Praticidade: Botões removíveis para facilitar a limpeza pesada.\n🔧 Instalação: Entrada de gás do lado esquerdo (visto de frente).`,
     price: 190.00,
     category: 'Eletrodomésticos',
     images: [
