@@ -11,7 +11,6 @@ import {
   Home,
   PawPrint,
   Utensils,
-  Armchair,
   Monitor,
   MoreHorizontal,
   Flame,
@@ -22,7 +21,9 @@ import {
   Heart,
   ArrowRight,
   MapPin,
-  Clock
+  Clock,
+  FileText,
+  Undo2
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER } from './constants';
@@ -30,6 +31,7 @@ import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 
 type View = 'catalog' | 'about' | 'how';
+type DetailTab = 'gallery' | 'description';
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Brinquedos": <Gamepad2 size={14} />,
@@ -54,6 +56,7 @@ const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+  const [detailTab, setDetailTab] = useState<DetailTab>('gallery');
 
   useEffect(() => {
     if (viewingProduct || fullScreenImage) {
@@ -61,6 +64,7 @@ const App: React.FC = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
+    if (!viewingProduct) setDetailTab('gallery');
   }, [viewingProduct, fullScreenImage]);
 
   const filteredProducts = useMemo(() => {
@@ -159,7 +163,6 @@ const App: React.FC = () => {
 
     return (
       <>
-        {/* Banner de Boas Vindas na Home */}
         {activeCategory === 'Todos' && (
           <div className="bg-white rounded-[3rem] p-8 md:p-12 mb-12 shadow-sm border border-slate-100 relative overflow-hidden">
             <div className="relative z-10 max-w-2xl">
@@ -193,7 +196,7 @@ const App: React.FC = () => {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
             {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
@@ -219,7 +222,6 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar currentView={currentView} setView={setCurrentView} />
 
-      {/* Menu de Categorias Sticky */}
       {currentView === 'catalog' && (
         <div className="sticky top-[64px] z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200/50">
           <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
@@ -263,29 +265,46 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
 
-      {/* Modal Otimizado com Botão WhatsApp Poderoso */}
       {viewingProduct && (
         <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center bg-slate-900/95 backdrop-blur-md animate-in fade-in duration-300">
           <div className="bg-white w-full max-w-5xl md:rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row h-full md:h-auto md:max-h-[85vh] animate-in slide-in-from-bottom-20 duration-500">
             
-            {/* Esquerda: Galeria */}
+            {/* Esquerda: ÁREA DE MÍDIA / DESCRIÇÃO */}
             <div className="md:w-[55%] bg-slate-100 relative h-[45vh] md:h-auto overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-slate-100">
-              <ProductDetailGallery 
-                images={viewingProduct.images} 
-                onImageClick={(url) => setFullScreenImage(url)}
-              />
+              {detailTab === 'gallery' ? (
+                <ProductDetailGallery 
+                  images={viewingProduct.images} 
+                  onImageClick={(url) => setFullScreenImage(url)}
+                />
+              ) : (
+                <div className="absolute inset-0 bg-white md:bg-slate-50 overflow-y-auto custom-scrollbar p-8 md:p-12 animate-in fade-in slide-in-from-left-10 duration-500">
+                   <div className="max-w-prose mx-auto">
+                    <button 
+                      onClick={() => setDetailTab('gallery')}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-[10px] font-black uppercase tracking-widest mb-8 shadow-lg hover:bg-emerald-600 transition-colors"
+                    >
+                      <Undo2 size={14} /> Voltar para Fotos
+                    </button>
+                    <h3 className="text-2xl font-black text-slate-900 mb-6 border-b border-slate-200 pb-4">Descrição do Item</h3>
+                    <div className="text-slate-700 whitespace-pre-wrap leading-relaxed font-medium text-lg pb-12">
+                      {viewingProduct.description}
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <button 
                 onClick={() => setViewingProduct(null)} 
-                className="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2 rounded-full text-white z-50"
+                className="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2 rounded-full text-white z-[60]"
               >
                 <X size={20} />
               </button>
             </div>
             
-            {/* Direita: Conteúdo */}
+            {/* Direita: CONTEÚDO E BOTÕES */}
             <div className="md:w-[45%] flex flex-col bg-white overflow-hidden h-[55vh] md:h-auto">
-              <div className="p-6 md:p-10 pb-4 shrink-0 border-b border-slate-50 md:border-none">
-                <div className="flex justify-between items-center mb-3">
+              <div className="p-6 md:p-10 flex flex-col h-full">
+                <div className="flex justify-between items-center mb-4">
                   <span className={`text-[9px] font-black text-white uppercase tracking-widest px-3 py-1.5 rounded-full ${CATEGORY_COLORS[viewingProduct.category] || 'bg-emerald-600'}`}>
                     {viewingProduct.category}
                   </span>
@@ -294,44 +313,50 @@ const App: React.FC = () => {
                   </button>
                 </div>
                 
-                <h2 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-2 tracking-tight">
+                <h2 className="text-xl md:text-3xl font-black text-slate-900 leading-tight mb-3 tracking-tight">
                   {viewingProduct.name}
                 </h2>
                 
-                <div className="flex items-baseline gap-1.5 mb-6 text-slate-900">
+                <div className="flex items-baseline gap-1.5 mb-8 text-slate-900">
                   <span className="text-sm font-bold text-emerald-600">R$</span>
-                  <span className="text-3xl md:text-4xl font-black tracking-tighter">{viewingProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                  <span className="text-3xl md:text-5xl font-black tracking-tighter">{viewingProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
                 </div>
                 
-                <a 
-                  href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Quero muito comprar o item "${viewingProduct.name}" que vi no catálogo Desapegos Londrina. Ainda está disponível?`)}`} 
-                  target={viewingProduct.isSold ? '_self' : '_blank'} 
-                  className={`relative group w-full flex items-center justify-center space-x-4 py-6 rounded-2xl font-black uppercase text-sm tracking-widest transition-all duration-300 overflow-hidden ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-[#25D366] text-white hover:bg-[#128C7E] shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-[1.02]'}`}
-                >
-                  {!viewingProduct.isSold && (
-                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  )}
-                  <MessageCircle size={28} fill="currentColor" className="text-white shrink-0" />
-                  <div className="flex flex-col items-start leading-none">
-                    <span className="text-[10px] opacity-80 mb-0.5 font-bold">GARIMPAR AGORA</span>
-                    <span>COMPRAR NO WHATSAPP</span>
-                  </div>
-                </a>
-              </div>
-              
-              <div className="flex-1 overflow-y-auto p-6 md:p-10 pt-4 custom-scrollbar touch-pan-y">
-                <div className="hidden md:block w-full h-px bg-slate-100 mb-6"></div>
-                <h4 className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4">Informações do item</h4>
-                <div className="text-slate-800 whitespace-pre-wrap leading-relaxed font-medium text-[15px] md:text-lg pb-10">
-                  {viewingProduct.description}
+                <div className="space-y-4 mt-auto">
+                  <a 
+                    href={viewingProduct.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de mais informações sobre o item "${viewingProduct.name}" que vi no catálogo Desapegos Londrina. Ainda está disponível?`)}`} 
+                    target={viewingProduct.isSold ? '_self' : '_blank'} 
+                    className={`relative group w-full flex items-center justify-center space-x-4 py-6 rounded-3xl font-black uppercase text-sm tracking-widest transition-all duration-300 overflow-hidden ${viewingProduct.isSold ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-[#25D366] text-white hover:bg-[#128C7E] shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-[1.02]'}`}
+                  >
+                    {!viewingProduct.isSold && (
+                      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    )}
+                    <MessageCircle size={28} fill="currentColor" className="text-white shrink-0" />
+                    <div className="flex flex-col items-start leading-none">
+                      <span className="text-[10px] opacity-80 mb-0.5 font-bold">INTERESSE NO ITEM</span>
+                      <span>PEDIR INFORMAÇÕES</span>
+                    </div>
+                  </a>
+
+                  <button 
+                    onClick={() => setDetailTab('description')}
+                    disabled={detailTab === 'description'}
+                    className={`w-full flex items-center justify-center space-x-3 py-5 rounded-3xl font-black uppercase text-xs tracking-[0.2em] transition-all duration-300 border-2 ${detailTab === 'description' ? 'bg-slate-50 text-slate-300 border-slate-50 cursor-default' : 'bg-white text-slate-900 border-slate-900 hover:bg-slate-900 hover:text-white active:scale-95'}`}
+                  >
+                    <FileText size={18} />
+                    <span>Ver Descrição do Item</span>
+                  </button>
                 </div>
+                
+                <p className="mt-8 text-center text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                  Londrina - PR • Bairro São Fernando
+                </p>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Lightbox */}
       {fullScreenImage && (
         <div 
           className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-lg flex items-center justify-center animate-in fade-in duration-300"
