@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { X, Camera } from 'lucide-react';
 import { Product, Category } from '../types';
@@ -14,7 +15,8 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
     name: '',
     description: '',
     price: 0,
-    category: 'Outros',
+    // Fix: Default to the first valid category from constants to avoid type mismatch with 'Outros'
+    category: CATEGORIES[0],
     images: [],
     isSold: false,
     isHighlighted: false
