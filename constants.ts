@@ -8,11 +8,27 @@ export const CATEGORIES: Category[] = [
   "Roupas",
   "Eletrônicos",
   "Informática",
+  "Eletrodomésticos",
   "Móveis",
   "Outros"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'fogao-venax',
+    name: 'Fogão de Mesa Venax 4 Bocas – Inox com Acendimento Automático e Respaldo',
+    description: `Vendo fogão portátil (fogareiro) da marca Venax, modelo de mesa, ideal para quem tem pouco espaço, para cozinhas compactas ou para usar como fogão auxiliar em áreas de festa e camping.\n\nO grande diferencial deste modelo é o respaldo traseiro (painel), que além de dar um acabamento bonito, protege a parede contra respingos de gordura enquanto você cozinha.\n\nCaracterísticas Técnicas:\n\n✨ Mesa: Em Inox brilhante (super fácil de limpar e durável).\n🔥 Queimadores (Bocas): 4 no total, sendo 1 Grande (mais potente/rápido) e 3 Médios.\n⚡ Acendimento: Totalmente automático (não precisa de fósforo).\n🍳 Trempes: Esmaltadas, garantindo maior durabilidade.\n🧽 Praticidade: Botões removíveis para facilitar a limpeza pesada.\n🔧 Instalação: Entrada de gás do lado esquerdo (visto de frente).`,
+    price: 190.00,
+    category: 'Eletrodomésticos',
+    images: [
+      'https://desapegos.puter.site/eletro/fogareiro_venax/01.jpg',
+      'https://desapegos.puter.site/eletro/fogareiro_venax/02.jpg',
+      'https://desapegos.puter.site/eletro/fogareiro_venax/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
   {
     id: 'repetidor-tplink',
     name: 'Repetidor de Sinal Wi-Fi TP-Link 300Mbps (Modelo TL-WA850RE) - Bivolt',
@@ -24,7 +40,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now()
+    createdAt: Date.now() - 5
   },
   {
     id: 'batgirl-jato',

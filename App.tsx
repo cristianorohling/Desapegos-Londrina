@@ -17,7 +17,8 @@ import {
   Monitor,
   MoreHorizontal,
   Flame,
-  Maximize2
+  Maximize2,
+  CookingPot
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER } from './constants';
@@ -32,6 +33,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Roupas": <Shirt size={14} />,
   "Eletrônicos": <Smartphone size={14} />,
   "Informática": <Monitor size={14} />,
+  "Eletrodomésticos": <CookingPot size={14} />,
   "Móveis": <Armchair size={14} />,
   "Outros": <MoreHorizontal size={14} />
 };
