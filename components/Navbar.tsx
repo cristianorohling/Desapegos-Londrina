@@ -1,47 +1,68 @@
-import React from 'react';
-import { ShoppingBag } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShoppingBag, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface NavbarProps {
   currentView: 'catalog' | 'about' | 'how';
   setView: (view: 'catalog' | 'about' | 'how') => void;
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentView, setView }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggleMenu }) => {
+  const handleNav = (view: 'catalog' | 'about' | 'how') => {
+    setView(view);
+    if (window.innerWidth < 768) toggleMenu();
+  };
+
   return (
-    <nav className="bg-white border-b border-slate-200/50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center h-auto md:h-24 py-6 md:py-0 gap-6">
+    <nav className="bg-white border-b border-slate-200/60 transition-all duration-300 shadow-sm relative z-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo Minimalista */}
           <div 
             className="flex items-center cursor-pointer group"
             onClick={() => setView('catalog')}
           >
-            <div className="bg-slate-900 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <ShoppingBag size={28} className="text-white" />
+            <div className="bg-slate-900 p-2 rounded-xl group-hover:scale-105 transition-transform shadow-md">
+              <ShoppingBag size={20} className="text-white" />
             </div>
-            <div className="ml-4 flex flex-col leading-tight">
-              <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter uppercase">
-                DESAPEGOS <span className="text-red-600">LONDRINA</span>
+            <div className="ml-3">
+              <h1 className="text-lg md:text-xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+                DESAPEGOS <span className="text-red-600">LDR</span>
               </h1>
-              <span className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-400">Curadoria & Oportunidades</span>
             </div>
           </div>
 
-          <div className="flex items-center space-x-1 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+          {/* Botão de Menu Retrátil */}
+          <button 
+            onClick={toggleMenu}
+            className="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-full hover:bg-slate-100 transition-all active:scale-95 group"
+          >
+            <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900">
+              {isMenuOpen ? 'Fechar' : 'Menu & Filtros'}
+            </span>
+            {isMenuOpen ? <X size={18} className="text-red-600" /> : <Menu size={18} className="text-slate-900" />}
+          </button>
+        </div>
+
+        {/* Menu Expandido */}
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-[500px] opacity-100 pb-8 pt-2' : 'max-h-0 opacity-0'}`}>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 p-2 bg-slate-50 rounded-3xl border border-slate-200">
             <button
-              onClick={() => setView('catalog')}
-              className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${currentView === 'catalog' ? 'bg-white text-red-600 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+              onClick={() => handleNav('catalog')}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'catalog' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Catálogo
             </button>
             <button
-              onClick={() => setView('about')}
-              className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${currentView === 'about' ? 'bg-white text-red-600 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+              onClick={() => handleNav('about')}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'about' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Sobre
             </button>
             <button
-              onClick={() => setView('how')}
-              className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${currentView === 'how' ? 'bg-white text-red-600 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+              onClick={() => handleNav('how')}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'how' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Como Funciona
             </button>
