@@ -15,6 +15,35 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'gaiola-calopsita',
+    name: 'Gaiola Espaçosa para Calopsitas e Pássaros Mansos – Ótimo Estado',
+    description: `Vendo gaiola branca estilo "chalé", ideal para acomodar com conforto calopsitas, periquitos ou agapornis. A gaiola é espaçosa, permitindo que o pássaro se movimente bem, e possui estrutura resistente.\n\nDestaques:\n\n🦜 Capacidade: Comporta confortavelmente até 2 calopsitas.\n🧼 Praticidade: Possui bandeja inferior removível (gaveta) que facilita muito a limpeza dos dejetos sem precisar abrir a gaiola.\n🚪 Acessos: Conta com duas aberturas (portas) para facilitar o manuseio e a colocação de comida/água.\n🪵 Acessórios: Acompanha os poleiros de madeira (conforme fotos).\n\nMedidas:\n📏 Largura: 46 cm\n📏 Profundidade: 27 cm\n📏 Altura: 48 cm (no ponto mais alto) / 40 cm (laterais)\n\nEstou à disposição para dúvidas. Entre em contato!`,
+    price: 50.00,
+    category: 'Pets',
+    images: [
+      'https://desapegos.puter.site/pets/gaiola_calopsita/01.png',
+      'https://desapegos.puter.site/pets/gaiola_calopsita/02.jpg',
+      'https://desapegos.puter.site/pets/gaiola_calopsita/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now()
+  },
+  {
+    id: 'globo-pera-luminaria',
+    name: 'Globo Pera Com Boca 10 Cm Para Lustre Ou Ventilador Teto',
+    description: `Renove sua luminária com segurança! Globo modelo Pera feito de plástico resistente. Boca padrão de 10cm, serve perfeitamente em ventiladores e lustres.`,
+    price: 8.00,
+    category: 'Decoração',
+    images: [
+      'https://desapegos.puter.site/deco/globo_pera/01.png',
+      'https://desapegos.puter.site/deco/globo_pera/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 500
+  },
+  {
     id: 'fogao-venax',
     name: 'Fogão de Mesa Venax 4 Bocas – Inox com Acendimento Automático e Respaldo',
     description: `Vendo fogão portátil (fogareiro) da marca Venax, modelo de mesa, ideal para quem tem pouco espaço, para cozinhas compactas ou para usar como fogão auxiliar em áreas de festa e camping.\n\nO grande diferencial deste modelo é o respaldo traseiro (painel), que além de dar um acabamento bonito, protege a parede contra respingos de gordura enquanto você cozinha.\n\nCaracterísticas Técnicas:\n\n✨ Mesa: Em Inox brilhante (super fácil de limpar e durável).\n🔥 Queimadores (Bocas): 4 no total, sendo 1 Grande (mais potente/rápido) e 3 Médios.\n⚡ Acendimento: Totalmente automático (não precisa de fósforo).\n🍳 Trempes: Esmaltadas, garantindo maior durabilidade.\n🧽 Praticidade: Botões removíveis para facilitar a limpeza pesada.\n🔧 Instalação: Entrada de gás do lado esquerdo (visto de frente).`,
@@ -27,7 +56,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 1000
   },
   {
     id: 'repetidor-tplink',
@@ -40,12 +69,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5
+    createdAt: Date.now() - 5000
   },
   {
     id: 'batgirl-jato',
     name: 'Boneca Batgirl DC Super Hero Girls com Jato (Mattel) - 15cm',
-    description: `Vendo boneca Batgirl da linha DC Super Hero Girls, original da Mattel. Item perfeito para colecionadores ou para presentear. A boneca está pronta para a ação com seu jato personalizado!\n\nDetalhes do product:\n\n🦸‍♀️ Tamanho: Boneca de 15 cm.\n✈️ Acessórios: Acompanha o Jato (com rodas que giram de verdade) e o capacete removível.\n🏷️ Marca: Mattel (Ref: DVG74/DVG72).\n✨ Estado: Usada, mas bem conservada.`,
+    description: `Vendo boneca Batgirl da linha DC Super Hero Girls, original da Mattel. Item perfeito para colecionadores ou para presentear. A boneca está pronta para a ação with seu jato personalizado!\n\nDetalhes do product:\n\n🦸‍♀️ Tamanho: Boneca de 15 cm.\n✈️ Acessórios: Acompanha o Jato (com rodas que giram de verdade) e o capacete removível.\n🏷️ Marca: Mattel (Ref: DVG74/DVG72).\n✨ Estado: Usada, mas bem conservada.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -54,7 +83,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 10
+    createdAt: Date.now() - 10000
   },
   {
     id: 'lote-ferramentas-massinha',
@@ -69,7 +98,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 25
+    createdAt: Date.now() - 25000
   },
   {
     id: 'lote-polly-pocket',
@@ -82,7 +111,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 50
+    createdAt: Date.now() - 50000
   },
   {
     id: 'panelinhas-metal',
@@ -97,7 +126,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 100
+    createdAt: Date.now() - 100000
   },
   {
     id: 'barbie-salao-pia',
@@ -111,7 +140,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 500000
   },
   {
     id: 'army-men-toy-story',
@@ -126,7 +155,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 1000000
   },
   {
     id: 'baby-alive-festa-massas',
@@ -141,7 +170,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000
+    createdAt: Date.now() - 2000000
   },
   {
     id: 'abajur-retro',
@@ -152,7 +181,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     images: ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=400'],
     isSold: true,
     isHighlighted: false,
-    createdAt: Date.now() - 11000
+    createdAt: Date.now() - 11000000
   }
 ];
 
