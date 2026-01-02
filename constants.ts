@@ -5,8 +5,6 @@ export const CATEGORIES: Category[] = [
   "Decoração",
   "Pets",
   "Utilidades Domésticas",
-  "Roupas",
-  "Eletrônicos",
   "Informática",
   "Eletrodomésticos",
   "Móveis",
@@ -14,6 +12,34 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'cavalo-madeira-balanco',
+    name: 'Cavalinho de Balanço em Madeira Reforçado - Clássico e Resistente',
+    description: `Vendo cavalinho de balanço feito em madeira de alta qualidade. É um brinquedo "à moda antiga", muito mais resistente que os de plástico atuais. Ideal tanto para a diversão das crianças (ajuda no equilíbrio e coordenação) quanto para decoração de quartos infantis ou ambientes com estilo vintage/rústico.\n\nA estrutura é reforçada, garantindo segurança e durabilidade. Peça muito bonita e conservada.`,
+    price: 80.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/cavalo_madeira/01.png',
+      'https://desapegos.puter.site/brinquedos/cavalo_madeira/02.jpg',
+      'https://desapegos.puter.site/brinquedos/cavalo_madeira/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
+    id: 'stacie-suco-playset',
+    name: 'Boneca Barbie Stacie Playset Com Suco E Cachorrinho',
+    description: `Junte-se à Stacie™, a irmã mais nova e cheia de energia da Barbie®, para uma tarde de diversão refrescante e saudável! Este playset adorável traz tudo o que é necessário para criar histórias deliciosas sob o sol.`,
+    price: 35.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/stacie_suco/01.png'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 500
+  },
   {
     id: 'gaiola-calopsita',
     name: 'Gaiola Espaçosa para Calopsitas e Pássaros Mansos – Ótimo Estado',
@@ -27,7 +53,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now()
+    createdAt: Date.now() - 1000
   },
   {
     id: 'globo-pera-luminaria',
@@ -41,7 +67,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 5000
   },
   {
     id: 'fogao-venax',
@@ -56,7 +82,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 10000
   },
   {
     id: 'repetidor-tplink',
@@ -69,7 +95,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5000
+    createdAt: Date.now() - 15000
   },
   {
     id: 'batgirl-jato',
@@ -83,7 +109,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 10000
+    createdAt: Date.now() - 20000
   },
   {
     id: 'lote-ferramentas-massinha',
