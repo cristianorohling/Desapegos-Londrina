@@ -37,9 +37,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Pets": <PawPrint size={14} />,
   "Cozinha": <Utensils size={14} />,
   "Informática": <Monitor size={14} />,
-  "Móveis": <Armchair size={14} />,
-  "Instrumentos Musicais": <Music size={14} />,
-  "Outros": <MoreHorizontal size={14} />
+  "Instrumentos Musicais": <Music size={14} />
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -48,9 +46,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Pets": "bg-emerald-500",
   "Cozinha": "bg-orange-500",
   "Informática": "bg-blue-500",
-  "Móveis": "bg-stone-500",
-  "Instrumentos Musicais": "bg-indigo-500",
-  "Outros": "bg-slate-500"
+  "Instrumentos Musicais": "bg-indigo-500"
 };
 
 const App: React.FC = () => {

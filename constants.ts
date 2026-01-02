@@ -6,9 +6,7 @@ export const CATEGORIES: Category[] = [
   "Pets",
   "Cozinha",
   "Informática",
-  "Móveis",
-  "Instrumentos Musicais",
-  "Outros"
+  "Instrumentos Musicais"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
@@ -346,7 +344,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'army-men-toy-story',
     name: 'Exército de Soldadinhos Verdes Disney Pixar Toy Story - Oficiais!',
-    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pe, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originel e licenciadas.\n- Estado de conservação: Excelente, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
+    description: `"Sentido! Batalhão, apresentar armas!"\n\nTraga a magia do quarto do Andy para sua casa com este incrível lote dos icônicos Soldadinhos Verdes!\n\nEstes não são soldadinhos genéricos. Este é um conjunto oficial Disney • Pixar, com a autenticidade gravada na base de cada peça (conforme mostrado nas fotos). São os verdadeiros heróis de Toy Story prontos para a missão!\n\nDetalhes do Conjunto:\n- Um exército de soldadinhos verdes clássicos.\n- Grande variedade de poses de combate: atirando de pe, ajoelhados, rastejando (prone), com binóculos, etc.\n- Peças originel e licenciadas.\n- Estado de conservação: Excellent, prontos para muitas horas de batalha imaginária ou para completar sua coleção.\n\nIdeal para fãs da franquia Toy Story e colecionadores da Disney.\n\nNão perca a chance de comandar este pelotão!`,
     price: 40.00,
     category: 'Brinquedos',
     images: [
