@@ -8,10 +8,84 @@ export const CATEGORIES: Category[] = [
   "Informática",
   "Eletrodomésticos",
   "Móveis",
+  "Instrumentos Musicais",
   "Outros"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'boneco-dengue-vintage-xuxa',
+    name: 'Boneco Vintage Articulado Dengue (Xou da Xuxa) Anos 80',
+    description: `Grande oportunidade para colecionadores e nostálgicos dos anos 80!\n\nColoco à venda este incrível boneco vintage articulado do personagem "Dengue" (do Xou da Xuxa). É uma peça cheia de história e perfeita para completar sua coleção.\n\n✨ Detalhes do Estado de Conservação:\n🎨 Pintura: Em muito bom estado, com as cores amarelo e verde ainda vivas, conforme as fotos.\n🦾 Articulações: Excelente estado! Estão firmes e segurando bem as poses, o que é raro em bonecos dessa idade.\n\n⚠️ Observações importantes: A peça é vendida exatamente como está nas imagens. Ela não possui as antenas e não possui asas.\n\nApesar dos detalhes faltantes, é um item estruturalmente muito bom e difícil de achar com articulações tão preservadas.`,
+    price: 30.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/dengue_xuxa/01.png',
+      'https://desapegos.puter.site/brinquedos/dengue_xuxa/02.jpg',
+      'https://desapegos.puter.site/brinquedos/dengue_xuxa/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now()
+  },
+  {
+    id: 'kit-cozinha-barbie-vintage',
+    name: 'Kit Cozinha Infantil para Barbie - Panelinhas, Comidinhas e Eletros',
+    description: `Vendo lote de brinquedos antigos de cozinha/casinha. Ótima oportunidade para completar sua coleção ou decoração vintage.\n\n✨ Detalhes do Lote:\n- Diversas comidinhas (embalagens vintage de Leite, Margarina, Suco e Refrigerante Elefanta).\n- Conjunto de panelas roxas.\n- Mini batedeira e máquina de costura.\n- Talheres e pratos.`,
+    price: 8.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/kit_minicozinha/01.png',
+      'https://desapegos.puter.site/brinquedos/kit_minicozinha/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 100
+  },
+  {
+    id: 'mesa-cadeiras-barbie',
+    name: 'Conjunto de Mesinha e 4 Cadeiras para Casa de Bonecas',
+    description: `Vendo lindo kit de móveis para casinha de boneca. O conjunto está em ótimo estado e é perfeito para completar a decoração.\n\n✨ O que inclui:\n- 1 mesa redonda transparente com detalhes em relevo (estilo cristal com glitter)\n- 4 cadeiras na cor rosa pink com design vazado.\n\n📏 Compatibilidade: Ideal para bonecas tamanho padrão (tipo Barbie, Susie, etc.).`,
+    price: 10.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/mesa_barbie/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 200
+  },
+  {
+    id: 'yamaha-clavinova-cvp',
+    name: 'Piano Digital Yamaha Clavinova Série CVP - Oportunidade',
+    description: `Vendo Piano Digital Yamaha Clavinova (Série CVP), um instrumento robusto e consagrado pela qualidade sonora e fidelidade ao toque de um piano acústico.\n\nO instrumento possui a aclamada mecânica de teclas da Yamaha (pesadas e sensitivas), ideal tanto para estudantes quanto para pianistas experientes que buscam a sensação real de um piano de cauda em um formato digital.\n\n✨ Estado de Conservação:\n🎹 Mecânica e Som: Funcionamento perfeito. Todas as teclas estão alinhadas, com peso correto e emitindo som limpo. Alto-falantes potentes e sem chiados.\n🪑 Estética: Móvel em bom estado geral, com marcas naturais do tempo (detalhe oxidado na plaqueta da marca, conforme fotos).\n\n⚠️ ATENÇÃO (Detalhe importante):\nO display (tela) está funcionando o sistema, porém está sem backlight (luz de fundo). O conteúdo aparece, mas fica escuro/difícil de ler. O piano pode ser tocado perfeitamente como um piano tradicional, mas a navegação nos menus de ritmos requer reparo ou uso com iluminação externa.`,
+    price: 8000.00,
+    category: 'Instrumentos Musicais',
+    images: [
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/01.png',
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/02.png',
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/03.png',
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/04.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() - 300
+  },
+  {
+    id: 'pogobol-barbie-classico',
+    name: 'Pogobol da Barbie - Diversão Clássica em Rosa e Roxo!',
+    description: `Este é um Pogobol temático da Barbie, um brinquedo clássico para pular e se divertir. \n\nO item apresentado nas imagens é um product usado e exibe sinais visíveis de desgaste e uso, como marcas na superfície da bola rosa e na base plástica. Apesar das marcas de uso, ele mantém suas características originais e o tema da Barbie.`,
+    price: 10.00,
+    category: 'Brinquedos',
+    images: [
+      'https://desapegos.puter.site/brinquedos/barbie_pogobol/01.png',
+      'https://desapegos.puter.site/brinquedos/barbie_pogobol/02.jpg',
+      'https://desapegos.puter.site/brinquedos/barbie_pogobol/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() - 500
+  },
   {
     id: 'lote-lol-surprise-completo',
     name: 'Lote L.O.L. Surprise! ✨ Várias Bonecas + Acessórios e Bola!',
@@ -25,12 +99,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now() - 1000
   },
   {
     id: 'bandai-dx-dodekabutak-vintage',
     name: 'Robô Transformável Bandai DX Dodekabutak - Super Change Series',
-    description: `Vendo robô transformável vintage da Bandai, modelo DX Dodekabutac da série japonesa B-Robo Kabutack. Peça original e licenciada, fabricada no Japão.\n\nDetalhes do Produto:\n🤖 Personagem: Dodekabutak (Robô Besouro Gigante)\n✨ Linha: Super Change Series\n🇯🇵 Origem: Bandai Japan\n\nUm item raro para colecionadores de robôs japoneses e fãs da cultura Tokusatsu. Em excelente estado de conservação!`,
+    description: `Vendo robô transformável vintage da Bandai, modelo DX Dodekabutac da série japonesa B-Robo Kabutack. Peça original e licenciada, fabricada no Japão.\n\nDetalhes do Produto:\n🤖 Personagem: Dodekabutak (Robô Besouro Gigante)\n✨ Linha: Super Change Series\n\nUm item raro para colecionadores de robôs japoneses e fãs da cultura Tokusatsu. Em excelente estado de conservação!`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
@@ -39,7 +113,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 2000
   },
   {
     id: 'chapeu-woody-toy-story',
@@ -53,7 +127,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 3000
   },
   {
     id: 'cavalo-madeira-balanco',
@@ -68,7 +142,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000
+    createdAt: Date.now() - 4000
   },
   {
     id: 'stacie-suco-playset',
@@ -81,7 +155,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 3000
+    createdAt: Date.now() - 5000
   },
   {
     id: 'gaiola-calopsita',
@@ -96,7 +170,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5000
+    createdAt: Date.now() - 6000
   },
   {
     id: 'globo-pera-luminaria',
@@ -234,8 +308,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/babyalive/01.png',
-      'https://desapegos.puter.site/brinquedos/babyalive/02.jpg',
-      'https://desapegos.puter.site/brinquedos/babyalive/03.jpg'
+      'https://desapegos.puter.site/babyalive/02.jpg',
+      'https://desapegos.puter.site/babyalive/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
