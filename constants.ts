@@ -11,6 +11,61 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'casinha-passarinho-madeira',
+    name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
+    description: `Dê um toque de charme e natureza à sua decoração com esta linda casinha de passarinho artesanal.\n\nConfeccionada em madeira resistente e com acabamento em verniz escuro, esta peça traz o estilo rústico clássico que combina perfeitamente com jardins, varandas, áreas gourmet ou até mesmo para compor cenários e decorações internas.\n\n✨ Características:\n- Material: Madeira maciça tratada e envernizada (maior durabilidade).\n- Design: Rústico e minimalista.\n- Acabamento: Verniz de alto brilho que realça os veios da madeira.\n- Uso: Ideal para decoração de ambientes, jardins ou colecionadores.`,
+    price: 35.00,
+    category: 'Decoração',
+    images: [
+      'https://desapegos.puter.site/deco/casinha_envernizada/01.png',
+      'https://desapegos.puter.site/deco/casinha_envernizada/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 400
+  },
+  {
+    id: 'coruja-entalhada-madeira',
+    name: 'Coruja Entalhada em Madeira Maciça - Decoração Rústica de Parede',
+    description: `Traga sabedoria e um toque rústico para o seu ambiente com esta belíssima escultura de coruja, entalhada à mão em madeira maciça.\n\n✨ Destaques:\n- Artesanato Autêntico: Entalhe manual com riqueza de detalhes nas texturas.\n- Material Nobre: Feita em madeira resistente e durável.\n- Versatilidade: Combina com decorações rústicas, vintage, boho ou campestres.\n- Pronta para Pendurar: Ideal para destacar paredes vazias ou compor com outros quadros.\n\n🦉 Ficha Técnica:\n- Material: Madeira maciça.\n- Acabamento: Envernizado (protege e dá brilho).\n- Estado: Excelente conservação.`,
+    price: 45.00,
+    category: 'Decoração',
+    images: [
+      'https://desapegos.puter.site/deco/coruja_entalhada/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 300
+  },
+  {
+    id: 'volante-multilaser-3-em-1',
+    name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
+    description: `Eleve sua experiência em jogos de corrida! Vendo Kit Volante e Pedal da marca Multilaser, compatível com PlayStation 2, PlayStation 3 e PC. Ideal para simuladores e diversão garantida.\n\n🎮 Compatibilidade: PS2, PS3 e Computador (PC).\n✨ Estado: Excelente estado de conservação, sem marcas de uso significativas.\n🏎️ Funcionamento: Totalmente funcional, todos os botões, pedais e respostas do volante estão 100%.`,
+    price: 150.00,
+    category: 'Informática',
+    images: [
+      'https://desapegos.puter.site/informatica/volante_multi/01.png',
+      'https://desapegos.puter.site/informatica/volante_multi/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 200
+  },
+  {
+    id: 'fogao-lenha-fundimig-f090',
+    name: 'Fogão a Lenha Antigo FUNDIMIG F-090 (Nº 0) - Relíquia em Ferro Fundido',
+    description: `Uma peça clássica e robusta, inteiramente fabricada em ferro fundido de alta qualidade. Ideal para quem busca um projeto de restauração, decoração rústica ou precisa de peças de reposição para outro fogão da mesma época.\n\n🔥 Características:\n- Marca: Fundimig\n- Material: Ferro fundido com detalhes em relevo (design clássico e elegante).\n- Dimensões: 71cm (altura com pés) x 51cm (profundidade) x 75cm (largura).\n\n🛠️ Estado: A estrutura principal está íntegra e o ferro é extremamente durável. A peça apresenta ferrugem superficial natural do tempo, que pode ser tratada com lixamento e pintura de alta temperatura. Faltam algumas peças.`,
+    price: 1390.00,
+    category: 'Cozinha',
+    images: [
+      'https://desapegos.puter.site/cozinha/fogao_fundimig/01.png',
+      'https://desapegos.puter.site/cozinha/fogao_fundimig/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 100
+  },
+  {
     id: 'fogao-industrial-dako-couracado',
     name: 'Fogão Industrial Dako Couraçado Clássico – O "Tanque de Guerra" da Cozinha',
     description: `Para quem busca potência real e durabilidade extrema! Este clássico Dako Couraçado é conhecido pela sua robustez incomparável. Perfeito para quem precisa de um equipamento que não te deixa na mão.\n\n🛠️ Estado: É um item vintage, com marcas de uso que contam sua história, mas sua estrutura é de ferro puro. Funcionamento pleno das bocas e do forno.\n\n🔥 Diferencial: Forno gigante e funcional, ideal para assados grandes, pães artesanais ou para uso em pequenos comércios e áreas de lazer.\n\n📦 Bônus: Já acompanha mangueira e registro! É comprar e começar a usar.`,
@@ -32,7 +87,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'fruteira-mesa-2-andares-floral',
     name: 'Fruteira de Mesa Premium 2 Andares - Charme Floral',
-    description: `Adicione um toque de elegância e organização à sua mesa! Esta fruteira de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para organizar frutas, servir docinhos em festas ou até organizar maquiagens e perfumes.\n\n🍎 Praticidade: Fácil de limpar e desmontar. Um achado por um preço simbólico!`,
+    description: `Adicione um toque de elegância e organização à sua mesa! Esta fruteira de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para organizar frutas, servir docinhos em festas ou até organizar maquiagens e perfumes.\n\n🍎 Praticidade: Fácil de limpar e montar. Um achado por um preço simbólico!`,
     price: 10.00,
     category: 'Cozinha',
     images: [
@@ -273,7 +328,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Heroína pronta para o combate aéreo! Boneca Batgirl de 15cm original Mattel com seu jato tecnológico.\n\n✈️ Acessórios: O jato possui rodas funcionais e a boneca vem com seu traje clássico de heroína. Item impecável para colecionadores de DC.`,
+    description: `Heroína pronta para o combate aéreo! Boneca Batgirl de 15cm original Mattel com seu jato tecnológico.\n\n✈️ Acessórios: O jato possui wheels funcionais e a boneca vem com seu traje clássico de heroína. Item impecável para colecionadores de DC.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -350,7 +405,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     images: [
       'https://desapegos.puter.site/brinquedos/armymen/01.png',
       'https://desapegos.puter.site/brinquedos/armymen/02.png',
-      'https://desapegos.puter.site/brinquedos/armymen/03.png'
+      'https://desapegos.puter.site/brinquedos/armymen/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
