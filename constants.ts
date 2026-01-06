@@ -28,7 +28,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'coruja-entalhada-madeira',
     name: 'Coruja Entalhada em Madeira Maciça - Decoração Rústica de Parede',
     description: `Traga sabedoria e um toque rústico para o seu ambiente com esta belíssima escultura de coruja, entalhada à mão em madeira maciça.\n\n✨ Destaques:\n- Artesanato Autêntico: Entalhe manual com riqueza de detalhes nas texturas.\n- Material Nobre: Feita em madeira resistente e durável.\n- Versatilidade: Combina com decorações rústicas, vintage, boho ou campestres.\n- Pronta para Pendurar: Ideal para destacar paredes vazias ou compor com outros quadros.\n\n🦉 Ficha Técnica:\n- Material: Madeira maciça.\n- Acabamento: Envernizado (protege e dá brilho).\n- Estado: Excelente conservação.`,
-    price: 45.00,
+    price: 50.00,
     category: 'Decoração',
     images: [
       'https://desapegos.puter.site/deco/coruja_entalhada/01.png'
@@ -55,7 +55,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'fogao-lenha-fundimig-f090',
     name: 'Fogão a Lenha Antigo FUNDIMIG F-090 (Nº 0) - Relíquia em Ferro Fundido',
     description: `Uma peça clássica e robusta, inteiramente fabricada em ferro fundido de alta qualidade. Ideal para quem busca um projeto de restauração, decoração rústica ou precisa de peças de reposição para outro fogão da mesma época.\n\n🔥 Características:\n- Marca: Fundimig\n- Material: Ferro fundido com detalhes em relevo (design clássico e elegante).\n- Dimensões: 71cm (altura com pés) x 51cm (profundidade) x 75cm (largura).\n\n🛠️ Estado: A estrutura principal está íntegra e o ferro é extremamente durável. A peça apresenta ferrugem superficial natural do tempo, que pode ser tratada com lixamento e pintura de alta temperatura. Faltam algumas peças.`,
-    price: 1390.00,
+    price: 1400.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/fogao_fundimig/01.png',
@@ -88,7 +88,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'fruteira-mesa-2-andares-floral',
     name: 'Fruteira de Mesa Premium 2 Andares - Charme Floral',
     description: `Adicione um toque de elegância e organização à sua mesa! Esta fruteira de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para organizar frutas, servir docinhos em festas ou até organizar maquiagens e perfumes.\n\n🍎 Praticidade: Fácil de limpar e montar. Um achado por um preço simbólico!`,
-    price: 10.00,
+    price: 15.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site//cozinha/suporte_frutas/01.png'
@@ -101,7 +101,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'termo-rey-gravatinha-par',
     name: 'Relíquia Termo-Rey "Gravatinha" - Par de Travessas Vintage',
     description: `Atenção colecionadores e amantes do retrô! Estamos desapegando deste par icônico da lendária Termo-Rey, na estampa "Gravatinha" (padrão geométrico laranja dos anos 60/70).\n\n🍽️ O que inclui:\n- 1 Travessa Oval clássica\n- 1 Tigela (Bowl) Redonda\n\nPeças em opalina branca ultra resistente, perfeitas para quem valoriza a memória afetiva e quer dar um toque autêntico de "casa de vó" na decoração ou na mesa posta.`,
-    price: 100.00,
+    price: 120.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/termo_rey/01.png',
@@ -128,7 +128,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'boneco-dengue-vintage-xuxa',
     name: 'Boneco Dengue (Xou da Xuxa) - Colecionável Original Anos 80',
     description: `Uma verdadeira viagem no tempo! O fiel escudeiro da Rainha Xuxa pode ser seu. Este boneco do Dengue é uma peça rara de se encontrar com articulações tão firmes.\n\n🎨 Estado: Pintura amarela e verde muito bem preservada. Articulações segurando todas as poses.\n\n⚠️ Nota para colecionadores: Não possui as antenas e asas originais, mas a estrutura básica está excelente para restauro ou exibição.`,
-    price: 30.00,
+    price: 45.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/dengue_xuxa/01.png',
@@ -143,7 +143,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'kit-cozinha-barbie-vintage',
     name: 'Super Lote Cozinha Vintage Barbie - Itens de Coleção',
     description: `Oportunidade para quem ama miniaturas retrô! Lote com diversas comidinhas e eletros mini que marcaram época.\n\n🥤 Inclui: Embalagens clássicas de Leite, Margarina e o raro Suco Elefanta, além de batedeira e máquina de costura miniatura. Perfeito para dioramas ou colecionadores exigentes.`,
-    price: 8.00,
+    price: 15.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/kit_minicozinha/01.png',
@@ -186,7 +186,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'pogobol-barbie-classico',
     name: 'Pogobol Barbie Original - Diversão Ativa Retrô',
     description: `O clássico que nunca sai de moda! Pogobol oficial temático da Barbie em tons de rosa e roxo.\n\n🛼 Estado: Item usado com marcas de aventuras anteriores, mas com a pressão e o plástico em perfeito estado para continuar pulando muito!`,
-    price: 10.00,
+    price: 15.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/barbie_pogobol/01.png',
@@ -201,7 +201,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'lote-lol-surprise-completo',
     name: 'Super Lote L.O.L. Surprise! - 5 Bonecas + Acessórios',
     description: `O sonho de qualquer fã da LOL! Um lote completo com 5 bonequinhas originais, cada uma com seu estilo único (incluindo modelos com glitter).\n\n🟣 Inclui: Roupas, mamadeiras, sapatos e a icônica BOLA original para guardar tudo. Prontas para novas surpresas!`,
-    price: 80.00,
+    price: 85.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/lote_lol/01.png',
@@ -216,7 +216,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'bandai-dx-dodekabutak-vintage',
     name: 'Robô DX Dodekabutak Bandai - Original Japonês Kabutack',
     description: `Item de raridade extrema para colecionadores de Tokusatsu e robôs japoneses. Original Bandai Japan, série Kabutack.\n\n🤖 Função: Transformação completa de Besouro para Modo Robô (Super Change Series). Peça robusta, licenciada e em excelente estado de conservação.`,
-    price: 80.00,
+    price: 100.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/robo_kabutak/01.jpg',
@@ -272,7 +272,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'gaiola-calopsita',
     name: 'Gaiola Chalé Premium para Calopsitas e Pássaros Mansos',
     description: `O lar perfeito para seu pet alado! Estrutura branca tipo chalé, muito espaçosa e higiênica.\n\n🦜 Praticidade: Bandeja removível que facilita a limpeza diária. Duas portas de acesso e poleiros de madeira inclusos. Cabe confortavelmente até 2 aves.`,
-    price: 50.00,
+    price: 55.00,
     category: 'Pets',
     images: [
       'https://desapegos.puter.site/pets/gaiola_calopsita/01.png',
@@ -287,7 +287,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'globo-pera-luminaria',
     name: 'Globo Luminária Pera - Reposição 10cm',
     description: `Mantenha sua iluminação impecável. Globo de plástico resistente (polietileno) modelo Pera.\n\n💡 Medida: Boca de 10cm, padrão para a maioria dos ventiladores de teto e lustres. Transparência perfeita para luz suave.`,
-    price: 8.00,
+    price: 15.00,
     category: 'Decoração',
     images: [
       'https://desapegos.puter.site/deco/globo_pera/01.png',
@@ -329,7 +329,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
     description: `Heroína pronta para o combate aéreo! Boneca Batgirl de 15cm original Mattel com seu jato tecnológico.\n\n✈️ Acessórios: O jato possui wheels funcionais e a boneca vem com seu traje clássico de heroína. Item impecável para colecionadores de DC.`,
-    price: 50.00,
+    price: 45.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/batgirl_jato/01.png',
@@ -358,7 +358,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
     description: `Crie infinitas combinações de moda! Lote com 4 bonecas Polly e uma enorme variedade de roupas, sapatos e bolsas.\n\n👗 Moda: Inclui vestidos, saias, acessórios e até um pet. Horas de diversão garantidas com o closet mais famoso do mundo das bonecas.`,
-    price: 50.00,
+    price: 55.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/lote_polly/01.png'
@@ -400,7 +400,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'army-men-toy-story',
     name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
     description: `"Soldados, preparar para o resgate!" Lote oficial Disney Pixar dos clássicos soldadinhos verdes do filme Toy Story.\n\n🎖️ Autenticidade: Peças gravadas com a licença oficial. Grande variedade de poses (binóculo, rastejando, atirando). Item para colecionadores e fãs da saga.`,
-    price: 40.00,
+    price: 45.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/armymen/01.png',
