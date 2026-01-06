@@ -59,7 +59,14 @@ const App: React.FC = () => {
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [detailTab, setDetailTab] = useState<DetailTab>('gallery');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Inicializa o menu aberto se for PC (>= 768px)
+  const [isMenuOpen, setIsMenuOpen] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 768;
+    }
+    return false;
+  });
 
   const highlightedProducts = useMemo(() => 
     INITIAL_PRODUCTS.filter(p => p.isHighlighted && !p.isSold), 
@@ -88,12 +95,13 @@ const App: React.FC = () => {
   const resetView = () => {
     setActiveCategory('Todos');
     setCurrentView('catalog');
-    setIsMenuOpen(false);
+    setIsMenuOpen(window.innerWidth >= 768); // Mantém aberto no PC ao resetar
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCategoryClick = (cat: Category | 'Todos') => {
     setActiveCategory(cat);
+    // Fecha o menu automaticamente apenas no mobile após selecionar categoria
     if (window.innerWidth < 768) setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -156,10 +164,9 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in">
-        {/* Banner de Boas-Vindas - Agora com tons esmeralda */}
+        {/* Banner de Boas-Vindas */}
         {activeCategory === 'Todos' && (
           <section className="mb-12 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg p-8 md:p-12">
-            {/* Elementos decorativos de fundo emerald */}
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-emerald-200 rounded-full blur-3xl opacity-20" />
             <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-30" />
             
@@ -175,7 +182,6 @@ const App: React.FC = () => {
                 Seja muito bem-vindo(a) ao catálogo do nosso bazar!               
               </p>
               
-              {/* Texto Destacado WhatsApp */}
               <a 
                 href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                 target="_blank" 

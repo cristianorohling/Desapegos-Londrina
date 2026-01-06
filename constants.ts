@@ -67,9 +67,9 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: 'fogao-industrial-dako-couracado',
-    name: 'Fogão Industrial Dako Couraçado Clássico – O "Tanque de Guerra" da Cozinha',
+    name: 'Fogão Industrial Dako Couraçado Clássico',
     description: `Para quem busca potência real e durabilidade extrema! Este clássico Dako Couraçado é conhecido pela sua robustez incomparável. Perfeito para quem precisa de um equipamento que não te deixa na mão.\n\n🛠️ Estado: É um item vintage, com marcas de uso que contam sua história, mas sua estrutura é de ferro puro. Funcionamento pleno das bocas e do forno.\n\n🔥 Diferencial: Forno gigante e funcional, ideal para assados grandes, pães artesanais ou para uso em pequenos comércios e áreas de lazer.\n\n📦 Bônus: Já acompanha mangueira e registro! É comprar e começar a usar.`,
-    price: 800.00,
+    price: 1000.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/dako_couracado/01.png',
