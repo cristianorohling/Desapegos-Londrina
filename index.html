@@ -35,6 +35,21 @@
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+
+        /* Animação Marquee para os destaques */
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          /* Aumentado de 40s para 80s para ficar mais lento e legível */
+          animation: marquee 80s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
     </style>
 <script type="importmap">
 {

@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   LayoutGrid, 
@@ -24,7 +23,8 @@ import {
   Clock,
   FileText,
   Undo2,
-  MousePointer2
+  MousePointer2,
+  Zap
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -59,6 +59,10 @@ const App: React.FC = () => {
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [detailTab, setDetailTab] = useState<DetailTab>('gallery');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const highlightedProducts = useMemo(() => 
+    INITIAL_PRODUCTS.filter(p => p.isHighlighted && !p.isSold), 
+  []);
 
   const sortedCategories = useMemo(() => [...CATEGORIES].sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
 
@@ -184,6 +188,28 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-red-50">
+      {/* Ticker de Destaques */}
+      <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-white/10 relative z-[60]">
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          {/* Repetimos o conteúdo para garantir scroll infinito suave */}
+          {[...Array(2)].map((_, idx) => (
+            <div key={idx} className="flex items-center">
+              {highlightedProducts.map((p) => (
+                <div key={`${idx}-${p.id}`} className="flex items-center mx-8 group cursor-pointer" onClick={() => setViewingProduct(p)}>
+                  <span className="flex items-center gap-1 bg-red-600 px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest mr-3">
+                    <Zap size={10} fill="white" /> DESTAQUE
+                  </span>
+                  <span className="text-[10px] font-bold tracking-tight opacity-70 mr-2 uppercase">{p.category}:</span>
+                  <span className="text-[10px] font-black uppercase tracking-wider group-hover:text-red-400 transition-colors">{p.name}</span>
+                  <span className="mx-3 text-red-500 font-black">•</span>
+                  <span className="text-[10px] font-black">R$ {p.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Navbar 
         currentView={currentView} 
         setView={setCurrentView} 
