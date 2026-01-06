@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { X, Camera } from 'lucide-react';
 import { Product, Category } from '../types';
@@ -15,7 +14,6 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
     name: '',
     description: '',
     price: 0,
-    // Fix: Default to the first valid category from constants to avoid type mismatch with 'Outros'
     category: CATEGORIES[0],
     images: [],
     isSold: false,
@@ -101,7 +99,7 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
                 <input
                   type="checkbox"
                   id="highlight"
-                  className="w-6 h-6 accent-slate-900 rounded-lg cursor-pointer"
+                  className="w-6 h-6 accent-emerald-600 rounded-lg cursor-pointer"
                   checked={formData.isHighlighted}
                   onChange={e => setFormData(prev => ({ ...prev, isHighlighted: e.target.checked }))}
                 />

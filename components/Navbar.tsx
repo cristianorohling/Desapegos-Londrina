@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ShoppingBag, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import React from 'react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   currentView: 'catalog' | 'about' | 'how';
@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggl
   };
 
   return (
-    <nav className="bg-white border-b border-slate-200/60 transition-all duration-300 shadow-sm relative z-50">
+    <nav className="bg-white border-b border-emerald-100 transition-all duration-300 shadow-sm relative z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo Minimalista */}
@@ -24,11 +24,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggl
             onClick={() => setView('catalog')}
           >
             <div className="bg-slate-900 p-2 rounded-xl group-hover:scale-105 transition-transform shadow-md">
-              <ShoppingBag size={20} className="text-white" />
+              <ShoppingBag size={20} className="text-emerald-400" />
             </div>
             <div className="ml-3">
               <h1 className="text-lg md:text-xl font-black text-slate-900 tracking-tighter uppercase leading-none">
-                DESAPEGOS <span className="text-red-600">LDR</span>
+                DESAPEGOS <span className="text-emerald-600">LONDRINA</span>
               </h1>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggl
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900">
               {isMenuOpen ? 'Fechar' : 'Menu & Filtros'}
             </span>
-            {isMenuOpen ? <X size={18} className="text-red-600" /> : <Menu size={18} className="text-slate-900" />}
+            {isMenuOpen ? <X size={18} className="text-emerald-600" /> : <Menu size={18} className="text-slate-900" />}
           </button>
         </div>
 
@@ -50,19 +50,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggl
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 p-2 bg-slate-50 rounded-3xl border border-slate-200">
             <button
               onClick={() => handleNav('catalog')}
-              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'catalog' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'catalog' ? 'bg-white text-emerald-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Catálogo
             </button>
             <button
               onClick={() => handleNav('about')}
-              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'about' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'about' ? 'bg-white text-emerald-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Sobre
             </button>
             <button
               onClick={() => handleNav('how')}
-              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'how' ? 'bg-white text-red-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+              className={`w-full md:w-auto px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${currentView === 'how' ? 'bg-white text-emerald-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Como Funciona
             </button>

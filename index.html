@@ -16,27 +16,27 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Barra de scroll visível e estilizada */
+        /* Barra de scroll visível e estilizada - Agora em tons de Verde */
         .custom-scrollbar::-webkit-scrollbar { 
           width: 8px; 
         }
         .custom-scrollbar::-webkit-scrollbar-track { 
-          background: #f1f5f9; 
+          background: #ecfdf5; /* Emerald-50 track */
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb { 
-          background: #cbd5e1; 
+          background: #10b981; /* Emerald-500 thumb */
           border-radius: 10px;
-          border: 2px solid #f1f5f9;
+          border: 2px solid #ecfdf5;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #94a3b8;
+          background: #059669; /* Emerald-600 */
         }
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 
-        /* Animação Marquee para os destaques - Velocidade ultra lenta para legibilidade total */
+        /* Animação Marquee para os destaques */
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -74,7 +74,7 @@
 }
 </script>
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+<body class="bg-[#ECFDF5] text-slate-900 overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

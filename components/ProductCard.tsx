@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
 
   return (
     <div 
-      className={`group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer relative ${product.isSold ? 'opacity-60 grayscale-[0.3]' : ''}`}
+      className={`group bg-white rounded-3xl overflow-hidden border border-emerald-50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer relative ${product.isSold ? 'opacity-60 grayscale-[0.3]' : ''}`}
       onClick={() => onViewDetails?.(product)}
     >
       <div className="relative aspect-square md:aspect-[4/5] overflow-hidden bg-slate-50 shrink-0">
@@ -57,7 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
             {product.images.map((_, i) => (
               <div 
                 key={i} 
-                className={`h-1 rounded-full transition-all duration-300 ${i === currentIdx ? 'w-4 bg-white shadow-sm' : 'w-1 bg-white/40'}`}
+                className={`h-1 rounded-full transition-all duration-300 ${i === currentIdx ? 'w-4 bg-emerald-500 shadow-sm' : 'w-1 bg-white/40'}`}
               />
             ))}
           </div>
@@ -72,7 +72,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
         )}
 
         <div className="absolute top-3 left-3">
-          <span className="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-md text-[8px] font-black uppercase tracking-widest text-slate-800 shadow-sm border border-slate-100">
+          <span className="bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-md text-[8px] font-black uppercase tracking-widest text-slate-800 shadow-sm border border-emerald-50">
             {product.category}
           </span>
         </div>
@@ -85,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
         
         <div className="mt-auto flex items-center justify-between">
           <span className="text-base md:text-lg font-black text-slate-900">
-            <span className="text-emerald-500 text-[10px] mr-0.5 font-bold">R$</span>
+            <span className="text-emerald-600 text-[10px] mr-0.5 font-bold">R$</span>
             {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
           </span>
           <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all">
