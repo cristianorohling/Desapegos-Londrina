@@ -36,7 +36,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 
-        /* Animação Marquee para os destaques */
+        /* Animação Marquee para os destaques - Velocidade ultra lenta para legibilidade total */
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -44,11 +44,20 @@
         .animate-marquee {
           display: flex;
           width: max-content;
-          /* Aumentado de 80s para 160s para garantir uma leitura tranquila */
-          animation: marquee 160s linear infinite;
+          animation: marquee 240s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
+        }
+
+        /* Animação de Pulsação para o WhatsApp */
+        @keyframes pulse-whatsapp {
+          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+          70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        .animate-pulse-ws {
+          animation: pulse-whatsapp 2s infinite;
         }
     </style>
 <script type="importmap">

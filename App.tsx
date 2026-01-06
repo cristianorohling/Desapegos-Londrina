@@ -24,7 +24,8 @@ import {
   FileText,
   Undo2,
   MousePointer2,
-  Zap
+  Zap,
+  Star
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -188,23 +189,30 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 selection:bg-red-50">
-      {/* Ticker de Destaques */}
-      <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-white/10 relative z-[60]">
+      {/* Ticker de Destaques - Mais engajador e ultra-lento */}
+      <div className="bg-slate-900 text-white py-2.5 overflow-hidden border-b border-white/10 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
-          {/* Repetimos o conteúdo para garantir scroll infinito suave */}
           {[...Array(2)].map((_, idx) => (
             <div key={idx} className="flex items-center">
               {highlightedProducts.map((p) => (
-                <div key={`${idx}-${p.id}`} className="flex items-center mx-8 group cursor-pointer" onClick={() => setViewingProduct(p)}>
-                  <span className="flex items-center gap-1 bg-red-600 px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest mr-3">
-                    <Zap size={10} fill="white" /> DESTAQUE
+                <div key={`${idx}-${p.id}`} className="flex items-center mx-10 group cursor-pointer" onClick={() => setViewingProduct(p)}>
+                  <span className="flex items-center gap-1.5 bg-red-600 px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest mr-3 shadow-lg shadow-red-900/20">
+                    <Star size={10} fill="white" /> OPORTUNIDADE
                   </span>
-                  <span className="text-[10px] font-bold tracking-tight opacity-70 mr-2 uppercase">{p.category}:</span>
+                  <span className="text-[10px] font-bold tracking-tight opacity-50 mr-2 uppercase">{p.category}</span>
                   <span className="text-[10px] font-black uppercase tracking-wider group-hover:text-red-400 transition-colors">{p.name}</span>
-                  <span className="mx-3 text-red-500 font-black">•</span>
-                  <span className="text-[10px] font-black">R$ {p.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                  <span className="mx-4 text-white/20 font-light">|</span>
+                  <span className="text-[10px] font-black text-red-500">R$ {p.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                  <span className="ml-3 text-[8px] font-black text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">CLIQUE PARA VER</span>
                 </div>
               ))}
+              {/* Frases de engajamento extras no marquee */}
+              <div className="flex items-center mx-10">
+                <span className="flex items-center gap-1.5 bg-indigo-600 px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest mr-3">
+                  <Flame size={10} fill="white" /> BAZAR ATIVO
+                </span>
+                <span className="text-[10px] font-black uppercase tracking-wider">RETIRADA NO BAIRRO {NEIGHBORHOOD.toUpperCase()} • LONDRINA</span>
+              </div>
             </div>
           ))}
         </div>
@@ -345,6 +353,20 @@ const App: React.FC = () => {
           <button className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"><X size={32} /></button>
         </div>
       )}
+
+      {/* Floating WhatsApp Button com animação de pulsação e mensagem de suporte */}
+      <a 
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Vi o catálogo Desapegos Londrina e gostaria de saber mais sobre como funciona o bazar e os itens disponíveis.')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws"
+        aria-label="Contato via WhatsApp"
+      >
+        <MessageCircle size={28} fill="white" />
+        <span className="absolute right-full mr-4 bg-white text-slate-900 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-all transform translate-x-4 group-hover:translate-x-0 whitespace-nowrap border border-slate-100">
+          Dúvidas? Chame no Whats
+        </span>
+      </a>
 
       <footer className="bg-white border-t border-slate-200 py-12">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
