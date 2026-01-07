@@ -13,7 +13,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'casinha-passarinho-madeira',
     name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
-    description: `Dê um toque de charme e natureza à sua decoração com esta linda casinha de passarinho artesanal.\n\nConfeccionada em madeira resistente e com acabamento em verniz escuro, esta peça traz o estilo rústico clássico que combina perfeitamente com jardins, varandas, áreas gourmet ou até mesmo para compor cenários e decorações internas.\n\n✨ Características:\n- Material: Madeira maciça tratada e envernizada (maior durabilidade).\n- Design: Rústico e minimalista.\n- Acabamento: Verniz de alto brilho que realça os veios da madeira.\n- Uso: Ideal para decoração de ambientes, jardins ou colecionadores.`,
+    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada com verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
     price: 50.00,
     category: 'Decoração',
     images: [
@@ -27,7 +27,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'coruja-entalhada-madeira',
     name: 'Coruja Entalhada em Madeira Maciça - Decoração Rústica de Parede',
-    description: `Traga sabedoria e um toque rústico para o seu ambiente com esta belíssima escultura de coruja, entalhada à mão em madeira maciça.\n\n✨ Destaques:\n- Artesanato Autêntico: Entalhe manual com riqueza de detalhes nas texturas.\n- Material Nobre: Feita em madeira resistente e durável.\n- Versatilidade: Combina com decorações rústicas, vintage, boho ou campestres.\n- Pronta para Pendurar: Ideal para destacar paredes vazias ou compor com outros quadros.\n\n🦉 Ficha Técnica:\n- Material: Madeira maciça.\n- Acabamento: Envernizado (protege e dá brilho).\n- Estado: Excelente conservação.`,
+    description: `Escultura de coruja entalhada manualmente em madeira maciça. Peça única de artesanato para decoração rústica de parede. Acabamento envernizado e em excelente estado de conservação.`,
     price: 50.00,
     category: 'Decoração',
     images: [
@@ -40,7 +40,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'volante-multilaser-3-em-1',
     name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
-    description: `Eleve sua experiência em jogos de corrida! Vendo Kit Volante e Pedal da marca Multilaser, compatível com PlayStation 2, PlayStation 3 e PC. Ideal para simuladores e diversão garantida.\n\n🎮 Compatibilidade: PS2, PS3 e Computador (PC).\n✨ Estado: Excelente estado de conservação, sem marcas de uso significativas.\n🏎️ Funcionamento: Totalmente funcional, todos os botões, pedais e respostas do volante estão 100%.`,
+    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível com PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
     price: 150.00,
     category: 'Informática',
     images: [
@@ -54,7 +54,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'fogao-lenha-fundimig-f090',
     name: 'Fogão a Lenha Antigo FUNDIMIG F-090 (Nº 0) - Relíquia em Ferro Fundido',
-    description: `Uma peça clássica e robusta, inteiramente fabricada em ferro fundido de alta qualidade. Ideal para quem busca um projeto de restauração, decoração rústica ou precisa de peças de reposição para outro fogão da mesma época.\n\n🔥 Características:\n- Marca: Fundimig\n- Material: Ferro fundido com detalhes em relevo (design clássico e elegante).\n- Dimensões: 71cm (altura com pés) x 51cm (profundidade) x 75cm (largura).\n\n🛠️ Estado: A estrutura principal está íntegra e o ferro é extremamente durável. A peça apresenta ferrugem superficial natural do tempo, que pode ser tratada com lixamento e pintura de alta temperatura. Faltam algumas peças.`,
+    description: `Fogão a lenha antigo da marca Fundimig, modelo F-090 (Número 0). Fabricado inteiramente em ferro fundido. Peça robusta, ideal para projetos de restauração ou decoração rústica. Dimensões: 71cm (A) x 51cm (P) x 75cm (L). Apresenta ferrugem superficial e faltam algumas peças.`,
     price: 1399.00,
     category: 'Cozinha',
     images: [
@@ -68,7 +68,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'fogao-industrial-dako-couracado',
     name: 'Fogão Industrial Dako Couraçado Clássico',
-    description: `Para quem busca potência real e durabilidade extrema! Este clássico Dako Couraçado é conhecido pela sua robustez incomparável. Perfeito para quem precisa de um equipamento que não te deixa na mão.\n\n🛠️ Estado: É um item vintage, com marcas de uso que contam sua história, mas sua estrutura é de ferro puro. Funcionamento pleno das bocas e do forno.\n\n🔥 Diferencial: Forno gigante e funcional, ideal para assados grandes, pães artesanais ou para uso em pequenos comércios e áreas de lazer.\n\n📦 Bônus: Já acompanha mangueira e registro! É comprar e começar a usar.`,
+    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage com marcas de uso. Acompanha mangueira e registro de gás.`,
     price: 1299.00,
     category: 'Cozinha',
     images: [
@@ -87,7 +87,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'suporte-doces-cupcakes_floral',
     name: 'Suporte para doces e Cucpakes 2 Andares - Charme Floral',
-    description: `Adicione um toque de elegância e organização à sua mesa! Este suporte de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para servir docinhos em festas.\n\n🍎 Praticidade: Fácil de limpar e montar. Um achado por um preço simbólico!`,
+    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design com acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
     price: 25.00,
     category: 'Cozinha',
     images: [
@@ -100,7 +100,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'termo-rey-gravatinha-par',
     name: 'Relíquia Termo-Rey "Gravatinha" - Par de Travessas Vintage',
-    description: `Atenção colecionadores e amantes do retrô! Estamos desapegando deste par icônico da lendária Termo-Rey, na estampa "Gravatinha" (padrão geométrico laranja dos anos 60/70).\n\n🍽️ O que inclui:\n- 1 Travessa Oval clássica\n- 1 Tigela (Bowl) Redonda\n\nPeças em opalina branca ultra resistente, perfeitas para quem valoriza a memória afetiva e quer dar um toque autêntico de "casa de vó" na decoração ou na mesa posta.`,
+    description: `Par de travessas vintage da marca Termo-Rey, na clássica estampa "Gravatinha" (padrão geométrico dos anos 60/70). O conjunto inclui 1 travessa oval e 1 tigela redonda em opalina branca resistente. Peças de coleção em bom estado.`,
     price: 180.00,
     category: 'Cozinha',
     images: [
@@ -114,7 +114,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'mini-aquaterrario-decorado-betta',
     name: 'Mini Aquaterrário Decorado - Home Office & Pets',
-    description: `Um pedaço da natureza na sua mesa! Este mini aquaterrário é perfeito para quem quer a companhia de um peixinho Betta ou uma pequena tartaruga com estilo e praticidade.\n\n✨ Destaques:\n- Já vem decorado com plantas e substrato fixos.\n- Possui plataforma elevada (área seca) para tartarugas.\n- Acompanha tampa de vidro sob medida para total segurança.\n\n📏 Compacto: 19x13x13cm. Ideal para qualquer cantinho!`,
+    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado com plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
     price: 45.00,
     category: 'Pets',
     images: [
@@ -127,7 +127,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'boneco-dengue-vintage-xuxa',
     name: 'Boneco Dengue (Xou da Xuxa) - Colecionável Original Anos 80',
-    description: `Uma verdadeira viagem no tempo! O fiel escudeiro da Rainha Xuxa pode ser seu. Este boneco do Dengue é uma peça rara de se encontrar com articulações tão firmes.\n\n🎨 Estado: Pintura amarela e verde muito bem preservada. Articulações segurando todas as poses.\n\n⚠️ Nota para colecionadores: Não possui as antenas e asas originais, mas a estrutura básica está excelente para restauro ou exibição.`,
+    description: `Boneco original do personagem Dengue (Xou da Xuxa), anos 80. Pintura e articulações bem preservadas. Não possui as antenas e asas originais. Peça para colecionadores ou restauro.`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
@@ -142,7 +142,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'kit-cozinha-barbie-vintage',
     name: 'Super Lote Cozinha Vintage Barbie - Itens de Coleção',
-    description: `Oportunidade para quem ama miniaturas retrô! Lote com diversas comidinhas e eletros mini que marcaram época.\n\n🥤 Inclui: Embalagens clássicas de Leite, Margarina e o raro Suco Elefanta, além de batedeira e máquina de costura miniatura. Perfeito para dioramas ou colecionadores exigentes.`,
+    description: `Lote de miniaturas vintage para cozinha da Barbie. Inclui embalagens clássicas (Leite, Suco Elefanta), batedeira e máquina de costura em miniatura. Itens de coleção dos anos 80/90 para dioramas.`,
     price: 19.00,
     category: 'Brinquedos',
     images: [
@@ -156,7 +156,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'mesa-cadeiras-barbie',
     name: 'Conjunto Jantar Crystal Doll - Mesa e 4 Cadeiras Pink',
-    description: `Para a casa da Barbie ficar completa! Mesa em estilo cristal com glitter e cadeiras pink vibrantes.\n\n💖 Ideal para bonecas tamanho padrão (Barbie, Susie, etc). Em estado de novo, pronto para a próxima brincadeira!`,
+    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal com glitter e 4 cadeiras na cor pink. Em estado de novo.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -169,7 +169,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'yamaha-clavinova-cvp',
     name: 'Piano Digital Yamaha Clavinova CVP - Som Profissional',
-    description: `Um instrumento de elite para músicos apaixonados. A linha CVP da Yamaha é famosa pelo toque realista de piano de cauda e timbres impecáveis.\n\n🎹 Toque: Teclas pesadas e sensitivas (GH/GH3).\n🎹 Som: Alto-falantes integrados de alta fidelidade.\n\n⚠️ Detalhe: O piano funciona perfeitamente para tocar, porém o display está sem a luz de fundo (backlight). É possível ler as informações sob luz forte ou lanterna. Um piano de R$ 15k por uma fração do preço devido a este detalhe.`,
+    description: `Piano digital profissional Yamaha Clavinova linha CVP. Teclas pesadas e sensitivas (GH), som de alta fidelidade. O instrumento funciona perfeitamente, mas o display está sem a luz de fundo (backlight queimado).`,
     price: 9000.00,
     category: 'Instrumentos Musicais',
     images: [
@@ -185,7 +185,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'pogobol-barbie-classico',
     name: 'Pogobol Barbie Original - Diversão Ativa Retrô',
-    description: `O clássico que nunca sai de moda! Pogobol oficial temático da Barbie em tons de rosa e roxo.\n\n🛼 Estado: Item usado com marcas de aventuras anteriores, mas com a pressão e o plástico em perfeito estado para continuar pulando muito!`,
+    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, com marcas de uso no plástico, mas funcional e com boa pressão na bola.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -200,7 +200,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'lote-lol-surprise-completo',
     name: 'Super Lote L.O.L. Surprise! - 5 Bonecas + Acessórios',
-    description: `O sonho de qualquer fã da LOL! Um lote completo com 5 bonequinhas originais, cada uma com seu estilo único (incluindo modelos com glitter).\n\n🟣 Inclui: Roupas, mamadeiras, sapatos e a icônica BOLA original para guardar tudo. Prontas para novas surpresas!`,
+    description: `Lote com 5 bonecas originais L.O.L. Surprise!, incluindo modelos com glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
     price: 85.00,
     category: 'Brinquedos',
     images: [
@@ -215,7 +215,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'bandai-dx-dodekabutak-vintage',
     name: 'Robô DX Dodekabutak Bandai - Original Japonês Kabutack',
-    description: `Item de raridade extrema para colecionadores de Tokusatsu e robôs japoneses. Original Bandai Japan, série Kabutack.\n\n🤖 Função: Transformação completa de Besouro para Modo Robô (Super Change Series). Peça robusta, licenciada e em excelente estado de conservação.`,
+    description: `Robô DX Dodekabutak original Bandai Japan, da série Kabutack (1997). Realiza transformação completa de modo besouro para modo robô. Peça rara e em excelente estado de conservação.`,
     price: 100.00,
     category: 'Brinquedos',
     images: [
@@ -229,7 +229,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'chapeu-woody-toy-story',
     name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
-    description: `"Tem uma cobra na minha bota!" Chapéu icônico do Woody em feltro marrom texturizado com costuras laterais.\n\n🤠 Estado: Muito conservado, perfeito para fantasias, decoração temática ou para o pequeno caubói da casa.`,
+    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom com as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
     price: 8.00,
     category: 'Brinquedos',
     images: [
@@ -243,7 +243,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'cavalo-madeira-balanco',
     name: 'Cavalinho de Balanço Retrô - Madeira Maciça Reforçada',
-    description: `Um brinquedo que dura gerações! Feito em madeira de lei reforçada, muito superior aos modelos de plástico.\n\n🪵 Decoração: Além de divertir, é uma peça linda para compor quartos infantis com pegada rústica ou vintage. Totalmente seguro e estável.`,
+    description: `Cavalinho de balanço estilo retrô feito em madeira de lei maciça e reforçada. Brinquedo durável e seguro, também serve como peça de decoração para quartos infantis.`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
@@ -258,7 +258,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'stacie-suco-playset',
     name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
-    description: `A irmã da Barbie em um dia de sol! Playset completo com balcão de sucos, acessórios refrescantes e o inseparável cachorrinho.\n\n🥤 Diversão: Inclui itens detalhados para criar histórias de verão. Boneca original Mattel em perfeito estado.`,
+    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) com tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
     price: 69.00,
     category: 'Brinquedos',
     images: [
@@ -271,7 +271,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'gaiola-calopsita',
     name: 'Gaiola Chalé Premium para Calopsitas e Pássaros Mansos',
-    description: `O lar perfeito para seu pet alado! Estrutura branca tipo chalé, muito espaçosa e higiênica.\n\n🦜 Praticidade: Bandeja removível que facilita a limpeza diária. Duas portas de acesso e poleiros de madeira inclusos. Cabe confortavelmente até 2 aves.`,
+    description: `Gaiola espaçosa modelo chalé branco, ideal para calopsitas e pássaros mansos. Possui bandeja removível para facilitar a limpeza, duas portas de acesso e poleiros.`,
     price: 80.00,
     category: 'Pets',
     images: [
@@ -286,7 +286,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'globo-pera-luminaria',
     name: 'Globo Luminária Pera - Reposição 10cm',
-    description: `Mantenha sua iluminação impecável. Globo de plástico resistente (polietileno) modelo Pera.\n\n💡 Medida: Boca de 10cm, padrão para a maioria dos ventiladores de teto e lustres. Transparência perfeita para luz suave.`,
+    description: `Globo (cúpula) modelo Pera em plástico resistente (polietileno). Boca de 10cm. Peça de reposição para ventiladores de teto e lustres.`,
     price: 10.00,
     category: 'Decoração',
     images: [
@@ -300,7 +300,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'fogao-venax',
     name: 'Fogão de Mesa Venax 4 Bocas Inox - Luxo Portátil',
-    description: `Praticidade com acabamento premium! Este fogão Venax de mesa em Inox é perfeito para apartamentos, áreas gourmet ou camping.\n\n⚡ Tecnologia: Acendimento automático total e mesa em inox brilhante de fácil limpeza. Possui painel traseiro (respaldo) que protege a sua parede de gordura.`,
+    description: `Fogão de mesa (cooktop portátil) Venax de 4 bocas. Mesa em aço inox, acendimento automático e painel traseiro. Ideal para cozinhas pequenas ou camping.`,
     price: 199.00,
     category: 'Cozinha',
     images: [
@@ -315,7 +315,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'repetidor-tplink',
     name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
-    description: `Sua internet em todos os cômodos! Repetidor original TP-Link, modelo TL-WA850RE, o mais vendido da categoria.\n\n📶 Performance: 300Mbps de velocidade, bivolt automático e configuração simplificada via botão WPS. Ideal para home office e streaming.`,
+    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, com configuração fácil via botão WPS. Melhora a cobertura da internet.`,
     price: 79.00,
     category: 'Informática',
     images: [
@@ -328,7 +328,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Heroína pronta para o combate aéreo! Boneca Batgirl de 15cm original Mattel com seu jato tecnológico.\n\n✈️ Acessórios: O jato possui wheels funcionais e a boneca vem com seu traje clássico de heroína. Item impecável para colecionadores de DC.`,
+    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com rodas funcionais. Item de colecionador em ótimo estado.`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
@@ -342,7 +342,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'lote-ferramentas-massinha',
     name: 'Mega Kit Acessórios Play-Doh - Fábrica de Diversão',
-    description: `Tudo o que os pequenos precisam para criar! Lote gigante de moldes, extrusoras de macarrão e ferramentas de corte.\n\n🌈 Criatividade: Dezenas de formas para soltar a imaginação. (Observação: Acompanha apenas os acessórios plásticos, não inclui as massas).`,
+    description: `Grande lote de acessórios e ferramentas para brincar com massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
     price: 45.00,
     category: 'Brinquedos',
     images: [
@@ -356,8 +356,8 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: 'lote-polly-pocket',
-    name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
-    description: `Crie infinitas combinações de moda! Lote com 4 bonecas Polly e uma enorme variedade de roupas, sapatos e bolsas.\n\n👗 Moda: Inclui vestidos, saias, acessórios e até um pet. Horas de diversão garantidas com o closet mais famoso do mundo das bonecas.`,
+    name: 'Lote Polly Pocket Fashion - 4 Bonecas + roupinhas',
+    description: `Lote Polly Pocket contendo 4 bonecas e roupas, sapatos, bolsas e acessórios para montar looks.`,
     price: 65.00,
     category: 'Brinquedos',
     images: [
@@ -370,7 +370,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'panelinhas-metal',
     name: 'Kit MasterChef Kids - Panelinhas em Metal Inox Realistas',
-    description: `A casinha subiu de nível! Kit de panelas em metal de verdade (estilo inox), muito mais duráveis e realistas que as de plástico.\n\n🍳 Menu: Caçarola, frigideira, escorredor e utensílios profissionais miniatura. Brilhantes e prontas para o próximo banquete imaginário!`,
+    description: `Kit de panelinhas de brinquedo feitas em metal (estilo inox), realistas e duráveis. Inclui caçarola, frigideira, escorredor e utensílios em miniatura.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -385,7 +385,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'barbie-salao-pia',
     name: 'Pia de Salão Barbie Glamour - Cuba com Glitter',
-    description: `Momento de autocuidado para as bonecas! Lavatório de salão com cuba azul translúcida cheia de glitter e armário retrô roxo.\n\n✨ Estilo: Peça icônica da Mattel para completar qualquer cenário de casinha ou salão de beleza da Barbie.`,
+    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul com glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
     price: 29.00,
     category: 'Brinquedos',
     images: [
@@ -399,7 +399,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'army-men-toy-story',
     name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
-    description: `"Soldados, preparar para o resgate!" Lote oficial Disney Pixar dos clássicos soldadinhos verdes do filme Toy Story.\n\n🎖️ Autenticidade: Peças gravadas com a licença oficial. Grande variedade de poses (binóculo, rastejando, atirando). Item para colecionadores e fãs da saga.`,
+    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas com a licença, em diversas poses de combate.`,
     price: 49.00,
     category: 'Brinquedos',
     images: [
@@ -414,7 +414,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'baby-alive-festa-massas',
     name: 'Baby Alive Festa das Massas Original Hasbro - Interativa',
-    description: `A bebê que come de verdade! Esta Baby Alive acompanha uma maquininha que cria diferentes formatos de massa.\n\n👶 Interatividade: A criança prepara o macarrão, dá para a bebê e depois troca a fraldinha. Original Hasbro, muito conservada e higienizada. Inclui vestidinho original e acessórios de cozinha.`,
+    description: `Boneca interativa Baby Alive Festa das Massas (Hasbro). Ela "come" a massinha de macarrão e faz caquinha na fralda. Acompanha acessórios originais.`,
     price: 150.00,
     category: 'Brinquedos',
     images: [

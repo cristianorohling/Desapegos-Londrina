@@ -27,7 +27,9 @@ import {
   Share2,
   Clock,
   ArrowRight,
-  ChevronDown
+  ChevronDown,
+  Search,
+  Eraser
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -62,6 +64,7 @@ const slugify = (text: string) => text.toString().toLowerCase()
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('catalog');
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
+  const [searchQuery, setSearchQuery] = useState('');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -109,6 +112,7 @@ const App: React.FC = () => {
     setCurrentView('catalog');
     setViewingProduct(null);
     setActiveCategory('Todos');
+    setSearchQuery('');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -122,11 +126,18 @@ const App: React.FC = () => {
     return INITIAL_PRODUCTS
       .filter(p => {
         const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
-        if (activeCategory === 'Todos' && p.isSold) return false;
-        return categoryMatch;
+        const searchLower = searchQuery.toLowerCase();
+        const searchMatch = !searchQuery || 
+                           p.name.toLowerCase().includes(searchLower) || 
+                           p.description.toLowerCase().includes(searchLower);
+        
+        // Na home (Todos), não mostramos vendidos a menos que esteja filtrando/pesquisando
+        if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
+        
+        return categoryMatch && searchMatch;
       })
       .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-  }, [activeCategory]);
+  }, [activeCategory, searchQuery]);
 
   const handleCategoryClick = (cat: Category | 'Todos') => {
     setActiveCategory(cat);
@@ -280,7 +291,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Barra Flutuante de WhatsApp exclusiva para Landing Page */}
+      {/* Barra Flutuante de WhatsApp */}
       <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 z-[100] animate-in slide-in-from-bottom duration-500">
         <div className="max-w-screen-sm mx-auto bg-white/90 backdrop-blur-xl p-2.5 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-white/50 flex items-center justify-between gap-3">
           <div className="hidden sm:block pl-6">
@@ -368,7 +379,29 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {activeCategory === 'Todos' && (
+        {/* Barra de Pesquisa */}
+        <div className="max-w-xl mx-auto mb-8 relative group">
+          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
+            <Search size={20} />
+          </div>
+          <input 
+            type="text" 
+            placeholder="O que você está procurando hoje?"
+            className="w-full pl-14 pr-12 py-5 bg-white border-2 border-emerald-100 rounded-[2rem] shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          {searchQuery && (
+            <button 
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-5 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
+            >
+              <X size={20} />
+            </button>
+          )}
+        </div>
+
+        {activeCategory === 'Todos' && !searchQuery && (
           <section className="mb-12 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg p-8 md:p-12">
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-emerald-200 rounded-full blur-3xl opacity-20" />
             <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-30" />
@@ -404,7 +437,7 @@ const App: React.FC = () => {
 
         <div className="mb-8 flex flex-col items-center">
           <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter mb-2 text-center px-4">
-            {activeCategory === 'Todos' ? 'Itens Disponíveis' : activeCategory}
+            {searchQuery ? `Resultados para "${searchQuery}"` : (activeCategory === 'Todos' ? 'Itens Disponíveis' : activeCategory)}
           </h2>
           <div className="h-1 w-16 bg-emerald-600 rounded-full mb-3"></div>
           <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">{filteredProducts.length} itens encontrados</p>
@@ -421,11 +454,15 @@ const App: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center">
-            <PackageOpen size={48} className="mx-auto text-slate-300 mb-4" />
-            <h3 className="text-xl font-black text-slate-900 mb-4">Nada encontrado nesta categoria.</h3>
-            <button onClick={navigateToHome} className="bg-slate-900 text-white px-8 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest">
-              Ver tudo
+          <div className="py-20 text-center bg-white rounded-[3rem] border border-emerald-100 border-dashed">
+            <PackageOpen size={48} className="mx-auto text-slate-200 mb-4" />
+            <h3 className="text-xl font-black text-slate-900 mb-2">Ops! Nada por aqui.</h3>
+            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine com sua pesquisa no momento.</p>
+            <button 
+              onClick={() => {setSearchQuery(''); setActiveCategory('Todos')}} 
+              className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-600 transition-colors"
+            >
+              Limpar Filtros
             </button>
           </div>
         )}
@@ -521,7 +558,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Botão Flutuante Circular Global (Oculto apenas no product-landing para não chocar com a barra) */}
+      {/* Botão Flutuante Circular Global */}
       <a 
         href={`https://wa.me/${WHATSAPP_NUMBER}`}
         target="_blank"
