@@ -174,9 +174,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Instrumentos Musicais',
     images: [
       'https://desapegos.puter.site/instrumentos/yamaha_clavinova/01.png',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/02.png',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/03.png',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/04.png'
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/02.jpg',
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/03.jpg',
+      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/04.jpg'
     ],
     isSold: false,
     isHighlighted: true,
