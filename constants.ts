@@ -14,7 +14,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'casinha-passarinho-madeira',
     name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
     description: `Dê um toque de charme e natureza à sua decoração com esta linda casinha de passarinho artesanal.\n\nConfeccionada em madeira resistente e com acabamento em verniz escuro, esta peça traz o estilo rústico clássico que combina perfeitamente com jardins, varandas, áreas gourmet ou até mesmo para compor cenários e decorações internas.\n\n✨ Características:\n- Material: Madeira maciça tratada e envernizada (maior durabilidade).\n- Design: Rústico e minimalista.\n- Acabamento: Verniz de alto brilho que realça os veios da madeira.\n- Uso: Ideal para decoração de ambientes, jardins ou colecionadores.`,
-    price: 35.00,
+    price: 50.00,
     category: 'Decoração',
     images: [
       'https://desapegos.puter.site/deco/casinha_envernizada/01.png',
@@ -55,7 +55,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'fogao-lenha-fundimig-f090',
     name: 'Fogão a Lenha Antigo FUNDIMIG F-090 (Nº 0) - Relíquia em Ferro Fundido',
     description: `Uma peça clássica e robusta, inteiramente fabricada em ferro fundido de alta qualidade. Ideal para quem busca um projeto de restauração, decoração rústica ou precisa de peças de reposição para outro fogão da mesma época.\n\n🔥 Características:\n- Marca: Fundimig\n- Material: Ferro fundido com detalhes em relevo (design clássico e elegante).\n- Dimensões: 71cm (altura com pés) x 51cm (profundidade) x 75cm (largura).\n\n🛠️ Estado: A estrutura principal está íntegra e o ferro é extremamente durável. A peça apresenta ferrugem superficial natural do tempo, que pode ser tratada com lixamento e pintura de alta temperatura. Faltam algumas peças.`,
-    price: 1400.00,
+    price: 1399.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/fogao_fundimig/01.png',
@@ -69,7 +69,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'fogao-industrial-dako-couracado',
     name: 'Fogão Industrial Dako Couraçado Clássico',
     description: `Para quem busca potência real e durabilidade extrema! Este clássico Dako Couraçado é conhecido pela sua robustez incomparável. Perfeito para quem precisa de um equipamento que não te deixa na mão.\n\n🛠️ Estado: É um item vintage, com marcas de uso que contam sua história, mas sua estrutura é de ferro puro. Funcionamento pleno das bocas e do forno.\n\n🔥 Diferencial: Forno gigante e funcional, ideal para assados grandes, pães artesanais ou para uso em pequenos comércios e áreas de lazer.\n\n📦 Bônus: Já acompanha mangueira e registro! É comprar e começar a usar.`,
-    price: 1000.00,
+    price: 1299.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/dako_couracado/01.png',
@@ -85,10 +85,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     createdAt: Date.now()
   },
   {
-    id: 'fruteira-mesa-2-andares-floral',
-    name: 'Fruteira de Mesa Premium 2 Andares - Charme Floral',
-    description: `Adicione um toque de elegância e organização à sua mesa! Esta fruteira de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para organizar frutas, servir docinhos em festas ou até organizar maquiagens e perfumes.\n\n🍎 Praticidade: Fácil de limpar e montar. Um achado por um preço simbólico!`,
-    price: 15.00,
+    id: 'suporte-doces-cupcakes_floral',
+    name: 'Suporte para doces e Cucpakes 2 Andares - Charme Floral',
+    description: `Adicione um toque de elegância e organização à sua mesa! Este suporte de dois andares não é apenas funcional, é uma peça de decoração por si só.\n\n✨ Design: Acabamento rendado com centro floral delicado. Muito versátil para servir docinhos em festas.\n\n🍎 Praticidade: Fácil de limpar e montar. Um achado por um preço simbólico!`,
+    price: 25.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site//cozinha/suporte_frutas/01.png'
@@ -101,7 +101,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'termo-rey-gravatinha-par',
     name: 'Relíquia Termo-Rey "Gravatinha" - Par de Travessas Vintage',
     description: `Atenção colecionadores e amantes do retrô! Estamos desapegando deste par icônico da lendária Termo-Rey, na estampa "Gravatinha" (padrão geométrico laranja dos anos 60/70).\n\n🍽️ O que inclui:\n- 1 Travessa Oval clássica\n- 1 Tigela (Bowl) Redonda\n\nPeças em opalina branca ultra resistente, perfeitas para quem valoriza a memória afetiva e quer dar um toque autêntico de "casa de vó" na decoração ou na mesa posta.`,
-    price: 120.00,
+    price: 180.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/cozinha/termo_rey/01.png',
@@ -115,7 +115,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'mini-aquaterrario-decorado-betta',
     name: 'Mini Aquaterrário Decorado - Home Office & Pets',
     description: `Um pedaço da natureza na sua mesa! Este mini aquaterrário é perfeito para quem quer a companhia de um peixinho Betta ou uma pequena tartaruga com estilo e praticidade.\n\n✨ Destaques:\n- Já vem decorado com plantas e substrato fixos.\n- Possui plataforma elevada (área seca) para tartarugas.\n- Acompanha tampa de vidro sob medida para total segurança.\n\n📏 Compacto: 19x13x13cm. Ideal para qualquer cantinho!`,
-    price: 30.00,
+    price: 45.00,
     category: 'Pets',
     images: [
       'https://desapegos.puter.site/pets/aquario_beta/01.png'
@@ -128,7 +128,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'boneco-dengue-vintage-xuxa',
     name: 'Boneco Dengue (Xou da Xuxa) - Colecionável Original Anos 80',
     description: `Uma verdadeira viagem no tempo! O fiel escudeiro da Rainha Xuxa pode ser seu. Este boneco do Dengue é uma peça rara de se encontrar com articulações tão firmes.\n\n🎨 Estado: Pintura amarela e verde muito bem preservada. Articulações segurando todas as poses.\n\n⚠️ Nota para colecionadores: Não possui as antenas e asas originais, mas a estrutura básica está excelente para restauro ou exibição.`,
-    price: 45.00,
+    price: 80.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/dengue_xuxa/01.png',
@@ -143,7 +143,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'kit-cozinha-barbie-vintage',
     name: 'Super Lote Cozinha Vintage Barbie - Itens de Coleção',
     description: `Oportunidade para quem ama miniaturas retrô! Lote com diversas comidinhas e eletros mini que marcaram época.\n\n🥤 Inclui: Embalagens clássicas de Leite, Margarina e o raro Suco Elefanta, além de batedeira e máquina de costura miniatura. Perfeito para dioramas ou colecionadores exigentes.`,
-    price: 15.00,
+    price: 19.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/kit_minicozinha/01.png',
@@ -157,7 +157,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'mesa-cadeiras-barbie',
     name: 'Conjunto Jantar Crystal Doll - Mesa e 4 Cadeiras Pink',
     description: `Para a casa da Barbie ficar completa! Mesa em estilo cristal com glitter e cadeiras pink vibrantes.\n\n💖 Ideal para bonecas tamanho padrão (Barbie, Susie, etc). Em estado de novo, pronto para a próxima brincadeira!`,
-    price: 10.00,
+    price: 15.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/mesa_barbie/01.png'
@@ -170,7 +170,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'yamaha-clavinova-cvp',
     name: 'Piano Digital Yamaha Clavinova CVP - Som Profissional',
     description: `Um instrumento de elite para músicos apaixonados. A linha CVP da Yamaha é famosa pelo toque realista de piano de cauda e timbres impecáveis.\n\n🎹 Toque: Teclas pesadas e sensitivas (GH/GH3).\n🎹 Som: Alto-falantes integrados de alta fidelidade.\n\n⚠️ Detalhe: O piano funciona perfeitamente para tocar, porém o display está sem a luz de fundo (backlight). É possível ler as informações sob luz forte ou lanterna. Um piano de R$ 15k por uma fração do preço devido a este detalhe.`,
-    price: 8000.00,
+    price: 9000.00,
     category: 'Instrumentos Musicais',
     images: [
       'https://desapegos.puter.site/instrumentos/yamaha_clavinova/01.png',
@@ -230,7 +230,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'chapeu-woody-toy-story',
     name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
     description: `"Tem uma cobra na minha bota!" Chapéu icônico do Woody em feltro marrom texturizado com costuras laterais.\n\n🤠 Estado: Muito conservado, perfeito para fantasias, decoração temática ou para o pequeno caubói da casa.`,
-    price: 5.00,
+    price: 8.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/chapeu_woody/01.jpg',
@@ -259,7 +259,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'stacie-suco-playset',
     name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
     description: `A irmã da Barbie em um dia de sol! Playset completo com balcão de sucos, acessórios refrescantes e o inseparável cachorrinho.\n\n🥤 Diversão: Inclui itens detalhados para criar histórias de verão. Boneca original Mattel em perfeito estado.`,
-    price: 35.00,
+    price: 69.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/stacie_suco/01.png'
@@ -272,7 +272,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'gaiola-calopsita',
     name: 'Gaiola Chalé Premium para Calopsitas e Pássaros Mansos',
     description: `O lar perfeito para seu pet alado! Estrutura branca tipo chalé, muito espaçosa e higiênica.\n\n🦜 Praticidade: Bandeja removível que facilita a limpeza diária. Duas portas de acesso e poleiros de madeira inclusos. Cabe confortavelmente até 2 aves.`,
-    price: 55.00,
+    price: 80.00,
     category: 'Pets',
     images: [
       'https://desapegos.puter.site/pets/gaiola_calopsita/01.png',
@@ -287,7 +287,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'globo-pera-luminaria',
     name: 'Globo Luminária Pera - Reposição 10cm',
     description: `Mantenha sua iluminação impecável. Globo de plástico resistente (polietileno) modelo Pera.\n\n💡 Medida: Boca de 10cm, padrão para a maioria dos ventiladores de teto e lustres. Transparência perfeita para luz suave.`,
-    price: 15.00,
+    price: 10.00,
     category: 'Decoração',
     images: [
       'https://desapegos.puter.site/deco/globo_pera/01.png',
@@ -301,7 +301,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'fogao-venax',
     name: 'Fogão de Mesa Venax 4 Bocas Inox - Luxo Portátil',
     description: `Praticidade com acabamento premium! Este fogão Venax de mesa em Inox é perfeito para apartamentos, áreas gourmet ou camping.\n\n⚡ Tecnologia: Acendimento automático total e mesa em inox brilhante de fácil limpeza. Possui painel traseiro (respaldo) que protege a sua parede de gordura.`,
-    price: 190.00,
+    price: 199.00,
     category: 'Cozinha',
     images: [
       'https://desapegos.puter.site/eletro/fogareiro_venax/01.jpg',
@@ -316,7 +316,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'repetidor-tplink',
     name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
     description: `Sua internet em todos os cômodos! Repetidor original TP-Link, modelo TL-WA850RE, o mais vendido da categoria.\n\n📶 Performance: 300Mbps de velocidade, bivolt automático e configuração simplificada via botão WPS. Ideal para home office e streaming.`,
-    price: 60.00,
+    price: 79.00,
     category: 'Informática',
     images: [
       'https://desapegos.puter.site/informatica/repetidor_tp-link/01.jpg'
@@ -343,7 +343,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'lote-ferramentas-massinha',
     name: 'Mega Kit Acessórios Play-Doh - Fábrica de Diversão',
     description: `Tudo o que os pequenos precisam para criar! Lote gigante de moldes, extrusoras de macarrão e ferramentas de corte.\n\n🌈 Criatividade: Dezenas de formas para soltar a imaginação. (Observação: Acompanha apenas os acessórios plásticos, não inclui as massas).`,
-    price: 35.00,
+    price: 45.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/kit_massinha/01.png',
@@ -358,7 +358,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
     description: `Crie infinitas combinações de moda! Lote com 4 bonecas Polly e uma enorme variedade de roupas, sapatos e bolsas.\n\n👗 Moda: Inclui vestidos, saias, acessórios e até um pet. Horas de diversão garantidas com o closet mais famoso do mundo das bonecas.`,
-    price: 55.00,
+    price: 65.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/lote_polly/01.png'
@@ -386,7 +386,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'barbie-salao-pia',
     name: 'Pia de Salão Barbie Glamour - Cuba com Glitter',
     description: `Momento de autocuidado para as bonecas! Lavatório de salão com cuba azul translúcida cheia de glitter e armário retrô roxo.\n\n✨ Estilo: Peça icônica da Mattel para completar qualquer cenário de casinha ou salão de beleza da Barbie.`,
-    price: 30.00,
+    price: 29.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/barbiesalao/01.png',
@@ -400,7 +400,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'army-men-toy-story',
     name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
     description: `"Soldados, preparar para o resgate!" Lote oficial Disney Pixar dos clássicos soldadinhos verdes do filme Toy Story.\n\n🎖️ Autenticidade: Peças gravadas com a licença oficial. Grande variedade de poses (binóculo, rastejando, atirando). Item para colecionadores e fãs da saga.`,
-    price: 45.00,
+    price: 49.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/armymen/01.png',
