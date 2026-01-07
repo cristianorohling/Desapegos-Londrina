@@ -146,61 +146,64 @@ const App: React.FC = () => {
   };
 
   const renderProductLanding = (product: Product) => (
-    <div className="animate-fade-in max-w-7xl mx-auto pb-20 px-4">
-      {/* Top Header Navigation */}
-      <div className="pt-4 md:pt-8 mb-8">
+    <div className="animate-fade-in max-w-7xl mx-auto pb-32 px-4 md:px-8">
+      {/* Navegação Superior */}
+      <div className="pt-6 md:pt-10 mb-6 md:mb-12">
         <button 
           onClick={navigateToHome}
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors group"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-all group"
         >
-          <div className="bg-white p-2 rounded-xl shadow-sm border border-emerald-100 group-hover:bg-emerald-50">
-            <ArrowLeft size={16} />
+          <div className="bg-white p-2.5 rounded-2xl shadow-sm border border-emerald-100 group-hover:scale-110 transition-transform">
+            <ArrowLeft size={18} />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-widest">Ver Todo o Catálogo</span>
+          <span className="text-[11px] font-black uppercase tracking-[0.2em]">Voltar ao Bazar</span>
         </button>
       </div>
 
-      {/* Main Product Layout (PC: 2 Columns) */}
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+      {/* Layout Principal - Grid Equilibrado */}
+      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         
-        {/* Gallery Section */}
-        <div className="w-full lg:w-[55%] shrink-0">
-          <div className="bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-emerald-100 relative group">
-            <div className="aspect-square md:aspect-[4/3] lg:max-h-[70vh] bg-slate-50">
+        {/* Lado Esquerdo: Galeria (Foco Visual) */}
+        <div className="w-full lg:col-span-7 shrink-0">
+          <div className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
+            <div className="aspect-square md:aspect-[4/3] lg:max-h-[75vh] bg-slate-50">
               <ProductDetailGallery 
                 images={product.images} 
                 onImageClick={setFullScreenImage}
               />
             </div>
             {product.isSold && (
-              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-20">
-                <span className="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black text-sm tracking-[0.2em] uppercase shadow-2xl">
-                  Item Vendido
+              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center z-20">
+                <span className="bg-white text-slate-900 px-12 py-5 rounded-3xl font-black text-sm tracking-[0.2em] uppercase shadow-2xl animate-pulse">
+                  Este item já foi vendido
                 </span>
               </div>
             )}
           </div>
-          
-          {/* Mobile Scroll Indicator */}
-          <div className="lg:hidden flex flex-col items-center mt-12 animate-bounce opacity-40">
-            <span className="text-[8px] font-black uppercase tracking-[0.3em] mb-2">Role para detalhes</span>
-            <ChevronDown size={20} />
-          </div>
         </div>
 
-        {/* Info & Content Section */}
-        <div className="w-full lg:w-[45%] lg:sticky lg:top-24 space-y-8">
+        {/* Lado Direito: Conteúdo (Foco Texto e Informação) */}
+        <div className="w-full lg:col-span-5 space-y-8">
           <div className="space-y-4">
              <div className="flex items-center justify-between">
-                <span className={`text-[9px] font-black text-white uppercase tracking-widest px-4 py-1.5 rounded-lg ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
-                  {product.category}
-                </span>
-                <button onClick={shareProduct} className="p-2 text-slate-400 hover:text-emerald-600 transition-colors"><Share2 size={20} /></button>
+                <div className="flex items-center gap-2">
+                  <span className={`text-[10px] font-black text-white uppercase tracking-widest px-4 py-2 rounded-xl shadow-sm ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
+                    {product.category}
+                  </span>
+                  {product.isHighlighted && (
+                    <span className="bg-amber-100 text-amber-700 px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-1">
+                      <Star size={12} fill="currentColor" /> Destaque
+                    </span>
+                  )}
+                </div>
+                <button onClick={shareProduct} className="p-3 bg-white rounded-2xl text-slate-400 hover:text-emerald-600 border border-emerald-50 transition-all shadow-sm"><Share2 size={20} /></button>
              </div>
-             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none tracking-tighter">
+             
+             <h1 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tighter">
                 {product.name}
              </h1>
-             <div className="flex items-baseline gap-2 pt-2">
+
+             <div className="flex items-baseline gap-2 pt-4 border-b border-emerald-50 pb-6">
                 <span className="text-xl font-bold text-emerald-600">R$</span>
                 <span className="text-6xl md:text-7xl font-black tracking-tighter text-slate-900">
                   {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
@@ -208,76 +211,60 @@ const App: React.FC = () => {
              </div>
           </div>
 
-          {/* Quick Info Badges */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white p-5 rounded-2xl border border-emerald-100 flex items-center gap-3 shadow-sm">
-              <MapPin size={20} className="text-emerald-500" />
+          {/* Seção de Texto com Prioridade */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2 text-[10px] font-black text-emerald-800 uppercase tracking-[0.2em]">
+              <FileText size={18} /> Descrição do Produto
+            </div>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium whitespace-pre-wrap">
+              {product.description}
+            </p>
+          </div>
+
+          {/* Badges de confiança */}
+          <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex-1 min-w-[120px] bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
+              <MapPin size={20} className="text-emerald-600" />
               <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase">Retirada</p>
-                <p className="text-[11px] font-bold text-slate-700">{NEIGHBORHOOD}</p>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Londrina - PR</p>
+                <p className="text-[11px] font-black text-slate-800">{NEIGHBORHOOD}</p>
               </div>
             </div>
-            <div className="bg-white p-5 rounded-2xl border border-emerald-100 flex items-center gap-3 shadow-sm">
-              <CheckCircle2 size={20} className="text-emerald-500" />
+            <div className="flex-1 min-w-[120px] bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
+              <CheckCircle2 size={20} className="text-emerald-600" />
               <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase">Estado</p>
-                <p className="text-[11px] font-bold text-slate-700">Foto Real</p>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Condição</p>
+                <p className="text-[11px] font-black text-slate-800">Foto Real</p>
               </div>
             </div>
           </div>
 
-          {/* WhatsApp CTA (Main Section) */}
-          <div className="bg-slate-900 p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full" />
-            <h4 className="text-white text-lg font-black mb-6 flex items-center gap-2">
-              <Sparkles size={18} className="text-emerald-400" /> Tenho interesse!
-            </h4>
+          {/* CTA Principal Integrado (PC) */}
+          <div className="hidden lg:block pt-8">
             <a 
-              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" no catálogo e gostaria de combinar a retirada.`)}`} 
+              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${product.name}" do bazar.`)}`} 
               target={product.isSold ? '_self' : '_blank'} 
-              className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-xs tracking-widest transition-all ${product.isSold ? 'bg-white/10 text-white/30 cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-400 active:scale-95 shadow-lg shadow-emerald-900/20'}`}
+              className={`w-full flex items-center justify-center space-x-4 py-6 rounded-3xl font-black uppercase text-sm tracking-[0.2em] transition-all shadow-2xl ${product.isSold ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-emerald-600 hover:shadow-emerald-200'}`}
             >
-              <MessageCircle size={20} />
-              <span>Chamar no WhatsApp</span>
+              <MessageCircle size={24} />
+              <span>Garantir este item</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Description Section (Full Width on Scroll) */}
-      <div className="mt-20 max-w-4xl">
-        <div className="bg-white p-10 md:p-16 rounded-[3rem] border border-emerald-100 shadow-sm">
-           <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8">
-              <FileText size={16} /> Descrição Completa
-           </div>
-           <p className="text-slate-600 text-lg md:text-xl leading-relaxed whitespace-pre-wrap font-medium">
-             {product.description}
-           </p>
-           
-           {/* WhatsApp Button Repeat (for long texts) */}
-           <div className="mt-12 pt-12 border-t border-emerald-50">
-              <a 
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                className="text-emerald-600 font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:gap-5 transition-all"
-              >
-                Gostou? Clique aqui para mandar um WhatsApp <ArrowRight size={20} />
-              </a>
-           </div>
-        </div>
-      </div>
-
-      {/* Related Section */}
-      <section className="mt-32">
-        <div className="flex items-end justify-between mb-12">
+      {/* Sugestões de outros produtos */}
+      <section className="mt-32 border-t border-emerald-50 pt-20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 text-center md:text-left">
           <div>
-            <h2 className="text-3xl font-black text-slate-900 tracking-tighter">Descubra mais</h2>
-            <p className="text-slate-400 text-xs font-black uppercase tracking-widest mt-1">Outros itens da nossa casa</p>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter">Continue garimpando</h2>
+            <p className="text-slate-500 text-xs md:text-sm font-bold uppercase tracking-[0.3em] mt-2">Mais tesouros da nossa casa para a sua</p>
           </div>
           <button 
             onClick={navigateToHome}
-            className="hidden md:flex items-center gap-2 px-6 py-3 border-2 border-slate-900 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all"
+            className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 rounded-[1.5rem] font-black text-[11px] uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all shadow-lg flex items-center gap-2 group"
           >
-            Ver Catálogo <LayoutGrid size={14} />
+            Ver Catálogo <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -291,16 +278,24 @@ const App: React.FC = () => {
             ))
           }
         </div>
-        
-        <div className="mt-12 md:hidden">
-          <button 
-            onClick={navigateToHome}
-            className="w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl"
-          >
-            Ver Catálogo Completo
-          </button>
-        </div>
       </section>
+
+      {/* Barra de Ação Flutuante (Mobile e Laptop) */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 z-[100] lg:hidden animate-in slide-in-from-bottom duration-500">
+        <div className="max-w-md mx-auto bg-white/80 backdrop-blur-xl p-2 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 flex items-center justify-between gap-2">
+          <div className="pl-6 py-2">
+            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Preço de desapego</p>
+            <p className="text-xl font-black text-slate-900">R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+          </div>
+          <a 
+            href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${product.name}" do bazar.`)}`} 
+            target={product.isSold ? '_self' : '_blank'} 
+            className={`flex items-center gap-2 px-8 py-4 rounded-[2rem] font-black uppercase text-[10px] tracking-widest transition-all ${product.isSold ? 'bg-slate-100 text-slate-300' : 'bg-emerald-500 text-white shadow-lg active:scale-95'}`}
+          >
+            <MessageCircle size={18} fill="white" /> Tenho Interesse
+          </a>
+        </div>
+      </div>
     </div>
   );
 
@@ -365,7 +360,7 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="animate-fade-in">
+      <div className="animate-fade-in px-4">
         {activeCategory === 'Todos' && (
           <section className="mb-12 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg p-8 md:p-12">
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-emerald-200 rounded-full blur-3xl opacity-20" />
@@ -523,7 +518,7 @@ const App: React.FC = () => {
         href={`https://wa.me/${WHATSAPP_NUMBER}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws"
+        className="fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws lg:flex hidden"
       >
         <MessageCircle size={28} fill="white" />
       </a>
