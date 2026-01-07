@@ -147,7 +147,7 @@ const App: React.FC = () => {
 
   const renderProductLanding = (product: Product) => (
     <div className="animate-fade-in max-w-7xl mx-auto pb-32 px-4 md:px-8">
-      {/* Navegação Superior - Espaçamento MÍNIMO */}
+      {/* Navegação Superior */}
       <div className="pt-1 md:pt-2 mb-2 md:mb-3">
         <button 
           onClick={navigateToHome}
@@ -160,10 +160,10 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      {/* Grid Principal Equilibrado */}
+      {/* Grid Principal */}
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
         
-        {/* Lado Esquerdo: Galeria com proporção forçada e centralização absoluta */}
+        {/* Lado Esquerdo: Galeria */}
         <div className="w-full lg:col-span-7 shrink-0">
           <div className="bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
             <div className="aspect-square md:aspect-[4/3] lg:max-h-[65vh] bg-slate-50 flex items-center justify-center relative">
@@ -221,7 +221,7 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Badges de confiança */}
+          {/* Badges */}
           <div className="flex gap-3">
             <div className="flex-1 bg-white p-4 rounded-2xl border border-emerald-50 flex items-center gap-3 shadow-sm">
               <MapPin size={18} className="text-emerald-500" />
@@ -239,7 +239,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Botão de WhatsApp Lateral (PC) */}
+          {/* Botão lateral (PC) */}
           <div className="hidden lg:block pt-2">
             <a 
               href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" no catálogo e gostaria de combinar.`)}`} 
@@ -280,7 +280,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Barra Flutuante de WhatsApp (Mobile e PC) */}
+      {/* Barra Flutuante de WhatsApp exclusiva para Landing Page */}
       <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 z-[100] animate-in slide-in-from-bottom duration-500">
         <div className="max-w-screen-sm mx-auto bg-white/90 backdrop-blur-xl p-2.5 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-white/50 flex items-center justify-between gap-3">
           <div className="hidden sm:block pl-6">
@@ -521,6 +521,16 @@ const App: React.FC = () => {
         </div>
       )}
 
+      {/* Botão Flutuante Circular Global (Oculto apenas no product-landing para não chocar com a barra) */}
+      <a 
+        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws ${currentView === 'product-landing' ? 'hidden' : 'flex'}`}
+      >
+        <MessageCircle size={28} fill="white" />
+      </a>
+
       <footer className="bg-white border-t border-emerald-100 py-12 mb-20 lg:mb-0">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
@@ -549,7 +559,6 @@ const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) 
   return (
     <div className="w-full h-full flex flex-col relative group cursor-zoom-in" onClick={() => onImageClick(images[active])}>
       <div className="relative flex-1 bg-slate-50 flex items-center justify-center overflow-hidden p-4 md:p-8">
-        {/* Imagem Centralizada com Preenchimento para evitar tocar nas bordas */}
         <div className="w-full h-full flex items-center justify-center">
           <img 
             key={active}
