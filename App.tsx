@@ -26,7 +26,8 @@ import {
   ArrowLeft,
   Share2,
   Clock,
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -145,148 +146,142 @@ const App: React.FC = () => {
   };
 
   const renderProductLanding = (product: Product) => (
-    <div className="animate-fade-in max-w-5xl mx-auto pb-20">
-      {/* Header Mobile Otimizado */}
-      <div className="px-4 pt-4 md:pt-12 mb-6">
+    <div className="animate-fade-in max-w-7xl mx-auto pb-20 px-4">
+      {/* Top Header Navigation */}
+      <div className="pt-4 md:pt-8 mb-8">
         <button 
           onClick={navigateToHome}
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors mb-6 group"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors group"
         >
-          <div className="bg-white p-2 rounded-xl shadow-sm group-hover:bg-emerald-50 transition-colors border border-emerald-100">
+          <div className="bg-white p-2 rounded-xl shadow-sm border border-emerald-100 group-hover:bg-emerald-50">
             <ArrowLeft size={16} />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-widest">Catálogo Completo</span>
+          <span className="text-[10px] font-black uppercase tracking-widest">Ver Todo o Catálogo</span>
         </button>
+      </div>
 
-        {/* Título Antes (Foco Mobile) */}
-        <div className="flex flex-col gap-2 mb-4">
-          <div className="flex items-center justify-between">
-            <span className={`text-[8px] font-black text-white uppercase tracking-widest px-3 py-1 rounded-lg ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
-              {product.category}
-            </span>
-            <button 
-              onClick={shareProduct}
-              className="p-2 text-slate-400 hover:text-emerald-600 transition-colors"
+      {/* Main Product Layout (PC: 2 Columns) */}
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+        
+        {/* Gallery Section */}
+        <div className="w-full lg:w-[55%] shrink-0">
+          <div className="bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-emerald-100 relative group">
+            <div className="aspect-square md:aspect-[4/3] lg:max-h-[70vh] bg-slate-50">
+              <ProductDetailGallery 
+                images={product.images} 
+                onImageClick={setFullScreenImage}
+              />
+            </div>
+            {product.isSold && (
+              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-20">
+                <span className="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black text-sm tracking-[0.2em] uppercase shadow-2xl">
+                  Item Vendido
+                </span>
+              </div>
+            )}
+          </div>
+          
+          {/* Mobile Scroll Indicator */}
+          <div className="lg:hidden flex flex-col items-center mt-12 animate-bounce opacity-40">
+            <span className="text-[8px] font-black uppercase tracking-[0.3em] mb-2">Role para detalhes</span>
+            <ChevronDown size={20} />
+          </div>
+        </div>
+
+        {/* Info & Content Section */}
+        <div className="w-full lg:w-[45%] lg:sticky lg:top-24 space-y-8">
+          <div className="space-y-4">
+             <div className="flex items-center justify-between">
+                <span className={`text-[9px] font-black text-white uppercase tracking-widest px-4 py-1.5 rounded-lg ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
+                  {product.category}
+                </span>
+                <button onClick={shareProduct} className="p-2 text-slate-400 hover:text-emerald-600 transition-colors"><Share2 size={20} /></button>
+             </div>
+             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-none tracking-tighter">
+                {product.name}
+             </h1>
+             <div className="flex items-baseline gap-2 pt-2">
+                <span className="text-xl font-bold text-emerald-600">R$</span>
+                <span className="text-6xl md:text-7xl font-black tracking-tighter text-slate-900">
+                  {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                </span>
+             </div>
+          </div>
+
+          {/* Quick Info Badges */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white p-5 rounded-2xl border border-emerald-100 flex items-center gap-3 shadow-sm">
+              <MapPin size={20} className="text-emerald-500" />
+              <div>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Retirada</p>
+                <p className="text-[11px] font-bold text-slate-700">{NEIGHBORHOOD}</p>
+              </div>
+            </div>
+            <div className="bg-white p-5 rounded-2xl border border-emerald-100 flex items-center gap-3 shadow-sm">
+              <CheckCircle2 size={20} className="text-emerald-500" />
+              <div>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Estado</p>
+                <p className="text-[11px] font-bold text-slate-700">Foto Real</p>
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp CTA (Main Section) */}
+          <div className="bg-slate-900 p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full" />
+            <h4 className="text-white text-lg font-black mb-6 flex items-center gap-2">
+              <Sparkles size={18} className="text-emerald-400" /> Tenho interesse!
+            </h4>
+            <a 
+              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" no catálogo e gostaria de combinar a retirada.`)}`} 
+              target={product.isSold ? '_self' : '_blank'} 
+              className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-xs tracking-widest transition-all ${product.isSold ? 'bg-white/10 text-white/30 cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-400 active:scale-95 shadow-lg shadow-emerald-900/20'}`}
             >
-              <Share2 size={18} />
-            </button>
+              <MessageCircle size={20} />
+              <span>Chamar no WhatsApp</span>
+            </a>
           </div>
-          <h1 className="text-2xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter">
-            {product.name}
-          </h1>
-        </div>
-
-        {/* Preço em Destaque */}
-        <div className="flex items-baseline gap-1 mb-6">
-          <span className="text-lg font-bold text-emerald-600">R$</span>
-          <span className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900">
-            {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-          </span>
         </div>
       </div>
 
-      {/* Galeria em Evidência */}
-      <div className="px-0 md:px-4 mb-8">
-        <div className="bg-white md:rounded-[3rem] overflow-hidden shadow-2xl border-y md:border border-emerald-100 relative group">
-          <div className="aspect-square md:aspect-video bg-slate-50">
-            <ProductDetailGallery 
-              images={product.images} 
-              onImageClick={setFullScreenImage}
-            />
-          </div>
-          {product.isSold && (
-            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-20">
-              <span className="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black text-sm tracking-[0.2em] uppercase shadow-2xl animate-in zoom-in-95">
-                Item Vendido
-              </span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Ações e Descrição */}
-      <div className="px-4 grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-7 space-y-8">
-          <div className="bg-white p-8 rounded-[2.5rem] border border-emerald-100 shadow-sm">
-            <h3 className="text-[10px] font-black text-emerald-800 uppercase tracking-widest mb-6 flex items-center gap-2">
-              <FileText size={18} /> Sobre este item
-            </h3>
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-medium">
-              {product.description}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <div className="flex-1 min-w-[140px] bg-white p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
-              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase">Localização</p>
-                <p className="text-[10px] font-bold text-slate-700">{NEIGHBORHOOD}</p>
-              </div>
-            </div>
-            <div className="flex-1 min-w-[140px] bg-white p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
-              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-                <CheckCircle2 size={20} />
-              </div>
-              <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase">Verificado</p>
-                <p className="text-[10px] font-bold text-slate-700">Foto Real</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Sidebar de Ação (Sticky on Desktop) */}
-        <div className="lg:col-span-5">
-          <div className="lg:sticky lg:top-24 space-y-4">
-            <div className="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
-              
-              <h4 className="text-xl font-black mb-6 tracking-tight relative z-10">Gostou desse desapego?</h4>
-              
+      {/* Description Section (Full Width on Scroll) */}
+      <div className="mt-20 max-w-4xl">
+        <div className="bg-white p-10 md:p-16 rounded-[3rem] border border-emerald-100 shadow-sm">
+           <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8">
+              <FileText size={16} /> Descrição Completa
+           </div>
+           <p className="text-slate-600 text-lg md:text-xl leading-relaxed whitespace-pre-wrap font-medium">
+             {product.description}
+           </p>
+           
+           {/* WhatsApp Button Repeat (for long texts) */}
+           <div className="mt-12 pt-12 border-t border-emerald-50">
               <a 
-                href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${product.name}" que vi no catálogo.`)}`} 
-                target={product.isSold ? '_self' : '_blank'} 
-                className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-xs tracking-widest transition-all relative z-10 ${product.isSold ? 'bg-white/10 text-white/30 cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg active:scale-95'}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                className="text-emerald-600 font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:gap-5 transition-all"
               >
-                <MessageCircle size={20} />
-                <span>Chamar no WhatsApp</span>
+                Gostou? Clique aqui para mandar um WhatsApp <ArrowRight size={20} />
               </a>
-              
-              <p className="mt-6 text-[10px] text-white/40 font-bold uppercase tracking-widest text-center relative z-10">
-                Negociação direta e sem taxas
-              </p>
-            </div>
-
-            <button 
-              onClick={navigateToHome}
-              className="w-full py-5 border-2 border-slate-200 text-slate-500 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:border-slate-900 hover:text-slate-900 transition-all flex items-center justify-center gap-2 group"
-            >
-              <LayoutGrid size={14} className="group-hover:rotate-90 transition-transform" />
-              Ver Outros Produtos
-            </button>
-          </div>
+           </div>
         </div>
       </div>
 
-      {/* Itens Sugeridos */}
-      <section className="mt-24 px-4">
-        <div className="flex items-center justify-between mb-8">
+      {/* Related Section */}
+      <section className="mt-32">
+        <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter">Mais da nossa casa</h2>
-            <div className="h-1 w-12 bg-emerald-500 rounded-full mt-1"></div>
+            <h2 className="text-3xl font-black text-slate-900 tracking-tighter">Descubra mais</h2>
+            <p className="text-slate-400 text-xs font-black uppercase tracking-widest mt-1">Outros itens da nossa casa</p>
           </div>
           <button 
             onClick={navigateToHome}
-            className="text-[10px] font-black uppercase text-emerald-600 flex items-center gap-1 group"
+            className="hidden md:flex items-center gap-2 px-6 py-3 border-2 border-slate-900 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all"
           >
-            Ver tudo <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            Ver Catálogo <LayoutGrid size={14} />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {INITIAL_PRODUCTS
             .filter(p => p.id !== product.id && !p.isSold)
             .sort(() => 0.5 - Math.random())
@@ -295,6 +290,15 @@ const App: React.FC = () => {
               <ProductCard key={p.id} product={p} onViewDetails={navigateToProduct} />
             ))
           }
+        </div>
+        
+        <div className="mt-12 md:hidden">
+          <button 
+            onClick={navigateToHome}
+            className="w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl"
+          >
+            Ver Catálogo Completo
+          </button>
         </div>
       </section>
     </div>
@@ -389,7 +393,7 @@ const App: React.FC = () => {
                   <MessageCircle size={20} fill="white" />
                 </div>
                 <span className="text-emerald-800 font-black text-xs md:text-sm uppercase tracking-widest text-left">
-                  Duvidas? Chama no WhatsApp!
+                  Dúvidas? Chama no WhatsApp!
                 </span>
               </a>
             </div>
