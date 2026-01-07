@@ -8,7 +8,7 @@ import {
   ChevronRight, 
   Sparkles,
   Gamepad2,
-  Home,
+  Home as HomeIcon,
   PawPrint,
   Utensils,
   Monitor,
@@ -25,7 +25,8 @@ import {
   CheckCircle2,
   ArrowLeft,
   Share2,
-  Clock
+  Clock,
+  ArrowRight
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -33,11 +34,10 @@ import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 
 type View = 'catalog' | 'about' | 'how' | 'product-landing';
-type DetailTab = 'gallery' | 'description';
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Brinquedos": <Gamepad2 size={16} />,
-  "Decoração": <Home size={16} />,
+  "Decoração": <HomeIcon size={16} />,
   "Pets": <PawPrint size={16} />,
   "Cozinha": <Utensils size={16} />,
   "Informática": <Monitor size={16} />,
@@ -53,7 +53,6 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Instrumentos Musicais": "bg-emerald-900"
 };
 
-// Helper para converter string em slug de URL
 const slugify = (text: string) => text.toString().toLowerCase()
   .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   .replace(/\s+/g, '-').replace(/[^\w-]+/g, '')
@@ -64,10 +63,8 @@ const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
-  const [detailTab, setDetailTab] = useState<DetailTab>('gallery');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Sistema de Roteamento Simples via URL
   useEffect(() => {
     const handleRouting = () => {
       const path = window.location.pathname;
@@ -148,110 +145,148 @@ const App: React.FC = () => {
   };
 
   const renderProductLanding = (product: Product) => (
-    <div className="animate-fade-in max-w-6xl mx-auto py-4 md:py-12 px-4">
-      {/* Breadcrumb / Back Button */}
-      <button 
-        onClick={navigateToHome}
-        className="flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors mb-8 group"
-      >
-        <div className="bg-white p-2 rounded-full shadow-sm group-hover:scale-110 transition-transform border border-emerald-50">
-          <ArrowLeft size={18} />
-        </div>
-        <span className="text-[10px] font-black uppercase tracking-widest">Voltar ao Catálogo</span>
-      </button>
+    <div className="animate-fade-in max-w-5xl mx-auto pb-20">
+      {/* Header Mobile Otimizado */}
+      <div className="px-4 pt-4 md:pt-12 mb-6">
+        <button 
+          onClick={navigateToHome}
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors mb-6 group"
+        >
+          <div className="bg-white p-2 rounded-xl shadow-sm group-hover:bg-emerald-50 transition-colors border border-emerald-100">
+            <ArrowLeft size={16} />
+          </div>
+          <span className="text-[10px] font-black uppercase tracking-widest">Catálogo Completo</span>
+        </button>
 
-      <div className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border border-emerald-100 flex flex-col lg:flex-row">
-        {/* Gallery Section */}
-        <div className="lg:w-[60%] bg-slate-50 relative min-h-[400px] md:min-h-[600px] border-b lg:border-b-0 lg:border-r border-emerald-50">
-          <ProductDetailGallery 
-            images={product.images} 
-            onImageClick={setFullScreenImage}
-          />
-          {product.isSold && (
-            <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-20">
-              <span className="bg-white text-slate-900 px-8 py-3 rounded-2xl font-black text-xs tracking-[0.2em] uppercase shadow-2xl">
-                Item já Vendido
-              </span>
-            </div>
-          )}
-        </div>
-
-        {/* Info Section */}
-        <div className="lg:w-[40%] p-8 md:p-16 flex flex-col justify-center">
-          <div className="mb-6 flex items-center justify-between">
-            <span className={`text-[9px] font-black text-white uppercase tracking-widest px-4 py-2 rounded-full ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
+        {/* Título Antes (Foco Mobile) */}
+        <div className="flex flex-col gap-2 mb-4">
+          <div className="flex items-center justify-between">
+            <span className={`text-[8px] font-black text-white uppercase tracking-widest px-3 py-1 rounded-lg ${CATEGORY_COLORS[product.category] || 'bg-emerald-600'}`}>
               {product.category}
             </span>
             <button 
               onClick={shareProduct}
-              className="p-3 bg-slate-50 rounded-2xl text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-all border border-slate-100"
+              className="p-2 text-slate-400 hover:text-emerald-600 transition-colors"
             >
-              <Share2 size={20} />
+              <Share2 size={18} />
             </button>
           </div>
-
-          <h1 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] mb-6 tracking-tighter">
+          <h1 className="text-2xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter">
             {product.name}
           </h1>
+        </div>
 
-          <div className="flex items-baseline gap-2 mb-10">
-            <span className="text-xl font-bold text-emerald-600">R$</span>
-            <span className="text-6xl md:text-8xl font-black tracking-tighter text-slate-900">
-              {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-            </span>
+        {/* Preço em Destaque */}
+        <div className="flex items-baseline gap-1 mb-6">
+          <span className="text-lg font-bold text-emerald-600">R$</span>
+          <span className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900">
+            {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </span>
+        </div>
+      </div>
+
+      {/* Galeria em Evidência */}
+      <div className="px-0 md:px-4 mb-8">
+        <div className="bg-white md:rounded-[3rem] overflow-hidden shadow-2xl border-y md:border border-emerald-100 relative group">
+          <div className="aspect-square md:aspect-video bg-slate-50">
+            <ProductDetailGallery 
+              images={product.images} 
+              onImageClick={setFullScreenImage}
+            />
+          </div>
+          {product.isSold && (
+            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-20">
+              <span className="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black text-sm tracking-[0.2em] uppercase shadow-2xl animate-in zoom-in-95">
+                Item Vendido
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Ações e Descrição */}
+      <div className="px-4 grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-7 space-y-8">
+          <div className="bg-white p-8 rounded-[2.5rem] border border-emerald-100 shadow-sm">
+            <h3 className="text-[10px] font-black text-emerald-800 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <FileText size={18} /> Sobre este item
+            </h3>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-medium">
+              {product.description}
+            </p>
           </div>
 
-          <div className="space-y-4 mb-12">
-            <a 
-              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${product.name}" que vi no catálogo.`)}`} 
-              target={product.isSold ? '_self' : '_blank'} 
-              className={`w-full flex items-center justify-center space-x-4 py-6 rounded-[2rem] font-black uppercase text-sm tracking-widest transition-all shadow-xl ${product.isSold ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-emerald-600 active:scale-95 hover:shadow-emerald-200'}`}
-            >
-              <MessageCircle size={24} />
-              <span>Quero este desapego</span>
-            </a>
-            
-            <div className="flex items-center justify-center gap-6 pt-4 border-t border-emerald-50">
-              <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                <MapPin size={14} className="text-emerald-500" /> {NEIGHBORHOOD}
+          <div className="flex flex-wrap gap-4">
+            <div className="flex-1 min-w-[140px] bg-white p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
+              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+                <MapPin size={20} />
               </div>
-              <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                <CheckCircle2 size={14} className="text-emerald-500" /> Foto Real
+              <div>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Localização</p>
+                <p className="text-[10px] font-bold text-slate-700">{NEIGHBORHOOD}</p>
+              </div>
+            </div>
+            <div className="flex-1 min-w-[140px] bg-white p-4 rounded-2xl border border-emerald-100 flex items-center gap-3">
+              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+                <CheckCircle2 size={20} />
+              </div>
+              <div>
+                <p className="text-[8px] font-black text-slate-400 uppercase">Verificado</p>
+                <p className="text-[10px] font-bold text-slate-700">Foto Real</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100">
-            <h3 className="text-xs font-black text-emerald-800 uppercase tracking-widest mb-4 flex items-center gap-2">
-              <FileText size={16} /> Detalhes do Item
-            </h3>
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed whitespace-pre-wrap font-medium">
-              {product.description}
-            </p>
+        {/* Sidebar de Ação (Sticky on Desktop) */}
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-24 space-y-4">
+            <div className="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+              
+              <h4 className="text-xl font-black mb-6 tracking-tight relative z-10">Gostou desse desapego?</h4>
+              
+              <a 
+                href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Tenho interesse no item "${product.name}" que vi no catálogo.`)}`} 
+                target={product.isSold ? '_self' : '_blank'} 
+                className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-xs tracking-widest transition-all relative z-10 ${product.isSold ? 'bg-white/10 text-white/30 cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg active:scale-95'}`}
+              >
+                <MessageCircle size={20} />
+                <span>Chamar no WhatsApp</span>
+              </a>
+              
+              <p className="mt-6 text-[10px] text-white/40 font-bold uppercase tracking-widest text-center relative z-10">
+                Negociação direta e sem taxas
+              </p>
+            </div>
+
+            <button 
+              onClick={navigateToHome}
+              className="w-full py-5 border-2 border-slate-200 text-slate-500 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:border-slate-900 hover:text-slate-900 transition-all flex items-center justify-center gap-2 group"
+            >
+              <LayoutGrid size={14} className="group-hover:rotate-90 transition-transform" />
+              Ver Outros Produtos
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Suggested Items CTA */}
-      <section className="mt-24 md:mt-32">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 px-4">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter mb-2">
-              Não pare por aqui!
-            </h2>
-            <p className="text-slate-500 text-xs md:text-sm font-bold uppercase tracking-widest">
-              Veja outros desapegos incríveis da nossa casa
-            </p>
+      {/* Itens Sugeridos */}
+      <section className="mt-24 px-4">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter">Mais da nossa casa</h2>
+            <div className="h-1 w-12 bg-emerald-500 rounded-full mt-1"></div>
           </div>
           <button 
             onClick={navigateToHome}
-            className="px-10 py-4 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all shadow-lg"
+            className="text-[10px] font-black uppercase text-emerald-600 flex items-center gap-1 group"
           >
-            Ver Catálogo Completo
+            Ver tudo <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {INITIAL_PRODUCTS
             .filter(p => p.id !== product.id && !p.isSold)
             .sort(() => 0.5 - Math.random())
@@ -354,7 +389,7 @@ const App: React.FC = () => {
                   <MessageCircle size={20} fill="white" />
                 </div>
                 <span className="text-emerald-800 font-black text-xs md:text-sm uppercase tracking-widest text-left">
-                  Duvidas? Chama a gente no WhatsApp!
+                  Duvidas? Chama no WhatsApp!
                 </span>
               </a>
             </div>
