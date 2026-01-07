@@ -329,7 +329,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
     description: `Heroína pronta para o combate aéreo! Boneca Batgirl de 15cm original Mattel com seu jato tecnológico.\n\n✈️ Acessórios: O jato possui wheels funcionais e a boneca vem com seu traje clássico de heroína. Item impecável para colecionadores de DC.`,
-    price: 45.00,
+    price: 80.00,
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/batgirl_jato/01.png',
