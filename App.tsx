@@ -147,8 +147,8 @@ const App: React.FC = () => {
 
   const renderProductLanding = (product: Product) => (
     <div className="animate-fade-in max-w-7xl mx-auto pb-32 px-4 md:px-8">
-      {/* Navegação Superior - Espaçamento drasticamente reduzido */}
-      <div className="pt-2 md:pt-4 mb-3 md:mb-4">
+      {/* Navegação Superior - Espaçamento MÍNIMO */}
+      <div className="pt-1 md:pt-2 mb-2 md:mb-3">
         <button 
           onClick={navigateToHome}
           className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-all group"
@@ -163,10 +163,10 @@ const App: React.FC = () => {
       {/* Grid Principal Equilibrado */}
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
         
-        {/* Lado Esquerdo: Galeria com proporção forçada */}
+        {/* Lado Esquerdo: Galeria com proporção forçada e centralização absoluta */}
         <div className="w-full lg:col-span-7 shrink-0">
           <div className="bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
-            <div className="aspect-square md:aspect-[4/3] lg:max-h-[65vh] bg-slate-50 flex items-center justify-center">
+            <div className="aspect-square md:aspect-[4/3] lg:max-h-[65vh] bg-slate-50 flex items-center justify-center relative">
               <ProductDetailGallery 
                 images={product.images} 
                 onImageClick={setFullScreenImage}
@@ -548,30 +548,32 @@ const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) 
 
   return (
     <div className="w-full h-full flex flex-col relative group cursor-zoom-in" onClick={() => onImageClick(images[active])}>
-      <div className="relative flex-1 bg-slate-50 flex items-center justify-center overflow-hidden">
-        {/* Forçando largura padrão e preenchimento consistente */}
-        <img 
-          key={active}
-          src={images[active]} 
-          className="w-full h-full object-contain animate-in fade-in duration-500" 
-          alt="Foto do produto" 
-        />
+      <div className="relative flex-1 bg-slate-50 flex items-center justify-center overflow-hidden p-4 md:p-8">
+        {/* Imagem Centralizada com Preenchimento para evitar tocar nas bordas */}
+        <div className="w-full h-full flex items-center justify-center">
+          <img 
+            key={active}
+            src={images[active]} 
+            className="max-w-full max-h-full object-contain animate-in fade-in duration-500 shadow-sm" 
+            alt="Foto do produto" 
+          />
+        </div>
         
         {images.length > 1 && (
           <>
             <button 
               onClick={(e) => { e.stopPropagation(); setActive((prev) => (prev - 1 + images.length) % images.length); }}
-              className="absolute left-4 bg-white/80 p-3 rounded-full shadow-lg text-slate-900 hover:bg-white transition-all active:scale-90"
+              className="absolute left-2 md:left-4 bg-white/80 p-2 md:p-3 rounded-full shadow-lg text-slate-900 hover:bg-white transition-all active:scale-90"
             >
               <ChevronLeft size={20} />
             </button>
             <button 
               onClick={(e) => { e.stopPropagation(); setActive((prev) => (prev + 1) % images.length); }}
-              className="absolute right-4 bg-white/80 p-3 rounded-full shadow-lg text-slate-900 hover:bg-white transition-all active:scale-90"
+              className="absolute right-2 md:right-4 bg-white/80 p-2 md:p-3 rounded-full shadow-lg text-slate-900 hover:bg-white transition-all active:scale-90"
             >
               <ChevronRight size={20} />
             </button>
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
               {images.map((_, i) => (
                 <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-emerald-600' : 'w-1.5 bg-black/10'}`} />
               ))}
