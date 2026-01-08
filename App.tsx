@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   LayoutGrid, 
@@ -20,17 +21,14 @@ import {
   HelpCircle,
   MapPin,
   FileText,
-  Undo2,
   Star,
   CheckCircle2,
   ArrowLeft,
   Share2,
-  Clock,
   ArrowRight,
-  ChevronDown,
   Search,
-  Eraser,
-  Hash
+  // Fix: Added missing Clock import
+  Clock
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -404,34 +402,36 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Barra de Pesquisa */}
-        <div className="max-w-xl mx-auto mb-6 relative group">
-          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
-            <Search size={20} />
+        {/* Header do Catálogo: Título e Pesquisa Lado a Lado */}
+        <div className="max-w-7xl mx-auto mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
+              {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore o Bazar' : activeCategory)}
+            </h2>
+            <div className="h-1 w-10 bg-emerald-600 rounded-full mt-2 mb-1"></div>
+            <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
           </div>
-          <input 
-            type="text" 
-            placeholder="Procure por cor, marca, tema..."
-            className="w-full pl-14 pr-12 py-5 bg-white border-2 border-emerald-100 rounded-[2rem] shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          {searchQuery && (
-            <button 
-              onClick={() => setSearchQuery('')}
-              className="absolute inset-y-0 right-5 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
-            >
-              <X size={20} />
-            </button>
-          )}
-        </div>
 
-        <div className="mb-6 flex flex-col items-center">
-          <h2 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter mb-1 text-center px-4">
-            {searchQuery ? `Resultados para "${searchQuery}"` : (activeCategory === 'Todos' ? 'Explore o Bazar' : activeCategory)}
-          </h2>
-          <div className="h-1 w-10 bg-emerald-600 rounded-full mb-1"></div>
-          <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
+          <div className="w-full max-w-md relative group">
+            <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
+              <Search size={18} />
+            </div>
+            <input 
+              type="text" 
+              placeholder="Pesquisar no bazar..."
+              className="w-full pl-12 pr-12 py-4 bg-white border-2 border-emerald-100 rounded-[2rem] shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-sm"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {searchQuery && (
+              <button 
+                onClick={() => setSearchQuery('')}
+                className="absolute inset-y-0 right-5 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
+              >
+                <X size={18} />
+              </button>
+            )}
+          </div>
         </div>
 
         {filteredProducts.length > 0 || (activeCategory === 'Todos' && !searchQuery) ? (
@@ -480,7 +480,7 @@ const App: React.FC = () => {
           <div className="py-20 text-center bg-white rounded-[3rem] border border-emerald-100 border-dashed">
             <PackageOpen size={48} className="mx-auto text-slate-200 mb-4" />
             <h3 className="text-xl font-black text-slate-900 mb-2">Ops! Nada por aqui.</h3>
-            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine com sua pesquisa no momento.</p>
+            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine with sua pesquisa no momento.</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('Todos')}} 
               className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-600 transition-colors"
@@ -567,7 +567,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <main className="flex-1 max-w-7xl mx-auto w-full pt-1 md:pt-2 pb-4 md:pb-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full pt-6 md:pt-10 pb-4 md:pb-6">
         {renderContent()}
       </main>
 
