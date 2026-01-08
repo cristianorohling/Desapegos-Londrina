@@ -283,7 +283,7 @@ const App: React.FC = () => {
               className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-[11px] tracking-[0.1em] transition-all shadow-xl ${product.isSold ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-emerald-600'}`}
             >
               <MessageCircle size={20} />
-              <span>Chamar para Retirar</span>
+              <span>Chama no Zap!</span>
             </a>
           </div>
         </div>
