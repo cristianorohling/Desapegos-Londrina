@@ -387,26 +387,26 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Header do Catálogo: Título e Pesquisa - ESPAÇO REDUZIDO */}
-        <div className="max-w-7xl mx-auto mb-4 md:mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-emerald-100/40 pb-4 md:pb-6">
+        {/* Header do Catálogo: Título e Pesquisa - ESPAÇO REDUZIDO AO MÁXIMO */}
+        <div className="max-w-7xl mx-auto mb-2 md:mb-4 flex flex-col md:flex-row items-center justify-between gap-3 border-b border-emerald-100/40 pb-2 md:pb-4">
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter leading-tight whitespace-nowrap">
+            <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
               {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
             </h2>
-            <div className="flex items-center gap-2 mt-1 md:mt-2">
-              <div className="h-0.5 w-6 bg-emerald-600 rounded-full"></div>
-              <p className="text-slate-400 text-[8px] md:text-[9px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="h-0.5 w-4 bg-emerald-600 rounded-full"></div>
+              <p className="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
             </div>
           </div>
 
-          <div className="w-full max-w-sm relative group">
+          <div className="w-full max-w-xs relative group">
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
               <Search size={14} />
             </div>
             <input 
               type="text" 
               placeholder="Pesquisar..."
-              className="w-full pl-10 pr-10 py-2.5 md:py-3 bg-white border-2 border-emerald-50 rounded-xl shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-xs md:text-sm"
+              className="w-full pl-10 pr-10 py-2 bg-white border-2 border-emerald-50 rounded-xl shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-xs"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -422,7 +422,7 @@ const App: React.FC = () => {
         </div>
 
         {filteredProducts.length > 0 || (activeCategory === 'Todos' && !searchQuery) ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {activeCategory === 'Todos' && !searchQuery && (
               <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-sm p-6 md:p-8 flex flex-col justify-center text-center space-y-4 md:space-y-6 relative group">
                 <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-emerald-50 rounded-full blur-2xl opacity-60" />
@@ -511,7 +511,7 @@ const App: React.FC = () => {
       />
 
       {currentView === 'catalog' && (
-        <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-4 md:py-6' : 'max-h-0 py-0'}`}>
+        <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-4' : 'max-h-0 py-0'}`}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
               <button
@@ -542,7 +542,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <main className="flex-1 max-w-7xl mx-auto w-full pt-4 md:pt-6 lg:pt-8 pb-4 md:pb-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full pt-1 md:pt-3 lg:pt-4 pb-4 md:pb-6">
         {renderContent()}
       </main>
 
