@@ -8,7 +8,7 @@ import {
   ChevronRight, 
   Sparkles,
   Gamepad2,
-  Home as HomeIcon,
+  Home as HomeIcon, 
   PawPrint,
   Utensils,
   Monitor,
@@ -387,65 +387,65 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Header do Catálogo: Título e Pesquisa Lado a Lado */}
-        <div className="max-w-7xl mx-auto mb-10 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-emerald-100/50 pb-8">
+        {/* Header do Catálogo: Título e Pesquisa - ESPAÇO REDUZIDO */}
+        <div className="max-w-7xl mx-auto mb-4 md:mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-emerald-100/40 pb-4 md:pb-6">
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter leading-tight whitespace-nowrap">
               {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
             </h2>
-            <div className="flex items-center gap-3 mt-3">
-              <div className="h-1 w-8 bg-emerald-600 rounded-full"></div>
-              <p className="text-slate-400 text-[9px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
+            <div className="flex items-center gap-2 mt-1 md:mt-2">
+              <div className="h-0.5 w-6 bg-emerald-600 rounded-full"></div>
+              <p className="text-slate-400 text-[8px] md:text-[9px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
             </div>
           </div>
 
           <div className="w-full max-w-sm relative group">
-            <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
-              <Search size={16} />
+            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
+              <Search size={14} />
             </div>
             <input 
               type="text" 
               placeholder="Pesquisar..."
-              className="w-full pl-11 pr-11 py-3.5 bg-white border-2 border-emerald-50 rounded-2xl shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-sm"
+              className="w-full pl-10 pr-10 py-2.5 md:py-3 bg-white border-2 border-emerald-50 rounded-xl shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-xs md:text-sm"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-5 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
+                className="absolute inset-y-0 right-4 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
               >
-                <X size={16} />
+                <X size={14} />
               </button>
             )}
           </div>
         </div>
 
         {filteredProducts.length > 0 || (activeCategory === 'Todos' && !searchQuery) ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {activeCategory === 'Todos' && !searchQuery && (
-              <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-sm p-6 md:p-10 flex flex-col justify-center text-center space-y-6 relative group">
+              <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-sm p-6 md:p-8 flex flex-col justify-center text-center space-y-4 md:space-y-6 relative group">
                 <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-emerald-50 rounded-full blur-2xl opacity-60" />
-                <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest self-center relative z-10">
-                  <Sparkles size={14} className="text-emerald-400" /> Curadoria Londrina
+                <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-3 py-1.5 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-widest self-center relative z-10">
+                  <Sparkles size={12} className="text-emerald-400" /> Curadoria Londrina
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight">
+                  <h3 className="text-xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
                     Da nossa casa <br/>
                     <span className="text-emerald-600 italic">para a sua casa</span>
                   </h3>
-                  <p className="text-slate-500 font-medium text-xs md:text-sm leading-relaxed mt-4">
-                    Seja muito bem-vindo(a) ao catálogo do nosso bazar! Aproveite cada achado único para o seu lar.
+                  <p className="text-slate-500 font-medium text-[11px] md:text-[13px] leading-relaxed mt-2">
+                    Seja muito bem-vindo(a) ao catálogo! Aproveite cada achado único para o seu lar.
                   </p>
                 </div>
                 <a 
                   href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-100 px-6 py-4 rounded-2xl hover:bg-emerald-100 transition-colors group relative z-10 mt-2 animate-pulse-ws"
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-100 px-5 py-3 rounded-xl hover:bg-emerald-100 transition-colors group relative z-10 mt-1 animate-pulse-ws"
                 >
-                  <MessageCircle size={20} fill="#065f46" className="text-emerald-800" />
-                  <span className="text-emerald-800 font-black text-[10px] uppercase tracking-widest">Dúvidas? Chama aqui!</span>
+                  <MessageCircle size={18} fill="#065f46" className="text-emerald-800" />
+                  <span className="text-emerald-800 font-black text-[9px] uppercase tracking-widest">Dúvidas? Chama aqui!</span>
                 </a>
               </div>
             )}
@@ -454,13 +454,13 @@ const App: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center bg-white rounded-[3rem] border border-emerald-100 border-dashed">
-            <PackageOpen size={48} className="mx-auto text-slate-200 mb-4" />
-            <h3 className="text-xl font-black text-slate-900 mb-2">Ops! Nada por aqui.</h3>
-            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine com sua pesquisa no momento.</p>
+          <div className="py-16 text-center bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-100 border-dashed">
+            <PackageOpen size={40} className="mx-auto text-slate-200 mb-3" />
+            <h3 className="text-lg font-black text-slate-900 mb-1">Ops! Nada por aqui.</h3>
+            <p className="text-slate-500 text-xs md:text-sm mb-6 px-10">Não encontramos nada que combine com sua pesquisa no momento.</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('Todos')}} 
-              className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-600 transition-colors"
+              className="bg-slate-900 text-white px-6 py-3 rounded-xl font-black text-[9px] uppercase tracking-widest hover:bg-emerald-600 transition-colors"
             >
               Limpar Filtros
             </button>
@@ -472,7 +472,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ECFDF5] selection:bg-emerald-200">
-      <div className="bg-slate-900 text-white py-2.5 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
+      <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...Array(2)].map((_, idx) => (
             <div key={idx} className="flex items-center">
@@ -511,12 +511,12 @@ const App: React.FC = () => {
       />
 
       {currentView === 'catalog' && (
-        <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-6' : 'max-h-0 py-0'}`}>
+        <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-4 md:py-6' : 'max-h-0 py-0'}`}>
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
               <button
                 onClick={() => handleCategoryClick('Todos')}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-black text-[9px] uppercase tracking-widest transition-all ${
+                className={`flex items-center space-x-2 px-5 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest transition-all ${
                   activeCategory === 'Todos' ? 'bg-slate-900 text-white shadow-lg scale-105' : 'bg-slate-50 text-slate-400 border border-slate-200 hover:text-slate-700'
                 }`}
               >
@@ -527,7 +527,7 @@ const App: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => handleCategoryClick(cat)}
-                  className={`flex items-center space-x-2 px-5 py-3 rounded-full font-black text-[9px] uppercase tracking-widest transition-all ${
+                  className={`flex items-center space-x-2 px-4 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest transition-all ${
                     activeCategory === cat 
                       ? `${CATEGORY_COLORS[cat] || 'bg-emerald-600'} text-white shadow-lg scale-105` 
                       : 'bg-slate-50 text-slate-400 border border-slate-200 hover:text-slate-700'
@@ -542,7 +542,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <main className="flex-1 max-w-7xl mx-auto w-full pt-6 md:pt-10 pb-4 md:pb-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full pt-4 md:pt-6 lg:pt-8 pb-4 md:pb-6">
         {renderContent()}
       </main>
 
@@ -560,21 +560,21 @@ const App: React.FC = () => {
         href={`https://wa.me/${WHATSAPP_NUMBER}`}
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws ${currentView === 'product-landing' ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws ${currentView === 'product-landing' ? 'hidden' : 'flex'}`}
       >
-        <MessageCircle size={28} fill="white" />
+        <MessageCircle size={24} fill="white" />
       </a>
 
-      <footer className="bg-white border-t border-emerald-100 py-12 mb-20 lg:mb-0">
+      <footer className="bg-white border-t border-emerald-100 py-10 mb-20 lg:mb-0">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <ShoppingBag size={20} className="text-emerald-600" />
-            <span className="text-sm font-black uppercase tracking-tighter">Desapegos Londrina</span>
+            <ShoppingBag size={18} className="text-emerald-600" />
+            <span className="text-xs font-black uppercase tracking-tighter">Desapegos Londrina</span>
           </div>
-          <p className="text-[9px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p>
+          <p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p>
           <div className="flex gap-4">
-            <button onClick={() => {setCurrentView('about'); setIsMenuOpen(false)}} className="text-[10px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Sobre</button>
-            <button onClick={() => {setCurrentView('how'); setIsMenuOpen(false)}} className="text-[10px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Dúvidas</button>
+            <button onClick={() => {setCurrentView('about'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Sobre</button>
+            <button onClick={() => {setCurrentView('how'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Dúvidas</button>
           </div>
         </div>
       </footer>
