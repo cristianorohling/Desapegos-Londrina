@@ -18,8 +18,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 50.00,
     category: 'Decoração',
     images: [
-      'https://desapegos.puter.site/deco/casinha_envernizada/01.png',
-      'https://desapegos.puter.site/deco/casinha_envernizada/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -33,7 +33,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 50.00,
     category: 'Decoração',
     images: [
-      'https://desapegos.puter.site/deco/coruja_entalhada/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/coruja_entalhada/01.png'
     ],
     isSold: false,
     isHighlighted: true,
@@ -47,8 +47,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 150.00,
     category: 'Informática',
     images: [
-      'https://desapegos.puter.site/informatica/volante_multi/01.png',
-      'https://desapegos.puter.site/informatica/volante_multi/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/01.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -62,8 +62,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 1399.00,
     category: 'Cozinha',
     images: [
-      'https://desapegos.puter.site/cozinha/fogao_fundimig/01.png',
-      'https://desapegos.puter.site/cozinha/fogao_fundimig/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/fogao_fundimig/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/fogao_fundimig/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -77,13 +77,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 1299.00,
     category: 'Cozinha',
     images: [
-      'https://desapegos.puter.site/cozinha/dako_couracado/01.png',
-      'https://desapegos.puter.site/cozinha/dako_couracado/02.jpg',
-      'https://desapegos.puter.site/cozinha/dako_couracado/03.jpg',
-      'https://desapegos.puter.site/cozinha/dako_couracado/04.jpg',
-      'https://desapegos.puter.site/cozinha/dako_couracado/05.jpg',
-      'https://desapegos.puter.site/cozinha/dako_couracado/06.jpg',
-      'https://desapegos.puter.site/cozinha/dako_couracado/07.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/03.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/04.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/05.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/06.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/07.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -97,7 +97,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 25.00,
     category: 'Cozinha',
     images: [
-      'https://desapegos.puter.site//cozinha/suporte_frutas/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos//cozinha/suporte_frutas/01.png'
     ],
     isSold: false,
     isHighlighted: true,
@@ -111,8 +111,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 180.00,
     category: 'Cozinha',
     images: [
-      'https://desapegos.puter.site/cozinha/termo_rey/01.png',
-      'https://desapegos.puter.site/cozinha/termo_rey/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -126,7 +126,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 45.00,
     category: 'Pets',
     images: [
-      'https://desapegos.puter.site/pets/aquario_beta/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/aquario_beta/01.png'
     ],
     isSold: false,
     isHighlighted: true,
@@ -140,9 +140,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 80.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/dengue_xuxa/01.png',
-      'https://desapegos.puter.site/brinquedos/dengue_xuxa/02.jpg',
-      'https://desapegos.puter.site/brinquedos/dengue_xuxa/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/03.jpg'
     ],
     isSold: true,
     isHighlighted: true,
@@ -156,8 +156,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 19.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/kit_minicozinha/01.png',
-      'https://desapegos.puter.site/brinquedos/kit_minicozinha/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_minicozinha/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_minicozinha/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -171,7 +171,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 15.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/mesa_barbie/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mesa_barbie/01.png'
     ],
     isSold: false,
     isHighlighted: true,
@@ -185,10 +185,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 9000.00,
     category: 'Instrumentos Musicais',
     images: [
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/01.png',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/02.jpg',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/03.jpg',
-      'https://desapegos.puter.site/instrumentos/yamaha_clavinova/04.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/instrumentos/yamaha_clavinova/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/instrumentos/yamaha_clavinova/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/instrumentos/yamaha_clavinova/03.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/instrumentos/yamaha_clavinova/04.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -202,9 +202,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 15.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/barbie_pogobol/01.png',
-      'https://desapegos.puter.site/brinquedos/barbie_pogobol/02.jpg',
-      'https://desapegos.puter.site/brinquedos/barbie_pogobol/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbie_pogobol/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbie_pogobol/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbie_pogobol/03.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -218,9 +218,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 85.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/lote_lol/01.png',
-      'https://desapegos.puter.site/brinquedos/lote_lol/02.jpg',
-      'https://desapegos.puter.site/brinquedos/lote_lol/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/lote_lol/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/lote_lol/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/lote_lol/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -234,8 +234,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 100.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/robo_kabutak/01.jpg',
-      'https://desapegos.puter.site/brinquedos/robo_kabutak/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/01.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/02.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -249,8 +249,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 8.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/chapeu_woody/01.jpg',
-      'https://desapegos.puter.site/brinquedos/chapeu_woody/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/01.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/02.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -264,9 +264,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 80.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/cavalo_madeira/01.png',
-      'https://desapegos.puter.site/brinquedos/cavalo_madeira/02.jpg',
-      'https://desapegos.puter.site/brinquedos/cavalo_madeira/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/cavalo_madeira/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/cavalo_madeira/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/cavalo_madeira/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -280,7 +280,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 69.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/stacie_suco/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/stacie_suco/01.png'
     ],
     isSold: false,
     isHighlighted: false,
@@ -294,9 +294,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 80.00,
     category: 'Pets',
     images: [
-      'https://desapegos.puter.site/pets/gaiola_calopsita/01.png',
-      'https://desapegos.puter.site/pets/gaiola_calopsita/02.jpg',
-      'https://desapegos.puter.site/pets/gaiola_calopsita/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/gaiola_calopsita/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/gaiola_calopsita/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/gaiola_calopsita/03.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -310,8 +310,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 10.00,
     category: 'Decoração',
     images: [
-      'https://desapegos.puter.site/deco/globo_pera/01.png',
-      'https://desapegos.puter.site/deco/globo_pera/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/globo_pera/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/globo_pera/02.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -325,9 +325,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 199.00,
     category: 'Cozinha',
     images: [
-      'https://desapegos.puter.site/eletro/fogareiro_venax/01.jpg',
-      'https://desapegos.puter.site/eletro/fogareiro_venax/02.jpg',
-      'https://desapegos.puter.site/eletro/fogareiro_venax/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/eletro/fogareiro_venax/01.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/eletro/fogareiro_venax/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/eletro/fogareiro_venax/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -341,7 +341,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 79.00,
     category: 'Informática',
     images: [
-      'https://desapegos.puter.site/informatica/repetidor_tp-link/01.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -355,8 +355,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 80.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/batgirl_jato/01.png',
-      'https://desapegos.puter.site/brinquedos/batgirl_jato/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/batgirl_jato/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/batgirl_jato/02.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -370,9 +370,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 45.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/kit_massinha/01.png',
-      'https://desapegos.puter.site/brinquedos/kit_massinha/02.jpg',
-      'https://desapegos.puter.site/brinquedos/kit_massinha/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_massinha/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_massinha/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_massinha/03.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -386,7 +386,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 65.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/lote_polly/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/lote_polly/01.png'
     ],
     isSold: false,
     isHighlighted: false,
@@ -400,9 +400,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 50.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/panelinhas_metal/01.png',
-      'https://desapegos.puter.site/brinquedos/panelinhas_metal/02.jpg',
-      'https://desapegos.puter.site/brinquedos/panelinhas_metal/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/panelinhas_metal/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/panelinhas_metal/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/panelinhas_metal/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -416,8 +416,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 29.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/barbiesalao/01.png',
-      'https://desapegos.puter.site/brinquedos/barbiesalao/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbiesalao/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbiesalao/02.jpg'
     ],
     isSold: false,
     isHighlighted: false,
@@ -431,9 +431,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 49.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/armymen/01.png',
-      'https://desapegos.puter.site/brinquedos/armymen/02.png',
-      'https://desapegos.puter.site/brinquedos/armymen/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/armymen/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/armymen/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/armymen/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
@@ -447,9 +447,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 150.00,
     category: 'Brinquedos',
     images: [
-      'https://desapegos.puter.site/brinquedos/babyalive/01.png',
-      'https://desapegos.puter.site/brinquedos/babyalive/02.jpg',
-      'https://desapegos.puter.site/brinquedos/babyalive/03.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/babyalive/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/babyalive/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/babyalive/03.jpg'
     ],
     isSold: false,
     isHighlighted: true,
