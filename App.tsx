@@ -57,10 +57,18 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Instrumentos Musicais": "bg-emerald-900"
 };
 
-const slugify = (text: string) => text.toString().toLowerCase()
-  .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-  .replace(/\s+/g, '-').replace(/[^\w-]+/g, '')
-  .replace(/--+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
+// Remove acentos e converte para minúsculas
+const normalizeText = (text: string) => 
+  text.toString().toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+const slugify = (text: string) => normalizeText(text)
+  .replace(/\s+/g, '-')
+  .replace(/[^\w-]+/g, '')
+  .replace(/--+/g, '-')
+  .replace(/^-+/, '')
+  .replace(/-+$/, '');
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('catalog');
@@ -127,12 +135,16 @@ const App: React.FC = () => {
     return INITIAL_PRODUCTS
       .filter(p => {
         const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
-        const searchLower = searchQuery.toLowerCase();
+        
+        // Normalização para busca ignorar acentos
+        const searchNorm = normalizeText(searchQuery);
+        const nameNorm = normalizeText(p.name);
+        const descNorm = normalizeText(p.description);
         
         const searchMatch = !searchQuery || 
-                           p.name.toLowerCase().includes(searchLower) || 
-                           p.description.toLowerCase().includes(searchLower) ||
-                           p.keywords?.some(k => k.toLowerCase().includes(searchLower));
+                           nameNorm.includes(searchNorm) || 
+                           descNorm.includes(searchNorm) ||
+                           p.keywords?.some(k => normalizeText(k).includes(searchNorm));
         
         if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
         
