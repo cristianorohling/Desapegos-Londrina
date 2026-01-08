@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Product } from '../types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -22,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
 
   return (
     <div 
-      className={`group bg-white rounded-3xl overflow-hidden border border-emerald-50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer relative ${product.isSold ? 'opacity-60 grayscale-[0.3]' : ''}`}
+      className={`group bg-white rounded-3xl overflow-hidden border border-emerald-50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer relative ${product.isSold ? 'opacity-80 grayscale' : ''}`}
       onClick={() => onViewDetails?.(product)}
     >
       <div className="relative aspect-square md:aspect-[4/5] overflow-hidden bg-slate-50 shrink-0">
@@ -63,11 +64,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
           </div>
         )}
 
+        {/* Tarja de Vendido */}
         {product.isSold && (
-          <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px] flex items-center justify-center z-20">
-            <span className="bg-white text-slate-900 px-4 py-1 rounded-lg font-black text-[9px] tracking-widest uppercase">
+          <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+            <div className="absolute top-0 right-0 bg-slate-900 text-white px-10 py-1.5 transform translate-x-[30%] translate-y-[100%] rotate-45 font-black text-[10px] tracking-[0.2em] uppercase shadow-2xl">
               Vendido
-            </span>
+            </div>
+            <div className="absolute inset-0 bg-slate-900/10 backdrop-blur-[0.5px]"></div>
           </div>
         )}
 
@@ -88,7 +91,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
             <span className="text-emerald-600 text-[10px] mr-0.5 font-bold">R$</span>
             {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
           </span>
-          <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all">
+          <div className={`w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all ${product.isSold ? 'invisible' : ''}`}>
             <ChevronRight size={16} />
           </div>
         </div>

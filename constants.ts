@@ -1,3 +1,4 @@
+
 import { Product, Category } from './types';
 
 export const CATEGORIES: Category[] = [
@@ -143,7 +144,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       'https://desapegos.puter.site/brinquedos/dengue_xuxa/02.jpg',
       'https://desapegos.puter.site/brinquedos/dengue_xuxa/03.jpg'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() - 300,
     keywords: ['boneco', 'dengue', 'xuxa', 'xou da xuxa', 'anos 80', 'vintage', 'colecionável', 'brinquedo antigo', 'raridade']
@@ -275,7 +276,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'stacie-suco-playset',
     name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
-    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) com tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
+    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) with tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
     price: 69.00,
     category: 'Brinquedos',
     images: [
