@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   LayoutGrid, 
@@ -27,7 +26,6 @@ import {
   Share2,
   ArrowRight,
   Search,
-  // Fix: Added missing Clock import
   Clock
 } from 'lucide-react';
 import { Product, Category } from './types';
@@ -55,7 +53,6 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Instrumentos Musicais": "bg-emerald-900"
 };
 
-// Remove acentos e converte para minúsculas
 const normalizeText = (text: string) => 
   text.toString().toLowerCase()
     .normalize('NFD')
@@ -133,8 +130,6 @@ const App: React.FC = () => {
     return INITIAL_PRODUCTS
       .filter(p => {
         const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
-        
-        // Normalização para busca ignorar acentos
         const searchNorm = normalizeText(searchQuery);
         const nameNorm = normalizeText(p.name);
         const descNorm = normalizeText(p.description);
@@ -145,7 +140,6 @@ const App: React.FC = () => {
                            p.keywords?.some(k => normalizeText(k).includes(searchNorm));
         
         if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
-        
         return categoryMatch && searchMatch;
       })
       .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
@@ -170,7 +164,6 @@ const App: React.FC = () => {
 
   const renderProductLanding = (product: Product) => (
     <div className="animate-fade-in max-w-7xl mx-auto pb-32 px-4 md:px-8">
-      {/* Navegação Superior */}
       <div className="pt-1 md:pt-2 mb-2 md:mb-3">
         <button 
           onClick={navigateToHome}
@@ -183,10 +176,7 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      {/* Grid Principal */}
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
-        
-        {/* Lado Esquerdo: Galeria */}
         <div className="w-full lg:col-span-7 shrink-0">
           <div className="bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
             <div className="aspect-square md:aspect-[4/3] lg:max-h-[65vh] bg-slate-50 flex items-center justify-center relative">
@@ -205,7 +195,6 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Lado Direito: Informações */}
         <div className="w-full lg:col-span-5 space-y-6">
           <div className="space-y-3">
              <div className="flex items-center justify-between">
@@ -234,7 +223,6 @@ const App: React.FC = () => {
              </div>
           </div>
 
-          {/* Descrição */}
           <div className="bg-white/50 p-6 rounded-[2rem] border border-emerald-100/50 space-y-4">
             <div className="flex items-center gap-2 text-[9px] font-black text-emerald-800 uppercase tracking-[0.2em]">
               <FileText size={16} /> Sobre o Item
@@ -256,7 +244,6 @@ const App: React.FC = () => {
             )}
           </div>
 
-          {/* Badges */}
           <div className="flex gap-3">
             <div className="flex-1 bg-white p-4 rounded-2xl border border-emerald-50 flex items-center gap-3 shadow-sm">
               <MapPin size={18} className="text-emerald-500" />
@@ -287,7 +274,6 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* Sugestões */}
       <section className="mt-16 md:mt-24 border-t border-emerald-100 pt-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
           <div className="text-center md:text-left">
@@ -314,7 +300,6 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Barra Flutuante */}
       <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 z-[100] animate-in slide-in-from-bottom duration-500">
         <div className="max-w-screen-sm mx-auto bg-white/90 backdrop-blur-xl p-2.5 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-white/50 flex items-center justify-between gap-3">
           <div className="hidden sm:block pl-6">
@@ -403,23 +388,25 @@ const App: React.FC = () => {
     return (
       <div className="animate-fade-in px-4">
         {/* Header do Catálogo: Título e Pesquisa Lado a Lado */}
-        <div className="max-w-7xl mx-auto mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto mb-10 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-emerald-100/50 pb-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
             <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
-              {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore o Bazar' : activeCategory)}
+              {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
             </h2>
-            <div className="h-1 w-10 bg-emerald-600 rounded-full mt-2 mb-1"></div>
-            <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
+            <div className="flex items-center gap-3 mt-3">
+              <div className="h-1 w-8 bg-emerald-600 rounded-full"></div>
+              <p className="text-slate-400 text-[9px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
+            </div>
           </div>
 
-          <div className="w-full max-w-md relative group">
+          <div className="w-full max-w-sm relative group">
             <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
-              <Search size={18} />
+              <Search size={16} />
             </div>
             <input 
               type="text" 
-              placeholder="Pesquisar no bazar..."
-              className="w-full pl-12 pr-12 py-4 bg-white border-2 border-emerald-100 rounded-[2rem] shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-sm"
+              placeholder="Pesquisar..."
+              className="w-full pl-11 pr-11 py-3.5 bg-white border-2 border-emerald-50 rounded-2xl shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium text-sm"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -428,7 +415,7 @@ const App: React.FC = () => {
                 onClick={() => setSearchQuery('')}
                 className="absolute inset-y-0 right-5 flex items-center text-slate-300 hover:text-slate-600 transition-colors"
               >
-                <X size={18} />
+                <X size={16} />
               </button>
             )}
           </div>
@@ -436,16 +423,12 @@ const App: React.FC = () => {
 
         {filteredProducts.length > 0 || (activeCategory === 'Todos' && !searchQuery) ? (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            
-            {/* O NOVO "WELCOME CARD" INTEGRADO NA GRADE */}
             {activeCategory === 'Todos' && !searchQuery && (
               <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-sm p-6 md:p-10 flex flex-col justify-center text-center space-y-6 relative group">
                 <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-emerald-50 rounded-full blur-2xl opacity-60" />
-                
                 <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest self-center relative z-10">
                   <Sparkles size={14} className="text-emerald-400" /> Curadoria Londrina
                 </div>
-                
                 <div className="relative z-10">
                   <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight">
                     Da nossa casa <br/>
@@ -455,7 +438,6 @@ const App: React.FC = () => {
                     Seja muito bem-vindo(a) ao catálogo do nosso bazar! Aproveite cada achado único para o seu lar.
                   </p>
                 </div>
-                
                 <a 
                   href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                   target="_blank" 
@@ -467,20 +449,15 @@ const App: React.FC = () => {
                 </a>
               </div>
             )}
-
             {filteredProducts.map(product => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onViewDetails={navigateToProduct}
-              />
+              <ProductCard key={product.id} product={product} onViewDetails={navigateToProduct} />
             ))}
           </div>
         ) : (
           <div className="py-20 text-center bg-white rounded-[3rem] border border-emerald-100 border-dashed">
             <PackageOpen size={48} className="mx-auto text-slate-200 mb-4" />
             <h3 className="text-xl font-black text-slate-900 mb-2">Ops! Nada por aqui.</h3>
-            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine with sua pesquisa no momento.</p>
+            <p className="text-slate-500 text-sm mb-6 px-10">Não encontramos nada que combine com sua pesquisa no momento.</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('Todos')}} 
               className="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-600 transition-colors"
@@ -495,7 +472,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ECFDF5] selection:bg-emerald-200">
-      {/* Ticker de Destaques */}
       <div className="bg-slate-900 text-white py-2.5 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...Array(2)].map((_, idx) => (
@@ -547,7 +523,6 @@ const App: React.FC = () => {
                 <LayoutGrid size={14} />
                 <span>Todos</span>
               </button>
-
               {sortedCategories.map(cat => (
                 <button
                   key={cat}
@@ -614,7 +589,6 @@ interface GalleryProps {
 
 const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) => {
   const [active, setActive] = useState(0);
-
   return (
     <div className="w-full h-full flex flex-col relative group cursor-zoom-in" onClick={() => onImageClick(images[active])}>
       <div className="relative flex-1 bg-slate-50 flex items-center justify-center overflow-hidden p-4 md:p-8">
@@ -626,7 +600,6 @@ const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) 
             alt="Foto do produto" 
           />
         </div>
-        
         {images.length > 1 && (
           <>
             <button 
