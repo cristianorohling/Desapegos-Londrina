@@ -9,5 +9,6 @@ export interface Product {
   images: string[];
   isSold: boolean;
   isHighlighted: boolean;
+  keywords?: string[];
   createdAt: number;
 }

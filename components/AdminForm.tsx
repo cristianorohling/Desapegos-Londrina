@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Camera } from 'lucide-react';
+import { X, Camera, Hash } from 'lucide-react';
 import { Product, Category } from '../types';
 import { CATEGORIES } from '../constants';
 
@@ -17,27 +17,31 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
     category: CATEGORIES[0],
     images: [],
     isSold: false,
-    isHighlighted: false
+    isHighlighted: false,
+    keywords: []
   });
   const [imageInput, setImageInput] = useState('');
+  const [keywordsInput, setKeywordsInput] = useState('');
 
   useEffect(() => {
     if (editProduct) {
       setFormData(editProduct);
       setImageInput(editProduct.images.join('\n'));
+      setKeywordsInput(editProduct.keywords?.join(', ') || '');
     }
   }, [editProduct]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const urls = imageInput.split(/[\n,]+/).map(u => u.trim()).filter(u => u !== '');
+    const keywords = keywordsInput.split(/[,;]+/).map(k => k.trim().toLowerCase()).filter(k => k !== '');
     
     if (!formData.name || urls.length === 0) {
       alert("Por favor, preencha o nome e insira pelo menos uma URL de imagem.");
       return;
     }
     
-    onSubmit({ ...formData, images: urls });
+    onSubmit({ ...formData, images: urls, keywords });
   };
 
   return (
@@ -95,6 +99,19 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
                 </div>
               </div>
 
+              <div>
+                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <Hash size={12} /> Palavras-chave (separadas por vírgula)
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 outline-none transition-all font-bold text-slate-700"
+                  value={keywordsInput}
+                  onChange={e => setKeywordsInput(e.target.value)}
+                  placeholder="Ex: retro, madeira, colecionador"
+                />
+              </div>
+
               <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-center space-x-4">
                 <input
                   type="checkbox"
@@ -114,7 +131,7 @@ const AdminForm: React.FC<AdminFormProps> = ({ onClose, onSubmit, editProduct })
                 <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Links das Imagens (uma por linha)</label>
                 <textarea
                   required
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-emerald-500/10 outline-none h-36 resize-none transition-all font-mono text-xs text-slate-600 leading-relaxed"
+                  className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-emerald-500/10 outline-none h-48 resize-none transition-all font-mono text-xs text-slate-600 leading-relaxed"
                   value={imageInput}
                   onChange={e => setImageInput(e.target.value)}
                   placeholder="https://sua-imagem.com/foto1.jpg&#10;https://sua-imagem.com/foto2.jpg"

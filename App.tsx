@@ -29,7 +29,8 @@ import {
   ArrowRight,
   ChevronDown,
   Search,
-  Eraser
+  Eraser,
+  Hash
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
@@ -127,11 +128,12 @@ const App: React.FC = () => {
       .filter(p => {
         const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
         const searchLower = searchQuery.toLowerCase();
+        
         const searchMatch = !searchQuery || 
                            p.name.toLowerCase().includes(searchLower) || 
-                           p.description.toLowerCase().includes(searchLower);
+                           p.description.toLowerCase().includes(searchLower) ||
+                           p.keywords?.some(k => k.toLowerCase().includes(searchLower));
         
-        // Na home (Todos), não mostramos vendidos a menos que esteja filtrando/pesquisando
         if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
         
         return categoryMatch && searchMatch;
@@ -230,6 +232,18 @@ const App: React.FC = () => {
             <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium whitespace-pre-wrap">
               {product.description}
             </p>
+            
+            {product.keywords && product.keywords.length > 0 && (
+              <div className="pt-4 mt-4 border-t border-emerald-100/30">
+                <div className="flex flex-wrap gap-2">
+                  {product.keywords.map(kw => (
+                    <span key={kw} className="text-[8px] font-bold text-slate-300 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded">
+                      #{kw}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Badges */}
@@ -250,7 +264,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Botão lateral (PC) */}
           <div className="hidden lg:block pt-2">
             <a 
               href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" no catálogo e gostaria de combinar.`)}`} 
@@ -291,7 +304,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Barra Flutuante de WhatsApp */}
+      {/* Barra Flutuante */}
       <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 z-[100] animate-in slide-in-from-bottom duration-500">
         <div className="max-w-screen-sm mx-auto bg-white/90 backdrop-blur-xl p-2.5 rounded-[2rem] shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-white/50 flex items-center justify-between gap-3">
           <div className="hidden sm:block pl-6">
@@ -379,14 +392,14 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Barra de Pesquisa */}
-        <div className="max-w-xl mx-auto mb-8 relative group">
+        {/* Barra de Pesquisa - Margem reduzida */}
+        <div className="max-w-xl mx-auto mb-4 relative group">
           <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
             <Search size={20} />
           </div>
           <input 
             type="text" 
-            placeholder="O que você está procurando hoje?"
+            placeholder="Procure por cor, marca, tema..."
             className="w-full pl-14 pr-12 py-5 bg-white border-2 border-emerald-100 rounded-[2rem] shadow-sm outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all font-bold text-slate-700 placeholder:text-slate-300 placeholder:font-medium"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -401,20 +414,21 @@ const App: React.FC = () => {
           )}
         </div>
 
+        {/* Banner de Boas-vindas - Compactado */}
         {activeCategory === 'Todos' && !searchQuery && (
-          <section className="mb-12 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg p-8 md:p-12">
+          <section className="mb-6 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg py-6 px-4 md:py-8 md:px-10">
             <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-emerald-200 rounded-full blur-3xl opacity-20" />
             <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-30" />
             
-            <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">
-                <Sparkles size={14} className="text-emerald-400" /> Curadoria Londrina
+            <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest">
+                <Sparkles size={12} className="text-emerald-400" /> Curadoria Londrina
               </div>
-              <h3 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">
+              <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight">
                 Da nossa casa <br/>
                 <span className="text-emerald-600 italic">para a sua casa</span>
               </h3>
-              <p className="text-slate-600 font-medium text-sm md:text-lg leading-relaxed px-4">
+              <p className="text-slate-500 font-medium text-xs md:text-base leading-relaxed px-4">
                 Seja muito bem-vindo(a) ao catálogo do nosso bazar!               
               </p>
               
@@ -422,12 +436,12 @@ const App: React.FC = () => {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-emerald-50 border-2 border-emerald-100 px-6 py-4 rounded-2xl animate-pulse-ws hover:bg-emerald-100 transition-colors group cursor-pointer"
+                className="inline-flex items-center gap-2 bg-emerald-50 border-2 border-emerald-100 px-4 py-3 rounded-xl animate-pulse-ws hover:bg-emerald-100 transition-colors group cursor-pointer mt-2"
               >
-                <div className="bg-emerald-600 p-2 rounded-xl text-white group-hover:scale-110 transition-transform">
-                  <MessageCircle size={20} fill="white" />
+                <div className="bg-emerald-600 p-1.5 rounded-lg text-white group-hover:scale-110 transition-transform">
+                  <MessageCircle size={16} fill="white" />
                 </div>
-                <span className="text-emerald-800 font-black text-xs md:text-sm uppercase tracking-widest text-left">
+                <span className="text-emerald-800 font-black text-[10px] uppercase tracking-widest">
                   Dúvidas? Chama no WhatsApp!
                 </span>
               </a>
@@ -436,15 +450,15 @@ const App: React.FC = () => {
         )}
 
         <div className="mb-8 flex flex-col items-center">
-          <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter mb-2 text-center px-4">
+          <h2 className="text-xl md:text-3xl font-black text-slate-900 tracking-tighter mb-1 text-center px-4">
             {searchQuery ? `Resultados para "${searchQuery}"` : (activeCategory === 'Todos' ? 'Itens Disponíveis' : activeCategory)}
           </h2>
-          <div className="h-1 w-16 bg-emerald-600 rounded-full mb-3"></div>
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">{filteredProducts.length} itens encontrados</p>
+          <div className="h-1 w-12 bg-emerald-600 rounded-full mb-2"></div>
+          <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens encontrados</p>
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
@@ -558,7 +572,6 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Botão Flutuante Circular Global */}
       <a 
         href={`https://wa.me/${WHATSAPP_NUMBER}`}
         target="_blank"

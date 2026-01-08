@@ -22,7 +22,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 400
+    createdAt: Date.now() + 400,
+    keywords: ['passarinho', 'jardim', 'madeira', 'rústico', 'artesanato', 'casa', 'decoração de jardim']
   },
   {
     id: 'coruja-entalhada-madeira',
@@ -35,7 +36,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 300
+    createdAt: Date.now() + 300,
+    keywords: ['coruja', 'madeira', 'entalhe', 'escultura', 'rústico', 'parede', 'artesanato', 'decoração']
   },
   {
     id: 'volante-multilaser-3-em-1',
@@ -49,7 +51,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 200
+    createdAt: Date.now() + 200,
+    keywords: ['volante', 'pedal', 'multilaser', 'ps2', 'ps3', 'pc', 'gamer', 'jogos de corrida', 'simulador']
   },
   {
     id: 'fogao-lenha-fundimig-f090',
@@ -63,7 +66,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 100
+    createdAt: Date.now() + 100,
+    keywords: ['fogão a lenha', 'ferro fundido', 'antigo', 'relíquia', 'restauração', 'rústico', 'fundimig', 'decoração fazenda']
   },
   {
     id: 'fogao-industrial-dako-couracado',
@@ -82,7 +86,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now()
+    createdAt: Date.now(),
+    keywords: ['fogão industrial', 'dako', 'couraçado', 'ferro', 'forno grande', 'profissional', 'cozinha', 'vintage', 'robusto']
   },
   {
     id: 'suporte-doces-cupcakes_floral',
@@ -95,7 +100,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 50
+    createdAt: Date.now() - 50,
+    keywords: ['suporte doces', 'cupcakes', 'boleira', 'floral', 'provençal', 'festa', 'mesa posta', 'decoração', 'dois andares']
   },
   {
     id: 'termo-rey-gravatinha-par',
@@ -109,7 +115,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 100
+    createdAt: Date.now() - 100,
+    keywords: ['termo-rey', 'gravatinha', 'vintage', 'antigo', 'travessa', 'tigela', 'opalina', 'anos 60', 'anos 70', 'coleção', 'retrô']
   },
   {
     id: 'mini-aquaterrario-decorado-betta',
@@ -122,7 +129,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 200
+    createdAt: Date.now() - 200,
+    keywords: ['aquário', 'terrário', 'betta', 'tartaruga', 'peixe', 'decorado', 'pequeno', 'pets', 'home office']
   },
   {
     id: 'boneco-dengue-vintage-xuxa',
@@ -137,7 +145,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 300
+    createdAt: Date.now() - 300,
+    keywords: ['boneco', 'dengue', 'xuxa', 'xou da xuxa', 'anos 80', 'vintage', 'colecionável', 'brinquedo antigo', 'raridade']
   },
   {
     id: 'kit-cozinha-barbie-vintage',
@@ -151,7 +160,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 400
+    createdAt: Date.now() - 400,
+    keywords: ['barbie', 'cozinha', 'miniatura', 'vintage', 'anos 80', 'anos 90', 'coleção', 'diorama', 'acessórios boneca', 'suco elefanta']
   },
   {
     id: 'mesa-cadeiras-barbie',
@@ -164,7 +174,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 500
+    createdAt: Date.now() - 500,
+    keywords: ['mesa boneca', 'cadeiras boneca', 'barbie', 'crystal', 'pink', 'rosa', 'móveis boneca', 'brinquedo', 'sala de jantar']
   },
   {
     id: 'yamaha-clavinova-cvp',
@@ -180,7 +191,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 600
+    createdAt: Date.now() - 600,
+    keywords: ['piano digital', 'yamaha', 'clavinova', 'cvp', 'teclado', 'instrumento musical', 'profissional', 'piano elétrico', 'teclas pesadas']
   },
   {
     id: 'pogobol-barbie-classico',
@@ -195,7 +207,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 700
+    createdAt: Date.now() - 700,
+    keywords: ['pogobol', 'barbie', 'estrela', 'brinquedo antigo', 'anos 90', 'vintage', 'pula pula', 'retrô']
   },
   {
     id: 'lote-lol-surprise-completo',
@@ -210,7 +223,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000
+    createdAt: Date.now() - 1000,
+    keywords: ['lol surprise', 'bonecas lol', 'lote bonecas', 'coleção', 'brinquedo menina', 'acessórios lol', 'glitter']
   },
   {
     id: 'bandai-dx-dodekabutak-vintage',
@@ -224,7 +238,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000
+    createdAt: Date.now() - 2000,
+    keywords: ['robô', 'bandai', 'kabutack', 'dodekabutak', 'tokusatsu', 'japonês', 'vintage', 'colecionável', 'transformável', 'anos 90']
   },
   {
     id: 'chapeu-woody-toy-story',
@@ -238,7 +253,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 3000
+    createdAt: Date.now() - 3000,
+    keywords: ['chapéu woody', 'toy story', 'fantasia', 'caubói', 'infantil', 'disney', 'pixar', 'cosplay infantil']
   },
   {
     id: 'cavalo-madeira-balanco',
@@ -253,7 +269,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 4000
+    createdAt: Date.now() - 4000,
+    keywords: ['cavalinho', 'balanço', 'madeira maciça', 'brinquedo educativo', 'rústico', 'decoração infantil', 'retrô', 'vintage']
   },
   {
     id: 'stacie-suco-playset',
@@ -266,7 +283,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5000
+    createdAt: Date.now() - 5000,
+    keywords: ['barbie', 'stacie', 'playset', 'boneca', 'suco', 'smoothie', 'cachorro', 'pet', 'brinquedo mattel']
   },
   {
     id: 'gaiola-calopsita',
@@ -281,7 +299,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 6000
+    createdAt: Date.now() - 6000,
+    keywords: ['gaiola', 'calopsita', 'viveiro', 'pássaros', 'chalé', 'pets', 'aves', 'agapornis']
   },
   {
     id: 'globo-pera-luminaria',
@@ -295,7 +314,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 10000
+    createdAt: Date.now() - 10000,
+    keywords: ['globo', 'luminária', 'cúpula', 'ventilador de teto', 'bocal 10cm', 'reposição', 'iluminação', 'plástico']
   },
   {
     id: 'fogao-venax',
@@ -310,7 +330,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 15000
+    createdAt: Date.now() - 15000,
+    keywords: ['fogão de mesa', 'cooktop', 'fogareiro', 'venax', 'inox', 'portátil', '4 bocas', 'camping', 'cozinha pequena', 'acendimento automático']
   },
   {
     id: 'repetidor-tplink',
@@ -323,7 +344,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 20000
+    createdAt: Date.now() - 20000,
+    keywords: ['repetidor wifi', 'tp-link', 'amplificador sinal', 'roteador', 'internet', 'wireless', 'wifi', 'informática']
   },
   {
     id: 'batgirl-jato',
@@ -337,7 +359,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 25000
+    createdAt: Date.now() - 25000,
+    keywords: ['batgirl', 'dc super hero girls', 'boneca heroína', 'bat-jato', 'veículo', 'mattel', 'dc comics', 'brinquedo', 'colecionável']
   },
   {
     id: 'lote-ferramentas-massinha',
@@ -352,12 +375,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 30000
+    createdAt: Date.now() - 30000,
+    keywords: ['massinha', 'play-doh', 'ferramentas massinha', 'cortadores', 'moldes', 'rolinhos', 'brinquedo educativo', 'arte', 'criatividade']
   },
   {
     id: 'lote-polly-pocket',
-    name: 'Lote Polly Pocket Fashion - 4 Bonecas + roupinhas',
-    description: `Lote Polly Pocket contendo 4 bonecas e roupas, sapatos, bolsas e acessórios para montar looks.`,
+    name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
+    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet com variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
     price: 65.00,
     category: 'Brinquedos',
     images: [
@@ -365,7 +389,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 50000
+    createdAt: Date.now() - 50000,
+    keywords: ['polly pocket', 'bonecas polly', 'lote', 'roupinhas polly', 'closet', 'fashion', 'moda', 'brinquedo menina', 'acessórios']
   },
   {
     id: 'panelinhas-metal',
@@ -380,7 +405,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 100000
+    createdAt: Date.now() - 100000,
+    keywords: ['panelinhas', 'brinquedo cozinha', 'metal', 'inox', 'masterchef kids', 'realista', 'brincadeira de casinha', 'durável']
   },
   {
     id: 'barbie-salao-pia',
@@ -394,7 +420,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500000
+    createdAt: Date.now() - 500000,
+    keywords: ['pia barbie', 'salão de beleza barbie', 'lavatório boneca', 'móveis barbie', 'glitter', 'acessório boneca', 'mattel']
   },
   {
     id: 'army-men-toy-story',
@@ -409,7 +436,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000000
+    createdAt: Date.now() - 1000000,
+    keywords: ['soldadinhos', 'army men', 'toy story', 'soldado verde', 'disney pixar', 'colecionável', 'miniatura', 'clássico']
   },
   {
     id: 'baby-alive-festa-massas',
@@ -424,7 +452,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000000
+    createdAt: Date.now() - 2000000,
+    keywords: ['baby alive', 'boneca que come', 'festa das massas', 'hasbro', 'boneca interativa', 'brinquedo menina', 'massinha']
   }
 ];
 
