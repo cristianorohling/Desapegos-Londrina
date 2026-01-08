@@ -404,8 +404,8 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Barra de Pesquisa - Margem reduzida */}
-        <div className="max-w-xl mx-auto mb-4 relative group">
+        {/* Barra de Pesquisa */}
+        <div className="max-w-xl mx-auto mb-6 relative group">
           <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-emerald-500 transition-colors">
             <Search size={20} />
           </div>
@@ -426,51 +426,48 @@ const App: React.FC = () => {
           )}
         </div>
 
-        {/* Banner de Boas-vindas - Compactado */}
-        {activeCategory === 'Todos' && !searchQuery && (
-          <section className="mb-6 relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] border border-emerald-200 shadow-lg py-6 px-4 md:py-8 md:px-10">
-            <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-emerald-200 rounded-full blur-3xl opacity-20" />
-            <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-emerald-100 rounded-full blur-3xl opacity-30" />
-            
-            <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto space-y-3">
-              <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest">
-                <Sparkles size={12} className="text-emerald-400" /> Curadoria Londrina
-              </div>
-              <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight">
-                Da nossa casa <br/>
-                <span className="text-emerald-600 italic">para a sua casa</span>
-              </h3>
-              <p className="text-slate-500 font-medium text-xs md:text-base leading-relaxed px-4">
-                Seja muito bem-vindo(a) ao catálogo do nosso bazar!               
-              </p>
-              
-              <a 
-                href={`https://wa.me/${WHATSAPP_NUMBER}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-50 border-2 border-emerald-100 px-4 py-3 rounded-xl animate-pulse-ws hover:bg-emerald-100 transition-colors group cursor-pointer mt-2"
-              >
-                <div className="bg-emerald-600 p-1.5 rounded-lg text-white group-hover:scale-110 transition-transform">
-                  <MessageCircle size={16} fill="white" />
-                </div>
-                <span className="text-emerald-800 font-black text-[10px] uppercase tracking-widest">
-                  Dúvidas? Chama no WhatsApp!
-                </span>
-              </a>
-            </div>
-          </section>
-        )}
-
-        <div className="mb-8 flex flex-col items-center">
-          <h2 className="text-xl md:text-3xl font-black text-slate-900 tracking-tighter mb-1 text-center px-4">
-            {searchQuery ? `Resultados para "${searchQuery}"` : (activeCategory === 'Todos' ? 'Itens Disponíveis' : activeCategory)}
+        <div className="mb-6 flex flex-col items-center">
+          <h2 className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter mb-1 text-center px-4">
+            {searchQuery ? `Resultados para "${searchQuery}"` : (activeCategory === 'Todos' ? 'Explore o Bazar' : activeCategory)}
           </h2>
-          <div className="h-1 w-12 bg-emerald-600 rounded-full mb-2"></div>
-          <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens encontrados</p>
+          <div className="h-1 w-10 bg-emerald-600 rounded-full mb-1"></div>
+          <p className="text-slate-400 text-[8px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
         </div>
 
-        {filteredProducts.length > 0 ? (
+        {filteredProducts.length > 0 || (activeCategory === 'Todos' && !searchQuery) ? (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            
+            {/* O NOVO "WELCOME CARD" INTEGRADO NA GRADE */}
+            {activeCategory === 'Todos' && !searchQuery && (
+              <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-sm p-6 md:p-10 flex flex-col justify-center text-center space-y-6 relative group">
+                <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-emerald-50 rounded-full blur-2xl opacity-60" />
+                
+                <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest self-center relative z-10">
+                  <Sparkles size={14} className="text-emerald-400" /> Curadoria Londrina
+                </div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter leading-tight">
+                    Da nossa casa <br/>
+                    <span className="text-emerald-600 italic">para a sua casa</span>
+                  </h3>
+                  <p className="text-slate-500 font-medium text-xs md:text-sm leading-relaxed mt-4">
+                    Seja muito bem-vindo(a) ao catálogo do nosso bazar! Aproveite cada achado único para o seu lar.
+                  </p>
+                </div>
+                
+                <a 
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-100 px-6 py-4 rounded-2xl hover:bg-emerald-100 transition-colors group relative z-10 mt-2 animate-pulse-ws"
+                >
+                  <MessageCircle size={20} fill="#065f46" className="text-emerald-800" />
+                  <span className="text-emerald-800 font-black text-[10px] uppercase tracking-widest">Dúvidas? Chama aqui!</span>
+                </a>
+              </div>
+            )}
+
             {filteredProducts.map(product => (
               <ProductCard
                 key={product.id}
