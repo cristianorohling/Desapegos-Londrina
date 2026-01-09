@@ -1,4 +1,3 @@
-
 import { Product, Category } from './types';
 
 export const CATEGORIES: Category[] = [
@@ -11,6 +10,20 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'lote-mario-bros-mcdonalds',
+    name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
+    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
+    price: 80.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 500,
+    keywords: ['mario bros', 'nintendo', 'mcdonalds', 'bowser', 'yoshi', 'luigi', 'peach', 'toad', 'toadette', 'brinquedo', 'coleção', 'vintage']
+  },
   {
     id: 'casinha-passarinho-madeira',
     name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
@@ -351,7 +364,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com rodas funcionais. Item de colecionador em ótimo estado.`,
+    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com wheels funcionais. Item de colecionador em ótimo estado.`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
