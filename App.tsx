@@ -26,10 +26,12 @@ import {
   Share2,
   ArrowRight,
   Search,
-  Clock
+  Clock,
+  Facebook,
+  ExternalLink
 } from 'lucide-react';
 import { Product, Category } from './types';
-import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD } from './constants';
+import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL } from './constants';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 
@@ -385,7 +387,7 @@ const App: React.FC = () => {
 
     if (currentView === 'about') {
       return (
-        <div className="max-w-4xl mx-auto py-8 md:py-16 px-4 animate-fade-in">
+        <div className="max-w-5xl mx-auto py-8 md:py-16 px-4 animate-fade-in space-y-16">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2 space-y-6">
               <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
@@ -404,6 +406,35 @@ const App: React.FC = () => {
               <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border-2 border-white">
                 <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Home Atmosphere" />
               </div>
+            </div>
+          </div>
+
+          {/* Card de Confiança / Marketplace */}
+          <div className="bg-white rounded-[3rem] p-8 md:p-12 border border-emerald-100 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-16 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50" />
+            <div className="shrink-0 flex flex-col items-center">
+               <div className="bg-slate-900 text-white p-6 rounded-[2rem] shadow-2xl relative z-10">
+                  <Facebook size={48} />
+               </div>
+               <div className="flex gap-1 mt-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="#f59e0b" className="text-amber-500" />)}
+               </div>
+               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mt-2">Classificação Máxima</span>
+            </div>
+            <div className="flex-1 space-y-4 text-center md:text-left relative z-10">
+               <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Vendedor Recomendado</h3>
+               <p className="text-slate-500 font-medium leading-relaxed">
+                 Temos orgulho da nossa reputação de <strong>5 estrelas no Facebook Marketplace</strong>. 
+                 Nossa transparência e cuidado com cada item garantem uma experiência de compra segura e satisfatória.
+               </p>
+               <a 
+                 href={FB_MARKETPLACE_URL} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="inline-flex items-center gap-3 bg-emerald-500 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-100"
+               >
+                 Ver Perfil no Marketplace <ExternalLink size={14} />
+               </a>
             </div>
           </div>
         </div>
@@ -440,12 +471,23 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Header do Catálogo: Título e Pesquisa - ESPAÇO REDUZIDO AO MÁXIMO */}
+        {/* Header do Catálogo: Título e Pesquisa */}
         <div className="max-w-7xl mx-auto mb-2 md:mb-4 flex flex-col md:flex-row items-center justify-between gap-3 border-b border-emerald-100/40 pb-2 md:pb-4">
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-            <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
-              {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
-            </h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
+                {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
+              </h2>
+              {/* Badge de Marketplace */}
+              <a 
+                href={FB_MARKETPLACE_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hidden md:flex items-center gap-1.5 bg-white border border-slate-200 px-2.5 py-1 rounded-full text-[8px] font-black uppercase tracking-widest text-slate-500 hover:border-emerald-500 hover:text-emerald-600 transition-all shadow-sm"
+              >
+                <Facebook size={10} className="text-blue-600" /> Vendedor 5 Estrelas
+              </a>
+            </div>
             <div className="flex items-center gap-2 mt-1">
               <div className="h-0.5 w-4 bg-emerald-600 rounded-full"></div>
               <p className="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">{filteredProducts.length} itens disponíveis</p>
@@ -487,8 +529,12 @@ const App: React.FC = () => {
                     Da nossa casa <br/>
                     <span className="text-emerald-600 italic">para a sua casa</span>
                   </h3>
+                  <div className="flex items-center justify-center gap-1 my-2">
+                    {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#f59e0b" className="text-amber-500" />)}
+                    <span className="text-[10px] font-black text-slate-400 ml-2 uppercase">5.0 Marketplace</span>
+                  </div>
                   <p className="text-slate-500 font-medium text-[11px] md:text-[13px] leading-relaxed mt-2">
-                    Seja muito bem-vindo(a) ao catálogo! Aproveite cada achado único para o seu lar.
+                    Vendedor verificado com reputação máxima. Sua satisfação é nossa prioridade.
                   </p>
                 </div>
                 <a 
@@ -625,7 +671,10 @@ const App: React.FC = () => {
             <span className="text-xs font-black uppercase tracking-tighter">Desapegos Londrina</span>
           </div>
           <p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
+            <a href={FB_MARKETPLACE_URL} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors">
+              <Facebook size={18} />
+            </a>
             <button onClick={() => {setCurrentView('about'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Sobre</button>
             <button onClick={() => {setCurrentView('how'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Dúvidas</button>
           </div>

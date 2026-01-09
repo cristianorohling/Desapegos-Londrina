@@ -11,6 +11,22 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'lote-miniaturas-chumbo-rpg',
+    name: "Lote Imperdível de Miniaturas de Chumbo (Old School)",
+    description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
+
+Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a colecionadores adultos e hobbyistas. Recomenda-se lavar as mãos após o manuseio e não são indicadas para crianças.`,
+    price: 80.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guerreiros_rpg/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 700,
+    keywords: ['miniaturas de chumbo', 'rpg', 'guerreiros', 'metal', 'old school', 'colecionador', 'vintage', 'hobby', 'miniatura antiga', 'fantasia']
+  },
+  {
     id: 'kit-guardioes-galaxia-bootleg',
     name: "Kit Completo Guardiões da Galáxia - Versão bootleg",
     description: `Dá uma olhada nesse kit completo da equipe mais fora da lei da galáxia! São bonecos de fabricação chinesa (versão alternativa/bootleg), ideais para quem quer a equipe toda reunida sem gastar muito.
@@ -489,3 +505,4 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
 
 export const WHATSAPP_NUMBER = "5543991167333";
 export const NEIGHBORHOOD = "San Fernando";
+export const FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/profile/seu-perfil-aqui";
