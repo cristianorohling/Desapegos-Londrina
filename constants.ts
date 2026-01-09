@@ -19,7 +19,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 500,
     keywords: ['mario bros', 'nintendo', 'mcdonalds', 'bowser', 'yoshi', 'luigi', 'peach', 'toad', 'toadette', 'brinquedo', 'coleção', 'vintage']
