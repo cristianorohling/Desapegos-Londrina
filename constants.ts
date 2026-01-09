@@ -11,6 +11,22 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'kit-guardioes-galaxia-bootleg',
+    name: "Kit Completo Guardiões da Galáxia - Versão bootleg",
+    description: `Dá uma olhada nesse kit completo da equipe mais fora da lei da galáxia! São bonecos de fabricação chinesa (versão alternativa/bootleg), ideais para quem quer a equipe toda reunida sem gastar muito.
+
+O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado com sua faca de combate. Além deles, o kit conta com Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
+    price: 50.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guardioes_galaxia/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 600,
+    keywords: ['guardiões da galáxia', 'action figure', 'bonecos marvel', 'kit completo', 'senhor das estrelas', 'drax', 'rocket e groot', 'versão chinesa', 'bootleg', 'brinquedo barato']
+  },
+  {
     id: 'lote-mario-bros-mcdonalds',
     name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
     description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
@@ -135,7 +151,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'mini-aquaterrario-decorado-betta',
     name: 'Mini Aquaterrário Decorado - Home Office & Pets',
-    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado com plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
+    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado with plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
     price: 45.00,
     category: 'Pets',
     images: [
