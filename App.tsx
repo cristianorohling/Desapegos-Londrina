@@ -65,6 +65,16 @@ const slugify = (text: string) => normalizeText(text)
   .replace(/^-+/, '')
   .replace(/-+$/, '');
 
+// Função auxiliar para embaralhar arrays
+const shuffle = <T,>(array: T[]): T[] => {
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
+
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('catalog');
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
@@ -72,6 +82,9 @@ const App: React.FC = () => {
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Estado para persistir a ordem aleatória durante a sessão atual
+  const [randomSeed] = useState(() => Math.random());
 
   useEffect(() => {
     const handleRouting = () => {
@@ -127,23 +140,64 @@ const App: React.FC = () => {
   const sortedCategories = useMemo(() => [...CATEGORIES].sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
 
   const filteredProducts = useMemo(() => {
-    return INITIAL_PRODUCTS
-      .filter(p => {
-        const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
-        const searchNorm = normalizeText(searchQuery);
-        const nameNorm = normalizeText(p.name);
-        const descNorm = normalizeText(p.description);
-        
-        const searchMatch = !searchQuery || 
-                           nameNorm.includes(searchNorm) || 
-                           descNorm.includes(searchNorm) ||
-                           p.keywords?.some(k => normalizeText(k).includes(searchNorm));
-        
-        if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
-        return categoryMatch && searchMatch;
-      })
-      .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-  }, [activeCategory, searchQuery]);
+    // 1. Filtro básico
+    const baseItems = INITIAL_PRODUCTS.filter(p => {
+      const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
+      const searchNorm = normalizeText(searchQuery);
+      const nameNorm = normalizeText(p.name);
+      const descNorm = normalizeText(p.description);
+      
+      const searchMatch = !searchQuery || 
+                         nameNorm.includes(searchNorm) || 
+                         descNorm.includes(searchNorm) ||
+                         p.keywords?.some(k => normalizeText(k).includes(searchNorm));
+      
+      // No "Todos" sem busca, ocultamos os vendidos para dar espaço aos novos
+      if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
+      return categoryMatch && searchMatch;
+    });
+
+    // 2. Lógica de Ordenação Aleatória Balanceada (Intercalada por Categoria)
+    if (activeCategory === 'Todos' && !searchQuery) {
+      // Agrupar por categoria
+      const groups: Record<string, Product[]> = {};
+      baseItems.forEach(p => {
+        if (!groups[p.category]) groups[p.category] = [];
+        groups[p.category].push(p);
+      });
+
+      // Embaralhar cada grupo individualmente
+      Object.keys(groups).forEach(cat => {
+        groups[cat] = shuffle(groups[cat]);
+      });
+
+      // Intercalar (Round-robin) para garantir distribuição
+      const result: Product[] = [];
+      const cats = Object.keys(groups);
+      let hasMore = true;
+      let round = 0;
+
+      while (hasMore) {
+        hasMore = false;
+        cats.forEach(cat => {
+          if (groups[cat][round]) {
+            result.push(groups[cat][round]);
+            hasMore = true;
+          }
+        });
+        round++;
+      }
+      return result;
+    }
+
+    // Se for uma categoria específica ou houver busca, apenas embaralhamos o resultado
+    if (!searchQuery) {
+      return shuffle(baseItems);
+    }
+
+    // Com busca, mantemos ordem alfabética ou relevância
+    return baseItems.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+  }, [activeCategory, searchQuery, randomSeed]); // randomSeed garante re-calculo se resetado
 
   const handleCategoryClick = (cat: Category | 'Todos') => {
     setActiveCategory(cat);
@@ -289,9 +343,8 @@ const App: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {INITIAL_PRODUCTS
+          {shuffle(INITIAL_PRODUCTS)
             .filter(p => p.id !== product.id && !p.isSold)
-            .sort(() => 0.5 - Math.random())
             .slice(0, 4)
             .map(p => (
               <ProductCard key={p.id} product={p} onViewDetails={navigateToProduct} />
