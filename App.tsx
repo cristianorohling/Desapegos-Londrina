@@ -67,7 +67,6 @@ const slugify = (text: string) => normalizeText(text)
   .replace(/^-+/, '')
   .replace(/-+$/, '');
 
-// Função auxiliar para embaralhar arrays
 const shuffle = <T,>(array: T[]): T[] => {
   const newArr = [...array];
   for (let i = newArr.length - 1; i > 0; i--) {
@@ -85,10 +84,17 @@ const App: React.FC = () => {
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // Estado para persistir a ordem aleatória durante a sessão atual
   const [randomSeed] = useState(() => Math.random());
 
+  // Lógica de Meta Tags e Roteamento
   useEffect(() => {
+    const updateMeta = (title: string, desc: string, image: string) => {
+      document.title = title;
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+      document.querySelector('meta[property="og:description"]')?.setAttribute('content', desc);
+      document.querySelector('meta[property="og:image"]')?.setAttribute('content', image);
+    };
+
     const handleRouting = () => {
       const path = window.location.pathname;
       const parts = path.split('/').filter(Boolean);
@@ -99,16 +105,30 @@ const App: React.FC = () => {
         if (product) {
           setViewingProduct(product);
           setCurrentView('product-landing');
+          
+          // Atualiza meta tags dinamicamente para o produto
+          const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+          updateMeta(
+            `${product.name} - R$ ${priceStr} | Desapegos Londrina`,
+            product.description.substring(0, 160) + '...',
+            product.images[0]
+          );
+          
           window.scrollTo(0, 0);
           return;
         }
       }
       
-      if (path === '/sobre') setCurrentView('about');
-      else if (path === '/duvidas') setCurrentView('how');
-      else {
+      if (path === '/sobre') {
+        setCurrentView('about');
+        updateMeta("Sobre Nós | Desapegos Londrina", "Conheça a história do nosso bazar e por que estamos desapegando.", "");
+      } else if (path === '/duvidas') {
+        setCurrentView('how');
+        updateMeta("Dúvidas Frequentes | Desapegos Londrina", "Saiba como comprar e retirar seus itens no nosso bazar.", "");
+      } else {
         setCurrentView('catalog');
         setViewingProduct(null);
+        updateMeta("Desapegos Londrina - Bazar", "Confira os melhores itens e oportunidades no nosso bazar de desapegos em Londrina!", "");
       }
     };
 
@@ -123,6 +143,11 @@ const App: React.FC = () => {
     window.history.pushState({}, '', url);
     setViewingProduct(product);
     setCurrentView('product-landing');
+    
+    // Atualiza o título imediatamente
+    const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    document.title = `${product.name} - R$ ${priceStr} | Desapegos Londrina`;
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -132,6 +157,7 @@ const App: React.FC = () => {
     setViewingProduct(null);
     setActiveCategory('Todos');
     setSearchQuery('');
+    document.title = "Desapegos Londrina - Bazar";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -142,7 +168,6 @@ const App: React.FC = () => {
   const sortedCategories = useMemo(() => [...CATEGORIES].sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
 
   const filteredProducts = useMemo(() => {
-    // 1. Filtro básico
     const baseItems = INITIAL_PRODUCTS.filter(p => {
       const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
       const searchNorm = normalizeText(searchQuery);
@@ -154,26 +179,21 @@ const App: React.FC = () => {
                          descNorm.includes(searchNorm) ||
                          p.keywords?.some(k => normalizeText(k).includes(searchNorm));
       
-      // No "Todos" sem busca, ocultamos os vendidos para dar espaço aos novos
       if (activeCategory === 'Todos' && !searchQuery && p.isSold) return false;
       return categoryMatch && searchMatch;
     });
 
-    // 2. Lógica de Ordenação Aleatória Balanceada (Intercalada por Categoria)
     if (activeCategory === 'Todos' && !searchQuery) {
-      // Agrupar por categoria
       const groups: Record<string, Product[]> = {};
       baseItems.forEach(p => {
         if (!groups[p.category]) groups[p.category] = [];
         groups[p.category].push(p);
       });
 
-      // Embaralhar cada grupo individualmente
       Object.keys(groups).forEach(cat => {
         groups[cat] = shuffle(groups[cat]);
       });
 
-      // Intercalar (Round-robin) para garantir distribuição
       const result: Product[] = [];
       const cats = Object.keys(groups);
       let hasMore = true;
@@ -192,14 +212,12 @@ const App: React.FC = () => {
       return result;
     }
 
-    // Se for uma categoria específica ou houver busca, apenas embaralhamos o resultado
     if (!searchQuery) {
       return shuffle(baseItems);
     }
 
-    // Com busca, mantemos ordem alfabética ou relevância
     return baseItems.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-  }, [activeCategory, searchQuery, randomSeed]); // randomSeed garante re-calculo se resetado
+  }, [activeCategory, searchQuery, randomSeed]);
 
   const handleCategoryClick = (cat: Category | 'Todos') => {
     setActiveCategory(cat);
@@ -210,10 +228,15 @@ const App: React.FC = () => {
 
   const shareProduct = () => {
     if (navigator.share && viewingProduct) {
+      const priceStr = viewingProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
       navigator.share({
         title: viewingProduct.name,
-        text: `Olha esse desapego que encontrei no bazar: ${viewingProduct.name}`,
+        text: `🔥 OPORTUNIDADE: ${viewingProduct.name}\n💰 Preço: R$ ${priceStr}\n\nConfira os detalhes e fotos no link:`,
         url: window.location.href,
+      }).catch(() => {
+        // Fallback caso falhe o share nativo
+        const text = encodeURIComponent(`🔥 OPORTUNIDADE: ${viewingProduct.name}\n💰 Preço: R$ ${priceStr}\n\nLink: ${window.location.href}`);
+        window.open(`https://wa.me/?text=${text}`, '_blank');
       });
     }
   };
@@ -319,7 +342,7 @@ const App: React.FC = () => {
 
           <div className="hidden lg:block pt-2">
             <a 
-              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" no catálogo e gostaria de combinar.`)}`} 
+              href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Vi o item "${product.name}" (R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}) no catálogo e gostaria de combinar a retirada.`)}`} 
               target={product.isSold ? '_self' : '_blank'} 
               className={`w-full flex items-center justify-center space-x-3 py-5 rounded-2xl font-black uppercase text-[11px] tracking-[0.1em] transition-all shadow-xl ${product.isSold ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-emerald-600'}`}
             >
@@ -367,7 +390,7 @@ const App: React.FC = () => {
              <span className="text-lg font-black text-slate-900">R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
           </div>
           <a 
-            href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Quero o item "${product.name}" do bazar.`)}`} 
+            href={product.isSold ? '#' : `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Quero o item "${product.name}" (R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}) do bazar.`)}`} 
             target={product.isSold ? '_self' : '_blank'} 
             className={`flex items-center justify-center gap-2 px-6 sm:px-10 py-3.5 rounded-[1.5rem] font-black uppercase text-[10px] tracking-widest transition-all ${product.isSold ? 'bg-slate-100 text-slate-300' : 'bg-emerald-500 text-white shadow-lg active:scale-95'}`}
           >
@@ -409,7 +432,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Card de Confiança / Marketplace */}
           <div className="bg-white rounded-[3rem] p-8 md:p-12 border border-emerald-100 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-16 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50" />
             <div className="shrink-0 flex flex-col items-center">
@@ -471,14 +493,12 @@ const App: React.FC = () => {
 
     return (
       <div className="animate-fade-in px-4">
-        {/* Header do Catálogo: Título e Pesquisa */}
         <div className="max-w-7xl mx-auto mb-2 md:mb-4 flex flex-col md:flex-row items-center justify-between gap-3 border-b border-emerald-100/40 pb-2 md:pb-4">
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
             <div className="flex items-center gap-3">
               <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
                 {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do Bazar!' : activeCategory)}
               </h2>
-              {/* Badge de Marketplace */}
               <a 
                 href={FB_MARKETPLACE_URL} 
                 target="_blank" 
