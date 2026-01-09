@@ -86,15 +86,30 @@ const App: React.FC = () => {
   
   const [randomSeed] = useState(() => Math.random());
 
-  // Lógica de Meta Tags e Roteamento
-  useEffect(() => {
-    const updateMeta = (title: string, desc: string, image: string) => {
-      document.title = title;
-      document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
-      document.querySelector('meta[property="og:description"]')?.setAttribute('content', desc);
-      document.querySelector('meta[property="og:image"]')?.setAttribute('content', image);
+  // Função centralizada para atualizar as meta tags
+  const updateMetaTags = (title: string, desc: string, image: string) => {
+    document.title = title;
+    
+    // Atualiza Open Graph (WhatsApp, Facebook, etc)
+    const tags = {
+      'og:title': title,
+      'og:description': desc,
+      'og:image': image,
+      'twitter:title': title,
+      'twitter:description': desc,
+      'twitter:image': image
     };
 
+    Object.entries(tags).forEach(([property, content]) => {
+      let element = document.querySelector(`meta[property="${property}"]`) || 
+                    document.querySelector(`meta[name="${property}"]`);
+      if (element) {
+        element.setAttribute('content', content);
+      }
+    });
+  };
+
+  useEffect(() => {
     const handleRouting = () => {
       const path = window.location.pathname;
       const parts = path.split('/').filter(Boolean);
@@ -106,11 +121,10 @@ const App: React.FC = () => {
           setViewingProduct(product);
           setCurrentView('product-landing');
           
-          // Atualiza meta tags dinamicamente para o produto
           const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-          updateMeta(
+          updateMetaTags(
             `${product.name} - R$ ${priceStr} | Desapegos Londrina`,
-            product.description.substring(0, 160) + '...',
+            product.description.substring(0, 150) + "...",
             product.images[0]
           );
           
@@ -121,14 +135,14 @@ const App: React.FC = () => {
       
       if (path === '/sobre') {
         setCurrentView('about');
-        updateMeta("Sobre Nós | Desapegos Londrina", "Conheça a história do nosso bazar e por que estamos desapegando.", "");
+        updateMetaTags("Sobre Nós | Desapegos Londrina", "Conheça nossa história.", "");
       } else if (path === '/duvidas') {
         setCurrentView('how');
-        updateMeta("Dúvidas Frequentes | Desapegos Londrina", "Saiba como comprar e retirar seus itens no nosso bazar.", "");
+        updateMetaTags("Dúvidas | Desapegos Londrina", "Como comprar.", "");
       } else {
         setCurrentView('catalog');
         setViewingProduct(null);
-        updateMeta("Desapegos Londrina - Bazar", "Confira os melhores itens e oportunidades no nosso bazar de desapegos em Londrina!", "");
+        updateMetaTags("Desapegos Londrina - Bazar", "Confira as melhores oportunidades!", "");
       }
     };
 
@@ -144,9 +158,12 @@ const App: React.FC = () => {
     setViewingProduct(product);
     setCurrentView('product-landing');
     
-    // Atualiza o título imediatamente
     const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-    document.title = `${product.name} - R$ ${priceStr} | Desapegos Londrina`;
+    updateMetaTags(
+      `${product.name} - R$ ${priceStr} | Desapegos Londrina`,
+      product.description.substring(0, 150) + "...",
+      product.images[0]
+    );
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -157,7 +174,7 @@ const App: React.FC = () => {
     setViewingProduct(null);
     setActiveCategory('Todos');
     setSearchQuery('');
-    document.title = "Desapegos Londrina - Bazar";
+    updateMetaTags("Desapegos Londrina - Bazar", "Explore o catálogo completo.", "");
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -226,18 +243,25 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Função de compartilhamento otimizada para WhatsApp
   const shareProduct = () => {
-    if (navigator.share && viewingProduct) {
-      const priceStr = viewingProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    if (!viewingProduct) return;
+
+    const priceStr = viewingProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    const shareText = `🔥 *OPORTUNIDADE NO BAZAR!*\n\n*${viewingProduct.name.toUpperCase()}*\n💰 *Preço:* R$ ${priceStr}\n\n📍 _Local: Bairro ${NEIGHBORHOOD}, Londrina_\n\nVeja as fotos e detalhes completos aqui:`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
       navigator.share({
         title: viewingProduct.name,
-        text: `🔥 OPORTUNIDADE: ${viewingProduct.name}\n💰 Preço: R$ ${priceStr}\n\nConfira os detalhes e fotos no link:`,
-        url: window.location.href,
+        text: shareText,
+        url: shareUrl,
       }).catch(() => {
-        // Fallback caso falhe o share nativo
-        const text = encodeURIComponent(`🔥 OPORTUNIDADE: ${viewingProduct.name}\n💰 Preço: R$ ${priceStr}\n\nLink: ${window.location.href}`);
-        window.open(`https://wa.me/?text=${text}`, '_blank');
+        // Fallback para abrir WhatsApp diretamente se o Share API falhar
+        window.open(`https://wa.me/?text=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank');
       });
+    } else {
+      window.open(`https://wa.me/?text=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank');
     }
   };
 
@@ -287,7 +311,13 @@ const App: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <button onClick={shareProduct} className="p-2.5 bg-white rounded-xl text-slate-400 hover:text-emerald-600 border border-emerald-50 transition-all shadow-sm"><Share2 size={18} /></button>
+                <button 
+                  onClick={shareProduct} 
+                  title="Compartilhar no WhatsApp"
+                  className="p-2.5 bg-white rounded-xl text-slate-400 hover:text-emerald-600 border border-emerald-50 transition-all shadow-sm active:scale-90"
+                >
+                  <Share2 size={18} />
+                </button>
              </div>
              
              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 leading-tight tracking-tighter">
