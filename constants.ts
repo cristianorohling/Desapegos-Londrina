@@ -411,7 +411,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-ferramentas-massinha',
     name: 'Mega Kit Acessórios Play-Doh - Fábrica de Diversão',
-    description: `Grande lote de acessórios e ferramentas para brincar com massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
+    description: `Grande lote de acessórios e ferramentas para brincar with massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
     price: 45.00,
     category: 'Brinquedos',
     images: [
@@ -427,7 +427,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
-    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet com variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
+    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet with variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
     price: 65.00,
     category: 'Brinquedos',
     images: [
@@ -457,7 +457,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'barbie-salao-pia',
     name: 'Pia de Salão Barbie Glamour - Cuba com Glitter',
-    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul com glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
+    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul with glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
     price: 29.00,
     category: 'Brinquedos',
     images: [
@@ -472,7 +472,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'army-men-toy-story',
     name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
-    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas com a licença, em diversas poses de combate.`,
+    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas with a licença, em diversas poses de combate.`,
     price: 49.00,
     category: 'Brinquedos',
     images: [
@@ -505,4 +505,4 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
 
 export const WHATSAPP_NUMBER = "5543991167333";
 export const NEIGHBORHOOD = "San Fernando";
-export const FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/profile/seu-perfil-aqui";
+export const FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/profile/100001551016902/";

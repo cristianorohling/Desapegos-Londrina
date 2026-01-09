@@ -419,7 +419,7 @@ const App: React.FC = () => {
                <div className="flex gap-1 mt-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="#f59e0b" className="text-amber-500" />)}
                </div>
-               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mt-2">Classificação Máxima</span>
+               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mt-2">Reputação Máxima</span>
             </div>
             <div className="flex-1 space-y-4 text-center md:text-left relative z-10">
                <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Vendedor Recomendado</h3>
@@ -476,7 +476,7 @@ const App: React.FC = () => {
           <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
             <div className="flex items-center gap-3">
               <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
-                {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do nosso Bazar!' : activeCategory)}
+                {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do Bazar!' : activeCategory)}
               </h2>
               {/* Badge de Marketplace */}
               <a 
@@ -668,7 +668,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <ShoppingBag size={18} className="text-emerald-600" />
-            <span className="text-xs font-black uppercase tracking-tighter">Desapegos Londrina</span>
+            <span className="text-xs font-black uppercase tracking-tighter">Crie Lá - Bazar</span>
           </div>
           <p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p>
           <div className="flex gap-4 items-center">
