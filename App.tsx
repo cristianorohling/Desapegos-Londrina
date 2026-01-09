@@ -668,7 +668,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <ShoppingBag size={18} className="text-emerald-600" />
-            <span className="text-xs font-black uppercase tracking-tighter">Crie Lá - Bazar</span>
+            <span className="text-xs font-black uppercase tracking-tighter">Desapegos Londrina</span>
           </div>
           <p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p>
           <div className="flex gap-4 items-center">

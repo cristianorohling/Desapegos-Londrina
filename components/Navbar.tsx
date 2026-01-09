@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView, isMenuOpen, toggl
             </div>
             <div className="ml-3">
               <h1 className="text-base md:text-lg font-black text-slate-900 tracking-tighter uppercase leading-none">
-                CRIE <span className="text-emerald-600">LÁ</span>
+                DESAPEGOS <span className="text-emerald-600">LONDRINA</span>
               </h1>
             </div>
           </div>

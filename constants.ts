@@ -503,6 +503,6 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   }
 ];
 
-export const WHATSAPP_NUMBER = "5543991167333";
+export const WHATSAPP_NUMBER = "5543991223034";
 export const NEIGHBORHOOD = "San Fernando";
 export const FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/profile/100001551016902/";
