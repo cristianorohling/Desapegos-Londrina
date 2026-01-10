@@ -383,7 +383,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     id: 'repetidor-tplink',
     name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
     description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, com configuração fácil via botão WPS. Melhora a cobertura da internet.`,
-    price: 79.00,
+    price: 50.00,
     category: 'Informática',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
