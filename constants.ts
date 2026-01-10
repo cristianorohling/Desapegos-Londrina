@@ -11,6 +11,29 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'guitarra-guitar-hero-bright',
+    name: "Guitarra Guitar Hero Bright - PS2 / PS3 / Wii",
+    description: `Vendo Guitarra Controle da marca Bright, modelo Stratocaster branca. Na caixa original, caixa levemente danificada.
+
+Compatibilidade: PS2, PS3 e Wii.
+Conexão: Com fio (cabo USB/Adaptador).
+Estado: Produto novo, testado e funcionando 100%.
+
+Ideal para quem quer reviver os clássicos do Guitar Hero e Rock Band nos consoles retrô ou PC.`,
+    price: 249.00,
+    category: 'Informática',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/02.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/03.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/04.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 2000,
+    keywords: ['guitar hero', 'guitarra', 'bright', 'ps2', 'ps3', 'wii', 'controle', 'games', 'rock band', 'novo']
+  },
+  {
     id: 'patins-inline-ajustavel',
     name: "Patins In Line Preto Ajustável Tam 34, 35 e 36 - Roller Recreativo",
     description: `Vendo par de patins in-line (roller) na cor preta com detalhes em branco e prata. Modelo recreativo unissex, ideal para lazer e iniciantes na patinação.
@@ -19,7 +42,7 @@ Características do produto:
 Numeração: Atende tamanhos 34 e 35, servindo até 36 (formato ajustável).
 Estrutura: Bota externa rígida para maior suporte e bota interna (liner) acolchoada e confortável.
 Fixação: Sistema triplo de fechamento com cadarço, tira de velcro no peito do pé e presilha de trava rápida no tornozelo, garantindo firmeza e segurança.
-Rodas: 4 rodas em linha originais modelo Conect, em bom estado de conservação.
+Rodas: 4 rodas in linha originais modelo Conect, em bom estado de conservação.
 Segurança: Possui freio traseiro instalado no pé direito.
 
 Produto íntegro, higienizado e pronto para uso.`,
@@ -236,7 +259,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'mesa-cadeiras-barbie',
     name: 'Conjunto Jantar Crystal Doll - Mesa e 4 Cadeiras Pink',
-    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal com glitter e 4 cadeiras na cor pink. Em estado de novo.`,
+    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal with glitter e 4 cadeiras na cor pink. Em estado de novo.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -420,7 +443,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com wheels funcionais. Item de colecionador em ótimo estado.`,
+    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato with wheels funcionais. Item de colecionador em ótimo estado.`,
     price: 80.00,
     category: 'Brinquedos',
     images: [
