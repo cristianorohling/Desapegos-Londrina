@@ -119,7 +119,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/01.jpg',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/02.jpg'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 200,
     keywords: ['volante', 'pedal', 'multilaser', 'ps2', 'ps3', 'pc', 'gamer', 'jogos de corrida', 'simulador']
@@ -183,7 +183,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/02.jpg'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() - 100,
     keywords: ['termo-rey', 'gravatinha', 'vintage', 'antigo', 'travessa', 'tigela', 'opalina', 'anos 60', 'anos 70', 'coleção', 'retrô']
