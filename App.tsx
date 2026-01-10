@@ -67,7 +67,6 @@ const slugify = (text: string) => normalizeText(text)
   .replace(/^-+/, '')
   .replace(/-+$/, '');
 
-// Mapa para converter slugs de volta para nomes de categoria reais
 const SLUG_TO_CATEGORY = CATEGORIES.reduce((acc, cat) => {
   acc[slugify(cat)] = cat;
   return acc;
@@ -114,7 +113,6 @@ const App: React.FC = () => {
       const path = window.location.pathname;
       const parts = path.split('/').filter(Boolean);
       
-      // Detalhes do Produto: /[categoria]/[id]
       if (parts.length >= 2) {
         const productId = parts[parts.length - 1];
         const product = INITIAL_PRODUCTS.find(p => p.id === productId);
@@ -132,15 +130,13 @@ const App: React.FC = () => {
         }
       }
       
-      // Páginas Estáticas ou Categorias
-      if (path === '/sobre') {
+      if (path === '/sobre' || path === '/sobre/') {
         setCurrentView('about');
         updateMetaTags("Sobre Nós | Desapegos Londrina", "Conheça nossa história.", "");
-      } else if (path === '/duvidas') {
+      } else if (path === '/duvidas' || path === '/duvidas/') {
         setCurrentView('how');
         updateMetaTags("Dúvidas | Desapegos Londrina", "Como comprar.", "");
       } else if (parts.length === 1 && SLUG_TO_CATEGORY[parts[0]]) {
-        // Link de Categoria Direta: /[slug-categoria]
         const cat = SLUG_TO_CATEGORY[parts[0]];
         setCurrentView('catalog');
         setViewingProduct(null);
@@ -148,7 +144,6 @@ const App: React.FC = () => {
         updateMetaTags(`Itens de ${cat} | Desapegos Londrina`, `Veja todos os nossos desapegos de ${cat}.`, "");
         window.scrollTo(0, 0);
       } else {
-        // Home / Todos
         setCurrentView('catalog');
         setViewingProduct(null);
         setActiveCategory('Todos');
@@ -204,14 +199,13 @@ const App: React.FC = () => {
     }
   };
 
-  // Nova função para compartilhar a categoria atual
   const shareCurrentCategory = () => {
     const shareUrl = window.location.href;
-    const title = activeCategory === 'Todos' ? "CATÁLOGO COMPLETO" : `ITENS DE ${activeCategory.toUpperCase()}`;
-    const shareText = `👋 *${title} - DESAPEGOS LONDRINA*\n\nConfira as novidades e oportunidades que separei para você no nosso bazar:\n`;
+    const categoryName = activeCategory === 'Todos' ? "CATÁLOGO COMPLETO" : `ITENS DE ${activeCategory.toUpperCase()}`;
+    const shareText = `👋 *${categoryName} - DESAPEGOS LONDRINA*\n\nSeparei alguns itens incríveis no nosso bazar! Dá uma olhadinha no link:\n`;
 
     if (navigator.share) {
-      navigator.share({ title: title, text: shareText, url: shareUrl }).catch(() => {
+      navigator.share({ title: categoryName, text: shareText, url: shareUrl }).catch(() => {
         window.open(`https://wa.me/?text=${encodeURIComponent(shareText + '\n' + shareUrl)}`, '_blank');
       });
     } else {
@@ -307,7 +301,6 @@ const App: React.FC = () => {
               <h2 className="text-lg md:text-2xl font-black text-slate-900 tracking-tighter leading-none whitespace-nowrap">
                 {searchQuery ? 'Resultados' : (activeCategory === 'Todos' ? 'Explore os itens do Bazar!' : activeCategory)}
               </h2>
-              {/* Novo Botão de Compartilhar Categoria */}
               <button 
                 onClick={shareCurrentCategory}
                 title={`Compartilhar link de ${activeCategory}`}

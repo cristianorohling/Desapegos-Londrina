@@ -11,6 +11,30 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'patins-inline-ajustavel',
+    name: "Patins In Line Preto Ajustável Tam 34, 35 e 36 - Roller Recreativo",
+    description: `Vendo par de patins in-line (roller) na cor preta com detalhes em branco e prata. Modelo recreativo unissex, ideal para lazer e iniciantes na patinação.
+
+Características do produto:
+Numeração: Atende tamanhos 34 e 35, servindo até 36 (formato ajustável).
+Estrutura: Bota externa rígida para maior suporte e bota interna (liner) acolchoada e confortável.
+Fixação: Sistema triplo de fechamento com cadarço, tira de velcro no peito do pé e presilha de trava rápida no tornozelo, garantindo firmeza e segurança.
+Rodas: 4 rodas em linha originais modelo Conect, em bom estado de conservação.
+Segurança: Possui freio traseiro instalado no pé direito.
+
+Produto íntegro, higienizado e pronto para uso.`,
+    price: 150.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/patins_inline/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/patins_inline/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 1000,
+    keywords: ['patins', 'inline', 'roller', 'esporte', 'lazer', 'ajustável', 'brinquedo', 'radical']
+  },
+  {
     id: 'lote-miniaturas-chumbo-rpg',
     name: "Lote Imperdível de Miniaturas de Chumbo (Old School)",
     description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
@@ -462,7 +486,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbiesalao/01.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbiesalao/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/barbiesalao/02.jpg'
     ],
     isSold: false,
     isHighlighted: false,
