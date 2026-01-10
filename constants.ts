@@ -80,7 +80,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/coruja_entalhada/01.png'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 300,
     keywords: ['coruja', 'madeira', 'entalhe', 'escultura', 'rústico', 'parede', 'artesanato', 'decoração']
