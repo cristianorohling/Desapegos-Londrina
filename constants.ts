@@ -89,7 +89,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     id: 'volante-multilaser-3-em-1',
     name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
     description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível com PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
-    price: 150.00,
+    price: 110.00,
     category: 'Informática',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/01.jpg',
