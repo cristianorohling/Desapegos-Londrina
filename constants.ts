@@ -68,7 +68,7 @@ Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guerreiros_rpg/01.png'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 700,
     keywords: ['miniaturas de chumbo', 'rpg', 'guerreiros', 'metal', 'old school', 'colecionador', 'vintage', 'hobby', 'miniatura antiga', 'fantasia']
