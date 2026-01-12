@@ -63,7 +63,7 @@ Produto íntegro, higienizado e pronto para uso.`,
     description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
 
 Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a colecionadores adultos e hobbyistas. Recomenda-se lavar as mãos após o manuseio e não são indicadas para crianças.`,
-    price: 80.00,
+    price: 50.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guerreiros_rpg/01.png'
@@ -93,7 +93,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     id: 'lote-mario-bros-mcdonalds',
     name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
     description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
-    price: 80.00,
+    price: 50.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'
