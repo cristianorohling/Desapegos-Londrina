@@ -355,7 +355,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     id: 'chapeu-woody-toy-story',
     name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
     description: `Chapéu do personagem Woody (Toy Story) em feltro marrom com as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
-    price: 8.00,
+    price: 10.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/01.jpg',
