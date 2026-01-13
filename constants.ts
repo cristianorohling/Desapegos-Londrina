@@ -28,7 +28,7 @@ Ideal para quem quer reviver os clássicos do Guitar Hero e Rock Band nos consol
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/03.jpg',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/04.jpg'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 2000,
     keywords: ['guitar hero', 'guitarra', 'bright', 'ps2', 'ps3', 'wii', 'controle', 'games', 'rock band', 'novo']
