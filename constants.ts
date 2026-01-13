@@ -11,6 +11,23 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'mimo-convert-locomotiva',
+    name: 'Mimo Convert "Locomotiva" (versão brasileira do "GoBots Loco")',
+    description: `Mergulhe na nostalgia dos anos 80 com este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
+
+O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste natural de um brinquedo que foi muito aproveitado ("played condition"), já sem os adesivos originais. A mecânica de transformação permanece funcional, tornando-o uma excelente opção acessível para projetos de restauração, customização ou simplesmente para ter na estante um sobrevivente genuíno da infância.`,
+    price: 100.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mimo_convert/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mimo_convert/02.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 3000,
+    keywords: ['mimo', 'convert', 'gobots', 'loco', 'locomotiva', 'vintage', 'anos 80', 'brinquedo antigo', 'robô', 'transformação', 'colecionador']
+  },
+  {
     id: 'guitarra-guitar-hero-bright',
     name: "Guitarra Guitar Hero Bright - PS2 / PS3 / Wii",
     description: `Vendo Guitarra Controle da marca Bright, modelo Stratocaster branca. Na caixa original, caixa levemente danificada.

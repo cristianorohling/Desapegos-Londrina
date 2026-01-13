@@ -114,10 +114,13 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleRouting = () => {
       const path = window.location.pathname;
-      const parts = path.split('/').filter(Boolean);
+      const cleanPath = path.replace(/\/$/, '') || '/';
+      const parts = cleanPath.split('/').filter(Boolean);
       
+      console.log("Routing to:", cleanPath, parts);
+
       // Rota Oculta: /vendidos
-      if (path === '/vendidos' || path === '/vendidos/') {
+      if (cleanPath === '/vendidos') {
         setCurrentView('sold-report');
         updateMetaTags("Relatório de Vendas | Desapegos Londrina", "Área Privada", "");
         window.scrollTo(0, 0);
@@ -141,10 +144,10 @@ const App: React.FC = () => {
         }
       }
       
-      if (path === '/sobre' || path === '/sobre/') {
+      if (cleanPath === '/sobre') {
         setCurrentView('about');
         updateMetaTags("Sobre Nós | Desapegos Londrina", "Conheça nossa história.", "");
-      } else if (path === '/duvidas' || path === '/duvidas/') {
+      } else if (cleanPath === '/duvidas') {
         setCurrentView('how');
         updateMetaTags("Dúvidas | Desapegos Londrina", "Como comprar.", "");
       } else if (parts.length === 1 && SLUG_TO_CATEGORY[parts[0]]) {
