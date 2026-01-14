@@ -16,7 +16,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: `Disponível para venda o Diaclone Hilux 4WD Azul, fabricado pela Takara, conhecido entre colecionadores como "Blue Trailbreaker". Este modelo é um Pre-Transformer genuíno, utilizando o molde original que antecede a linha G1 da Hasbro, com a construção robusta em metal die-cast e acabamento cromado típicos da engenharia japonesa dos anos 80.
 
 Esta variante de cor é um item de alta raridade, sendo consideravelmente mais difícil de encontrar no mercado do que a versão preta padrão. Trata-se de uma peça essencial para coleções de Transformers Vintage, ideal para quem busca documentar a história da linha com variantes escassas e originais de época.`,
-    price: 290.00,
+    price: 260.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/01.png',
@@ -24,7 +24,7 @@ Esta variante de cor é um item de alta raridade, sendo consideravelmente mais d
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/03.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/04.png'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() + 4000,
     keywords: ['diaclone', 'takara', 'transformers', 'vintage', 'azul', 'hilux', '4wd', 'colecionador', 'anos 80', 'raridade', 'metal die-cast']
