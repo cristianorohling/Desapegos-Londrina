@@ -11,12 +11,31 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'diaclone-hilux-azul',
+    name: 'Diaclone Hilux 4WD Azul, Takara (1983)',
+    description: `Disponível para venda o Diaclone Hilux 4WD Azul, fabricado pela Takara, conhecido entre colecionadores como "Blue Trailbreaker". Este modelo é um Pre-Transformer genuíno, utilizando o molde original que antecede a linha G1 da Hasbro, com a construção robusta em metal die-cast e acabamento cromado típicos da engenharia japonesa dos anos 80.
+
+Esta variante de cor é um item de alta raridade, sendo consideravelmente mais difícil de encontrar no mercado do que a versão preta padrão. Trata-se de uma peça essencial para coleções de Transformers Vintage, ideal para quem busca documentar a história da linha com variantes escassas e originais de época.`,
+    price: 290.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/03.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/04.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 4000,
+    keywords: ['diaclone', 'takara', 'transformers', 'vintage', 'azul', 'hilux', '4wd', 'colecionador', 'anos 80', 'raridade', 'metal die-cast']
+  },
+  {
     id: 'mimo-convert-locomotiva',
     name: 'Mimo Convert "Locomotiva" (versão brasileira do "GoBots Loco")',
-    description: `Mergulhe na nostalgia dos anos 80 com este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
+    description: `Mergulhe na nostalgia dos anos 80 with este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
 
 O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste natural de um brinquedo que foi muito aproveitado ("played condition"), já sem os adesivos originais. A mecânica de transformação permanece funcional, tornando-o uma excelente opção acessível para projetos de restauração, customização ou simplesmente para ter na estante um sobrevivente genuíno da infância.`,
-    price: 100.00,
+    price: 80.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mimo_convert/01.png',
@@ -361,7 +380,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/01.jpg',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/02.jpg'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: false,
     createdAt: Date.now() - 3000,
     keywords: ['chapéu woody', 'toy story', 'fantasia', 'caubói', 'infantil', 'disney', 'pixar', 'cosplay infantil']
