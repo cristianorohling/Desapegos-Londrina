@@ -11,8 +11,39 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'chaleira-smartfy-inox',
+    name: 'Jarra Chaleira Elétrica Inox Smartfy 1.8L 220V - NOVA NA CAIXA',
+    description: `Traga modernidade e eficiência para a sua cozinha com a Jarra Elétrica Smartfy Inox. Equipamento robusto, ideal para quem busca rapidez no preparo de bebidas quentes e agilidade nas receitas do dia a dia.
+
+Destaques do Produto:
+* Alta Performance: Com 1500W de potência, ferve 1,8 litros de água em poucos minutos.
+* Acabamento Premium: Design sofisticado em Aço Inox e Preto, combinando com qualquer cozinha moderna.
+* Segurança Total: Sistema de desligamento automático após a fervura e proteção contra superaquecimento.
+* Higiene: Filtro integrado no bico e interior em inox, garantindo água pura sem cheiro ou gosto.
+* Ergonomia: Base com giro 360º, facilitando o manuseio tanto para destros quanto para canhotos.
+* Ideal para: Café, chás, chimarrão, preparo de alimentos instantâneos e esterilização de utensílios.
+
+Ficha Técnica:
+* Marca: Smartfy
+* Modelo: JE02I
+* Voltagem: 220V - 240V
+* Capacidade: 1.8 Litros
+* Material: Aço Inoxidável e Polipropileno
+* Condição: Novo, intacto na embalagem original.`,
+    price: 75.00,
+    category: 'Cozinha',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/01.webp',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/02.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 6000,
+    keywords: ['chaleira elétrica', 'smartfy', 'inox', 'cozinha', '220v', 'novo', 'eletrodoméstico', 'café', 'chá', 'chimarrão']
+  },
+  {
     id: 'comando-arcade-sanwa-vermelho',
-    name: 'Comando Arcade Tipo Sanwa Profissional Vermelho - Alta Precisão',
+    name: 'Comando Arcade Tipo Sanwa Profissional Vermelho - Alta Precision',
     description: `Controle para fliperama padrão Japonês (Tipo Sanwa). Ideal para quem busca precisão em jogos de luta (Street Fighter, KOF, Mortal Kombat) e agilidade em jogos de nave (shmup).
 
 Diferente dos comandos nacionais antigos (pesados), este modelo "Tipo Sanwa" oferece uma movimentação macia, curso curto e resposta rápida, permitindo a execução de combos e movimentos complexos com muito mais facilidade.
@@ -430,7 +461,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'stacie-suco-playset',
     name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
-    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) with tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
+    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) with tema de barraca de sucos. Inclui a boneca, balcão, accessories de smoothie e cachorrinho pet.`,
     price: 69.00,
     category: 'Brinquedos',
     images: [
