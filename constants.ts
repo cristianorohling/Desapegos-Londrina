@@ -11,6 +11,32 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'comando-arcade-sanwa-vermelho',
+    name: 'Comando Arcade Tipo Sanwa Profissional Vermelho - Alta Precisão',
+    description: `Controle para fliperama padrão Japonês (Tipo Sanwa). Ideal para quem busca precisão em jogos de luta (Street Fighter, KOF, Mortal Kombat) e agilidade em jogos de nave (shmup).
+
+Diferente dos comandos nacionais antigos (pesados), este modelo "Tipo Sanwa" oferece uma movimentação macia, curso curto e resposta rápida, permitindo a execução de combos e movimentos complexos com muito mais facilidade.
+
+Características:
+* Modelo: Estilo Sanwa JLF (Padrão Japonês).
+* Sensibilidade: Alta precisão com microswitches de resposta tátil (barulho de "clique" satisfatório).
+* Formato: Balltop (Bolinha) na cor Vermelha.
+* Restritor: Acompanha restritor (peça amarela) para garantir movimentos precisos nas diagonais.
+* Estado: NOVO`,
+    price: 65.00,
+    category: 'Informática',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/03.jpg',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/04.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 5000,
+    keywords: ['arcade', 'fliperama', 'sanwa', 'controle', 'games', 'jogos de luta', 'precisão', 'retrogamer', 'novo']
+  },
+  {
     id: 'diaclone-hilux-azul',
     name: 'Diaclone Hilux 4WD Azul, Takara (1983)',
     description: `Disponível para venda o Diaclone Hilux 4WD Azul, fabricado pela Takara, conhecido entre colecionadores como "Blue Trailbreaker". Este modelo é um Pre-Transformer genuíno, utilizando o molde original que antecede a linha G1 da Hasbro, com a construção robusta em metal die-cast e acabamento cromado típicos da engenharia japonesa dos anos 80.
@@ -96,7 +122,7 @@ Produto íntegro, higienizado e pronto para uso.`,
   {
     id: 'lote-miniaturas-chumbo-rpg',
     name: "Lote Imperdível de Miniaturas de Chumbo (Old School)",
-    description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
+    description: `Reviva a era de ouro do RPG with este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
 
 Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a colecionadores adultos e hobbyistas. Recomenda-se lavar as mãos após o manuseio e não são indicadas para crianças.`,
     price: 50.00,
@@ -142,7 +168,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'casinha-passarinho-madeira',
     name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
-    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada com verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
+    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada with verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
     price: 50.00,
     category: 'Decoração',
     images: [
@@ -171,7 +197,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'volante-multilaser-3-em-1',
     name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
-    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível com PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
+    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível with PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
     price: 100.00,
     category: 'Informática',
     images: [
@@ -201,7 +227,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'fogao-industrial-dako-couracado',
     name: 'Fogão Industrial Dako Couraçado Clássico',
-    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage com marcas de uso. Acompanha mangueira e registro de gás.`,
+    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage with marcas de uso. Acompanha mangueira e registro de gás.`,
     price: 1299.00,
     category: 'Cozinha',
     images: [
@@ -221,7 +247,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'suporte-doces-cupcakes_floral',
     name: 'Suporte para doces e Cucpakes 2 Andares - Charme Floral',
-    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design com acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
+    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design with acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
     price: 25.00,
     category: 'Cozinha',
     images: [
@@ -326,7 +352,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'pogobol-barbie-classico',
     name: 'Pogobol Barbie Original - Diversão Ativa Retrô',
-    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, com marcas de uso no plástico, mas funcional e com boa pressão na bola.`,
+    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, with marcas de uso no plástico, mas funcional e with boa pressão na bola.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -342,7 +368,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-lol-surprise-completo',
     name: 'Super Lote L.O.L. Surprise! - 5 Bonecas + Acessórios',
-    description: `Lote com 5 bonecas originais L.O.L. Surprise!, incluindo modelos com glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
+    description: `Lote with 5 bonecas originais L.O.L. Surprise!, incluindo modelos with glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
     price: 85.00,
     category: 'Brinquedos',
     images: [
@@ -373,7 +399,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'chapeu-woody-toy-story',
     name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
-    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom com as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
+    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom with as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
     price: 10.00,
     category: 'Brinquedos',
     images: [
@@ -465,7 +491,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'repetidor-tplink',
     name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
-    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, com configuração fácil via botão WPS. Melhora a cobertura da internet.`,
+    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, with configuração fácil via botão WPS. Melhora a cobertura da internet.`,
     price: 50.00,
     category: 'Informática',
     images: [
