@@ -11,6 +11,26 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'mjolnir-thor-low-cost',
+    name: 'Mjolnir do Thor (Versão de Entrada/Low Cost)',
+    description: `Vendo este Mjolnir de plástico. Não foi forjado no coração de uma estrela moribunda, foi forjado numa injetora de plástico mesmo, mas quebra o galho!
+
+Perfeito para:
+* Completar fantasia de última hora.
+* Deixar na estante (de longe engana bem!).
+* Presentear sobrinho que quebra tudo.
+* Fazer um projeto de pintura e deixar ele com cara de item de luxo.`,
+    price: 15.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/martelo_thor/01.png'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() + 8000,
+    keywords: ['thor', 'mjolnir', 'marvel', 'vingadores', 'martelo', 'fantasia', 'brinquedo', 'geek', 'barato']
+  },
+  {
     id: 'tait-speaker-tmaa10',
     name: 'Alto-Falante Tait TMAA10 High Power (Novo) - Padrão Industrial p/ Rádio',
     description: `Vendo alto-falante remoto original da Tait Communications, modelo High-Power (TMAA10). Equipamento novo, nunca utilizado.
@@ -57,7 +77,7 @@ Ficha Técnica:
 * Capacidade: 1.8 Litros
 * Material: Aço Inoxidável e Polipropileno
 * Condição: Novo, intacto na embalagem original.`,
-    price: 75.00,
+    price: 60.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/01.webp',
@@ -119,7 +139,7 @@ Esta variante de cor é um item de alta raridade, sendo consideravelmente mais d
     description: `Mergulhe na nostalgia dos anos 80 with este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
 
 O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste natural de um brinquedo que foi muito aproveitado ("played condition"), já sem os adesivos originais. A mecânica de transformação permanece funcional, tornando-o uma excelente opção acessível para projetos de restauração, customização ou simplesmente para ter na estante um sobrevivente genuíno da infância.`,
-    price: 80.00,
+    price: 100.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mimo_convert/01.png',
