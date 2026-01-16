@@ -11,6 +11,33 @@ export const CATEGORIES: Category[] = [
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'tait-speaker-tmaa10',
+    name: 'Alto-Falante Tait TMAA10 High Power (Novo) - Padrão Industrial p/ Rádio',
+    description: `Vendo alto-falante remoto original da Tait Communications, modelo High-Power (TMAA10). Equipamento novo, nunca utilizado.
+
+Este não é um alto-falante comum. É um equipamento de padrão industrial/militar, projetado para oferecer áudio extremamente alto e cristalino mesmo em ambientes barulhentos (ideal para caminhonetes a diesel, caminhões, viaturas ou maquinário agrícola).
+
+Destaques:
+* Durabilidade Extrema: Carcaça reforçada e resistente a impactos e vibração.
+* Qualidade de Áudio: Som encorpado, sem a distorção típica de caixas de plástico simples.
+* Praticidade: Acompanha suporte de metal (bracket) original para fixação no painel ou teto e cabo longo para instalação flexível.
+
+Especificações:
+* Marca: Tait Communications (Nova Zelândia)
+* Estado: Novo (Zero)
+* Compatibilidade: Funciona em qualquer rádio móvel (VHF, UHF, PX/Faixa do Cidadão) que aceite caixa externa (Motorola, Yaesu, Icom, Voyager, etc).`,
+    price: 200.00,
+    category: 'Informática',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/02.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 7000,
+    keywords: ['tait', 'tmaa10', 'alto-falante', 'rádio', 'comunicação', 'industrial', 'vhf', 'uhf', 'px', 'novo']
+  },
+  {
     id: 'chaleira-smartfy-inox',
     name: 'Jarra Chaleira Elétrica Inox Smartfy 1.8L 220V - NOVA NA CAIXA',
     description: `Traga modernidade e eficiência para a sua cozinha com a Jarra Elétrica Smartfy Inox. Equipamento robusto, ideal para quem busca rapidez no preparo de bebidas quentes e agilidade nas receitas do dia a dia.
@@ -171,7 +198,7 @@ Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a
     name: "Kit Completo Guardiões da Galáxia - Versão bootleg",
     description: `Dá uma olhada nesse kit completo da equipe mais fora da lei da galáxia! São bonecos de fabricação chinesa (versão alternativa/bootleg), ideais para quem quer a equipe toda reunida sem gastar muito.
 
-O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado com sua faca de combate. Além deles, o kit conta com Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
+O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado with sua faca de combate. Além deles, o kit conta with Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -185,7 +212,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-mario-bros-mcdonalds',
     name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
-    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
+    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta with figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
