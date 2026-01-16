@@ -489,11 +489,11 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     id: 'bandai-dx-dodekabutak-vintage',
     name: 'Robô DX Dodekabutak Bandai - Original Japonês Kabutack',
     description: `Robô DX Dodekabutak original Bandai Japan, da série Kabutack (1997). Realiza transformação completa de modo besouro para modo robô. Peça rara e em excelente estado de conservação.`,
-    price: 100.00,
+    price: 80.00,
     category: 'Brinquedos',
     images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/01.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/02.jpg'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/02.png'
     ],
     isSold: false,
     isHighlighted: true,
