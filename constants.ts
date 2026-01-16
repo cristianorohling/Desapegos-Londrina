@@ -5,11 +5,37 @@ export const CATEGORIES: Category[] = [
   "Decoração",
   "Pets",
   "Cozinha",
-  "Informática",
+  "Info Eletrônicos",
   "Instrumentos Musicais"
 ];
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'tv-philco-ford-vintage-amarela',
+    name: 'TV Antiga Philco-Ford Portátil Amarela - Vintage Anos 70 - Rara - Space Age',
+    description: `Vendo rara TV portátil da marca Philco-Ford, modelo icônico da década de 1970. Uma verdadeira peça de história e design, ideal para colecionadores, decoração de ambientes retrô, cenografia, vitrines ou projetos de restauração.
+
+Destaques do Produto:
+* Marca: Philco-Ford (Período clássico da marca).
+* Estilo: Design "Space Age" com gabinete na cor Amarelo/Mostarda (cor difícil de encontrar e muito valorizada).
+* Estética: Peça com design arredondado, típica do futurismo dos anos 70.
+* Estado de Conservação: Estrutura externa (carcaça) íntegra, sem trincados graves. Botões e seletores originais presentes.
+* Funcionamento: O aparelho liga e acende a tela (chuvisco), mas precisa de conversor para sinal digital ou revisão técnica.
+
+Observação: Trata-se de uma TV de tubo (CRT) analógica. Para assistir canais hoje em dia, é necessário uso de conversores externos, mas seu maior valor é como objeto de decoração vintage.`,
+    price: 390.00,
+    category: 'Info Eletrônicos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/tv_philco_ford/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/tv_philco_ford/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/tv_philco_ford/03.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/tv_philco_ford/04.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 9000,
+    keywords: ['tv antiga', 'philco-ford', 'vintage', 'anos 70', 'amarela', 'retrô', 'decoração', 'space age', 'colecionador', 'tv de tubo']
+  },
   {
     id: 'mjolnir-thor-low-cost',
     name: 'Mjolnir do Thor (Versão de Entrada/Low Cost)',
@@ -47,7 +73,7 @@ Especificações:
 * Estado: Novo (Zero)
 * Compatibilidade: Funciona em qualquer rádio móvel (VHF, UHF, PX/Faixa do Cidadão) que aceite caixa externa (Motorola, Yaesu, Icom, Voyager, etc).`,
     price: 199.00,
-    category: 'Informática',
+    category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/02.png'
@@ -102,7 +128,7 @@ Características:
 * Restritor: Acompanha restritor (peça amarela) para garantir movimentos precisos nas diagonais.
 * Estado: NOVO`,
     price: 65.00,
-    category: 'Informática',
+    category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/02.png',
@@ -136,7 +162,7 @@ Esta variante de cor é um item de alta raridade, sendo consideravelmente mais d
   {
     id: 'mimo-convert-locomotiva',
     name: 'Mimo Convert "Locomotiva" (versão brasileira do "GoBots Loco")',
-    description: `Mergulhe na nostalgia dos anos 80 with este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
+    description: `Mergulhe na nostalgia dos anos 80 com este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
 
 O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste natural de um brinquedo que foi muito aproveitado ("played condition"), já sem os adesivos originais. A mecânica de transformação permanece funcional, tornando-o uma excelente opção acessível para projetos de restauração, customização ou simplesmente para ter na estante um sobrevivente genuíno da infância.`,
     price: 100.00,
@@ -161,7 +187,7 @@ Estado: Produto novo, testado e funcionando 100%.
 
 Ideal para quem quer reviver os clássicos do Guitar Hero e Rock Band nos consoles retrô ou PC.`,
     price: 249.00,
-    category: 'Informática',
+    category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/02.jpg',
@@ -200,7 +226,7 @@ Produto íntegro, higienizado e pronto para uso.`,
   {
     id: 'lote-miniaturas-chumbo-rpg',
     name: "Lote Imperdível de Miniaturas de Chumbo (Old School)",
-    description: `Reviva a era de ouro do RPG with este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
+    description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
 
 Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a colecionadores adultos e hobbyistas. Recomenda-se lavar as mãos após o manuseio e não são indicadas para crianças.`,
     price: 50.00,
@@ -218,7 +244,7 @@ Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a
     name: "Kit Completo Guardiões da Galáxia - Versão bootleg",
     description: `Dá uma olhada nesse kit completo da equipe mais fora da lei da galáxia! São bonecos de fabricação chinesa (versão alternativa/bootleg), ideais para quem quer a equipe toda reunida sem gastar muito.
 
-O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado with sua faca de combate. Além deles, o kit conta with Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
+O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado com sua faca de combate. Além deles, o kit conta com Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -232,7 +258,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-mario-bros-mcdonalds',
     name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
-    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta with figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
+    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
     price: 50.00,
     category: 'Brinquedos',
     images: [
@@ -246,7 +272,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'casinha-passarinho-madeira',
     name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
-    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada with verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
+    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada com verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
     price: 50.00,
     category: 'Decoração',
     images: [
@@ -275,9 +301,9 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'volante-multilaser-3-em-1',
     name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
-    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível with PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
+    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível com PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
     price: 100.00,
-    category: 'Informática',
+    category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/01.jpg',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/02.jpg'
@@ -305,7 +331,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'fogao-industrial-dako-couracado',
     name: 'Fogão Industrial Dako Couraçado Clássico',
-    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage with marcas de uso. Acompanha mangueira e registro de gás.`,
+    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage com marcas de uso. Acompanha mangueira e registro de gás.`,
     price: 1299.00,
     category: 'Cozinha',
     images: [
@@ -325,7 +351,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'suporte-doces-cupcakes_floral',
     name: 'Suporte para doces e Cucpakes 2 Andares - Charme Floral',
-    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design with acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
+    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design com acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
     price: 25.00,
     category: 'Cozinha',
     images: [
@@ -354,7 +380,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'mini-aquaterrario-decorado-betta',
     name: 'Mini Aquaterrário Decorado - Home Office & Pets',
-    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado with plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
+    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado com plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
     price: 45.00,
     category: 'Pets',
     images: [
@@ -399,7 +425,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'mesa-cadeiras-barbie',
     name: 'Conjunto Jantar Crystal Doll - Mesa e 4 Cadeiras Pink',
-    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal with glitter e 4 cadeiras na cor pink. Em estado de novo.`,
+    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal com glitter e 4 cadeiras na cor pink. Em estado de novo.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -430,7 +456,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'pogobol-barbie-classico',
     name: 'Pogobol Barbie Original - Diversão Ativa Retrô',
-    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, with marcas de uso no plástico, mas funcional e with boa pressão na bola.`,
+    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, com marcas de uso no plástico, mas funcional e com boa pressão na bola.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -446,7 +472,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-lol-surprise-completo',
     name: 'Super Lote L.O.L. Surprise! - 5 Bonecas + Acessórios',
-    description: `Lote with 5 bonecas originais L.O.L. Surprise!, incluindo modelos with glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
+    description: `Lote com 5 bonecas originais L.O.L. Surprise!, incluindo modelos com glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
     price: 85.00,
     category: 'Brinquedos',
     images: [
@@ -477,7 +503,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'chapeu-woody-toy-story',
     name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
-    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom with as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
+    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom com as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
     price: 10.00,
     category: 'Brinquedos',
     images: [
@@ -508,7 +534,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'stacie-suco-playset',
     name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
-    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) with tema de barraca de sucos. Inclui a boneca, balcão, accessories de smoothie e cachorrinho pet.`,
+    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) com tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
     price: 69.00,
     category: 'Brinquedos',
     images: [
@@ -569,9 +595,9 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'repetidor-tplink',
     name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
-    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, with configuração fácil via botão WPS. Melhora a cobertura da internet.`,
+    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, com configuração fácil via botão WPS. Melhora a cobertura da internet.`,
     price: 50.00,
-    category: 'Informática',
+    category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
     ],
@@ -583,8 +609,8 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'batgirl-jato',
     name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato with wheels funcionais. Item de colecionador em ótimo estado.`,
-    price: 80.00,
+    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com rodas funcionais. Item de colecionador em ótimo estado.`,
+    price: 60.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/batgirl_jato/01.png',
@@ -598,7 +624,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-ferramentas-massinha',
     name: 'Mega Kit Acessórios Play-Doh - Fábrica de Diversão',
-    description: `Grande lote de acessórios e ferramentas para brincar with massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
+    description: `Grande lote de acessórios e ferramentas para brincar com massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
     price: 45.00,
     category: 'Brinquedos',
     images: [
@@ -614,7 +640,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'lote-polly-pocket',
     name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
-    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet with variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
+    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet com variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
     price: 65.00,
     category: 'Brinquedos',
     images: [
@@ -644,7 +670,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'barbie-salao-pia',
     name: 'Pia de Salão Barbie Glamour - Cuba com Glitter',
-    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul with glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
+    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul com glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
     price: 29.00,
     category: 'Brinquedos',
     images: [
@@ -659,7 +685,7 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
   {
     id: 'army-men-toy-story',
     name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
-    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas with a licença, em diversas poses de combate.`,
+    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas com a licença, em diversas poses de combate.`,
     price: 49.00,
     category: 'Brinquedos',
     images: [
