@@ -26,7 +26,7 @@ Especificações:
 * Marca: Tait Communications (Nova Zelândia)
 * Estado: Novo (Zero)
 * Compatibilidade: Funciona em qualquer rádio móvel (VHF, UHF, PX/Faixa do Cidadão) que aceite caixa externa (Motorola, Yaesu, Icom, Voyager, etc).`,
-    price: 200.00,
+    price: 199.00,
     category: 'Informática',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/01.png',
