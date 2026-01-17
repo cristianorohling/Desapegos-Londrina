@@ -9,21 +9,25 @@ export const CATEGORIES: Category[] = [
   "Instrumentos Musicais"
 ];
 
+// Texto padrão para facilitar manutenção futura
+const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comigo. Para outras cidades, envio via OLX Pay (Correios) com embalagem reforçada.
+
+`;
+
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: 'tv-philco-ford-vintage-amarela',
-    name: 'TV Antiga Philco-Ford Portátil Amarela - Vintage Anos 70 - Rara - Space Age',
-    description: `Vendo rara TV portátil da marca Philco-Ford, modelo icônico da década de 1970. Uma verdadeira peça de história e design, ideal para colecionadores, decoração de ambientes retrô, cenografia, vitrines ou projetos de restauração.
+    name: 'TV Vintage Philco-Ford Amarela Space Age - Decoração (Londrina)',
+    description: `${HEADER_DESC}Vendo rara TV portátil da marca Philco-Ford, modelo icônico da década de 1970. Uma verdadeira peça de história e design "Space Age".
 
-Destaques do Produto:
-* Marca: Philco-Ford (Período clássico da marca).
-* Estilo: Design "Space Age" com gabinete na cor Amarelo/Mostarda (cor difícil de encontrar e muito valorizada).
-* Estética: Peça com design arredondado, típica do futurismo dos anos 70.
-* Estado de Conservação: Estrutura externa (carcaça) íntegra, sem trincados graves. Botões e seletores originais presentes.
-* Funcionamento: O aparelho liga e acende a tela (chuvisco), mas precisa de conversor para sinal digital ou revisão técnica.
+Ideal para: Colecionadores, decoração de ambientes retrô, cenografia e vitrines.
 
-Observação: Trata-se de uma TV de tubo (CRT) analógica. Para assistir canais hoje em dia, é necessário uso de conversores externos, mas seu maior valor é como objeto de decoração vintage.`,
-    price: 390.00,
+Destaques:
+* Design futurista na cor Amarelo/Mostarda (rara).
+* Estrutura íntegra, botões originais.
+* Liga e acende (chuvisco), vendida como item decorativo.
+* Atenção: Envio em embalagem extremamente protegida.`,
+    price: 349.00,
     category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/tv_philco_ford/01.png',
@@ -33,19 +37,15 @@ Observação: Trata-se de uma TV de tubo (CRT) analógica. Para assistir canais 
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 9000,
-    keywords: ['tv antiga', 'philco-ford', 'vintage', 'anos 70', 'amarela', 'retrô', 'decoração', 'space age', 'colecionador', 'tv de tubo']
+    createdAt: Date.now(),
+    keywords: ['tv antiga', 'philco', 'vintage', 'space age', 'decoração', 'amarela', 'anos 70', 'cenografia']
   },
   {
     id: 'mjolnir-thor-low-cost',
-    name: 'Mjolnir do Thor (Versão de Entrada/Low Cost)',
-    description: `Vendo este Mjolnir de plástico. Não foi forjado no coração de uma estrela moribunda, foi forjado numa injetora de plástico mesmo, mas quebra o galho!
+    name: 'Martelo Mjolnir Thor Plástico - Fantasia Barato (Londrina)',
+    description: `${HEADER_DESC}Martelo do Thor versão simples (brinquedo plástico). 
 
-Perfeito para:
-* Completar fantasia de última hora.
-* Deixar na estante (de longe engana bem!).
-* Presentear sobrinho que quebra tudo.
-* Fazer um projeto de pintura e deixar ele com cara de item de luxo.`,
+Ideal para completar fantasia de última hora, cosplay infantil ou decoração geek de baixo custo. Leve e seguro para crianças.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -53,26 +53,19 @@ Perfeito para:
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() + 8000,
-    keywords: ['thor', 'mjolnir', 'marvel', 'vingadores', 'martelo', 'fantasia', 'brinquedo', 'geek', 'barato']
+    createdAt: Date.now(),
+    keywords: ['thor', 'martelo', 'mjolnir', 'fantasia', 'cosplay', 'brinquedo', 'vingadores']
   },
   {
     id: 'tait-speaker-tmaa10',
-    name: 'Alto-Falante Tait TMAA10 High Power (Novo) - Padrão Industrial p/ Rádio',
-    description: `Vendo alto-falante remoto original da Tait Communications, modelo High-Power (TMAA10). Equipamento novo, nunca utilizado.
+    name: 'Alto-Falante Tait Padrão Industrial p/ Rádio PX - Novo (Londrina)',
+    description: `${HEADER_DESC}Alto-falante remoto original Tait Communications (TMAA10). Equipamento NOVO, padrão industrial/militar.
 
-Este não é um alto-falante comum. É um equipamento de padrão industrial/militar, projetado para oferecer áudio extremamente alto e cristalino mesmo em ambientes barulhentos (ideal para caminhonetes a diesel, caminhões, viaturas ou maquinário agrícola).
-
-Destaques:
-* Durabilidade Extrema: Carcaça reforçada e resistente a impactos e vibração.
-* Qualidade de Áudio: Som encorpado, sem a distorção típica de caixas de plástico simples.
-* Praticidade: Acompanha suporte de metal (bracket) original para fixação no painel ou teto e cabo longo para instalação flexível.
-
-Especificações:
-* Marca: Tait Communications (Nova Zelândia)
-* Estado: Novo (Zero)
-* Compatibilidade: Funciona em qualquer rádio móvel (VHF, UHF, PX/Faixa do Cidadão) que aceite caixa externa (Motorola, Yaesu, Icom, Voyager, etc).`,
-    price: 199.00,
+* Áudio cristalino e altíssimo volume (ideal para ambientes barulhentos, caminhões, obras).
+* Durabilidade extrema.
+* Acompanha suporte de metal e cabo longo.
+* Compatível com rádios Motorola, Yaesu, Icom, PX/PY.`,
+    price: 170.00,
     category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/speaker_tait/01.png',
@@ -80,30 +73,19 @@ Especificações:
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 7000,
-    keywords: ['tait', 'tmaa10', 'alto-falante', 'rádio', 'comunicação', 'industrial', 'vhf', 'uhf', 'px', 'novo']
+    createdAt: Date.now(),
+    keywords: ['tait', 'alto-falante', 'radioamador', 'px', 'py', 'caminhoneiro', 'industrial', 'tmaa10']
   },
   {
     id: 'chaleira-smartfy-inox',
-    name: 'Jarra Chaleira Elétrica Inox Smartfy 1.8L 220V - NOVA NA CAIXA',
-    description: `Traga modernidade e eficiência para a sua cozinha com a Jarra Elétrica Smartfy Inox. Equipamento robusto, ideal para quem busca rapidez no preparo de bebidas quentes e agilidade nas receitas do dia a dia.
+    name: 'Chaleira Elétrica Inox 1.8L 110v - Nova (Retira Londrina)',
+    description: `${HEADER_DESC}Jarra Elétrica Smartfy Inox 1.8 Litros (110v). Produto NOVO na caixa.
 
-Destaques do Produto:
-* Alta Performance: Com 1500W de potência, ferve 1,8 litros de água em poucos minutos.
-* Acabamento Premium: Design sofisticado em Aço Inox e Preto, combinando com qualquer cozinha moderna.
-* Segurança Total: Sistema de desligamento automático após a fervura e proteção contra superaquecimento.
-* Higiene: Filtro integrado no bico e interior em inox, garantindo água pura sem cheiro ou gosto.
-* Ergonomia: Base com giro 360º, facilitando o manuseio tanto para destros quanto para canhotos.
-* Ideal para: Café, chás, chimarrão, preparo de alimentos instantâneos e esterilização de utensílios.
-
-Ficha Técnica:
-* Marca: Smartfy
-* Modelo: JE02I
-* Voltagem: 220V - 240V
-* Capacidade: 1.8 Litros
-* Material: Aço Inoxidável e Polipropileno
-* Condição: Novo, intacto na embalagem original.`,
-    price: 60.00,
+* Potência: 1500W (Ferve muito rápido).
+* Acabamento em Inox (mais higiênico e durável que plástico).
+* Desligamento automático.
+* Preço de oportunidade para desocupar espaço.`,
+    price: 50.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/01.webp',
@@ -111,23 +93,19 @@ Ficha Técnica:
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 6000,
-    keywords: ['chaleira elétrica', 'smartfy', 'inox', 'cozinha', '220v', 'novo', 'eletrodoméstico', 'café', 'chá', 'chimarrão']
+    createdAt: Date.now(),
+    keywords: ['chaleira elétrica', 'inox', '110v', 'cozinha', 'eletrodoméstico', 'café', 'chá', 'novo']
   },
   {
     id: 'comando-arcade-sanwa-vermelho',
-    name: 'Comando Arcade Tipo Sanwa Profissional Vermelho - Alta Precision',
-    description: `Controle para fliperama padrão Japonês (Tipo Sanwa). Ideal para quem busca precisão em jogos de luta (Street Fighter, KOF, Mortal Kombat) e agilidade em jogos de nave (shmup).
+    name: 'Comando Arcade Sanwa Vermelho - Fliperama (Londrina/Envio)',
+    description: `${HEADER_DESC}Controle para Arcade/Fliperama tipo Sanwa JLF (Padrão Japonês). NOVO.
 
-Diferente dos comandos nacionais antigos (pesados), este modelo "Tipo Sanwa" oferece uma movimentação macia, curso curto e resposta rápida, permitindo a execução de combos e movimentos complexos com muito mais facilidade.
-
-Características:
-* Modelo: Estilo Sanwa JLF (Padrão Japonês).
-* Sensibilidade: Alta precisão com microswitches de resposta tátil (barulho de "clique" satisfatório).
-* Formato: Balltop (Bolinha) na cor Vermelha.
-* Restritor: Acompanha restritor (peça amarela) para garantir movimentos precisos nas diagonais.
-* Estado: NOVO`,
-    price: 65.00,
+* Balltop Vermelha.
+* Alta precisão para jogos de luta e shmups.
+* Clique dos microswitches macio e responsivo.
+* Acompanha restritor octogonal/quadrado.`,
+    price: 60.00,
     category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/comando_sanwa/01.png',
@@ -137,35 +115,19 @@ Características:
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 5000,
-    keywords: ['arcade', 'fliperama', 'sanwa', 'controle', 'games', 'jogos de luta', 'precisão', 'retrogamer', 'novo']
-  },
-  {
-    id: 'diaclone-hilux-azul',
-    name: 'Diaclone Hilux 4WD Azul, Takara (1983)',
-    description: `Disponível para venda o Diaclone Hilux 4WD Azul, fabricado pela Takara, conhecido entre colecionadores como "Blue Trailbreaker". Este modelo é um Pre-Transformer genuíno, utilizando o molde original que antecede a linha G1 da Hasbro, com a construção robusta em metal die-cast e acabamento cromado típicos da engenharia japonesa dos anos 80.
-
-Esta variante de cor é um item de alta raridade, sendo consideravelmente mais difícil de encontrar no mercado do que a versão preta padrão. Trata-se de uma peça essencial para coleções de Transformers Vintage, ideal para quem busca documentar a história da linha com variantes escassas e originais de época.`,
-    price: 260.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/01.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/02.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/03.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_azul/04.png'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 4000,
-    keywords: ['diaclone', 'takara', 'transformers', 'vintage', 'azul', 'hilux', '4wd', 'colecionador', 'anos 80', 'raridade', 'metal die-cast']
+    createdAt: Date.now(),
+    keywords: ['arcade', 'fliperama', 'sanwa', 'stick', 'controle', 'games', 'retrogaming', 'luta']
   },
   {
     id: 'mimo-convert-locomotiva',
-    name: 'Mimo Convert "Locomotiva" (versão brasileira do "GoBots Loco")',
-    description: `Mergulhe na nostalgia dos anos 80 com este robô vintage "Loco", da clássica linha Converts da Mimo (versão brasileira dos Gobots). Uma peça autêntica de época que se transforma de locomotiva a vapor para robô, ideal para colecionadores que valorizam a história dos brinquedos nacionais ou buscam completar sua coleção com um item original.
+    name: 'Robô GoBots Loco Mimo Anos 80 - Coleção (Retira ou Envio)',
+    description: `${HEADER_DESC}Clássico da Mimo (Convert) anos 80, versão brasileira dos GoBots. Modelo "Loco" (Locomotiva).
 
-O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste natural de um brinquedo que foi muito aproveitado ("played condition"), já sem os adesivos originais. A mecânica de transformação permanece funcional, tornando-o uma excelente opção acessível para projetos de restauração, customização ou simplesmente para ter na estante um sobrevivente genuíno da infância.`,
-    price: 100.00,
+* Item original de época.
+* Transforma perfeitamente.
+* Ideal para colecionadores de brinquedos nacionais antigos.
+* Estado: "Played condition" (com marcas do tempo, veja fotos).`,
+    price: 89.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mimo_convert/01.png',
@@ -173,151 +135,76 @@ O boneco é vendido no estado, apresentando marcas de uso visíveis e desgaste n
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 3000,
-    keywords: ['mimo', 'convert', 'gobots', 'loco', 'locomotiva', 'vintage', 'anos 80', 'brinquedo antigo', 'robô', 'transformação', 'colecionador']
-  },
-  {
-    id: 'guitarra-guitar-hero-bright',
-    name: "Guitarra Guitar Hero Bright - PS2 / PS3 / Wii",
-    description: `Vendo Guitarra Controle da marca Bright, modelo Stratocaster branca. Na caixa original, caixa levemente danificada.
-
-Compatibilidade: PS2, PS3 e Wii.
-Conexão: Com fio (cabo USB/Adaptador).
-Estado: Produto novo, testado e funcionando 100%.
-
-Ideal para quem quer reviver os clássicos do Guitar Hero e Rock Band nos consoles retrô ou PC.`,
-    price: 249.00,
-    category: 'Info Eletrônicos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/01.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/02.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/03.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/guitarra_bright/04.jpg'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 2000,
-    keywords: ['guitar hero', 'guitarra', 'bright', 'ps2', 'ps3', 'wii', 'controle', 'games', 'rock band', 'novo']
+    createdAt: Date.now(),
+    keywords: ['mimo', 'convert', 'gobots', 'transformers', 'anos 80', 'vintage', 'robô', 'trem']
   },
   {
     id: 'patins-inline-ajustavel',
-    name: "Patins In Line Preto Ajustável Tam 34, 35 e 36 - Roller Recreativo",
-    description: `Vendo par de patins in-line (roller) na cor preta com detalhes em branco e prata. Modelo recreativo unissex, ideal para lazer e iniciantes na patinação.
+    name: 'Patins In Line Ajustável 34-36 Preto - Retira Londrina',
+    description: `${HEADER_DESC}Patins Roller In-Line Ajustável (Serve do 34 ao 36). Unissex.
 
-Características do produto:
-Numeração: Atende tamanhos 34 e 35, servindo até 36 (formato ajustável).
-Estrutura: Bota externa rígida para maior suporte e bota interna (liner) acolchoada e confortável.
-Fixação: Sistema triplo de fechamento com cadarço, tira de velcro no peito do pé e presilha de trava rápida no tornozelo, garantindo firmeza e segurança.
-Rodas: 4 rodas in linha originais modelo Conect, em bom estado de conservação.
-Segurança: Possui freio traseiro instalado no pé direito.
-
-Produto íntegro, higienizado e pronto para uso.`,
-    price: 150.00,
+* Cor: Preto/Prata.
+* Estado: Usado, higienizado, rodinhas em bom estado.
+* Sistema de travas seguro.
+* Ótimo para quem está aprendendo a patinar sem gastar muito.`,
+    price: 130.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/patins_inline/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/patins_inline/02.jpg'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() + 1000,
-    keywords: ['patins', 'inline', 'roller', 'esporte', 'lazer', 'ajustável', 'brinquedo', 'radical']
-  },
-  {
-    id: 'lote-miniaturas-chumbo-rpg',
-    name: "Lote Imperdível de Miniaturas de Chumbo (Old School)",
-    description: `Reviva a era de ouro do RPG com este lote exclusivo de guerreiros em metal. São peças pesadas, detalhadas e clássicas, perfeitas para colecionadores e pintores que buscam a nostalgia das mesas antigas. O valor de R$ 80 refere-se ao lote completo das miniaturas (cenário não incluso).
-
-Nota importante: Por serem miniaturas vintage de chumbo, são itens destinados a colecionadores adultos e hobbyistas. Recomenda-se lavar as mãos após o manuseio e não são indicadas para crianças.`,
-    price: 50.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guerreiros_rpg/01.png'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 700,
-    keywords: ['miniaturas de chumbo', 'rpg', 'guerreiros', 'metal', 'old school', 'colecionador', 'vintage', 'hobby', 'miniatura antiga', 'fantasia']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['patins', 'roller', 'inline', 'ajustável', '34', '35', '36', 'esporte', 'lazer']
   },
   {
     id: 'kit-guardioes-galaxia-bootleg',
-    name: "Kit Completo Guardiões da Galáxia - Versão bootleg",
-    description: `Dá uma olhada nesse kit completo da equipe mais fora da lei da galáxia! São bonecos de fabricação chinesa (versão alternativa/bootleg), ideais para quem quer a equipe toda reunida sem gastar muito.
+    name: 'Kit Bonecos Guardiões da Galáxia (Star-Lord/Groot) - Barato',
+    description: `${HEADER_DESC}Kit completo com 5 bonecos dos Guardiões da Galáxia (Versão Bootleg/Chinesa).
 
-O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus dois blasters clássicos e o Drax já chega armado com sua faca de combate. Além deles, o kit conta com Gamora, Rocket Raccoon e o pequeno Groot. Ótimo custo-benefício para enfeitar a estante.`,
-    price: 50.00,
+* Inclui: Star-Lord, Gamora, Drax, Rocket e Groot.
+* Ótimo custo-benefício para decoração ou brinquedo de batalha.
+* Bonecos simples, mas com visual bacana da equipe reunida.`,
+    price: 45.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guardioes_galaxia/01.png'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() + 600,
-    keywords: ['guardiões da galáxia', 'action figure', 'bonecos marvel', 'kit completo', 'senhor das estrelas', 'drax', 'rocket e groot', 'versão chinesa', 'bootleg', 'brinquedo barato']
-  },
-  {
-    id: 'lote-mario-bros-mcdonalds',
-    name: "Lote Bonecos Super Mario Bros: Bowser, Yoshi, Luigi, Peach e McDonald's",
-    description: `Vendo lote misto de brinquedos Super Mario (McDonald's e genéricos)! O kit conta com figuras marcantes como Mario, Luigi, Princesa Peach, Bowser, Yoshi, Toad e Toadette, além de acessórios como cogumelos e blocos. Tudo em bom estado por apenas 80 reais! Aproveite!`,
-    price: 50.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 500,
-    keywords: ['mario bros', 'nintendo', 'mcdonalds', 'bowser', 'yoshi', 'luigi', 'peach', 'toad', 'toadette', 'brinquedo', 'coleção', 'vintage']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['guardiões da galáxia', 'marvel', 'bonecos', 'vingadores', 'groot', 'star lord', 'kit']
   },
   {
     id: 'casinha-passarinho-madeira',
-    name: 'Casinha de Passarinho Decorativa em Madeira Maciça - Estilo Rústico',
-    description: `Casinha de passarinho artesanal feita em madeira maciça tratada e envernizada com verniz escuro. Peça de estilo rústico, ideal para decoração de jardins, varandas, áreas gourmet ou ambientes internos.`,
-    price: 50.00,
+    name: 'Casinha Passarinho Madeira Rústica - Decoração (Londrina)',
+    description: `${HEADER_DESC}Casinha de passarinho artesanal em madeira maciça. 
+
+* Acabamento em verniz escuro.
+* Estilo rústico, perfeita para jardim, varanda ou área gourmet.
+* Peça nova, nunca exposta ao tempo.`,
+    price: 55.00,
     category: 'Decoração',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/01.png',
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/02.jpg'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() + 400,
-    keywords: ['passarinho', 'jardim', 'madeira', 'rústico', 'artesanato', 'casa', 'decoração de jardim']
-  },
-  {
-    id: 'coruja-entalhada-madeira',
-    name: 'Coruja Entalhada em Madeira Maciça - Decoração Rústica de Parede',
-    description: `Escultura de coruja entalhada manualmente em madeira maciça. Peça única de artesanato para decoração rústica de parede. Acabamento envernizado e em excelente estado de conservação.`,
-    price: 50.00,
-    category: 'Decoração',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/coruja_entalhada/01.png'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 300,
-    keywords: ['coruja', 'madeira', 'entalhe', 'escultura', 'rústico', 'parede', 'artesanato', 'decoração']
-  },
-  {
-    id: 'volante-multilaser-3-em-1',
-    name: 'Volante e Pedal Multilaser 3 em 1 (PS2, PS3 e PC)',
-    description: `Kit Volante e Pedal da marca Multilaser, modelo 3 em 1. Compatível com PlayStation 2, PlayStation 3 e Computador (PC). Em bom estado de conservação e totalmente funcional (botões, pedais e respostas ok).`,
-    price: 100.00,
-    category: 'Info Eletrônicos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/01.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/volante_multi/02.jpg'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() + 200,
-    keywords: ['volante', 'pedal', 'multilaser', 'ps2', 'ps3', 'pc', 'gamer', 'jogos de corrida', 'simulador']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['jardim', 'decoração', 'rústico', 'madeira', 'artesanato', 'paisagismo', 'passarinho']
   },
   {
     id: 'fogao-lenha-fundimig-f090',
-    name: 'Fogão a Lenha Antigo FUNDIMIG F-090 (Nº 0) - Relíquia em Ferro Fundido',
-    description: `Fogão a lenha antigo da marca Fundimig, modelo F-090 (Número 0). Fabricado inteiramente em ferro fundido. Peça robusta, ideal para projetos de restauração ou decoração rústica. Dimensões: 71cm (A) x 51cm (P) x 75cm (L). Apresenta ferrugem superficial e faltam algumas peças.`,
-    price: 1399.00,
+    name: 'Fogão a Lenha Antigo Fundimig F-090 Ferro - Restauro (Londrina)',
+    description: `${HEADER_DESC}Relíquia! Fogão a lenha antigo Fundimig F-090 (Número 0).
+
+* Material: 100% Ferro Fundido.
+* Ideal para: Restauração completa ou decoração de ambiente rústico/fazenda.
+* Estado: Precisa de restauro (tem ferrugem e faltam peças internas), vendido no estado.
+* RETIRADA APENAS EM LONDRINA (Item muito pesado).`,
+    price: 1390.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/fogao_fundimig/01.png',
@@ -325,14 +212,20 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() + 100,
-    keywords: ['fogão a lenha', 'ferro fundido', 'antigo', 'relíquia', 'restauração', 'rústico', 'fundimig', 'decoração fazenda']
+    createdAt: Date.now(),
+    keywords: ['fogão a lenha', 'ferro', 'antigo', 'fundimig', 'rústico', 'decoração', 'fazenda']
   },
   {
     id: 'fogao-industrial-dako-couracado',
-    name: 'Fogão Industrial Dako Couraçado Clássico',
-    description: `Fogão industrial clássico Dako Couraçado. Estrutura robusta em ferro puro de alta durabilidade. Possui forno gigante funcional e bocas em pleno funcionamento. Item vintage com marcas de uso. Acompanha mangueira e registro de gás.`,
-    price: 1299.00,
+    name: 'Fogão Industrial Dako Couraçado Ferro Puro - Vintage (Londrina)',
+    description: `${HEADER_DESC}Fogão Industrial Clássico Dako Couraçado. O "tanque de guerra" das cozinhas.
+
+* Estrutura inquebrável em ferro.
+* Bocas e Forno Gigante funcionando.
+* Acompanha mangueira e registro.
+* Marcas de uso do tempo (vintage).
+* RETIRADA APENAS EM LONDRINA.`,
+    price: 1250.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/dako_couracado/01.png',
@@ -346,71 +239,52 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     isSold: false,
     isHighlighted: true,
     createdAt: Date.now(),
-    keywords: ['fogão industrial', 'dako', 'couraçado', 'ferro', 'forno grande', 'profissional', 'cozinha', 'vintage', 'robusto']
+    keywords: ['fogão industrial', 'dako', 'couraçado', 'restaurante', 'ferro', 'vintage', 'forno']
   },
   {
     id: 'suporte-doces-cupcakes_floral',
-    name: 'Suporte para doces e Cucpakes 2 Andares - Charme Floral',
-    description: `Suporte de dois andares para doces, cupcakes ou salgados. Design com acabamento rendado e centro floral delicado. Feito em material plástico fácil de limpar e montar. Ideal para festas e mesa posta.`,
-    price: 25.00,
+    name: 'Suporte Doces Cupcakes 2 Andares - Festa (Londrina)',
+    description: `${HEADER_DESC}Boleira/Suporte de 2 andares para doces e salgados.
+
+* Estilo provençal com detalhes florais.
+* Desmontável e fácil de limpar.
+* Perfeito para compor mesa de aniversário ou café da tarde.`,
+    price: 20.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos//cozinha/suporte_frutas/01.png'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() - 50,
-    keywords: ['suporte doces', 'cupcakes', 'boleira', 'floral', 'provençal', 'festa', 'mesa posta', 'decoração', 'dois andares']
-  },
-  {
-    id: 'termo-rey-gravatinha-par',
-    name: 'Relíquia Termo-Rey "Gravatinha" - Par de Travessas Vintage',
-    description: `Par de travessas vintage da marca Termo-Rey, na clássica estampa "Gravatinha" (padrão geométrico dos anos 60/70). O conjunto inclui 1 travessa oval e 1 tigela redonda em opalina branca resistente. Peças de coleção em bom estado.`,
-    price: 180.00,
-    category: 'Cozinha',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/01.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/termo_rey/02.jpg'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() - 100,
-    keywords: ['termo-rey', 'gravatinha', 'vintage', 'antigo', 'travessa', 'tigela', 'opalina', 'anos 60', 'anos 70', 'coleção', 'retrô']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['festa', 'boleira', 'suporte doces', 'cupcake', 'decoração', 'mesa posta']
   },
   {
     id: 'mini-aquaterrario-decorado-betta',
-    name: 'Mini Aquaterrário Decorado - Home Office & Pets',
-    description: `Mini aquaterrário compacto (medidas aprox. 19x13x13cm). Já vem decorado com plantas e substrato fixos e possui plataforma elevada (área seca). Acompanha tampa de vidro. Ideal para peixe Betta ou pequena tartaruga.`,
-    price: 45.00,
+    name: 'Mini Aquário Terrário Decorado Betta - Vidro (Londrina)',
+    description: `${HEADER_DESC}Mini Aquaterrário pronto para uso.
+
+* Medidas: 19x13x13cm.
+* Decoração fixa incluída (pedras e plantas artificiais).
+* Plataforma seca (ideal para pequenas tartarugas ou rãs).
+* Ótimo para peixe Betta.`,
+    price: 40.00,
     category: 'Pets',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/aquario_beta/01.png'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() - 200,
-    keywords: ['aquário', 'terrário', 'betta', 'tartaruga', 'peixe', 'decorado', 'pequeno', 'pets', 'home office']
-  },
-  {
-    id: 'boneco-dengue-vintage-xuxa',
-    name: 'Boneco Dengue (Xou da Xuxa) - Colecionável Original Anos 80',
-    description: `Boneco original do personagem Dengue (Xou da Xuxa), anos 80. Pintura e articulações bem preservadas. Não possui as antenas e asas originais. Peça para colecionadores ou restauro.`,
-    price: 80.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/01.png',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/02.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/dengue_xuxa/03.jpg'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() - 300,
-    keywords: ['boneco', 'dengue', 'xuxa', 'xou da xuxa', 'anos 80', 'vintage', 'colecionável', 'brinquedo antigo', 'raridade']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['aquário', 'betta', 'terrário', 'peixe', 'pets', 'decoração', 'tartaruga']
   },
   {
     id: 'kit-cozinha-barbie-vintage',
-    name: 'Super Lote Cozinha Vintage Barbie - Itens de Coleção',
-    description: `Lote de miniaturas vintage para cozinha da Barbie. Inclui embalagens clássicas (Leite, Suco Elefanta), batedeira e máquina de costura em miniatura. Itens de coleção dos anos 80/90 para dioramas.`,
+    name: 'Lote Miniaturas Cozinha Barbie Vintage Anos 80 - Raro',
+    description: `${HEADER_DESC}Lote de colecionador! Miniaturas originais da Barbie Estrela (Anos 80/90).
+
+* Inclui: Caixinhas de leite/suco (Elefanta), Batedeira, Máquina de Costura.
+* Peças raras para completar cenários vintage ou dioramas.`,
     price: 19.00,
     category: 'Brinquedos',
     images: [
@@ -418,29 +292,39 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_minicozinha/02.jpg'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() - 400,
-    keywords: ['barbie', 'cozinha', 'miniatura', 'vintage', 'anos 80', 'anos 90', 'coleção', 'diorama', 'acessórios boneca', 'suco elefanta']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['barbie', 'estrela', 'vintage', 'miniatura', 'cozinha', 'anos 80', 'coleção']
   },
   {
     id: 'mesa-cadeiras-barbie',
-    name: 'Conjunto Jantar Crystal Doll - Mesa e 4 Cadeiras Pink',
-    description: `Conjunto de sala de jantar para bonecas tamanho Barbie. Inclui 1 mesa em estilo cristal com glitter e 4 cadeiras na cor pink. Em estado de novo.`,
+    name: 'Mesa Jantar Boneca Barbie + 4 Cadeiras Pink - Novo',
+    description: `${HEADER_DESC}Conjunto Sala de Jantar Crystal Doll.
+
+* 1 Mesa com acabamento glitter.
+* 4 Cadeiras Pink.
+* Tamanho compatível com Barbie, Susi, Monster High.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/mesa_barbie/01.png'
     ],
     isSold: false,
-    isHighlighted: true,
-    createdAt: Date.now() - 500,
-    keywords: ['mesa boneca', 'cadeiras boneca', 'barbie', 'crystal', 'pink', 'rosa', 'móveis boneca', 'brinquedo', 'sala de jantar']
+    isHighlighted: false,
+    createdAt: Date.now(),
+    keywords: ['barbie', 'móveis', 'boneca', 'brinquedo', 'pink', 'casa de boneca']
   },
   {
     id: 'yamaha-clavinova-cvp',
-    name: 'Piano Digital Yamaha Clavinova CVP - Som Profissional',
-    description: `Piano digital profissional Yamaha Clavinova linha CVP. Teclas pesadas e sensitivas (GH), som de alta fidelidade. O instrumento funciona perfeitamente, mas o display está sem a luz de fundo (backlight queimado).`,
-    price: 9000.00,
+    name: 'Piano Digital Yamaha Clavinova CVP Profissional - (Londrina)',
+    description: `${HEADER_DESC}Piano Digital Yamaha Clavinova (Linha CVP).
+
+* Teclas Pesadas (Ação de Martelo - GH).
+* Som de piano de cauda incrível e centenas de outros timbres.
+* Detalhe: Backlight do visor queimado (dá para ler com luz externa), restante funcionando 100%.
+* Um instrumento para a vida toda.
+* Aceito propostas coerentes. Retirada em Londrina.`,
+    price: 8900.00,
     category: 'Instrumentos Musicais',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/instrumentos/yamaha_clavinova/01.png',
@@ -450,13 +334,17 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 600,
-    keywords: ['piano digital', 'yamaha', 'clavinova', 'cvp', 'teclado', 'instrumento musical', 'profissional', 'piano elétrico', 'teclas pesadas']
+    createdAt: Date.now(),
+    keywords: ['piano', 'yamaha', 'clavinova', 'teclado', 'piano digital', 'instrumento', 'profissional']
   },
   {
     id: 'pogobol-barbie-classico',
-    name: 'Pogobol Barbie Original - Diversão Ativa Retrô',
-    description: `Pogobol original da Estrela, modelo temático da Barbie (rosa e roxo). Brinquedo clássico, usado, com marcas de uso no plástico, mas funcional e com boa pressão na bola.`,
+    name: 'Pogobol Estrela Barbie Original Vintage Anos 90 (Londrina)',
+    description: `${HEADER_DESC}Clássico Pogobol da Estrela - Edição Barbie.
+
+* Original dos anos 90.
+* Borracha com boa pressão, disco com marcas de uso normais.
+* Item nostálgico para colecionar ou brincar.`,
     price: 15.00,
     category: 'Brinquedos',
     images: [
@@ -466,13 +354,18 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 700,
-    keywords: ['pogobol', 'barbie', 'estrela', 'brinquedo antigo', 'anos 90', 'vintage', 'pula pula', 'retrô']
+    createdAt: Date.now(),
+    keywords: ['pogobol', 'estrela', 'antigo', 'anos 90', 'barbie', 'brinquedo', 'vintage']
   },
   {
     id: 'lote-lol-surprise-completo',
-    name: 'Super Lote L.O.L. Surprise! - 5 Bonecas + Acessórios',
-    description: `Lote com 5 bonecas originais L.O.L. Surprise!, incluindo modelos com glitter. Acompanha diversas roupas, sapatos, acessórios e a bola original para guardar.`,
+    name: 'Lote 5 Bonecas LOL Surprise Originais + Acessórios (Londrina)',
+    description: `${HEADER_DESC}Lote de desapego LOL Surprise!
+
+* 5 Bonecas originais (incluindo raras com glitter).
+* Vários acessórios (roupas, sapatos, mamadeiras).
+* Acompanha bola original.
+* Preço para levar tudo de uma vez.`,
     price: 85.00,
     category: 'Brinquedos',
     images: [
@@ -482,14 +375,19 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000,
-    keywords: ['lol surprise', 'bonecas lol', 'lote bonecas', 'coleção', 'brinquedo menina', 'acessórios lol', 'glitter']
+    createdAt: Date.now(),
+    keywords: ['lol surprise', 'boneca', 'lote', 'brinquedo', 'menina', 'coleção']
   },
   {
     id: 'bandai-dx-dodekabutak-vintage',
-    name: 'Robô DX Dodekabutak Bandai - Original Japonês Kabutack',
-    description: `Robô DX Dodekabutak original Bandai Japan, da série Kabutack (1997). Realiza transformação completa de modo besouro para modo robô. Peça rara e em excelente estado de conservação.`,
-    price: 80.00,
+    name: 'Boneco Bandai Kabutack 1997 Raro - Retira Londrina ou Envio',
+    description: `${HEADER_DESC}Raridade! Robô DX Dodekabutak Bandai Japan (1997).
+
+* Série B-Robo Kabutack (Metal Hero).
+* Transforma de Besouro para Robô (Mecanismo Super Change 100%).
+* Muito conservado, pintura brilhante.
+* Essencial para colecionador de Tokusatsu.`,
+    price: 65.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/robo_kabutak/01.png',
@@ -497,29 +395,18 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000,
-    keywords: ['robô', 'bandai', 'kabutack', 'dodekabutak', 'tokusatsu', 'japonês', 'vintage', 'colecionável', 'transformável', 'anos 90']
-  },
-  {
-    id: 'chapeu-woody-toy-story',
-    name: 'Chapéu Woody Toy Story - Edição Caubói Autêntico',
-    description: `Chapéu do personagem Woody (Toy Story) em feltro marrom com as costuras laterais características. Tamanho infantil. Em bom estado de conservação para fantasias.`,
-    price: 10.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/01.jpg',
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/02.jpg'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 3000,
-    keywords: ['chapéu woody', 'toy story', 'fantasia', 'caubói', 'infantil', 'disney', 'pixar', 'cosplay infantil']
+    createdAt: Date.now(),
+    keywords: ['bandai', 'kabutack', 'tokusatsu', 'robot', 'vintage', 'anos 90', 'japão', 'raro']
   },
   {
     id: 'cavalo-madeira-balanco',
-    name: 'Cavalinho de Balanço Retrô - Madeira Maciça Reforçada',
-    description: `Cavalinho de balanço estilo retrô feito em madeira de lei maciça e reforçada. Brinquedo durável e seguro, também serve como peça de decoração para quartos infantis.`,
-    price: 80.00,
+    name: 'Cavalinho de Balanço Madeira Maciça - Decoração Infantil (Londrina)',
+    description: `${HEADER_DESC}Cavalinho de Balanço Tradicional.
+
+* Feito em Madeira de Lei Maciça (muito resistente e pesado).
+* Estilo retrô, lindo para decorar quarto infantil ou para fotos.
+* Brinquedo eterno, dura gerações.`,
+    price: 75.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/cavalo_madeira/01.png',
@@ -528,28 +415,36 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 4000,
-    keywords: ['cavalinho', 'balanço', 'madeira maciça', 'brinquedo educativo', 'rústico', 'decoração infantil', 'retrô', 'vintage']
+    createdAt: Date.now(),
+    keywords: ['cavalinho', 'madeira', 'balanço', 'brinquedo educativo', 'decoração', 'rústico', 'infantil']
   },
   {
     id: 'stacie-suco-playset',
-    name: 'Playset Barbie Stacie - Smoothie & Pet Friend',
-    description: `Playset original Mattel da boneca Stacie (irmã da Barbie) com tema de barraca de sucos. Inclui a boneca, balcão, acessórios de smoothie e cachorrinho pet.`,
-    price: 69.00,
+    name: 'Playset Barbie Stacie Barraca de Suco - Completo Mattel',
+    description: `${HEADER_DESC}Playset Original Barbie Stacie "Barraca de Sucos".
+
+* Inclui: Boneca Stacie, Quiosque, Liquidificador, Copos e Cachorrinho.
+* Tudo original Mattel e em perfeito estado.
+* Lindo presente.`,
+    price: 65.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/stacie_suco/01.png'
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 5000,
-    keywords: ['barbie', 'stacie', 'playset', 'boneca', 'suco', 'smoothie', 'cachorro', 'pet', 'brinquedo mattel']
+    createdAt: Date.now(),
+    keywords: ['barbie', 'stacie', 'playset', 'boneca', 'suco', 'mattel', 'brinquedo']
   },
   {
     id: 'gaiola-calopsita',
-    name: 'Gaiola Chalé Premium para Calopsitas e Pássaros Mansos',
-    description: `Gaiola espaçosa modelo chalé branco, ideal para calopsitas e pássaros mansos. Possui bandeja removível para facilitar a limpeza, duas portas de acesso e poleiros.`,
-    price: 80.00,
+    name: 'Gaiola Chalé Grande Branca p/ Calopsita - (Londrina)',
+    description: `${HEADER_DESC}Gaiola Modelo Chalé Jardim.
+
+* Espaçosa, ideal para Calopsitas, Agapornis ou Periquitos.
+* Bandeja removível (fácil limpeza).
+* Cor branca. Acompanha poleiros.`,
+    price: 75.00,
     category: 'Pets',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/pets/gaiola_calopsita/01.png',
@@ -558,13 +453,17 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 6000,
-    keywords: ['gaiola', 'calopsita', 'viveiro', 'pássaros', 'chalé', 'pets', 'aves', 'agapornis']
+    createdAt: Date.now(),
+    keywords: ['gaiola', 'calopsita', 'viveiro', 'pássaro', 'pets', 'aves']
   },
   {
     id: 'globo-pera-luminaria',
-    name: 'Globo Luminária Pera - Reposição 10cm',
-    description: `Globo (cúpula) modelo Pera em plástico resistente (polietileno). Boca de 10cm. Peça de reposição para ventiladores de teto e lustres.`,
+    name: 'Globo Cúpula Ventilador Teto Plástico - Reposição',
+    description: `${HEADER_DESC}Globo/Tulipa modelo "Pera" para ventilador de teto.
+
+* Material: Plástico (não quebra fácil como vidro).
+* Boca: 10cm (Padrão universal).
+* Peça de reposição nova.`,
     price: 10.00,
     category: 'Decoração',
     images: [
@@ -573,14 +472,19 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 10000,
-    keywords: ['globo', 'luminária', 'cúpula', 'ventilador de teto', 'bocal 10cm', 'reposição', 'iluminação', 'plástico']
+    createdAt: Date.now(),
+    keywords: ['globo', 'luminária', 'ventilador', 'reparo', 'casa', 'iluminação']
   },
   {
     id: 'fogao-venax',
-    name: 'Fogão de Mesa Venax 4 Bocas Inox - Luxo Portátil',
-    description: `Fogão de mesa (cooktop portátil) Venax de 4 bocas. Mesa em aço inox, acendimento automático e painel traseiro. Ideal para cozinhas pequenas ou camping.`,
-    price: 199.00,
+    name: 'Fogão Cooktop Portátil Venax 4 Bocas Inox - Camping (Londrina)',
+    description: `${HEADER_DESC}Fogão de Mesa Venax 4 Bocas Inox.
+
+* Funcionando perfeitamente (Gás GLP).
+* Acendimento automático.
+* Leve e portátil: Ideal para quiosque, camping ou cozinha compacta.
+* Acabamento inox bonito.`,
+    price: 189.00,
     category: 'Cozinha',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/eletro/fogareiro_venax/01.jpg',
@@ -589,28 +493,37 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 15000,
-    keywords: ['fogão de mesa', 'cooktop', 'fogareiro', 'venax', 'inox', 'portátil', '4 bocas', 'camping', 'cozinha pequena', 'acendimento automático']
+    createdAt: Date.now(),
+    keywords: ['fogão', 'cooktop', 'venax', 'camping', 'portátil', 'inox', '4 bocas']
   },
   {
     id: 'repetidor-tplink',
-    name: 'Repetidor Wi-Fi TP-Link 300Mbps - Fim do Sinal Fraco',
-    description: `Repetidor de sinal Wi-Fi TP-Link modelo TL-WA850RE. Velocidade de 300Mbps, bivolt, com configuração fácil via botão WPS. Melhora a cobertura da internet.`,
-    price: 50.00,
+    name: 'Repetidor Wi-Fi TP-Link 300Mbps - Funciona 100% (Londrina)',
+    description: `${HEADER_DESC}Repetidor TP-Link TL-WA850RE.
+
+* Amplia o sinal do Wi-Fi para quartos "mortos".
+* Velocidade 300Mbps.
+* Bivolt.
+* Testado e funcionando perfeitamente.`,
+    price: 40.00,
     category: 'Info Eletrônicos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 20000,
-    keywords: ['repetidor wifi', 'tp-link', 'amplificador sinal', 'roteador', 'internet', 'wireless', 'wifi', 'informática']
+    createdAt: Date.now(),
+    keywords: ['wifi', 'repetidor', 'internet', 'tp-link', 'wireless', 'rede']
   },
   {
     id: 'batgirl-jato',
-    name: 'Batgirl DC Super Hero Girls + Bat-Jato - Mattel',
-    description: `Conjunto DC Super Hero Girls original Mattel. Inclui boneca Batgirl articulada de 15cm e Bat-Jato com rodas funcionais. Item de colecionador em ótimo estado.`,
-    price: 60.00,
+    name: 'Boneca Batgirl + Jato Mattel Original - Barato (Londrina/Envio)',
+    description: `${HEADER_DESC}Kit DC Super Hero Girls Mattel.
+
+* Boneca Batgirl Articulada (15cm).
+* Nave Bat-Jato (com rodas).
+* Brinquedo robusto e original. Ótimo estado.`,
+    price: 50.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/batgirl_jato/01.png',
@@ -618,14 +531,18 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 25000,
-    keywords: ['batgirl', 'dc super hero girls', 'boneca heroína', 'bat-jato', 'veículo', 'mattel', 'dc comics', 'brinquedo', 'colecionável']
+    createdAt: Date.now(),
+    keywords: ['batgirl', 'dc', 'super hero girls', 'boneca', 'brinquedo', 'mattel']
   },
   {
     id: 'lote-ferramentas-massinha',
-    name: 'Mega Kit Acessórios Play-Doh - Fábrica de Diversão',
-    description: `Grande lote de acessórios e ferramentas para brincar com massinha (tipo Play-Doh). Inclui diversas formas de corte, extrusoras e rolinhos. Não acompanha as massas.`,
-    price: 45.00,
+    name: 'Lote Acessórios Massinha Play-Doh Cortadores e Moldes',
+    description: `${HEADER_DESC}Saco cheio de ferramentas para massinha!
+
+* Vários cortadores, rolinhos, faquinhas e moldes.
+* Compatível com Play-Doh e massas escolares.
+* *Não acompanha a massa, apenas os acessórios.*`,
+    price: 40.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_massinha/01.png',
@@ -634,28 +551,37 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 30000,
-    keywords: ['massinha', 'play-doh', 'ferramentas massinha', 'cortadores', 'moldes', 'rolinhos', 'brinquedo educativo', 'arte', 'criatividade']
+    createdAt: Date.now(),
+    keywords: ['massinha', 'play-doh', 'moldes', 'brinquedo educativo', 'artes']
   },
   {
     id: 'lote-polly-pocket',
-    name: 'Lote Polly Pocket Fashion - 4 Bonecas + Closet Completo',
-    description: `Lote Polly Pocket contendo 4 bonecas e um grande closet com variedade de roupas, sapatos, bolsas e acessórios para montar looks.`,
-    price: 65.00,
+    name: 'Lote Polly Pocket 4 Bonecas + Closet Roupas - Barato',
+    description: `${HEADER_DESC}Kit Polly Pocket Fashion.
+
+* 4 Bonecas Polly.
+* 1 Closet expositor.
+* Várias roupinhas emborrachadas, bolsas e sapatos.
+* Diversão garantida.`,
+    price: 60.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/lote_polly/01.png'
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 50000,
-    keywords: ['polly pocket', 'bonecas polly', 'lote', 'roupinhas polly', 'closet', 'fashion', 'moda', 'brinquedo menina', 'acessórios']
+    createdAt: Date.now(),
+    keywords: ['polly', 'polly pocket', 'boneca', 'lote', 'roupinhas', 'fashion']
   },
   {
     id: 'panelinhas-metal',
-    name: 'Kit MasterChef Kids - Panelinhas em Metal Inox Realistas',
-    description: `Kit de panelinhas de brinquedo feitas em metal (estilo inox), realistas e duráveis. Inclui caçarola, frigideira, escorredor e utensílios em miniatura.`,
-    price: 50.00,
+    name: 'Kit Panelinhas Brinquedo Metal Inox Realista - MasterChef Kids',
+    description: `${HEADER_DESC}Kit de Cozinha Infantil Luxo.
+
+* Feitas em METAL (tipo Inox), não quebram como as de plástico.
+* Muito realistas (Miniaturas perfeitas).
+* Inclui panelas, escorredor e talheres.`,
+    price: 49.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/panelinhas_metal/01.png',
@@ -664,14 +590,18 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 100000,
-    keywords: ['panelinhas', 'brinquedo cozinha', 'metal', 'inox', 'masterchef kids', 'realista', 'brincadeira de casinha', 'durável']
+    createdAt: Date.now(),
+    keywords: ['cozinha', 'brinquedo', 'panelinhas', 'metal', 'inox', 'masterchef']
   },
   {
     id: 'barbie-salao-pia',
-    name: 'Pia de Salão Barbie Glamour - Cuba com Glitter',
-    description: `Lavatório/Pia de salão de beleza para Barbie. Possui cuba azul com glitter e armário roxo. Acessório original Mattel para casinha de bonecas.`,
-    price: 29.00,
+    name: 'Pia Lavatório Salão Barbie Glamour - Cuba Glitter Mattel',
+    description: `${HEADER_DESC}Acessório para Casa da Barbie.
+
+* Pia de Salão de Beleza.
+* Cuba com glitter e armário funcional.
+* Produto original Mattel.`,
+    price: 25.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/barbiesalao/01.png',
@@ -679,13 +609,17 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now() - 500000,
-    keywords: ['pia barbie', 'salão de beleza barbie', 'lavatório boneca', 'móveis barbie', 'glitter', 'acessório boneca', 'mattel']
+    createdAt: Date.now(),
+    keywords: ['barbie', 'móveis', 'salão', 'brinquedo', 'boneca']
   },
   {
     id: 'army-men-toy-story',
-    name: 'Exército Original Disney Pixar Toy Story - Pelotão de Elite',
-    description: `Lote de soldadinhos verdes "Army Men" originais Disney Pixar do filme Toy Story. Peças gravadas com a licença, em diversas poses de combate.`,
+    name: 'Soldadinhos Army Men Toy Story Disney Pixar Originais - Lote',
+    description: `${HEADER_DESC}O pelotão do Toy Story!
+
+* Soldadinhos "Army Men" ORIGINAIS Disney/Pixar (tem a marca gravada na base).
+* Plástico de alta qualidade e poses fiéis ao filme.
+* Item de colecionador.`,
     price: 49.00,
     category: 'Brinquedos',
     images: [
@@ -695,14 +629,19 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 1000000,
-    keywords: ['soldadinhos', 'army men', 'toy story', 'soldado verde', 'disney pixar', 'colecionável', 'miniatura', 'clássico']
+    createdAt: Date.now(),
+    keywords: ['toy story', 'soldadinho', 'army men', 'disney', 'pixar', 'coleção']
   },
   {
     id: 'baby-alive-festa-massas',
-    name: 'Baby Alive Festa das Massas Original Hasbro - Interativa',
-    description: `Boneca interativa Baby Alive Festa das Massas (Hasbro). Ela "come" a massinha de macarrão e faz caquinha na fralda. Acompanha acessórios originais.`,
-    price: 150.00,
+    name: 'Boneca Baby Alive Festa das Massas - Completa (Retira Londrina)',
+    description: `${HEADER_DESC}Baby Alive Interativa (Come e Faz Caquinha).
+
+* Modelo: Festa das Massas.
+* Funcionando perfeitamente.
+* Acompanha acessórios originais.
+* Cabelo e rosto impecáveis.`,
+    price: 120.00,
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/babyalive/01.png',
@@ -711,8 +650,8 @@ O set é completão e bem bacana: o Senhor das Estrelas (Star-Lord) vem com seus
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now() - 2000000,
-    keywords: ['baby alive', 'boneca que come', 'festa das massas', 'hasbro', 'boneca interativa', 'brinquedo menina', 'massinha']
+    createdAt: Date.now(),
+    keywords: ['baby alive', 'hasbro', 'boneca', 'interativa', 'massinha', 'brinquedo']
   }
 ];
 
