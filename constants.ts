@@ -16,6 +16,33 @@ const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comig
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'diaclone-police-countach-1982',
+    name: 'Raro Takara Diaclone Police Countach 1982 (Pre-Transformer Sunstreaker) - Japan',
+    description: `${HEADER_DESC}Oportunidade única para colecionadores de G1 e Diaclone. Vendo figura original Takara Diaclone Car Robot No. 3 - Countach Patrol Car (versão japonesa da polícia).
+
+Este é o modelo "Pre-Transformer" que deu origem ao molde do Sunstreaker, mas na versão exclusiva de polícia que nunca foi lançada pela Hasbro no ocidente. Fabricado no Japão (aprox. 1982/1983).
+
+Detalhes do Item:
+* Fabricante: Takara - Made in Japan (gravado no chassi).
+* Integridade: Mecanismo de transformação funciona, mas falta parte de um dos braços.
+* Reparos: Possui reparos caseiros antigos nas articulações (pinos substituídos por palitos).
+* Estética: Plástico com amarelamento do tempo. Adesivos originais "Polis Countach" e "Carrorobot" presentes, com desgastes naturais.
+* Acessórios: Não acompanha armas ou piloto.`,
+    price: 300.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_branco/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_branco/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_branco/03.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_branco/04.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/diaclone_branco/05.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 10000,
+    keywords: ['diaclone', 'takara', 'transformers', 'vintage', 'countach', 'sunstreaker', 'raridade', 'japão', 'anos 80', 'colecionador']
+  },
+  {
     id: 'tv-philco-ford-vintage-amarela',
     name: 'TV Vintage Philco-Ford Amarela Space Age - Decoração (Londrina)',
     description: `${HEADER_DESC}Vendo rara TV portátil da marca Philco-Ford, modelo icônico da década de 1970. Uma verdadeira peça de história e design "Space Age".
@@ -53,7 +80,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 100,
     keywords: ['thor', 'martelo', 'mjolnir', 'fantasia', 'cosplay', 'brinquedo', 'vingadores']
   },
   {
@@ -73,7 +100,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 200,
     keywords: ['tait', 'alto-falante', 'radioamador', 'px', 'py', 'caminhoneiro', 'industrial', 'tmaa10']
   },
   {
@@ -93,7 +120,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 300,
     keywords: ['chaleira elétrica', 'inox', '110v', 'cozinha', 'eletrodoméstico', 'café', 'chá', 'novo']
   },
   {
@@ -115,7 +142,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 400,
     keywords: ['arcade', 'fliperama', 'sanwa', 'stick', 'controle', 'games', 'retrogaming', 'luta']
   },
   {
@@ -135,7 +162,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 500,
     keywords: ['mimo', 'convert', 'gobots', 'transformers', 'anos 80', 'vintage', 'robô', 'trem']
   },
   {
@@ -155,7 +182,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 600,
     keywords: ['patins', 'roller', 'inline', 'ajustável', '34', '35', '36', 'esporte', 'lazer']
   },
   {
@@ -173,7 +200,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 700,
     keywords: ['guardiões da galáxia', 'marvel', 'bonecos', 'vingadores', 'groot', 'star lord', 'kit']
   },
   {
@@ -192,7 +219,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 800,
     keywords: ['jardim', 'decoração', 'rústico', 'madeira', 'artesanato', 'paisagismo', 'passarinho']
   },
   {
@@ -212,7 +239,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 900,
     keywords: ['fogão a lenha', 'ferro', 'antigo', 'fundimig', 'rústico', 'decoração', 'fazenda']
   },
   {
@@ -238,7 +265,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1000,
     keywords: ['fogão industrial', 'dako', 'couraçado', 'restaurante', 'ferro', 'vintage', 'forno']
   },
   {
@@ -256,7 +283,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1100,
     keywords: ['festa', 'boleira', 'suporte doces', 'cupcake', 'decoração', 'mesa posta']
   },
   {
@@ -275,7 +302,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1200,
     keywords: ['aquário', 'betta', 'terrário', 'peixe', 'pets', 'decoração', 'tartaruga']
   },
   {
@@ -293,7 +320,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1300,
     keywords: ['barbie', 'estrela', 'vintage', 'miniatura', 'cozinha', 'anos 80', 'coleção']
   },
   {
@@ -311,7 +338,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1400,
     keywords: ['barbie', 'móveis', 'boneca', 'brinquedo', 'pink', 'casa de boneca']
   },
   {
@@ -334,7 +361,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1500,
     keywords: ['piano', 'yamaha', 'clavinova', 'teclado', 'piano digital', 'instrumento', 'profissional']
   },
   {
@@ -354,7 +381,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1600,
     keywords: ['pogobol', 'estrela', 'antigo', 'anos 90', 'barbie', 'brinquedo', 'vintage']
   },
   {
@@ -375,7 +402,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1700,
     keywords: ['lol surprise', 'boneca', 'lote', 'brinquedo', 'menina', 'coleção']
   },
   {
@@ -395,7 +422,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1800,
     keywords: ['bandai', 'kabutack', 'tokusatsu', 'robot', 'vintage', 'anos 90', 'japão', 'raro']
   },
   {
@@ -415,7 +442,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 1900,
     keywords: ['cavalinho', 'madeira', 'balanço', 'brinquedo educativo', 'decoração', 'rústico', 'infantil']
   },
   {
@@ -433,7 +460,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2000,
     keywords: ['barbie', 'stacie', 'playset', 'boneca', 'suco', 'mattel', 'brinquedo']
   },
   {
@@ -453,7 +480,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2100,
     keywords: ['gaiola', 'calopsita', 'viveiro', 'pássaro', 'pets', 'aves']
   },
   {
@@ -472,7 +499,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2200,
     keywords: ['globo', 'luminária', 'ventilador', 'reparo', 'casa', 'iluminação']
   },
   {
@@ -493,7 +520,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2300,
     keywords: ['fogão', 'cooktop', 'venax', 'camping', 'portátil', 'inox', '4 bocas']
   },
   {
@@ -512,7 +539,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2400,
     keywords: ['wifi', 'repetidor', 'internet', 'tp-link', 'wireless', 'rede']
   },
   {
@@ -531,7 +558,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2500,
     keywords: ['batgirl', 'dc', 'super hero girls', 'boneca', 'brinquedo', 'mattel']
   },
   {
@@ -551,7 +578,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2600,
     keywords: ['massinha', 'play-doh', 'moldes', 'brinquedo educativo', 'artes']
   },
   {
@@ -570,7 +597,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2700,
     keywords: ['polly', 'polly pocket', 'boneca', 'lote', 'roupinhas', 'fashion']
   },
   {
@@ -590,7 +617,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2800,
     keywords: ['cozinha', 'brinquedo', 'panelinhas', 'metal', 'inox', 'masterchef']
   },
   {
@@ -609,7 +636,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: false,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 2900,
     keywords: ['barbie', 'móveis', 'salão', 'brinquedo', 'boneca']
   },
   {
@@ -629,7 +656,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 3000,
     keywords: ['toy story', 'soldadinho', 'army men', 'disney', 'pixar', 'coleção']
   },
   {
@@ -650,7 +677,7 @@ Ideal para completar fantasia de última hora, cosplay infantil ou decoração g
     ],
     isSold: false,
     isHighlighted: true,
-    createdAt: Date.now(),
+    createdAt: Date.now() - 3100,
     keywords: ['baby alive', 'hasbro', 'boneca', 'interativa', 'massinha', 'brinquedo']
   }
 ];
