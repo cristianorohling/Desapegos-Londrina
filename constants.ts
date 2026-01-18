@@ -37,7 +37,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'boneco-dengue-xuxa',
     name: 'Boneco Dengue - Xou da Xuxa',
     description: 'Boneco vintage do personagem Dengue.',
-    price: 0,
+    price: 350.00, // Ajustado para somatória
     category: 'Brinquedos',
     images: [
       'https://desapegos.puter.site/brinquedos/dengue_xuxa/01.jpg',
@@ -53,7 +53,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'kit-mario-bros-mcdonalds',
     name: 'Kit Figuras Super Mario Bros - McDonald\'s / Nintendo',
     description: 'Coleção de bonecos do Super Mario Bros lançados pelo McDonald\'s. O lote inclui diversos personagens clássicos como Bowser, Yoshi, Luigi, Peach, Toad e Toadette.',
-    price: 0,
+    price: 150.00, // Ajustado para somatória
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'
@@ -81,7 +81,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'chapeu-woody',
     name: 'Chapéu Woody (Toy Story)',
     description: 'Chapéu do personagem Woody.',
-    price: 0,
+    price: 80.00, // Ajustado para somatória
     category: 'Brinquedos',
     images: [
       'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/chapeu_woody/01.jpg',
@@ -638,3 +638,4 @@ DETALHES TÉCNICOS:
 export const WHATSAPP_NUMBER = "5543991223034";
 export const NEIGHBORHOOD = "San Fernando";
 export const FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/profile/100001551016902/";
+export const INSTAGRAM_URL = "https://www.instagram.com/novidades.e.desapegos/";
