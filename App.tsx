@@ -126,7 +126,7 @@ const App: React.FC = () => {
       
       if (cleanPath === '/vendidos') {
         setCurrentView('sold-report');
-        updateMetaTags("Relatório de Vendas | Desapegos Londrina", "Área Privada", "");
+        updateMetaTags("Relatório de Vendas | Novidades & Desapegos", "Área Privada", "");
         window.scrollTo(0, 0);
         return;
       }
@@ -139,7 +139,7 @@ const App: React.FC = () => {
           setCurrentView('product-landing');
           const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
           updateMetaTags(
-            `${product.name} - R$ ${priceStr} | Desapegos Londrina`,
+            `${product.name} - R$ ${priceStr} | Novidades & Desapegos`,
             product.description.substring(0, 150) + "...",
             product.images[0] || ""
           );
@@ -150,22 +150,22 @@ const App: React.FC = () => {
       
       if (cleanPath === '/sobre') {
         setCurrentView('about');
-        updateMetaTags("Sobre Nós | Desapegos Londrina", "Conheça nossa história.", "");
+        updateMetaTags("Sobre Nós | Novidades & Desapegos", "Conheça nossa história.", "");
       } else if (cleanPath === '/duvidas') {
         setCurrentView('how');
-        updateMetaTags("Dúvidas | Desapegos Londrina", "Como comprar.", "");
+        updateMetaTags("Dúvidas | Novidades & Desapegos", "Como comprar.", "");
       } else if (parts.length === 1 && SLUG_TO_CATEGORY[parts[0]]) {
         const cat = SLUG_TO_CATEGORY[parts[0]];
         setCurrentView('catalog');
         setViewingProduct(null);
         setActiveCategory(cat);
-        updateMetaTags(`Itens de ${cat} | Desapegos Londrina`, `Veja todos os nossos desapegos de ${cat}.`, "");
+        updateMetaTags(`Itens de ${cat} | Novidades & Desapegos`, `Veja todos os nossos desapegos de ${cat}.`, "");
         window.scrollTo(0, 0);
       } else {
         setCurrentView('catalog');
         setViewingProduct(null);
         setActiveCategory('Todos');
-        updateMetaTags("Desapegos Londrina - Bazar", "Confira as melhores oportunidades!", "");
+        updateMetaTags("Novidades & Desapegos - Bazar", "Confira as melhores oportunidades!", "");
       }
     };
 
@@ -181,7 +181,7 @@ const App: React.FC = () => {
     setViewingProduct(product);
     setCurrentView('product-landing');
     const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-    updateMetaTags(`${product.name} - R$ ${priceStr} | Desapegos Londrina`, product.description.substring(0, 150) + "...", product.images[0] || "");
+    updateMetaTags(`${product.name} - R$ ${priceStr} | Novidades & Desapegos`, product.description.substring(0, 150) + "...", product.images[0] || "");
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -193,9 +193,9 @@ const App: React.FC = () => {
     if (currentView !== 'catalog') setCurrentView('catalog');
     
     if (cat === 'Todos') {
-      updateMetaTags("Desapegos Londrina - Bazar", "Explore o catálogo completo.", "");
+      updateMetaTags("Novidades & Desapegos - Bazar", "Explore o catálogo completo.", "");
     } else {
-      updateMetaTags(`Itens de ${cat} | Desapegos Londrina`, `Veja todos os nossos desapegos de ${cat}.`, "");
+      updateMetaTags(`Itens de ${cat} | Novidades & Desapegos`, `Veja todos os nossos desapegos de ${cat}.`, "");
     }
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -220,7 +220,7 @@ const App: React.FC = () => {
   const shareCurrentCategory = () => {
     const shareUrl = window.location.href;
     const categoryName = activeCategory === 'Todos' ? "CATÁLOGO COMPLETO" : `ITENS DE ${activeCategory.toUpperCase()}`;
-    const shareText = `👋 *${categoryName} - DESAPEGOS LONDRINA*\n\nSeparei alguns itens incríveis no nosso bazar! Dá uma olhadinha no link:\n`;
+    const shareText = `👋 *${categoryName} - NOVIDADES & DESAPEGOS*\n\nSeparei alguns itens incríveis no nosso bazar! Dá uma olhadinha no link:\n`;
 
     if (navigator.share) {
       navigator.share({ title: categoryName, text: shareText, url: shareUrl }).catch(() => {
@@ -449,7 +449,7 @@ const App: React.FC = () => {
       <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className={`fixed bottom-6 right-6 z-[80] bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 flex items-center justify-center group animate-pulse-ws ${currentView === 'product-landing' ? 'hidden' : 'flex'}`}><MessageCircle size={24} fill="white" /></a>
 
       <footer className="bg-white border-t border-emerald-100 py-10 mb-20 lg:mb-0">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6"><div className="flex items-center gap-2"><ShoppingBag size={18} className="text-emerald-600" /><span className="text-xs font-black uppercase tracking-tighter">Desapegos Londrina</span></div><p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p><div className="flex gap-4 items-center"><a href={FB_MARKETPLACE_URL} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors"><Facebook size={18} /></a><button onClick={() => {setCurrentView('about'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Sobre</button><button onClick={() => {setCurrentView('how'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Dúvidas</button></div></div>
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6"><div className="flex items-center gap-2"><ShoppingBag size={18} className="text-emerald-600" /><span className="text-xs font-black uppercase tracking-tighter">Novidades & Desapegos</span></div><p className="text-[8px] text-slate-400 font-black uppercase tracking-[0.4em]">© 2026 Londrina - PR</p><div className="flex gap-4 items-center"><a href={FB_MARKETPLACE_URL} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors"><Facebook size={18} /></a><button onClick={() => {setCurrentView('about'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Sobre</button><button onClick={() => {setCurrentView('how'); setIsMenuOpen(false)}} className="text-[9px] font-black uppercase text-slate-500 hover:text-emerald-600 transition-colors">Dúvidas</button></div></div>
       </footer>
     </div>
   );
