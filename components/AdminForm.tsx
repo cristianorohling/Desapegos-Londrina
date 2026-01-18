@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Camera, Hash } from 'lucide-react';
-import { Product, Category } from '../types';
-import { CATEGORIES } from '../constants';
+import { Product, Category } from '../types.ts';
+import { CATEGORIES } from '../constants.ts';
 
 interface AdminFormProps {
   onClose: () => void;

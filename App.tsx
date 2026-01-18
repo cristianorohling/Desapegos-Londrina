@@ -33,10 +33,10 @@ import {
   History,
   Book
 } from 'lucide-react';
-import { Product, Category } from './types';
-import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL } from './constants';
-import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
+import { Product, Category } from './types.ts';
+import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL } from './constants.ts';
+import Navbar from './components/Navbar.tsx';
+import ProductCard from './components/ProductCard.tsx';
 
 type View = 'catalog' | 'about' | 'how' | 'product-landing' | 'sold-report';
 

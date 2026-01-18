@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Product } from '../types';
+import { Product } from '../types.ts';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
