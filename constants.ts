@@ -447,7 +447,7 @@ Vendo boneco transformável inspirado no personagem Jazz do primeiro filme dos T
     id: 'kit-mario-bros-mcdonalds',
     name: 'Kit Figuras Super Mario Bros - McDonald\'s',
     description: 'Vendido: Kit bonecos Mario Bros.',
-    price: 150.00,
+    price: 80.00,
     category: 'Brinquedos',
     images: ['https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/kit_mario/01.png'],
     isSold: true,
