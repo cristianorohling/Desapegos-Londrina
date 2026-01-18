@@ -10,12 +10,12 @@ export const CATEGORIES: Category[] = [
   "Livros"
 ];
 
-// Texto padrão para facilitar manutenção futura
 const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comigo. Para outras cidades, envio via OLX Pay (Correios) com embalagem reforçada.
 
 `;
 
 export const INITIAL_PRODUCTS: Product[] = [
+  // --- ITENS VENDIDOS ---
   {
     id: 'diaclone-hilux-azul',
     name: 'Diaclone Hilux 4WD Azul, Takara (1983)',
@@ -93,25 +93,91 @@ export const INITIAL_PRODUCTS: Product[] = [
     keywords: ['chapéu woody', 'toy story', 'fantasia', 'caubói', 'infantil', 'disney', 'pixar', 'cosplay infantil']
   },
   {
-    id: 'chaveiro-espada-garen-lol',
-    name: 'Chaveiro Espada do Garen (League of Legends) - 12cm Metal',
-    description: `${HEADER_DESC}Vendo pingente com miniatura da espada do campeão Garen. Peça rica em detalhes, ideal para usar na chave, mochila ou deixar na estante junto com a coleção.
-
-DETALHES TÉCNICOS:
-* Material: Liga de Zinco (Metal maciço, não é plástico).
-* Tamanho: 12 cm (Tamanho grande para chaveiro).
-* Acabamento: Estilo Bronze Antigo / Envelhecido.
-* Estado: Excelente conservação.`,
-    price: 30.00,
+    id: 'mjolnir-thor-low-cost',
+    name: 'Martelo Mjolnir Thor Plástico - Fantasia',
+    description: `${HEADER_DESC}Martelo do Thor versão simples (brinquedo plástico). Ideal para fantasia.`,
+    price: 15.00,
     category: 'Brinquedos',
     images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/pingente_lol/01.png'
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/martelo_thor/01.png'
     ],
-    isSold: false,
+    isSold: true,
     isHighlighted: false,
-    createdAt: Date.now() + 25000,
-    keywords: ['league of legends', 'lol', 'garen', 'espada', 'chaveiro', 'metal', 'geek', 'colecionador']
+    createdAt: Date.now() - 100,
+    keywords: ['thor', 'martelo', 'fantasia']
   },
+  {
+    id: 'chaleira-smartfy-inox',
+    name: 'Chaleira Elétrica Inox 1.8L 110v - Nova',
+    description: `${HEADER_DESC}Jarra Elétrica Smartfy Inox 1.8 Litros (110v). Produto NOVO na caixa.`,
+    price: 50.00,
+    category: 'Cozinha',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/01.webp'
+    ],
+    isSold: true,
+    isHighlighted: true,
+    createdAt: Date.now() - 300,
+    keywords: ['chaleira', 'inox', 'cozinha']
+  },
+  {
+    id: 'kit-guardioes-galaxia-bootleg',
+    name: 'Kit Bonecos Guardiões da Galáxia (Star-Lord/Groot)',
+    description: `${HEADER_DESC}Kit completo com 5 bonecos dos Guardiões da Galáxia.`,
+    price: 45.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guardioes_galaxia/01.png'
+    ],
+    isSold: true,
+    isHighlighted: false,
+    createdAt: Date.now() - 700,
+    keywords: ['marvel', 'guardiões', 'bonecos']
+  },
+  {
+    id: 'casinha-passarinho-madeira',
+    name: 'Casinha Passarinho Madeira Rústica',
+    description: `${HEADER_DESC}Casinha de passarinho artesanal em madeira maciça.`,
+    price: 55.00,
+    category: 'Decoração',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/01.png'
+    ],
+    isSold: true,
+    isHighlighted: false,
+    createdAt: Date.now() - 800,
+    keywords: ['jardim', 'madeira', 'artesanato']
+  },
+  {
+    id: 'globo-pera-luminaria',
+    name: 'Globo Cúpula Ventilador Teto Plástico',
+    description: `${HEADER_DESC}Globo/Tulipa modelo "Pera" para ventilador de teto. Peça de reposição.`,
+    price: 10.00,
+    category: 'Decoração',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/globo_pera/01.png'
+    ],
+    isSold: true,
+    isHighlighted: false,
+    createdAt: Date.now() - 2200,
+    keywords: ['globo', 'ventilador', 'reparo']
+  },
+  {
+    id: 'repetidor-tplink',
+    name: 'Repetidor Wi-Fi TP-Link 300Mbps',
+    description: `${HEADER_DESC}Repetidor TP-Link TL-WA850RE. Amplia o sinal do Wi-Fi.`,
+    price: 40.00,
+    category: 'Info Eletrônicos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
+    ],
+    isSold: true,
+    isHighlighted: false,
+    createdAt: Date.now() - 2400,
+    keywords: ['wifi', 'repetidor', 'internet']
+  },
+
+  // --- ITENS DISPONÍVEIS ---
   {
     id: 'escoteiros-mirins-colecao-rara',
     name: 'Coleção Biblioteca do Escoteiro Mirim Completa (20 Vols) + Estante Original Rara',
@@ -139,6 +205,26 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     isHighlighted: true,
     createdAt: Date.now() + 20000,
     keywords: ['livros', 'coleção', 'escoteiros mirins', 'disney', 'vintage', 'anos 80', 'raridade', 'mini-estante']
+  },
+  {
+    id: 'chaveiro-espada-garen-lol',
+    name: 'Chaveiro Espada do Garen (League of Legends) - 12cm Metal',
+    description: `${HEADER_DESC}Vendo pingente com miniatura da espada do campeão Garen. Peça rica em detalhes, ideal para usar na chave, mochila ou deixar na estante junto com a coleção.
+
+DETALHES TÉCNICOS:
+* Material: Liga de Zinco (Metal maciço, não é plástico).
+* Tamanho: 12 cm (Tamanho grande para chaveiro).
+* Acabamento: Estilo Bronze Antigo / Envelhecido.
+* Estado: Excelente conservação.`,
+    price: 30.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/pingente_lol/01.png'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() + 25000,
+    keywords: ['league of legends', 'lol', 'garen', 'espada', 'chaveiro', 'metal', 'geek', 'colecionador']
   },
   {
     id: 'miniatura-guarana-tai-vintage',
@@ -198,20 +284,6 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     keywords: ['tv antiga', 'philco', 'vintage', 'space age']
   },
   {
-    id: 'mjolnir-thor-low-cost',
-    name: 'Martelo Mjolnir Thor Plástico - Fantasia',
-    description: `${HEADER_DESC}Martelo do Thor versão simples (brinquedo plástico). Ideal para fantasia.`,
-    price: 15.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/martelo_thor/01.png'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 100,
-    keywords: ['thor', 'martelo', 'fantasia']
-  },
-  {
     id: 'tait-speaker-tmaa10',
     name: 'Alto-Falante Tait Padrão Industrial p/ Rádio PX',
     description: `${HEADER_DESC}Alto-falante remoto original Tait Communications (TMAA10).`,
@@ -224,20 +296,6 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     isHighlighted: true,
     createdAt: Date.now() - 200,
     keywords: ['tait', 'px', 'py', 'industrial']
-  },
-  {
-    id: 'chaleira-smartfy-inox',
-    name: 'Chaleira Elétrica Inox 1.8L 110v - Nova',
-    description: `${HEADER_DESC}Jarra Elétrica Smartfy Inox 1.8 Litros (110v). Produto NOVO na caixa.`,
-    price: 50.00,
-    category: 'Cozinha',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/cozinha/chaleira_smartfy/01.webp'
-    ],
-    isSold: true,
-    isHighlighted: true,
-    createdAt: Date.now() - 300,
-    keywords: ['chaleira', 'inox', 'cozinha']
   },
   {
     id: 'comando-arcade-sanwa-vermelho',
@@ -280,34 +338,6 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     isHighlighted: false,
     createdAt: Date.now() - 600,
     keywords: ['patins', 'roller', 'esporte']
-  },
-  {
-    id: 'kit-guardioes-galaxia-bootleg',
-    name: 'Kit Bonecos Guardiões da Galáxia (Star-Lord/Groot)',
-    description: `${HEADER_DESC}Kit completo com 5 bonecos dos Guardiões da Galáxia.`,
-    price: 45.00,
-    category: 'Brinquedos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/guardioes_galaxia/01.png'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 700,
-    keywords: ['marvel', 'guardiões', 'bonecos']
-  },
-  {
-    id: 'casinha-passarinho-madeira',
-    name: 'Casinha Passarinho Madeira Rústica',
-    description: `${HEADER_DESC}Casinha de passarinho artesanal em madeira maciça.`,
-    price: 55.00,
-    category: 'Decoração',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/casinha_envernizada/01.png'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 800,
-    keywords: ['jardim', 'madeira', 'artesanato']
   },
   {
     id: 'fogao-lenha-fundimig-f090',
@@ -492,20 +522,6 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     keywords: ['gaiola', 'calopsita', 'pássaro']
   },
   {
-    id: 'globo-pera-luminaria',
-    name: 'Globo Cúpula Ventilador Teto Plástico',
-    description: `${HEADER_DESC}Globo/Tulipa modelo "Pera" para ventilador de teto. Peça de reposição.`,
-    price: 10.00,
-    category: 'Decoração',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/globo_pera/01.png'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 2200,
-    keywords: ['globo', 'ventilador', 'reparo']
-  },
-  {
     id: 'fogao-venax',
     name: 'Fogão Cooktop Portátil Venax 4 Bocas Inox',
     description: `${HEADER_DESC}Fogão de Mesa Venax 4 Bocas Inox. Funcionando perfeitamente.`,
@@ -518,20 +534,6 @@ ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apre
     isHighlighted: true,
     createdAt: Date.now() - 2300,
     keywords: ['fogão', 'cooktop', 'venax']
-  },
-  {
-    id: 'repetidor-tplink',
-    name: 'Repetidor Wi-Fi TP-Link 300Mbps',
-    description: `${HEADER_DESC}Repetidor TP-Link TL-WA850RE. Amplia o sinal do Wi-Fi.`,
-    price: 40.00,
-    category: 'Info Eletrônicos',
-    images: [
-      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/informatica/repetidor_tp-link/01.jpg'
-    ],
-    isSold: true,
-    isHighlighted: false,
-    createdAt: Date.now() - 2400,
-    keywords: ['wifi', 'repetidor', 'internet']
   },
   {
     id: 'batgirl-jato',
