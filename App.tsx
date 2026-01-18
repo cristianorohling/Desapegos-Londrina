@@ -167,7 +167,7 @@ const App: React.FC = () => {
 
   const filteredProducts = useMemo(() => {
     const baseItems = INITIAL_PRODUCTS.filter(p => {
-      // Itens vendidos só aparecem no relatório de vendidos
+      // REGRA ESTREITA: Itens vendidos só aparecem no relatório de vendidos
       if (p.isSold && currentView !== 'sold-report') return false;
 
       const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
@@ -196,7 +196,7 @@ const App: React.FC = () => {
               <DollarSign size={14} /> Fechamento do Bazar
             </div>
             <h1 className="text-3xl md:text-5xl font-black tracking-tighter leading-none">Relatório de <br/><span className="text-emerald-400">Vendas Efetuadas</span></h1>
-            <p className="text-slate-400 text-sm font-medium max-w-md">Confira o desempenho total dos seus desapegos.</p>
+            <p className="text-slate-400 text-sm font-medium max-w-md">Estes itens já foram vendidos e o valor abaixo representa o total recebido até agora.</p>
           </div>
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2rem] min-w-[280px] relative z-10">
             <div className="flex items-center gap-3 text-emerald-400 mb-2">
@@ -208,7 +208,7 @@ const App: React.FC = () => {
               <span className="text-5xl font-black tracking-tighter">{totalRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
             </div>
             <div className="mt-6 pt-6 border-t border-white/10 flex justify-between items-center text-slate-400">
-               <div><p className="text-[8px] font-black uppercase">Itens Vendidos</p><p className="text-lg font-black text-white">{soldItems.length}</p></div>
+               <div><p className="text-[8px] font-black uppercase">Desapegos</p><p className="text-lg font-black text-white">{soldItems.length}</p></div>
                <div className="text-right"><p className="text-[8px] font-black uppercase">Ticket Médio</p><p className="text-lg font-black text-white">R$ {(soldItems.length > 0 ? totalRevenue / soldItems.length : 0).toLocaleString('pt-BR', { maximumFractionDigits: 0 })}</p></div>
             </div>
           </div>
@@ -217,7 +217,7 @@ const App: React.FC = () => {
         <div className="space-y-6">
           <div className="flex items-center gap-3 border-b border-emerald-100 pb-4">
             <div className="bg-slate-100 p-2 rounded-lg"><History size={18} className="text-slate-600" /></div>
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">Lista de Itens Pagos</h2>
+            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">Itens Vendidos</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {soldItems.map(product => <ProductCard key={product.id} product={product} onViewDetails={navigateToProduct} />)}
@@ -232,14 +232,14 @@ const App: React.FC = () => {
       <div className="pt-2 mb-3">
         <button onClick={navigateToHome} className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-all group">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-          <span className="text-[9px] font-black uppercase tracking-widest">Voltar ao Catálogo</span>
+          <span className="text-[9px] font-black uppercase tracking-widest">Voltar</span>
         </button>
       </div>
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
         <div className="w-full lg:col-span-7 shrink-0">
           <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
-            <div className="aspect-square md:aspect-[4/3] bg-slate-50 flex items-center justify-center relative">
-              <img src={product.images[0]} className="max-w-full max-h-full object-contain p-8" alt={product.name} onClick={() => setFullScreenImage(product.images[0])} />
+            <div className="aspect-square md:aspect-[4/3] bg-slate-50 flex items-center justify-center relative group cursor-zoom-in" onClick={() => setFullScreenImage(product.images[0])}>
+              <img src={product.images[0]} className="max-w-full max-h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500" alt={product.name} />
             </div>
             {product.isSold && <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center z-20"><span className="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs tracking-[0.2em] uppercase shadow-2xl">Item Vendido</span></div>}
           </div>
@@ -265,7 +265,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ECFDF5] selection:bg-emerald-200">
-      {/* FAIXA MARQUEE REATIVADA NO TOPO */}
+      {/* FAIXA MARQUEE - DESTAQUES */}
       <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...Array(2)].map((_, idx) => (
@@ -287,7 +287,7 @@ const App: React.FC = () => {
 
       <Navbar currentView={currentView as any} setView={(v) => { if (v === 'catalog') navigateToHome(); else { window.history.pushState({}, '', v === 'about' ? '/sobre' : '/duvidas'); setCurrentView(v as View); } }} isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
 
-      {/* MENU DE CATEGORIAS REATIVADO */}
+      {/* MENU DE CATEGORIAS */}
       {currentView === 'catalog' && (
         <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-4' : 'max-h-0 py-0'}`}>
           <div className="max-w-7xl mx-auto px-4">

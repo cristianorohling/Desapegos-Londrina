@@ -15,7 +15,36 @@ const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comig
 `;
 
 export const INITIAL_PRODUCTS: Product[] = [
-  // --- ITENS VENDIDOS ---
+  // --- NOVO ITEM DISPONÍVEL ---
+  {
+    id: 'jazz-bootleg-pontiac',
+    name: 'Robô Transformável Estilo Transformers Jazz (Filme) - Pontiac Solstice Prata',
+    description: `${HEADER_DESC}AVISO: NÃO É ORIGINAL! TRATA-SE DE UM BOOTLEG!
+
+Vendo boneco transformável inspirado no personagem Jazz do primeiro filme dos Transformers (2007).
+
+🤖 Visual Incrível: No modo veículo, ele se transforma em um Pontiac Solstice prateado. O visual do carro é muito bonito, ótimo para deixar exposto na estante ou usar em maquetes.
+
+🔍 Detalhes do Produto:
+- Tipo: Versão alternativa/genérica (Bootleg), não é da marca Hasbro.
+- Tamanho: Escala Legends (pequeno, cabe na palma da mão).
+- Condição: Novo (sem uso), porém, por ser uma versão genérica, possui plástico mais simples e articulações bem firmes/rígidas.
+- Indicação: Perfeito para quem quer um brinquedo barato para batalhas, para customizadores treinarem pintura ou para colecionadores de variantes "KO".`,
+    price: 45.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/jazz_bootleg/00.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/jazz_bootleg/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/jazz_bootleg/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/jazz_bootleg/03.jpg'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 100000,
+    keywords: ['transformers', 'jazz', 'bootleg', 'carro', 'robô', 'brinquedo']
+  },
+  
+  // --- ITENS VENDIDOS (SÓ APARECEM EM /VENDIDOS) ---
   {
     id: 'diaclone-hilux-azul',
     name: 'Diaclone Hilux 4WD Azul, Takara (1983)',
@@ -77,7 +106,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     keywords: ['chaleira', 'cozinha']
   },
 
-  // --- ITENS DISPONÍVEIS ---
+  // --- OUTROS ITENS DISPONÍVEIS ---
   {
     id: 'escoteiros-mirins-colecao-rara',
     name: 'Coleção Biblioteca do Escoteiro Mirim Completa (20 Vols) + Estante Original Rara',
