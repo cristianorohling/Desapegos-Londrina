@@ -162,6 +162,7 @@ const App: React.FC = () => {
 
   const navigateToHome = () => handleCategoryClick('Todos');
 
+  // MARQUEE: Apenas itens em destaque que NÃO foram vendidos
   const highlightedProducts = useMemo(() => INITIAL_PRODUCTS.filter(p => p.isHighlighted && !p.isSold), []);
   const sortedCategories = useMemo(() => [...CATEGORIES].sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
 
@@ -265,7 +266,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ECFDF5] selection:bg-emerald-200">
-      {/* FAIXA MARQUEE - DESTAQUES */}
+      {/* FAIXA MARQUEE - DESTAQUES (FILTRADOS) */}
       <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...Array(2)].map((_, idx) => (
