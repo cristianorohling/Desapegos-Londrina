@@ -16,6 +16,25 @@ const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comig
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'miniatura-guarana-tai-vintage',
+    name: 'Miniatura Guaraná Taí Coca-Cola Anos 80 - Coleção Rara',
+    description: `${HEADER_DESC}Vendo miniatura rara do Guaraná Taí. Peça original e autêntica da famosa Promoção das Miniaturas da Coca-Cola (anos 80), que incluía também Fanta e Sprite. Item indispensável para quem quer completar o engradado clássico da coleção.
+
+Estado de conservação:
+* Vidro e Rótulo: Rótulo íntegro, original e com cores vivas (excelente estado).
+* Tampa: Tampinha de metal original com oxidação natural do tempo.
+* Conteúdo: Garrafa vazia (sem líquido).`,
+    price: 50.00,
+    category: 'Decoração',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/deco/miniatura_tai/01.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 12000,
+    keywords: ['guaraná taí', 'coca-cola', 'miniatura', 'vintage', 'anos 80', 'colecionador', 'garrafinha', 'promoção']
+  },
+  {
     id: 'bumblebee-estrela-g1-restauro',
     name: 'Transformers G1 Bumblebee Fusca - Estrela Anos 80 (Para Restauro)',
     description: `${HEADER_DESC}Vendo Transformers Bumblebee (Fusca) original da Estrela (anos 80), ideal para retirada de peças ou restauro.

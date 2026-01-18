@@ -30,8 +30,7 @@ import {
   ExternalLink,
   DollarSign,
   TrendingUp,
-  History,
-  TrendingDown
+  History
 } from 'lucide-react';
 import { Product, Category } from './types';
 import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL } from './constants';
@@ -59,9 +58,9 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 const normalizeText = (text: string) => 
-  text.toString().toLowerCase()
+  text ? text.toString().toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
+    .replace(/[\u0300-\u036f]/g, '') : '';
 
 const slugify = (text: string) => normalizeText(text)
   .replace(/\s+/g, '-')
@@ -105,9 +104,14 @@ const App: React.FC = () => {
       'twitter:image': image
     };
     Object.entries(tags).forEach(([property, content]) => {
-      let element = document.querySelector(`meta[property="${property}"]`) || 
-                    document.querySelector(`meta[name="${property}"]`);
-      if (element) element.setAttribute('content', content);
+      if (!content) return;
+      const selector = property.startsWith('og:') 
+        ? `meta[property="${property}"]` 
+        : `meta[name="${property}"]`;
+      const element = document.querySelector(selector);
+      if (element) {
+        element.setAttribute('content', content);
+      }
     });
   };
 
@@ -117,9 +121,6 @@ const App: React.FC = () => {
       const cleanPath = path.replace(/\/$/, '') || '/';
       const parts = cleanPath.split('/').filter(Boolean);
       
-      console.log("Routing to:", cleanPath, parts);
-
-      // Rota Oculta: /vendidos
       if (cleanPath === '/vendidos') {
         setCurrentView('sold-report');
         updateMetaTags("Relatório de Vendas | Info Eletrônicos", "Área Privada", "");
@@ -137,7 +138,7 @@ const App: React.FC = () => {
           updateMetaTags(
             `${product.name} - R$ ${priceStr} | Info Eletrônicos`,
             product.description.substring(0, 150) + "...",
-            product.images[0]
+            product.images[0] || ""
           );
           window.scrollTo(0, 0);
           return;
@@ -177,7 +178,7 @@ const App: React.FC = () => {
     setViewingProduct(product);
     setCurrentView('product-landing');
     const priceStr = product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-    updateMetaTags(`${product.name} - R$ ${priceStr} | Info Eletrônicos`, product.description.substring(0, 150) + "...", product.images[0]);
+    updateMetaTags(`${product.name} - R$ ${priceStr} | Info Eletrônicos`, product.description.substring(0, 150) + "...", product.images[0] || "");
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -454,6 +455,8 @@ const App: React.FC = () => {
 interface GalleryProps { images: string[]; onImageClick: (url: string) => void; }
 const ProductDetailGallery: React.FC<GalleryProps> = ({ images, onImageClick }) => {
   const [active, setActive] = useState(0);
+  if (!images || images.length === 0) return null;
+  
   return (
     <div className="w-full h-full flex flex-col relative group cursor-zoom-in" onClick={() => onImageClick(images[active])}>
       <div className="relative flex-1 bg-slate-50 flex items-center justify-center overflow-hidden p-4 md:p-8">
