@@ -16,6 +16,30 @@ const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comig
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
+    id: 'bumblebee-estrela-g1-restauro',
+    name: 'Transformers G1 Bumblebee Fusca - Estrela Anos 80 (Para Restauro)',
+    description: `${HEADER_DESC}Vendo Transformers Bumblebee (Fusca) original da Estrela (anos 80), ideal para retirada de peças ou restauro.
+
+DETALHES:
+* Marca: Estrela S.A. (estampado no chassi).
+* Mecanismo de transformação das pernas e braços funcionando.
+* ATENÇÃO: A cabeça NÃO é original, está solta e vai junto apenas para completar o robô.
+* Cromados das rodas com desgaste natural do tempo.`,
+    price: 70.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/bumblebee_estrela/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/bumblebee_estrela/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/bumblebee_estrela/03.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/bumblebee_estrela/04.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/bumblebee_estrela/05.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 11000,
+    keywords: ['transformers', 'bumblebee', 'fusca', 'estrela', 'anos 80', 'vintage', 'robô', 'restauro', 'brinquedo antigo']
+  },
+  {
     id: 'diaclone-police-countach-1982',
     name: 'Raro Takara Diaclone Police Countach 1982 (Pre-Transformer Sunstreaker) - Japan',
     description: `${HEADER_DESC}Oportunidade única para colecionadores de G1 e Diaclone. Vendo figura original Takara Diaclone Car Robot No. 3 - Countach Patrol Car (versão japonesa da polícia).
