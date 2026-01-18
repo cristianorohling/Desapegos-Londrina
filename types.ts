@@ -1,4 +1,4 @@
-export type Category = "Brinquedos" | "Decoração" | "Pets" | "Cozinha" | "Info Eletrônicos" | "Instrumentos Musicais";
+export type Category = "Brinquedos" | "Decoração" | "Pets" | "Cozinha" | "Info Eletrônicos" | "Instrumentos Musicais" | "Livros";
 
 export interface Product {
   id: string;

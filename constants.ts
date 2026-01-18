@@ -6,7 +6,8 @@ export const CATEGORIES: Category[] = [
   "Pets",
   "Cozinha",
   "Info Eletrônicos",
-  "Instrumentos Musicais"
+  "Instrumentos Musicais",
+  "Livros"
 ];
 
 // Texto padrão para facilitar manutenção futura
@@ -15,6 +16,54 @@ const HEADER_DESC = `Sou de Londrina (San Fernando), pode retirar em mãos comig
 `;
 
 export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'chaveiro-espada-garen-lol',
+    name: 'Chaveiro Espada do Garen (League of Legends) - 12cm Metal',
+    description: `${HEADER_DESC}Vendo pingente com miniatura da espada do campeão Garen. Peça rica em detalhes, ideal para usar na chave, mochila ou deixar na estante junto com a coleção.
+
+DETALHES TÉCNICOS:
+* Material: Liga de Zinco (Metal maciço, não é plástico).
+* Tamanho: 12 cm (Tamanho grande para chaveiro).
+* Acabamento: Estilo Bronze Antigo / Envelhecido.
+* Estado: Excelente conservação.`,
+    price: 30.00,
+    category: 'Brinquedos',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/brinquedos/pingente_lol/01.png'
+    ],
+    isSold: false,
+    isHighlighted: false,
+    createdAt: Date.now() + 25000,
+    keywords: ['league of legends', 'lol', 'garen', 'espada', 'chaveiro', 'metal', 'geek', 'colecionador']
+  },
+  {
+    id: 'escoteiros-mirins-colecao-rara',
+    name: 'Coleção Biblioteca do Escoteiro Mirim Completa (20 Vols) + Estante Original Rara',
+    description: `${HEADER_DESC}Vendo coleção completa da "Biblioteca do Escoteiro Mirim", publicada pela Editora Nova Cultural (1985/86). Item de colecionador!
+
+O QUE ESTÁ INCLUSO:
+* Todos os 20 volumes (Capa Dura).
+* Acompanha a mini-estante plástica ORIGINAL da época (Item muito difícil de encontrar hoje em dia).
+
+DETALHES:
+As lombadas dos 20 livros, quando organizadas na estante, formam uma linda ilustração panorâmica dos Escoteiros Mirins. Conteúdo riquíssimo: adaptações dos manuais Disney clássicos (Prof. Pardal, Tio Patinhas, Mickey, etc.).
+
+ESTADO DE CONSERVAÇÃO: Livros em bom estado geral, íntegros e completos. Apresentam marcas do tempo e oxidação (amarelado) nas capas e cortes laterais, o que é natural para esta edição de capa branca com mais de 35 anos. As fotos são reais do produto.`,
+    price: 280.00,
+    category: 'Livros',
+    images: [
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/01.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/02.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/03.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/04.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/05.png',
+      'https://cdn.jsdelivr.net/gh/cristianorohling/Desapegos/livros/escoteiros_mirins/06.png'
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 20000,
+    keywords: ['livros', 'coleção', 'escoteiros mirins', 'disney', 'vintage', 'anos 80', 'raridade', 'mini-estante']
+  },
   {
     id: 'miniatura-guarana-tai-vintage',
     name: 'Miniatura Guaraná Taí Coca-Cola Anos 80 - Coleção Rara',
