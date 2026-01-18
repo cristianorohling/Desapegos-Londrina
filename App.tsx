@@ -34,10 +34,10 @@ import {
   Book,
   Instagram
 } from 'lucide-react';
-import { Product, Category } from './types.ts';
-import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL, INSTAGRAM_URL } from './constants.ts';
-import Navbar from './components/Navbar.tsx';
-import ProductCard from './components/ProductCard.tsx';
+import { Product, Category } from './types';
+import { INITIAL_PRODUCTS, CATEGORIES, WHATSAPP_NUMBER, NEIGHBORHOOD, FB_MARKETPLACE_URL, INSTAGRAM_URL } from './constants';
+import Navbar from './components/Navbar';
+import ProductCard from './components/ProductCard';
 
 type View = 'catalog' | 'about' | 'how' | 'product-landing' | 'sold-report';
 
@@ -162,13 +162,11 @@ const App: React.FC = () => {
 
   const navigateToHome = () => handleCategoryClick('Todos');
 
-  // MARQUEE: Apenas itens em destaque que NÃO foram vendidos
   const highlightedProducts = useMemo(() => INITIAL_PRODUCTS.filter(p => p.isHighlighted && !p.isSold), []);
   const sortedCategories = useMemo(() => [...CATEGORIES].sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
 
   const filteredProducts = useMemo(() => {
     const baseItems = INITIAL_PRODUCTS.filter(p => {
-      // REGRA ESTREITA: Itens vendidos só aparecem no relatório de vendidos
       if (p.isSold && currentView !== 'sold-report') return false;
 
       const categoryMatch = activeCategory === 'Todos' || p.category === activeCategory;
@@ -266,7 +264,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#ECFDF5] selection:bg-emerald-200">
-      {/* FAIXA MARQUEE - DESTAQUES (FILTRADOS) */}
       <div className="bg-slate-900 text-white py-2 overflow-hidden border-b border-emerald-900/20 relative z-[60]">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...Array(2)].map((_, idx) => (
@@ -288,7 +285,6 @@ const App: React.FC = () => {
 
       <Navbar currentView={currentView as any} setView={(v) => { if (v === 'catalog') navigateToHome(); else { window.history.pushState({}, '', v === 'about' ? '/sobre' : '/duvidas'); setCurrentView(v as View); } }} isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
 
-      {/* MENU DE CATEGORIAS */}
       {currentView === 'catalog' && (
         <div className={`bg-white border-b border-emerald-100 transition-all duration-500 overflow-hidden ${isMenuOpen ? 'max-h-[500px] py-4' : 'max-h-0 py-0'}`}>
           <div className="max-w-7xl mx-auto px-4">
