@@ -176,7 +176,7 @@ Palavras-chave: tv vintage, Philco-Ford, anos 70, design, colecionável.`,
     price: 300.00,
     category: 'Info Eletrônicos',
     images: [`${IMG_BASE_URL}/informatica/tv_philco_ford/01.png`],
-    isSold: true,
+    isSold: false,
     isHighlighted: true,
     createdAt: Date.now(),
     keywords: ['tv', 'vintage', 'philco']
