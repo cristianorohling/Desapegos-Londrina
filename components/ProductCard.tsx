@@ -33,18 +33,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => 
           loading="lazy"
         />
 
-        {/* Carrossel no Card */}
+        {/* Carrossel no Card - Ajustado para ser visível em mobile */}
         {product.images.length > 1 && !product.isSold && (
-          <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="absolute inset-0 flex items-center justify-between px-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
             <button 
               onClick={prevImage}
-              className="w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all"
+              className="w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all active:scale-90"
             >
               <ChevronLeft size={16} />
             </button>
             <button 
               onClick={nextImage}
-              className="w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all"
+              className="w-8 h-8 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all active:scale-90"
             >
               <ChevronRight size={16} />
             </button>

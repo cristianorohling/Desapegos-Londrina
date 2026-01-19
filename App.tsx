@@ -92,11 +92,10 @@ const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category | 'Todos'>('Todos');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewingProduct, setViewingProduct] = useState<Product | null>(null);
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const [randomSeed] = useState(() => Math.random());
-
   useEffect(() => {
     const handleRouting = () => {
       const path = window.location.pathname;
@@ -114,6 +113,7 @@ const App: React.FC = () => {
         const product = INITIAL_PRODUCTS.find(p => p.id === productId);
         if (product) {
           setViewingProduct(product);
+          setActiveImageIdx(0);
           setCurrentView('product-landing');
           window.scrollTo(0, 0);
           return;
@@ -141,6 +141,11 @@ const App: React.FC = () => {
     handleRouting();
     return () => window.removeEventListener('popstate', handleRouting);
   }, []);
+
+  // Resetar índice da imagem ao trocar de produto
+  useEffect(() => {
+    setActiveImageIdx(0);
+  }, [viewingProduct]);
 
   const navigateToProduct = (product: Product) => {
     const categorySlug = slugify(product.category);
@@ -236,11 +241,59 @@ const App: React.FC = () => {
       </div>
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
         <div className="w-full lg:col-span-7 shrink-0">
-          <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
-            <div className="aspect-square md:aspect-[4/3] bg-slate-50 flex items-center justify-center relative group cursor-zoom-in" onClick={() => setFullScreenImage(product.images[0])}>
-              <img src={product.images[0]} className="max-w-full max-h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500" alt={product.name} />
+          <div className="space-y-4">
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-emerald-100 relative">
+              <div 
+                className="aspect-square md:aspect-[4/3] bg-slate-50 flex items-center justify-center relative group cursor-zoom-in" 
+                onClick={() => setFullScreenImage(product.images[activeImageIdx])}
+              >
+                <img 
+                  src={product.images[activeImageIdx]} 
+                  className="max-w-full max-h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500" 
+                  alt={product.name} 
+                />
+                
+                {/* Navegação principal do carrossel */}
+                {product.images.length > 1 && (
+                  <>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveImageIdx(prev => (prev - 1 + product.images.length) % product.images.length);
+                      }}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveImageIdx(prev => (prev + 1) % product.images.length);
+                      }}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg text-slate-800 hover:bg-emerald-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </>
+                )}
+              </div>
+              {product.isSold && <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center z-20"><span className="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs tracking-[0.2em] uppercase shadow-2xl">Item Vendido</span></div>}
             </div>
-            {product.isSold && <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center z-20"><span className="bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs tracking-[0.2em] uppercase shadow-2xl">Item Vendido</span></div>}
+
+            {/* Thumbnails */}
+            {product.images.length > 1 && (
+              <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+                {product.images.map((img, idx) => (
+                  <button 
+                    key={idx} 
+                    onClick={() => setActiveImageIdx(idx)}
+                    className={`relative min-w-[80px] h-[80px] rounded-xl overflow-hidden border-2 transition-all ${activeImageIdx === idx ? 'border-emerald-500 ring-2 ring-emerald-200' : 'border-transparent opacity-60 hover:opacity-100'}`}
+                  >
+                    <img src={img} className="w-full h-full object-cover" alt={`${product.name} vista ${idx + 1}`} />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full lg:col-span-5 space-y-6">
