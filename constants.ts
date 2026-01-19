@@ -40,7 +40,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       `${IMG_BASE_URL}/brinquedos/carro_comando/01.png`,
       `${IMG_BASE_URL}/brinquedos/carro_comando/02.png`,
       `${IMG_BASE_URL}/brinquedos/carro_comando/03.png`,
-      `${IMG_BASE_URL}/brinquedos/carro_comando/04.jpg`
+      `${IMG_BASE_URL}/brinquedos/carro_comando/04.png`
     ],
     isSold: false,
     isHighlighted: true,
