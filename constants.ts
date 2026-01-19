@@ -126,10 +126,10 @@ Vendo boneco transformável inspirado no personagem Jazz do primeiro filme dos T
     id: 'tv-philco-ford-vintage-amarela',
     name: 'TV Vintage Philco-Ford Amarela Space Age',
     description: `${HEADER_DESC}TV portátil Philco-Ford, modelo icônico de 1970.`,
-    price: 349.00,
+    price: 300.00,
     category: 'Info Eletrônicos',
     images: [`${IMG_BASE_URL}/informatica/tv_philco_ford/01.png`],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now(),
     keywords: ['tv', 'vintage', 'philco']
