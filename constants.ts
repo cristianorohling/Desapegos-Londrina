@@ -789,7 +789,7 @@ Palavras-chave: baby alive, boneca interativa, festa das massas, brinquedo compl
     description: '',
     price: 10.00,
     category: 'Brinquedos',
-    images: [],
+    images: ['${IMG_BASE_URL}/brinquedos/chapeu_woody/01.jpg'],
     isSold: true,
     isHighlighted: false,
     createdAt: Date.now() - 9500,
