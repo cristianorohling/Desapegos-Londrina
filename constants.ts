@@ -586,6 +586,32 @@ export const INITIAL_PRODUCTS: Product[] = [
     isHighlighted: false,
     createdAt: Date.now() - 5000,
     keywords: ['artesanato', 'madeira']
+  },
+  {
+    id: 'cachepo-rustico-farmhouse-floral',
+    name: 'Cachepô Rústico Farmhouse em Madeira Maciça Entalhada (38cm)',
+    description: `${HEADER_DESC}Traga a alma do campo para dentro da sua casa. Peça de resgate com história em madeira maciça de alta densidade e design floral entalhado manualmente.
+
+    🌿 Destaques:
+    - Estilo Farmhouse autêntico e peça única.
+    - Exterior em madeira crua robusta com entalhe artesanal.
+    - Interior preservando a pátina do tempo e vestígios de policromia original.
+    - Versátil: ideal para plantas, organização de objetos ou centro de mesa.
+
+    📏 Medidas:
+    - Largura (Frente): 38 cm
+    - Altura: 24 cm
+    - Profundidade: 23 cm`,
+    price: 150.00,
+    category: 'Decoração',
+    images: [
+      `${IMG_BASE_URL}/deco/cachepo_entalhado/01.png`,
+      `${IMG_BASE_URL}/deco/cachepo_entalhado/02.png`
+    ],
+    isSold: false,
+    isHighlighted: true,
+    createdAt: Date.now() + 160000,
+    keywords: ['cachepo', 'madeira', 'rustico', 'farmhouse', 'decoracao', 'vintage']
   }
 ];
 
