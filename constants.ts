@@ -280,7 +280,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 65.00,
     category: 'Brinquedos',
     images: [`${IMG_BASE_URL}/brinquedos/robo_kabutak/01.png`],
-    isSold: false,
+    isSold: true,
     isHighlighted: true,
     createdAt: Date.now() - 1800,
     keywords: ['bandai', 'kabutack']
