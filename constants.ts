@@ -68,7 +68,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'escoteiros-mirins-colecao-rara',
     name: 'Coleção Biblioteca do Escoteiro Mirim Completa (20 Vols) + Estante Original Rara',
     description: `${HEADER_DESC}Coleção completa da Biblioteca do Escoteiro Mirim, Editora Nova Cultural, edição 1985/86. Inclui 20 volumes originais e estante de exposição rara.`,
-    price: 800.00,
+    price: 899.00,
     category: 'Livros',
     images: [`${IMG_BASE_URL}/livros/escoteiros_mirins/01.png`,
              `${IMG_BASE_URL}/livros/escoteiros_mirins/02.png`,
